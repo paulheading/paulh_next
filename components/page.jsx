@@ -57,10 +57,10 @@ function Page({ pages, projects, roles, education, treehouse }) {
             <div>{personal.medium_link}</div>
           </div>
         </Row>
-        <Row override={3}>
+        {/* <Row override={3}>
           <TripleTitle>Projects</TripleTitle>
           {projects.map(Columns)}
-        </Row>
+        </Row> */}
         {/* <Row>
           <div>
             <TripleTitle>Skills</TripleTitle>
