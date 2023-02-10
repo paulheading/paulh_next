@@ -17,6 +17,11 @@ async function getLayoutData() {
 
 async function getResumeData() {
   return {
+    heroes: await getTrelloData('heroes'),
+    projects: await getTrelloData('projects'),
+    gem: await getGemData(),
+    npm: await getNpmData(),
+    spotify: await getSpotifyData(),
     pages: await getTrelloData('pages'),
     roles: await getTrelloData('roles'),
     education: await getTrelloData('education'),
@@ -26,6 +31,11 @@ async function getResumeData() {
 
 async function getAboutData() {
   return {
+    heroes: await getTrelloData('heroes'),
+    projects: await getTrelloData('projects'),
+    gem: await getGemData(),
+    npm: await getNpmData(),
+    spotify: await getSpotifyData(),
     pages: await getTrelloData('pages'),
   }
 }
