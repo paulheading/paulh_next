@@ -45,20 +45,26 @@ export default function Menu() {
   return (
     <div {...containerProps}>
       <Wrap className={styles.wrap}>
-        <Link {...linkProps}>{desktop ? <PaulHDesktop /> : <PaulHMobile />}</Link>
+        <Link {...linkProps}>
+          {desktop ? (
+            <span className="medium-up">
+              <PaulHDesktop />
+            </span>
+          ) : (
+            <span className="medium-down">
+              <PaulHMobile />
+            </span>
+          )}
+        </Link>
         <div className={styles.links}>
           {data.map(({ title, icon }, index) => {
             const props = {
               title,
               index,
             }
-            return desktop ? (
-              <Links {...props} key={title + index} className="medium-up">
-                {title}
-              </Links>
-            ) : (
-              <Links {...props} key={title + index} className="medium-down">
-                {icon}
+            return (
+              <Links {...props} key={title + index}>
+                {desktop ? <span className="medium-up">{title}</span> : <span className="medium-down">{icon}</span>}
               </Links>
             )
           })}
