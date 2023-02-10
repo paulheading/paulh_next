@@ -1,5 +1,5 @@
 import Layout from 'layouts/main'
-import { getLayoutData, getResumeData } from 'scripts'
+import { getResumeData } from 'scripts'
 import Page from 'components/page'
 
 function Resume({ heroes, projects, gem, npm, spotify, pages, roles, education, treehouse }) {

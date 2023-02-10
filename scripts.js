@@ -1,9 +1,9 @@
-// import getMediumData from 'scripts/medium'
+import getMediumData from 'scripts/medium'
 import getTrelloData from 'scripts/trello'
 import getSpotifyData from 'scripts/spotify'
 import getGemData from 'scripts/gem'
 import getNpmData from 'scripts/npm'
-// import getTreehouseData from 'scripts/treehouse'
+import getTreehouseData from 'scripts/treehouse'
 
 async function getLayoutData() {
   return {
@@ -17,15 +17,11 @@ async function getLayoutData() {
 
 async function getResumeData() {
   return {
-    heroes: await getTrelloData('heroes'),
-    projects: await getTrelloData('projects'),
-    gem: await getGemData(),
-    npm: await getNpmData(),
-    spotify: await getSpotifyData(),
+    ...(await getLayoutData()),
     pages: await getTrelloData('pages'),
     roles: await getTrelloData('roles'),
     education: await getTrelloData('education'),
-    // treehouse: getTreehouseData(),
+    treehouse: getTreehouseData(),
   }
 }
 
