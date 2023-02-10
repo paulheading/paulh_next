@@ -18,7 +18,7 @@ export async function getStaticProps() {
   return {
     props: {
       ...(await getLayoutData()),
-      // ...(await getResumeData()),
+      ...(await getResumeData()),
     },
   }
 }
