@@ -55,7 +55,7 @@ export default function Menu() {
             }
             return (
               <Links {...props} key={title + index}>
-                {desktop ? title : icon}
+                {desktop ? <span className="medium-up">{title}</span> : <span className="medium-down">{icon}</span>}
               </Links>
             )
           })}
