@@ -11,11 +11,7 @@ function Resume({ heroes, projects, gem, npm, spotify, pages, roles, education, 
     education,
     treehouse,
   }
-  return (
-    <Layout {...layoutProps}>
-      <Page {...pageProps} />
-    </Layout>
-  )
+  return <Layout {...layoutProps}>{/* <Page {...pageProps} /> */}</Layout>
 }
 
 export async function getStaticProps() {
