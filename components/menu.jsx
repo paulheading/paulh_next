@@ -49,13 +49,16 @@ export default function Menu() {
         <div className={styles.links}>
           {data.map(({ title, icon }, index) => {
             const props = {
-              className: desktop ? 'medium-up' : 'medium-down',
               title,
               index,
             }
-            return (
-              <Links {...props} key={title + index}>
-                {desktop ? <span className="medium-up">{title}</span> : <span className="medium-down">{icon}</span>}
+            return desktop ? (
+              <Links {...props} key={title + index} className="medium-up">
+                {title}
+              </Links>
+            ) : (
+              <Links {...props} key={title + index} className="medium-down">
+                {icon}
               </Links>
             )
           })}
