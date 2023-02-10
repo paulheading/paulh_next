@@ -17,7 +17,6 @@ function Resume({ heroes, projects, gem, npm, spotify, pages, roles, education, 
 export async function getStaticProps() {
   return {
     props: {
-      ...(await getLayoutData()),
       ...(await getResumeData()),
     },
   }
