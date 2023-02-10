@@ -7,37 +7,12 @@ import getTreehouseData from 'scripts/treehouse'
 
 async function getLayoutData() {
   return {
-    heroes: await getTrelloData('heroes'),
-    projects: await getTrelloData('projects'),
+    ...(await getTrelloData()),
     gem: await getGemData(),
     npm: await getNpmData(),
     spotify: await getSpotifyData(),
-  }
-}
-
-async function getResumeData() {
-  return {
-    heroes: await getTrelloData('heroes'),
-    projects: await getTrelloData('projects'),
-    gem: await getGemData(),
-    npm: await getNpmData(),
-    spotify: await getSpotifyData(),
-    pages: await getTrelloData('pages'),
-    roles: await getTrelloData('roles'),
-    education: await getTrelloData('education'),
     treehouse: getTreehouseData(),
   }
 }
 
-async function getAboutData() {
-  return {
-    heroes: await getTrelloData('heroes'),
-    projects: await getTrelloData('projects'),
-    gem: await getGemData(),
-    npm: await getNpmData(),
-    spotify: await getSpotifyData(),
-    pages: await getTrelloData('pages'),
-  }
-}
-
-export { getLayoutData, getAboutData, getResumeData }
+export { getLayoutData }

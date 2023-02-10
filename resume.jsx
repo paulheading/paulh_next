@@ -1,5 +1,5 @@
 import Layout from 'layouts/main'
-import { getResumeData } from 'scripts'
+import { getLayoutData } from 'scripts'
 import Page from 'components/page'
 
 function Resume({ heroes, projects, gem, npm, spotify, pages, roles, education, treehouse }) {
@@ -13,8 +13,7 @@ function Resume({ heroes, projects, gem, npm, spotify, pages, roles, education, 
   }
   return (
     <Layout {...layoutProps}>
-      nope
-      {/* <Page {...pageProps} /> */}
+      <Page {...pageProps} />
     </Layout>
   )
 }
@@ -22,7 +21,7 @@ function Resume({ heroes, projects, gem, npm, spotify, pages, roles, education, 
 export async function getStaticProps() {
   return {
     props: {
-      ...(await getResumeData()),
+      ...(await getLayoutData()),
     },
   }
 }

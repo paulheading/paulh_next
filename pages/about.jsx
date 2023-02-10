@@ -1,11 +1,11 @@
 import Layout from 'layouts/main'
-import { getAboutData } from 'scripts'
+import { getLayoutData } from 'scripts'
 import Content from 'components/about/content'
 
-function About({ heroes, projects, gem, npm, spotify, pages }) {
-  const layoutProps = { heroes, projects, gem, npm, spotify }
+function About(props) {
+  const { pages } = props
   return (
-    <Layout {...layoutProps}>
+    <Layout {...props}>
       <Content pages={pages} />
     </Layout>
   )
@@ -14,7 +14,7 @@ function About({ heroes, projects, gem, npm, spotify, pages }) {
 export async function getStaticProps() {
   return {
     props: {
-      ...(await getAboutData()),
+      ...(await getLayoutData()),
     },
   }
 }
