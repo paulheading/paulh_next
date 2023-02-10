@@ -1,4 +1,4 @@
-@import 'styles/global/variables';
+@import 'styles/global/mixins';
 
 body {
   font-family: $font-family-body;
@@ -88,4 +88,16 @@ textarea {
   -webkit-appearance: none;
   border-radius: 0;
   padding: 0;
+}
+
+.medium-up {
+  @include medium-down {
+    display: none;
+  }
+}
+
+.medium-down {
+  @include medium-up {
+    display: none;
+  }
 }

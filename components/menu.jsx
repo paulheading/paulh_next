@@ -49,6 +49,7 @@ export default function Menu() {
         <div className={styles.links}>
           {data.map(({ title, icon }, index) => {
             const props = {
+              className: desktop ? 'medium-up' : 'medium-down',
               title,
               index,
             }
