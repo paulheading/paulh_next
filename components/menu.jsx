@@ -49,11 +49,14 @@ export default function Menu() {
         <div className={styles.links}>
           {data.map(({ title, icon }, index) => {
             const props = {
-              key: title + index,
               title,
               index,
             }
-            return <Links {...props}>{desktop ? title : icon}</Links>
+            return (
+              <Links {...props} key={title + index}>
+                {desktop ? title : icon}
+              </Links>
+            )
           })}
         </div>
       </Wrap>
