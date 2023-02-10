@@ -56,7 +56,7 @@ function Page({ pages, projects, roles, education, treehouse }) {
             <div>{personal.github_link}</div>
             <div>{personal.medium_link}</div>
           </div>
-        </Row> */}
+        </Row>
         <Row override={3}>
           <TripleTitle>Projects</TripleTitle>
           {projects.map(Columns)}
@@ -74,7 +74,7 @@ function Page({ pages, projects, roles, education, treehouse }) {
         <Row override={3}>
           <TripleTitle>Education</TripleTitle>
           {education.map(Columns)}
-        </Row>
+        </Row> */}
       </Wrap>
     </div>
   )
