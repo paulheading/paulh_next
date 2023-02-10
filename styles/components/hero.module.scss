@@ -1,0 +1,45 @@
+@import 'styles/global/mixins';
+
+.container[id='606d7'] {
+  @include hero-colors($c-hero-a...);
+}
+
+.container[id='60734'] {
+  @include hero-colors($c-hero-b...);
+}
+
+.container {
+  background-color: lightgrey;
+  grid-template: repeat(2, 1fr);
+  height: $height-section;
+  place-items: center;
+  text-align: center;
+  overflow: hidden;
+  display: grid;
+}
+
+@mixin grid-position {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.name {
+  @include grid-position;
+  line-height: $line-height-md;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  z-index: 2;
+
+  @include small-down {
+    font-size: 2.25rem;
+  }
+}
+
+.link {
+  padding: 0.375rem;
+}
+
+.svg {
+  @include grid-position;
+  transform: scale(2);
+}

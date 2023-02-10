@@ -1,0 +1,33 @@
+@import 'styles/global/mixins';
+
+.header {
+  grid-template-columns: 80px auto;
+  background-color: #222b1b;
+  display: grid;
+}
+
+.details_wrap {
+  grid-template-columns: auto 24px;
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.details {
+  overflow: hidden;
+}
+
+.link {
+  font-size: 0;
+}
+
+.name {
+  @include track_name;
+  line-height: 1;
+}
+
+.owner_name {
+  @include track_name;
+  margin-top: 0.75rem;
+  line-height: 1;
+}

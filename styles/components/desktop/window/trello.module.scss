@@ -1,0 +1,53 @@
+@import 'styles/global/mixins';
+
+.outer {
+  position: absolute;
+  text-align: left;
+}
+
+.window {
+  @include window;
+  background-color: #ebecf0;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+  color: #172b4e;
+  font-weight: 600;
+}
+
+@mixin header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.625rem;
+  display: flex;
+}
+
+.header {
+  @include header;
+}
+
+.card {
+  box-shadow: 0 0.125rem #5f6c84;
+  background-color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  display: block;
+
+  + .card {
+    margin-top: 0.625rem;
+  }
+}
+
+.name {
+  @include text-overflow;
+  line-height: 2rem;
+}
+
+.footer {
+  @include header;
+  color: #5f6c84;
+}
+
+.label_wrap {
+  margin-right: -0.25rem;
+  margin-left: -0.25rem;
+}

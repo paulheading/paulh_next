@@ -1,0 +1,33 @@
+@import 'styles/global/variables';
+@import 'styles/global/mixins/breakpoints';
+@import 'styles/global/mixins/buttons';
+@import 'styles/global/mixins/colors';
+@import 'styles/global/mixins/focus';
+@import 'styles/global/mixins/spotify';
+
+@mixin form_row {
+  display: grid;
+
+  + .row {
+    border-top: 1px solid $c-topbar;
+  }
+
+  @include large-up {
+    grid-template-columns: 8rem auto;
+    align-items: center;
+  }
+}
+
+@mixin window {
+  box-shadow: $box-shadow-window;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  overflow: hidden;
+  width: 16rem;
+}
+
+@mixin text-overflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

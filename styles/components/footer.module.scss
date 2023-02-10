@@ -1,0 +1,11 @@
+@import 'styles/global/variables';
+
+.footer_wrap {
+  background-color: black;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+}

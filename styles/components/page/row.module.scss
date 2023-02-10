@@ -1,0 +1,36 @@
+@import 'styles/global/mixins';
+
+.container {
+  background-color: white;
+  padding-bottom: 1.75rem;
+
+  @include medium-up {
+    padding-right: 1.75rem;
+    padding-left: 1.75rem;
+    padding-top: 1.75rem;
+    column-gap: 1.75rem;
+    display: grid;
+  }
+
+  @include medium-down {
+    box-shadow: $box-shadow-page;
+  }
+}
+
+.container + .container {
+  @include medium-down {
+    margin-top: 1.75rem;
+  }
+
+  @include medium-up {
+    border-top: 0.125rem dashed #dee2e6;
+  }
+}
+
+.double.container {
+  grid-template-columns: 2fr 1fr;
+}
+
+.triple.container {
+  grid-template-columns: repeat(3, 1fr);
+}

@@ -1,0 +1,4 @@
+@mixin track_name {
+  @include text-overflow;
+  display: block;
+}

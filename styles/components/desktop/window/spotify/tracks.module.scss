@@ -1,0 +1,23 @@
+@import 'styles/global/mixins';
+
+.track {
+  grid-template-columns: 2.25rem auto;
+  display: grid;
+}
+
+.track_link {
+  overflow: hidden;
+}
+
+.track_number {
+  color: #a0a19e;
+}
+
+.track_name {
+  @include track_name;
+}
+
+.artist_name {
+  @include track_name;
+  color: #a0a19e;
+}

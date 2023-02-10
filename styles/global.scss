@@ -1,0 +1,91 @@
+@import 'styles/global/variables';
+
+body {
+  font-family: $font-family-body;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-lg;
+  background-color: $c-gray-2;
+  font-size: $font-size-body;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: $font-family-headings;
+  font-size: $font-size-h2;
+  line-height: 1.2;
+  margin: 0;
+}
+
+h2 {
+  font-family: $font-family-headings;
+  margin: 0;
+}
+
+h3 {
+  font-family: $font-family-headings;
+  font-size: $font-size-h3;
+  margin: 0;
+}
+
+h4 {
+  font-family: $font-family-headings;
+  font-size: $font-size-h4;
+  margin: 0;
+}
+
+h5 {
+  font-family: $font-family-headings;
+  font-size: $font-size-h5;
+  margin: 0;
+}
+
+h6 {
+  font-size: $font-size-h6;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+
+  &:not(:last-child) {
+    margin-bottom: $plusp;
+  }
+
+  a {
+    // @include focus {
+    //   @include single-box($focus--dark);
+    //   background-color: $focus--dark;
+    // }
+  }
+}
+
+blockquote,
+figure {
+  margin: 0;
+
+  &:not(:last-child) {
+    margin-bottom: $plusp;
+  }
+}
+
+img {
+  &:not(:last-child) {
+    margin-bottom: $plusp;
+  }
+}
+
+input,
+textarea {
+  -webkit-appearance: none;
+  border-radius: 0;
+  padding: 0;
+}

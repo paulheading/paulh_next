@@ -1,0 +1,49 @@
+.marquee_container {
+  text-align: center;
+  position: relative;
+}
+
+.tab_container {
+  // line-height: $line-height-sm;
+  line-height: 1;
+  position: absolute;
+  top: -3.125rem;
+  width: 100%;
+}
+
+.tab_link {
+  border-right: 0.25rem solid transparent;
+  border-left: 0.25rem solid transparent;
+  border-top: 0.25rem solid transparent;
+  padding: 0.75rem 0.75rem 0.875rem;
+  border-top-right-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+  text-decoration: underline;
+  background-color: black;
+  display: inline-block;
+  color: white;
+
+  // @include focus {
+  //   background-color: white;
+  //   border-color: black;
+  //   color: black;
+  // }
+}
+
+.row_container {
+  border-bottom: 0.25rem solid black;
+  border-top: 0.25rem solid black;
+  background-color: white;
+  padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.repeat_container {
+  justify-content: center;
+  display: flex;
+  gap: 1rem;
+}

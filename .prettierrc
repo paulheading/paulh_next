@@ -1,0 +1,15 @@
+{
+  "tabWidth": 2,
+  "useTabs": false,
+  "bracketSameLine": true,
+  "semi": false,
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": ["**/*.tsx", "**/*.ts", "**/*.jsx", "**/*.js"],
+      "options": {
+        "printWidth": 300
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+@mixin focus-visible {
+  &[data-focus-visible-added] {
+    @content;
+  }
+}
+
+@mixin focus {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+
+  &:active {
+    @content;
+  }
+
+  @include focus-visible {
+    @content;
+  }
+}

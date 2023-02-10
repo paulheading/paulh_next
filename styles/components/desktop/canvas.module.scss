@@ -1,0 +1,29 @@
+@import 'styles/global/mixins';
+
+.canvas_container {
+  background-color: $c-teal;
+  overflow: hidden;
+  padding: 1rem;
+
+  @include medium-up {
+    height: $height-section;
+  }
+}
+
+.canvas_wrap {
+  justify-content: center;
+  display: grid;
+
+  @include medium-up {
+    justify-content: space-between;
+    display: flex;
+  }
+}
+
+.windows {
+  position: relative;
+
+  @include medium-down {
+    height: 25rem;
+  }
+}

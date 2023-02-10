@@ -1,0 +1,145 @@
+@import 'styles/global/mixins';
+
+.container {
+  background-color: $c-gray-2;
+  padding-right: 7vw;
+  padding-left: 7vw;
+  padding-top: 2rem;
+  overflow: hidden;
+  color: $c-topbar;
+
+  @include small-up {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-top: 5rem;
+  }
+}
+
+.contact_wrap {
+  box-shadow: $box-shadow-page;
+}
+
+.form {
+  background-color: white;
+}
+
+.wrap {
+  padding-left: 1rem;
+
+  @include small-up {
+    padding-left: 2rem;
+  }
+}
+
+.tag_row {
+  @include form_row;
+  padding-bottom: $padding-row-hz;
+  padding-top: $padding-row-hz;
+
+  @include large-down {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+.row {
+  @include form_row;
+
+  @include large-down {
+    padding-top: 0.75rem;
+
+    &[data-type='textarea'] {
+      padding-right: 0.75rem;
+    }
+  }
+}
+
+@mixin form_input {
+  @include input-colors;
+  font-weight: $font-weight-bold;
+  letter-spacing: -0.025rem;
+  padding-bottom: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.75rem;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+
+  @include large-up {
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+  }
+}
+
+.input {
+  @include form_input;
+}
+
+.textarea {
+  @include form_input;
+  grid-column: 1 / 3;
+  height: 12rem;
+  resize: none;
+
+  @include large-up {
+    height: 18rem;
+  }
+}
+
+.topbar {
+  border-top-right-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+  background-color: $c-topbar;
+  display: flex;
+  padding: 1rem;
+  gap: 0.75rem;
+}
+
+.button {
+  border-radius: 50%;
+  padding: 0.75rem;
+  cursor: pointer;
+  font-size: 0;
+  border: 0;
+}
+
+.button.close {
+  background-color: $c-red;
+
+  @include focus {
+    // @include double-box($topbar, $c-red);
+  }
+}
+
+.button.minimise {
+  background-color: $c-yellow;
+
+  @include focus {
+    // @include double-box($topbar, $c-yellow);
+  }
+}
+
+.tag {
+  padding: 0.5rem $padding-row-hz;
+  border-radius: 0.25rem;
+  background-color: $c-sky;
+  display: inline-block;
+  color: black;
+  cursor: default;
+}
+
+.contact_wrap {
+  max-width: 40rem;
+}
+
+.submit_wrap {
+  text-align: right;
+}
+
+.submit {
+  @include invisible-button;
+  font-weight: bold;
+  padding: 2rem;
+}

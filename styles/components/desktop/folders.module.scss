@@ -1,0 +1,29 @@
+@import 'styles/global/mixins';
+
+.folders {
+  position: relative;
+
+  @include medium-down {
+    max-width: 25rem;
+    margin: -0.75rem;
+  }
+}
+
+.folder_container {
+  @include invisible-button;
+  @include medium-up {
+    transition: right 300ms steps(3), top 300ms steps(3);
+    position: absolute;
+  }
+
+  @include medium-down {
+    margin: 0.75rem;
+  }
+}
+
+.title_words {
+  background-color: $c-teal--dark;
+  padding: 0.25rem 0.5rem;
+  display: inline-block;
+  color: white;
+}
