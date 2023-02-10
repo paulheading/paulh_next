@@ -3,6 +3,7 @@ import { getResumeData } from 'scripts'
 import Page from 'components/page'
 
 function Resume({ heroes, projects, gem, npm, spotify, pages, roles, education, treehouse }) {
+  return <div>test</div>
   const layoutProps = { heroes, projects, gem, npm, spotify }
   const pageProps = {
     pages,
@@ -11,19 +12,14 @@ function Resume({ heroes, projects, gem, npm, spotify, pages, roles, education, 
     education,
     treehouse,
   }
-  return (
-    <Layout {...layoutProps}>
-      {
-        // <Page {...pageProps} />
-      }
-    </Layout>
-  )
+  return <Layout {...layoutProps}>{<Page {...pageProps} />}</Layout>
 }
 
 export async function getStaticProps() {
+  const resume = await getResumeData()
   return {
     props: {
-      ...(await getResumeData()),
+      ...resume,
     },
   }
 }
