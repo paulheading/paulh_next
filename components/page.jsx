@@ -20,7 +20,7 @@ function TreehouseSkills({ title, score }, index) {
 }
 
 function Page({ pages, projects, roles, education, treehouse }) {
-  // const biography = find.by_name(pages, 'Biography')
+  const biography = find.by_name(pages, 'Biography')
 
   function TripleTitle({ children }) {
     const containerProps = {
@@ -47,7 +47,7 @@ function Page({ pages, projects, roles, education, treehouse }) {
             <div>{personal.email_link}</div>
           </div>
         </Row>
-        {/* <Row>
+        <Row>
           <div className={styles.left_column}>
             <h3 className={styles.title_wrap}>Biography</h3>
             <div>{parse(biography.desc)}</div>
@@ -74,7 +74,7 @@ function Page({ pages, projects, roles, education, treehouse }) {
         <Row override={3}>
           <TripleTitle>Education</TripleTitle>
           {education.map(Columns)}
-        </Row> */}
+        </Row>
       </Wrap>
     </div>
   )
