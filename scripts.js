@@ -1,4 +1,4 @@
-import getMediumData from 'scripts/medium'
+// import getMediumData from 'scripts/medium'
 import getTrelloData from 'scripts/trello'
 import getSpotifyData from 'scripts/spotify'
 import getGemData from 'scripts/gem'
@@ -17,7 +17,6 @@ async function getLayoutData() {
 
 async function getResumeData() {
   return {
-    ...(await getLayoutData()),
     pages: await getTrelloData('pages'),
     roles: await getTrelloData('roles'),
     education: await getTrelloData('education'),

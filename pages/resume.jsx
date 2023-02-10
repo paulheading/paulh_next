@@ -1,5 +1,5 @@
 import Layout from 'layouts/main'
-import { getResumeData } from 'scripts'
+import { getLayoutData, getResumeData } from 'scripts'
 import Page from 'components/page'
 
 function Resume({ heroes, projects, gem, npm, spotify, pages, roles, education, treehouse }) {
@@ -15,10 +15,11 @@ function Resume({ heroes, projects, gem, npm, spotify, pages, roles, education, 
 }
 
 export async function getStaticProps() {
+  const layout = await getLayoutData()
+  const resume = await getResumeData()
+
   return {
-    props: {
-      ...(await getResumeData()),
-    },
+    props: { ...layout, ...resume },
   }
 }
 
