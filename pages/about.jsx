@@ -3,10 +3,9 @@ import { getLayoutData } from 'scripts'
 import Content from 'components/about/content'
 
 function About(props) {
-  const { pages } = props
   return (
     <Layout {...props}>
-      <Content pages={pages} />
+      <Content />
     </Layout>
   )
 }

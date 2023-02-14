@@ -2,7 +2,7 @@ import axios from 'axios'
 import { list } from 'scripts/trello/variables'
 import { removeHero, makeHtml, cardType, prepLabels, readmore, trelloCards, trelloAttachments, trelloActions } from 'scripts/trello/helpers'
 
-const { pages, projects, roles, education } = list
+const { projects, roles, education } = list
 
 async function getTrelloAttachments(target) {
   if (!target) return
@@ -70,25 +70,20 @@ async function getTrelloCards(target) {
   return await Promise.all(result)
 }
 
-async function getTrelloProjects(type) {
-  if (!projects) return
-  let cards = await getTrelloCards(projects)
-  if (type === 'heroes') cards = cards.filter(({ name }) => name.startsWith('Hero: '))
-  cards = cards.map((card) => {
-    card.name = card.name.replace('Hero: ', '')
-    return card
-  })
-  return cards
+const getTrelloProjects = (projects) => projects.map((project) => ({ ...project, name: project.name.replace('Hero: ', '') }))
+
+function getTrelloHeroes(projects) {
+  projects = projects.filter(({ name }) => name.startsWith('Hero: '))
+  return projects.map((project) => ({ ...project, name: project.name.replace('Hero: ', '') }))
 }
 
-async function getTrelloData() {
-  return {
-    pages: await getTrelloCards(pages),
-    roles: await getTrelloCards(roles),
-    education: await getTrelloCards(education),
-    projects: await getTrelloProjects(),
-    heroes: await getTrelloProjects('heroes'),
+async function getTrelloData(type) {
+  if (type === 'projects' || type === 'heroes') {
+    const cards = await getTrelloCards(projects)
+    return type === 'projects' ? getTrelloProjects(cards) : getTrelloHeroes(cards)
   }
+  if (type === 'roles') return await getTrelloCards(roles)
+  if (type === 'education') return await getTrelloCards(education)
 }
 
 export default getTrelloData
