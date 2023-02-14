@@ -7,16 +7,16 @@ import useMediaQuery from 'hooks/useMediaQuery'
 import PaulHDesktop from 'logos/paulh/desktop'
 import PaulHMobile from 'logos/paulh/mobile'
 
-function MediumUp({ children }) {
-  return <span className="medium-up">{children}</span>
+function SmallUp({ children }) {
+  return <span className="small-up">{children}</span>
 }
 
-function MediumDown({ children }) {
-  return <span className="medium-down">{children}</span>
+function SmallDown({ children }) {
+  return <span className="small-down">{children}</span>
 }
 
 export default function Menu() {
-  const desktop = useMediaQuery(600)
+  const desktop = useMediaQuery(520)
   const router = useRouter()
   const isHome = router.asPath === '/'
 
@@ -55,13 +55,13 @@ export default function Menu() {
       <Wrap className={styles.wrap}>
         <Link {...linkProps}>
           {desktop ? (
-            <MediumUp>
+            <SmallUp>
               <PaulHDesktop />
-            </MediumUp>
+            </SmallUp>
           ) : (
-            <MediumDown>
+            <SmallDown>
               <PaulHMobile />
-            </MediumDown>
+            </SmallDown>
           )}
         </Link>
         <div className={styles.links}>
@@ -72,7 +72,7 @@ export default function Menu() {
             }
             return (
               <Links {...props} key={title + index}>
-                {desktop ? <MediumUp>{title}</MediumUp> : <MediumDown>{icon}</MediumDown>}
+                {desktop ? <SmallUp>{title}</SmallUp> : <SmallDown>{icon}</SmallDown>}
               </Links>
             )
           })}

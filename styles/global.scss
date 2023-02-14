@@ -94,14 +94,14 @@ textarea {
   padding: 0;
 }
 
-.medium-up {
-  @include medium-down {
+.small-up {
+  @include small-down {
     display: none;
   }
 }
 
-.medium-down {
-  @include medium-up {
+.small-down {
+  @include small-up {
     display: none;
   }
 }
