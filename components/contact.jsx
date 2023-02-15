@@ -18,9 +18,7 @@ function Topbar() {
   )
 }
 
-function Alert({ children }) {
-  return <div className={styles.alert}>{children}</div>
-}
+const Alert = ({ children }) => <div className={styles.alert}>{children}</div>
 
 function Form() {
   const {
@@ -30,13 +28,13 @@ function Form() {
   } = useForm()
   const [success, setSuccess] = useState(false)
   function onSubmit(form) {
-    // fetch('/', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    //   body: encode({ 'form-name': 'contact', ...form }),
-    // })
-    //   .then(() => setSuccess(true))
-    //   .catch((error) => alert(error))
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...form }),
+    })
+      .then(() => setSuccess(true))
+      .catch((error) => alert(error))
   }
 
   const formProps = {

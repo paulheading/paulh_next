@@ -32,51 +32,49 @@ function Page({ projects, roles, education, treehouse }) {
   }
 
   return (
-    <div className={styles.container}>
-      <Wrap className={styles.wrap}>
-        <Row alignItems="center">
-          <div className={styles.left_column}>
-            <h1>{personal.name}</h1>
-          </div>
-          <div className={styles.copy_wrap}>
-            <div>{personal.location}</div>
-            <div>{personal.email_link}</div>
-          </div>
-        </Row>
-        <Row>
-          <div className={styles.left_column}>
-            <h3 className={styles.title_wrap}>Biography</h3>
-            <div>
-              <p>
-                Hi 👋 I&apos;ve been a Full Stack Designer since 2020. I work in the <strong>Digital Products</strong> team at the <a href="https://barbican.org.uk">Barbican</a> and write javascript for front-end frameworks such as Vue.js and React.
-              </p>
-            </div>
-          </div>
-          <div className={styles.link_wrap}>
-            <div>{personal.github_link}</div>
-            <div>{personal.medium_link}</div>
-          </div>
-        </Row>
-        <Row override={3}>
-          <TripleTitle>Projects</TripleTitle>
-          {projects.map(Columns)}
-        </Row>
-        <Row>
+    <Wrap className={styles.wrap}>
+      <Row alignItems="center">
+        <div className={styles.left_column}>
+          <h1>{personal.name}</h1>
+        </div>
+        <div className={styles.copy_wrap}>
+          <div>{personal.location}</div>
+          <div>{personal.email_link}</div>
+        </div>
+      </Row>
+      <Row>
+        <div className={styles.left_column}>
+          <h3 className={styles.title_wrap}>Biography</h3>
           <div>
-            <TripleTitle>Skills</TripleTitle>
-            <div className={styles.skills_wrap}>{treehouse.map(TreehouseSkills)}</div>
+            <p>
+              Hi 👋 I&apos;ve been a Full Stack Designer since 2020. I work in the <strong>Digital Products</strong> team at the <a href="https://barbican.org.uk">Barbican</a> and write javascript for front-end frameworks such as Vue.js and React.
+            </p>
           </div>
-        </Row>
-        <Row override={3}>
-          <TripleTitle>Roles</TripleTitle>
-          {roles.map((role, index) => Columns({ ...role, variant: 'role' }, index))}
-        </Row>
-        <Row override={3}>
-          <TripleTitle>Education</TripleTitle>
-          {education.map(Columns)}
-        </Row>
-      </Wrap>
-    </div>
+        </div>
+        <div className={styles.link_wrap}>
+          <div>{personal.github_link}</div>
+          <div>{personal.medium_link}</div>
+        </div>
+      </Row>
+      <Row override={3}>
+        <TripleTitle>Projects</TripleTitle>
+        {projects.map(Columns)}
+      </Row>
+      <Row>
+        <div>
+          <TripleTitle>Skills</TripleTitle>
+          <div className={styles.skills_wrap}>{treehouse.map(TreehouseSkills)}</div>
+        </div>
+      </Row>
+      <Row override={3}>
+        <TripleTitle>Roles</TripleTitle>
+        {roles.map((role, index) => Columns({ ...role, variant: 'role' }, index))}
+      </Row>
+      <Row override={3}>
+        <TripleTitle>Education</TripleTitle>
+        {education.map(Columns)}
+      </Row>
+    </Wrap>
   )
 }
 
