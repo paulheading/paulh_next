@@ -12,6 +12,7 @@ function Folder({ name, folders, setFolder, position, count }) {
     style: desktop ? { ...position[count] } : null,
     className: styles.folder_container,
     onClick: () => setFolder(name),
+    id: name.replace(' ', '-'),
   }
 
   const Words = (name, index) => (

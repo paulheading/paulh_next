@@ -24,9 +24,11 @@ function SpotifyWindow({ name, folders, playlist, style }) {
     toggle(open, current)
   }, [open, ref])
 
+  const href = '#' + name.replace(' ', '-')
+
   return (
     <div {...outerProps}>
-      <SkipLink href="#folders">test</SkipLink>
+      <SkipLink href={href}>test</SkipLink>
       <div className={styles.window}>
         <Header {...playlist} />
         <main className={styles.main}>{playlist.tracks.map(Tracks)}</main>

@@ -18,14 +18,14 @@ function SmallDown({ children }) {
 export default function Menu() {
   const desktop = useMediaQuery(520)
   const router = useRouter()
-  const isHome = router.asPath === '/'
+  const isHome = router.pathname === '/'
 
   function Links({ title, children }) {
     if (title === 'Home') return
 
     function isActive() {
       let active = false
-      if ('/' + title === router.asPath) active = true
+      if ('/' + title === router.pathname) active = true
       return active
     }
 

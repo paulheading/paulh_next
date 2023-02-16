@@ -17,13 +17,13 @@ window.defaults = {
 window.open = function (target) {
   const tl = gsap.timeline()
   const { duration } = window.defaults
-  tl.to(target, { scale: 1, opacity: 1, duration })
+  tl.set(target, { display: 'block' }).to(target, { scale: 1, opacity: 1, duration })
 }
 
 window.close = function (target) {
   const tl = gsap.timeline()
   const { duration } = window.defaults
-  tl.to(target, { scale: 0.5, opacity: 0, duration })
+  tl.to(target, { scale: 0.5, opacity: 0, duration }).set(target, { display: 'none' })
 }
 
 window.toggle = (open, target) => (open ? window.open(target) : window.close(target))
