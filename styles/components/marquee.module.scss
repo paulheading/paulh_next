@@ -1,45 +1,59 @@
+@import 'styles/global/mixins';
+
 .marquee_container {
   text-align: center;
   position: relative;
 }
 
 .tab_container {
-  // line-height: $line-height-sm;
-  line-height: 1;
   position: absolute;
+  line-height: 1;
   top: -3.125rem;
   width: 100%;
 }
 
 .tab_link {
-  border-right: 0.25rem solid transparent;
-  border-left: 0.25rem solid transparent;
-  border-top: 0.25rem solid transparent;
+  $border: 0.25rem solid transparent;
+  $border-radius: 0.25rem;
+
+  border-top-right-radius: $border-radius;
+  border-top-left-radius: $border-radius;
   padding: 0.75rem 0.75rem 0.875rem;
-  border-top-right-radius: 0.25rem;
-  border-top-left-radius: 0.25rem;
   text-decoration: underline;
   background-color: black;
+  border-right: $border;
   display: inline-block;
+  border-left: $border;
+  border-top: $border;
   color: white;
 
-  // @include focus {
-  //   background-color: white;
-  //   border-color: black;
-  //   color: black;
-  // }
+  @include focus {
+    @include single-box(white);
+  }
 }
 
 .row_container {
-  border-bottom: 0.25rem solid black;
-  border-top: 0.25rem solid black;
+  $border: 0.25rem solid black;
+  $padding: 0.75rem;
+
   background-color: white;
-  padding-bottom: 0.75rem;
-  padding-top: 0.75rem;
+  border-bottom: $border;
   white-space: nowrap;
+  border-top: $border;
   position: relative;
   overflow: hidden;
   z-index: 2;
+
+  a {
+    padding-bottom: $padding;
+    display: inline-block;
+    padding-top: $padding;
+
+    @include focus {
+      background-color: lightgoldenrodyellow;
+      font-style: italic;
+    }
+  }
 }
 
 .repeat_container {

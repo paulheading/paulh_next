@@ -23,6 +23,30 @@
   background-color: white;
 }
 
+.success_container {
+  background-color: white;
+  justify-content: center;
+  padding-right: 2rem;
+  align-items: center;
+  padding-left: 2rem;
+  text-align: center;
+  min-height: 25rem;
+  display: flex;
+}
+
+.success_wrap {
+  position: relative;
+  top: -2rem;
+}
+
+.confetti {
+  font-size: 4rem;
+}
+
+.success_title {
+  margin-bottom: 0.25rem;
+}
+
 .wrap {
   padding-left: 1rem;
 

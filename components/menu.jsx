@@ -30,8 +30,14 @@ export default function Menu() {
     }
 
     const activeClass = isActive() ? styles.active : null
-    const isAbout = title === 'About' ? styles.about_link : styles.link
-    const className = `${isAbout} ${activeClass}`
+
+    function customClass() {
+      if (title === 'About') return styles.about_link
+      if (title === 'Resume') return styles.resume_link
+      return styles.link
+    }
+
+    const className = `${customClass()} ${activeClass}`
 
     const props = {
       href: title.toLowerCase(),

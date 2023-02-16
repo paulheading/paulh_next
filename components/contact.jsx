@@ -1,6 +1,6 @@
 import styles from 'styles/components/contact.module.scss'
 import Wrap from 'components/wrap'
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Row from 'components/contact/row'
 
@@ -20,21 +20,26 @@ function Topbar() {
 
 const Alert = ({ children }) => <div className={styles.alert}>{children}</div>
 
-function Form() {
+const encode = (data) =>
+  Object.keys(data)
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&')
+
+function Form({ handleSetSuccess }) {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm()
-  const [success, setSuccess] = useState(false)
   function onSubmit(form) {
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...form }),
-    })
-      .then(() => setSuccess(true))
-      .catch((error) => alert(error))
+    // fetch('/', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    //   body: encode({ 'form-name': 'contact', ...form }),
+    // })
+    //   .then(() => setSuccess(true))
+    //   .catch((error) => alert(error))
+    handleSetSuccess(true)
   }
 
   const formProps = {
@@ -98,11 +103,35 @@ function Form() {
 }
 
 function Contact() {
+  const [success, setSuccess] = useState(false)
+  const handleSetSuccess = (value) => setSuccess(value)
+
+  const formProps = {
+    handleSetSuccess,
+  }
+
+  const wrapProps = {
+    className: !success ? styles.contact_wrap : styles.contact_wrap__success,
+  }
+
   return (
     <div className={styles.container}>
       <Wrap className={styles.contact_wrap}>
         <Topbar />
-        <Form />
+        {!success ? (
+          <Form {...formProps} />
+        ) : (
+          <div className={styles.success_container}>
+            <div className={styles.success_wrap}>
+              <span className={styles.confetti}>🎉</span>
+              <h1 className={styles.success_title}>Success!</h1>
+              <p className={styles.success_tagline}>
+                Thanks for your message,
+                <br /> I&apos;ll be in touch soon :)
+              </p>
+            </div>
+          </div>
+        )}
       </Wrap>
     </div>
   )
