@@ -4,7 +4,7 @@
   position: relative;
 
   @include medium-down {
-    max-width: 25rem;
+    max-width: $height-windows;
     margin: -0.75rem;
   }
 }
@@ -19,11 +19,14 @@
   @include medium-down {
     margin: 0.75rem;
   }
+
+  @include focus {
+    .folder_words {
+      @include folder_words--focus;
+    }
+  }
 }
 
-.title_words {
-  background-color: $c-teal--dark;
-  padding: 0.25rem 0.5rem;
-  display: inline-block;
-  color: white;
+.folder_words {
+  @include folder_words;
 }

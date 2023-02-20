@@ -21,13 +21,25 @@
 @mixin window {
   box-shadow: $box-shadow-window;
   border-radius: 0.5rem;
+  width: $width-window;
   font-size: 1.125rem;
   overflow: hidden;
-  width: 16rem;
 }
 
 @mixin text-overflow {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+@mixin folder_words {
+  background-color: $c-teal--dark;
+  padding: 0.25rem 0.5rem;
+  display: inline-block;
+  color: white;
+}
+
+@mixin folder_words--focus {
+  background-color: white;
+  color: $c-teal--dark;
 }

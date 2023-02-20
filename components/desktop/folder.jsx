@@ -17,7 +17,7 @@ function Folder({ name, folders, setFolder, position, count }) {
 
   const Words = (name, index) => (
     <div key={'word' + index}>
-      <span className={styles.title_words}>{name}</span>
+      <span className={styles.folder_words}>{name}</span>
     </div>
   )
 

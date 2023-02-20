@@ -2,12 +2,8 @@
 
 .canvas_container {
   background-color: $c-teal;
+  padding: $padding-canvas;
   overflow: hidden;
-  padding: 1rem;
-
-  @include medium-up {
-    height: $height-section;
-  }
 }
 
 .canvas_wrap {
@@ -16,14 +12,28 @@
 
   @include medium-up {
     justify-content: space-between;
+    height: $height-windows;
     display: flex;
   }
+}
+
+.canvas_wrap + .credit_wrap {
+  margin-top: $padding-canvas;
 }
 
 .windows {
   position: relative;
 
   @include medium-down {
-    height: 25rem;
+    height: $height-windows;
+  }
+}
+
+.credit_link {
+  @include folder_words;
+  border-radius: 0.25rem;
+
+  @include focus {
+    @include folder_words--focus;
   }
 }

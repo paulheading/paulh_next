@@ -24,13 +24,13 @@
 }
 
 .success_container {
+  min-height: $height-windows;
   background-color: white;
   justify-content: center;
   padding-right: 2rem;
   align-items: center;
   padding-left: 2rem;
   text-align: center;
-  min-height: 25rem;
   display: flex;
 }
 

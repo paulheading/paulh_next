@@ -7,6 +7,7 @@ import SpotifyWindow from 'components/desktop/window/spotify'
 import ThemeWindow from 'components/desktop/window/theme'
 import Folders from 'components/desktop/folders'
 import { toggle } from 'scripts/helpers'
+import { CreateLink } from 'components/marquee'
 
 function Canvas({ projects, spotify, gem, npm, count }) {
   const [folders, setFolders] = useState(data)
@@ -64,6 +65,8 @@ function Canvas({ projects, spotify, gem, npm, count }) {
     playlist: _2020,
   }
 
+  const creditProps = { className: styles.credit_link, href: 'https://google.com' }
+
   return (
     <div className={styles.canvas_container}>
       <Wrap className={styles.canvas_wrap}>
@@ -76,6 +79,11 @@ function Canvas({ projects, spotify, gem, npm, count }) {
           <TrelloWindow {...trelloProps} />
         </div>
         <Folders {...foldersProps} />
+      </Wrap>
+      <Wrap className={styles.credit_wrap}>
+        <CreateLink {...creditProps}>
+          <h6>Icons made by DinosoftLabs</h6>
+        </CreateLink>
       </Wrap>
     </div>
   )
