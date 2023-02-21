@@ -1,12 +1,14 @@
 import styles from 'styles/components/skiplink.module.scss'
-import Link from 'next/link'
+
+// DONT USE NEXT/LINK FOR THIS
 
 function SkipLink({ href, children }) {
   const linkProps = {
     className: styles.skiplink,
     href,
   }
-  return <Link {...linkProps}>{children}</Link>
+
+  return <a {...linkProps}>{children}</a>
 }
 
 export default SkipLink
