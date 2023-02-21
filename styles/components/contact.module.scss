@@ -57,6 +57,7 @@
 
 .tag_row {
   @include form_row;
+  @include form_row_content;
   padding-bottom: $padding-row-hz;
   padding-top: $padding-row-hz;
 
@@ -79,26 +80,16 @@
   }
 }
 
-@mixin form_input {
-  @include input-colors;
-  font-weight: $font-weight-bold;
-  letter-spacing: -0.025rem;
-  padding-bottom: 0.75rem;
-  padding-right: 0.75rem;
-  padding-top: 0.75rem;
-  font-family: inherit;
-  font-size: inherit;
-  border: none;
+.row_content {
+  @include form_row_content;
+}
 
-  @include large-up {
-    padding-bottom: 1rem;
-    padding-right: 1rem;
-    padding-top: 1rem;
-  }
+.error_row {
+  @include form_row_content;
+}
 
-  &:focus {
-    background-color: lightgoldenrodyellow;
-  }
+.error_row_content {
+  grid-column: 2;
 }
 
 .input {
@@ -150,12 +141,12 @@
 }
 
 .tag {
-  padding: 0.5rem $padding-row-hz;
-  border-radius: 0.25rem;
   background-color: $c-sky;
+  border-radius: 0.25rem;
+  padding: $padding-tag;
   display: inline-block;
-  color: black;
   cursor: default;
+  color: black;
 }
 
 .contact_wrap {
@@ -170,4 +161,14 @@
   @include invisible-button;
   font-weight: bold;
   padding: 2rem;
+}
+
+.alert {
+  $border: 1px solid;
+
+  background-color: aliceblue;
+  padding: $padding-tag;
+  border-left: $border;
+  border-top: $border;
+  color: steelblue;
 }

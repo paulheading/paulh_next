@@ -1,6 +1,6 @@
 import styles from 'styles/components/contact.module.scss'
 import Wrap from 'components/wrap'
-import { Fragment, useState } from 'react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Row from 'components/contact/row'
 
@@ -18,7 +18,10 @@ function Topbar() {
   )
 }
 
-const Alert = ({ children }) => <div className={styles.alert}>{children}</div>
+function Alert({ className, children }) {
+  const containerClasses = `${styles.alert} ${className}`
+  return <div className={containerClasses}>{children}</div>
+}
 
 const encode = (data) =>
   Object.keys(data)
@@ -37,7 +40,10 @@ function Form({ handleSetSuccess }) {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...form }),
     })
-      .then(() => handleSetSuccess(true))
+      .then(() => {
+        handleSetSuccess(true)
+        setTimeout(() => handleSetSuccess(false), 3000)
+      })
       .catch((error) => alert(error))
   }
 
@@ -62,9 +68,12 @@ function Form({ handleSetSuccess }) {
   }
 
   const fromProps = {
-    pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
     placeholder: 'friendly@visitor.org',
-    required: true,
+    required: `Please fill in your email address`,
+    pattern: {
+      value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+      message: `Is this mistyped? I can't accept this`,
+    },
     label: 'From',
     ...rowProps,
   }
@@ -107,10 +116,6 @@ function Contact() {
 
   const formProps = {
     handleSetSuccess,
-  }
-
-  const wrapProps = {
-    className: !success ? styles.contact_wrap : styles.contact_wrap__success,
   }
 
   return (

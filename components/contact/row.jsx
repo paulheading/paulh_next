@@ -1,9 +1,10 @@
-import { Fragment } from 'react'
 import { Alert } from 'components/contact'
+import { useEffect } from 'react'
 import styles from 'styles/components/contact.module.scss'
 
 function Row({ label, type = 'text', register, required = false, pattern = null, placeholder, errors }) {
   const name = label.toLowerCase()
+  const error = errors[name]
 
   function className() {
     switch (type) {
@@ -28,16 +29,33 @@ function Row({ label, type = 'text', register, required = false, pattern = null,
     name,
   }
 
-  return (
-    <div {...containerProps}>
-      {type === 'text' && (
-        <Fragment>
+  function printContent() {
+    if (type === 'text') {
+      return (
+        <div className={styles.row_content}>
           <label htmlFor={name}>{label}</label>
           <input {...contentProps} />
-        </Fragment>
+        </div>
+      )
+    }
+    if (type === 'textarea') return <textarea {...contentProps} />
+  }
+
+  // Please fill in your email address
+
+  useEffect(() => {
+    if (!errors[name]) return
+    console.log(errors[name])
+  })
+
+  return (
+    <div {...containerProps}>
+      {printContent()}
+      {error && (
+        <div className={styles.error_row}>
+          <Alert className={styles.error_row_content}>{error.message}</Alert>
+        </div>
       )}
-      {type === 'textarea' && <textarea {...contentProps} />}
-      {errors[name] && <Alert>error!</Alert>}
     </div>
   )
 }
