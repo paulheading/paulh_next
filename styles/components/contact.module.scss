@@ -24,7 +24,7 @@
 }
 
 .success_container {
-  min-height: $height-windows;
+  min-height: $height-windows * 0.8;
   background-color: white;
   justify-content: center;
   padding-right: 2rem;
@@ -36,7 +36,7 @@
 
 .success_wrap {
   position: relative;
-  top: -2rem;
+  top: -0.5rem;
 }
 
 .confetti {
