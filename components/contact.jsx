@@ -32,14 +32,13 @@ function Form({ handleSetSuccess }) {
     formState: { errors },
   } = useForm()
   function onSubmit(form) {
-    // fetch('/', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    //   body: encode({ 'form-name': 'contact', ...form }),
-    // })
-    //   .then(() => setSuccess(true))
-    //   .catch((error) => alert(error))
-    handleSetSuccess(true)
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...form }),
+    })
+      .then(() => handleSetSuccess(true))
+      .catch((error) => alert(error))
   }
 
   const formProps = {
