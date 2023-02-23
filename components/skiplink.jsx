@@ -13,6 +13,6 @@ const SkipLink = forwardRef(({ href, children }, ref) => {
   return <a {...linkProps}>{children}</a>
 })
 
-Skiplink.displayName = 'Skiplink'
+SkipLink.displayName = 'SkipLink'
 
 export default SkipLink
