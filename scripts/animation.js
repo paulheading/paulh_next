@@ -39,6 +39,10 @@ window.hover = function (open, target) {
   open ? tl.play() : tl.pause()
 }
 
+window.bump = (target) => gsap.set(target, { zIndex: 3 })
+
+window.unbump = (target) => gsap.set(target, { clearProps: 'zIndex' })
+
 const wifi = {}
 
 wifi.defaults = {

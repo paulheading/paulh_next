@@ -14,7 +14,12 @@ function Folders({ folders, windowProps, setFolder, count }) {
     return <Folder {...folderProps} />
   }
 
-  return <div className={styles.folders}>{folders.map(printFolder)}</div>
+  const props = {
+    className: styles.folders,
+    id: 'folders',
+  }
+
+  return <div {...props}>{folders.map(printFolder)}</div>
 }
 
 export default Folders

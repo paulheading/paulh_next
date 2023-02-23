@@ -1,13 +1,14 @@
 import styles from 'styles/components/desktop/canvas.module.scss'
 import Wrap from 'components/wrap'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import data from 'data/folders'
 import TrelloWindow from 'components/desktop/window/trello'
 import SpotifyWindow from 'components/desktop/window/spotify'
 import ThemeWindow from 'components/desktop/window/theme'
 import Folders from 'components/desktop/folders'
-import { toggle } from 'scripts/helpers'
+import { find, toggle } from 'scripts/helpers'
 import { CreateLink } from 'components/marquee'
+import { window } from 'scripts/animation'
 
 function Canvas({ projects, spotify, gem, npm, count }) {
   const [folders, setFolders] = useState(data)
@@ -20,7 +21,6 @@ function Canvas({ projects, spotify, gem, npm, count }) {
   const windowProps = (name) => ({ name, folders })
 
   const foldersProps = {
-    id: 'folders',
     windowProps,
     setFolder,
     folders,
@@ -66,6 +66,26 @@ function Canvas({ projects, spotify, gem, npm, count }) {
   }
 
   const creditProps = { className: styles.credit_link, href: 'https://google.com' }
+
+  useEffect(() => {
+    document.addEventListener('keyup', ({ key }) => {
+      if (key !== 'Tab') return
+      const active = document.activeElement
+      const closest = active.closest('.window')
+
+      if (!closest) return
+
+      const { unbump, bump } = window
+
+      const siblings = find.sibling_windows(active)
+
+      siblings.forEach((sibling) => {
+        unbump(sibling)
+      })
+
+      bump(closest)
+    })
+  }, [])
 
   return (
     <div className={styles.canvas_container}>

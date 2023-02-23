@@ -45,14 +45,14 @@ function TrelloWindow({ name, folders, projects, style }) {
   }, [open, ref])
 
   const outerProps = {
-    className: styles.outer,
+    className: `window ${styles.outer}`,
     style,
     ref,
   }
 
   return (
     <div {...outerProps}>
-      <SkipLink href="#folders">test</SkipLink>
+      <SkipLink href="#folders">Skip to folders</SkipLink>
       <div className={styles.window}>
         <header className={styles.header}>
           <div>Projects</div>

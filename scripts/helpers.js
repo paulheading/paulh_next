@@ -2,6 +2,13 @@ const find = {}
 
 find.by_name = (pages, title) => pages.filter((page) => page.name === title)[0]
 
+find.sibling_windows = function (element) {
+  const parent = element.closest('.window')
+  const grandpa = parent.parentElement
+  const children = [...grandpa.children]
+  return children.filter((child) => child !== parent)
+}
+
 const create = {}
 
 create.label = function ({ name, color = 'purple' }, index) {
@@ -58,17 +65,11 @@ chop.desc = function (desc) {
 const toggle = {}
 
 toggle.folders = function (name, folder) {
-  if (name.includes('spotify') && folder.name.includes('spotify')) {
-    if (name !== folder.name) folder.open = false
-  }
+  if (name.includes('spotify') && folder.name.includes('spotify')) if (name !== folder.name) folder.open = false
 
-  if (name.includes('futuro') && folder.name.includes('barbican reset')) {
-    folder.open = false
-  }
+  if (name.includes('futuro') && folder.name.includes('barbican reset')) folder.open = false
 
-  if (name.includes('barbican reset') && folder.name.includes('futuro')) {
-    folder.open = false
-  }
+  if (name.includes('barbican reset') && folder.name.includes('futuro')) folder.open = false
 
   if (folder.name === name) folder.open = !folder.open
 

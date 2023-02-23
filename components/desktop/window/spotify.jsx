@@ -1,5 +1,5 @@
 import styles from 'styles/components/desktop/window/spotify.module.scss'
-import { useRef, useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { window } from 'scripts/animation'
 import SkipLink from 'components/skiplink'
 import Tracks from 'components/desktop/window/spotify/tracks'
@@ -11,9 +11,16 @@ function SpotifyWindow({ name, folders, playlist, style }) {
   const ref = useRef(null)
 
   const outerProps = {
-    className: styles.outer,
-    style,
+    className: `window ${styles.outer}`,
+    style: {
+      ...style,
+      display: open ? 'block' : 'none',
+    },
     ref,
+  }
+
+  const skipProps = {
+    href: '#folders',
   }
 
   useEffect(() => {
@@ -24,11 +31,9 @@ function SpotifyWindow({ name, folders, playlist, style }) {
     toggle(open, current)
   }, [open, ref])
 
-  const href = '#' + name.replace(' ', '-')
-
   return (
     <div {...outerProps}>
-      <SkipLink href={href}>test</SkipLink>
+      <SkipLink {...skipProps}>Skip to folders</SkipLink>
       <div className={styles.window}>
         <Header {...playlist} />
         <main className={styles.main}>{playlist.tracks.map(Tracks)}</main>
