@@ -81,12 +81,6 @@ figure {
   }
 }
 
-img {
-  &:not(:last-child) {
-    margin-bottom: $plusp;
-  }
-}
-
 input,
 textarea {
   -webkit-appearance: none;

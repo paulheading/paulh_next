@@ -1,10 +1,8 @@
 import styles from 'styles/components/desktop/window/trello.module.scss'
 import { CreateLink, NotFound } from 'components/marquee'
-import { useRef, useEffect } from 'react'
-import { window } from 'scripts/animation'
-import SkipLink from 'components/skiplink'
 import SettingsIcon from 'icons/settings'
 import Label from 'components/page/label'
+import Window from 'components/desktop/window'
 
 function Projects(project, index) {
   if (index >= 2) return
@@ -31,28 +29,14 @@ function Projects(project, index) {
 }
 
 function TrelloWindow({ name, folders, projects, style }) {
-  const state = folders.filter((folder) => folder.name === name)[0]
-  const open = state ? state.open : false
-  const ref = useRef(null)
-
-  useEffect(() => {
-    if (!ref) return
-    const { toggle, draggable, hover } = window
-    const { current } = ref
-    draggable(current)
-    toggle(open, current)
-    // hover(open, current)
-  }, [open, ref])
-
-  const outerProps = {
-    className: `window ${styles.outer}`,
+  const windowProps = {
+    name,
+    folders,
     style,
-    ref,
   }
 
   return (
-    <div {...outerProps}>
-      <SkipLink href="#folders">Skip to folders</SkipLink>
+    <Window {...windowProps}>
       <div className={styles.window}>
         <header className={styles.header}>
           <div>Projects</div>
@@ -66,7 +50,7 @@ function TrelloWindow({ name, folders, projects, style }) {
           <div>icon</div>
         </footer>
       </div>
-    </div>
+    </Window>
   )
 }
 

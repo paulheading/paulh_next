@@ -1,16 +1,17 @@
 @import 'styles/global/mixins';
 
 .track {
-  grid-template-columns: 2.25rem auto;
+  grid-template-columns: 2rem auto;
   display: grid;
-}
-
-.track_link {
-  overflow: hidden;
 }
 
 .track_number {
   color: #a0a19e;
+}
+
+.track_details {
+  padding-left: 0.25rem;
+  overflow: hidden;
 }
 
 .track_name {

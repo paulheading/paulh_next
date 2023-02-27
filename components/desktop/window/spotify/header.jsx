@@ -26,9 +26,7 @@ function Header({ name, image, owner, url }) {
 
   return (
     <header className={styles.header}>
-      <a {...linkProps}>
-        <Image {...imageProps} alt="spotify playlist cover" />
-      </a>
+      <Image {...imageProps} alt="spotify playlist cover" />
       <div className={styles.details_wrap}>
         <div className={styles.details}>
           <a {...nameProps}>{name}</a>

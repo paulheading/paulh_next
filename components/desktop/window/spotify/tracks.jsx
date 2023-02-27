@@ -16,9 +16,13 @@ function Tracks({ name, artist, url }, index) {
   return (
     <div key={name + index} className={styles.track}>
       <div className={styles.track_number}>{index + 1}</div>
-      <div className={styles.track_link}>
-        <a {...nameProps}>{name}</a>
-        <a {...artistProps}>{artist.name}</a>
+      <div className={styles.track_details}>
+        <div>
+          <a {...nameProps}>{name}</a>
+        </div>
+        <div>
+          <a {...artistProps}>{artist.name}</a>
+        </div>
       </div>
     </div>
   )

@@ -50,7 +50,7 @@
     padding-top: $padding;
 
     @include focus {
-      background-color: lightgoldenrodyellow;
+      background-color: $c-focus;
     }
   }
 }

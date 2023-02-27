@@ -1,4 +1,12 @@
 @mixin track_name {
   @include text-overflow;
-  display: block;
+  display: inline-block;
+  line-height: 1.2;
+  max-width: 100%;
+
+  @include focus {
+    @include single-box($c-focus);
+    background-color: $c-focus;
+    color: black;
+  }
 }
