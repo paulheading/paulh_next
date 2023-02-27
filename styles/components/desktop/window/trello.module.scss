@@ -1,18 +1,8 @@
 @import 'styles/global/mixins';
 
-.outer {
-  position: absolute;
-  text-align: left;
-}
-
-.window {
-  @include window;
-  background-color: #ebecf0;
-  padding-right: 0.625rem;
-  padding-left: 0.625rem;
-  color: #172b4e;
-  font-weight: 600;
-}
+$c-trello-text: #172b4e;
+$c-trello-background: #ebecf0;
+$c-trello-shadow: #5f6c84;
 
 @mixin header {
   justify-content: space-between;
@@ -21,30 +11,44 @@
   display: flex;
 }
 
+.outer {
+  position: absolute;
+  text-align: left;
+}
+
+.window {
+  @include window;
+  background-color: $c-trello-background;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+  color: $c-trello-text;
+  font-weight: 600;
+}
+
 .header {
   @include header;
 }
 
-.card {
-  box-shadow: 0 0.125rem #5f6c84;
-  background-color: #fff;
-  padding: 0.25rem 0.75rem;
-  border-radius: 0.25rem;
-  display: block;
-
-  + .card {
-    margin-top: 0.625rem;
-  }
+.row + .row {
+  margin-top: 0.625rem;
 }
 
-.name {
-  @include text-overflow;
-  line-height: 2rem;
+.card {
+  box-shadow: 0 0.125rem $c-trello-shadow;
+  background-color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  display: block;
+
+  @include focus {
+    @include single-box($c-trello-shadow, 0.1875rem);
+  }
 }
 
 .footer {
   @include header;
-  color: #5f6c84;
+  color: $c-trello-shadow;
 }
 
 .label_wrap {

@@ -3,27 +3,55 @@ import { CreateLink, NotFound } from 'components/marquee'
 import SettingsIcon from 'icons/settings'
 import Label from 'components/page/label'
 import Window from 'components/desktop/window'
+import { Fragment } from 'react'
 
 function Projects(project, index) {
   if (index >= 2) return
   const { name, more, labels } = project
+
   const createProps = {
+    className: styles.card,
     href: more ? more.url : null,
   }
   const notProps = {
+    className: styles.card,
     href: '/404',
   }
 
+  function LinkContent() {
+    return (
+      <Fragment>
+        <div className={styles.name}>{name}</div>
+        <div className={styles.label_wrap}>
+          {labels.map(({ name, color }, index) => (
+            <Label key={'label' + index} color={color}>
+              {name}
+            </Label>
+          ))}
+        </div>
+      </Fragment>
+    )
+  }
+
+  function IsLink() {
+    return (
+      <CreateLink {...createProps}>
+        <LinkContent />
+      </CreateLink>
+    )
+  }
+
+  function IsNotLink() {
+    return (
+      <NotFound {...notProps}>
+        <LinkContent />
+      </NotFound>
+    )
+  }
+
   return (
-    <div key={'project' + index} className={styles.card}>
-      <div className={styles.name}>{more ? <CreateLink {...createProps}>{name}</CreateLink> : <NotFound {...notProps}>{name}</NotFound>}</div>
-      <div className={styles.label_wrap}>
-        {labels.map(({ name, color }, index) => (
-          <Label key={'label' + index} color={color}>
-            {name}
-          </Label>
-        ))}
-      </div>
+    <div key={'project' + index} className={styles.row}>
+      {more ? <IsLink /> : <IsNotLink />}
     </div>
   )
 }

@@ -6,7 +6,7 @@ import Row from 'components/contact/row'
 
 function Button({ children, className }) {
   const customClass = `${styles.button} ${className}`
-  return <button className={customClass}>{children}</button>
+  return <div className={customClass}>{children}</div>
 }
 
 function Topbar() {

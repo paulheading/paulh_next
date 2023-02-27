@@ -51,8 +51,10 @@
 
 @mixin text-overflow {
   text-overflow: ellipsis;
+  display: inline-block;
   white-space: nowrap;
   overflow: hidden;
+  max-width: 100%;
 }
 
 @mixin folder_words {
