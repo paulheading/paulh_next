@@ -6,6 +6,11 @@
 
 .container[id='60734'] {
   @include hero-colors($c-hero-b...);
+
+  path[id='cursor'] {
+    fill: $c-hero-b3;
+    stroke: none;
+  }
 }
 
 .container {

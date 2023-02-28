@@ -19,3 +19,11 @@
   font-weight: 400;
   display: flex;
 }
+
+.name {
+  @include focus {
+    @include single-box($c-focus);
+    background-color: $c-focus;
+    color: black;
+  }
+}

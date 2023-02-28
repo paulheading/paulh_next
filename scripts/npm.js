@@ -13,7 +13,7 @@ async function getNpmData() {
   const downloads = point['downloads']
   const name = point['package']
 
-  return { name, version, downloads }
+  return { name, version, downloads, url: 'https://www.npmjs.com/package/barbican-reset' }
 }
 
 export default getNpmData

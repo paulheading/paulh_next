@@ -1,0 +1,45 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="320"
+  height="320"
+  viewBox="0 0 320 320">
+  <path
+    id="main"
+    d="M264.2,220.2H143.8V99.8h120.3v120.4H264.2z"
+    fill="none"
+    stroke="#000000"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-miterlimit="10" />
+  <path
+    id="left_3"
+    d="M131.8,175.8h-76v-18.3h76V175.8z"
+    fill="none"
+    stroke="#000000"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-miterlimit="10" />
+  <path
+    id="left_2"
+    d="M131.8,147h-76v-18.3h76V147z"
+    fill="none"
+    stroke="#000000"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-miterlimit="10" />
+  <path
+    id="left_1"
+    d="M131.8,118.2h-76V99.8h76V118.2z"
+    fill="none"
+    stroke="#000000"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-miterlimit="10" />
+  <path
+    id="cursor"
+    d="M197.1,148c-0.2,0-0.3,0.1-0.4,0.2c-0.1,0.1-0.2,0.3-0.2,0.4l0,18.9c0,0.3,0.3,0.6,0.6,0.6h1.7v-20H197.1z M199.9,148.3v19.3l4.1-4c0.1-0.1,0.3-0.2,0.5-0.2c0.2,0,0.3,0.2,0.4,0.3l3.4,7.8l2-0.9c0.3-0.1,0.4-0.5,0.3-0.8l-3.5-7.6l5.8-0.5	c0.2,0,0.4-0.2,0.5-0.4s0-0.4-0.1-0.6L199.9,148.3z M204.2,165.1l-1.5,1.4l2.1,5.1c0.1,0.2,0.3,0.4,0.5,0.4h1.8L204.2,165.1z" />
+</svg>

@@ -1,12 +1,16 @@
 import styles from 'styles/components/hero.module.scss'
 import { CreateLink, NotFound } from 'components/marquee'
 import parse from 'html-react-parser'
-import { useEffect } from 'react'
-import gsap from 'gsap'
+import { useRef, useEffect } from 'react'
+import { hero as animation } from 'scripts/animation'
 
 function Hero({ hero }) {
   const { id, name, more, svg } = hero
-  const containerProps = { className: styles.container, id: id.slice(0, 5) }
+  const slice = id.slice(0, 5)
+  const containerProps = { className: styles.container, id: slice }
+  const loop = 'loop_' + slice
+  const ref = useRef(null)
+
   const createProps = {
     href: more ? more.url : null,
     className: styles.link,
@@ -17,15 +21,14 @@ function Hero({ hero }) {
   }
 
   useEffect(() => {
-    // const target = '#svg'
-    // const tl = gsap.timeline()
-    // tl.set(target, { clearProps: 'all' }).to(target, { opacity: 0 })
+    if (!ref || !animation[loop]) return
+    animation[loop](ref.current)
   })
 
   return (
     <div {...containerProps}>
       <h1 className={styles.name}>{more ? <CreateLink {...createProps}>{name}</CreateLink> : <NotFound {...notProps}>{name}</NotFound>}</h1>
-      <div id="svg" className={styles.svg}>
+      <div ref={ref} className={styles.svg}>
         {svg && parse(svg)}
       </div>
     </div>

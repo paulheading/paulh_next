@@ -75,4 +75,23 @@ clock.blink = (target) => {
   tl.to(target, next(0.5)).to(target, next(1))
 }
 
-export { marquee, window, wifi, clock }
+const hero = {}
+
+hero.loop_60734 = function (target) {
+  const tl = gsap.timeline({ defaults: { duration: 0.8 } })
+  const fillOpacity = 0.5
+  const fill = '#ffe666'
+  const delay = 0.2
+
+  const getChild = (selector) => target.querySelector('#' + selector)
+
+  const cursor = getChild('cursor')
+  const left_1 = getChild('left_1')
+  const left_2 = getChild('left_2')
+  const left_3 = getChild('left_3')
+  const main = getChild('main')
+
+  tl.to(cursor, { x: -105, y: -40 }).set(left_1, { fill, fillOpacity }).set(left_1, { fill, fillOpacity: 0, delay }).to(cursor, { y: -10 }).set(left_2, { fill, fillOpacity }).set(left_2, { fill, fillOpacity: 0, delay }).to(cursor, { y: 20 }).set(left_3, { fill, fillOpacity })
+}
+
+export { marquee, window, wifi, clock, hero }

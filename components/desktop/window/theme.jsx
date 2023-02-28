@@ -21,12 +21,19 @@ function ThemeWindow({ name, folders, data, color, style }) {
     style,
   }
 
+  const nameProps = {
+    className: styles.name,
+    href: data.url,
+  }
+
   return (
     <Window {...windowProps}>
       <div {...innerProps}>
         <div className={styles.copy}>
           <div>
-            <div>{data.name}</div>
+            <div>
+              <a {...nameProps}>{data.name}</a>
+            </div>
             <div>{downloads}</div>
           </div>
           <div style={{ color }}>{version}</div>
