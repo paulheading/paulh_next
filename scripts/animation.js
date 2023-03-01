@@ -17,13 +17,19 @@ window.defaults = {
 window.open = function (target) {
   const tl = gsap.timeline()
   const { duration } = window.defaults
-  tl.set(target, { display: 'block' }).to(target, { scale: 1, opacity: 1, duration })
+  tl.set(target, { display: 'block' }).to(target, {
+    scale: 1,
+    opacity: 1,
+    duration,
+  })
 }
 
 window.close = function (target) {
   const tl = gsap.timeline()
   const { duration } = window.defaults
-  tl.to(target, { scale: 0.5, opacity: 0, duration }).set(target, { display: 'none' })
+  tl.to(target, { scale: 0.5, opacity: 0, duration }).set(target, {
+    display: 'none',
+  })
 }
 
 window.toggle = (open, target) => (open ? window.open(target) : window.close(target))
@@ -78,20 +84,55 @@ clock.blink = (target) => {
 const hero = {}
 
 hero.loop_60734 = function (target) {
-  const tl = gsap.timeline({ defaults: { duration: 0.8 } })
+  const getChild = (selector) => target.querySelector('#' + selector)
   const fillOpacity = 0.5
   const fill = '#ffe666'
-  const delay = 0.2
 
-  const getChild = (selector) => target.querySelector('#' + selector)
+  const cursor = {
+    selector: getChild('cursor'),
+    duration: 0.8,
+    delay: 0.2,
+  }
 
-  const cursor = getChild('cursor')
-  const left_1 = getChild('left_1')
-  const left_2 = getChild('left_2')
-  const left_3 = getChild('left_3')
-  const main = getChild('main')
+  const boxes = {
+    selector: [getChild('left_1'), getChild('left_2'), getChild('left_3')],
+    duration: 0.4,
+    delay: 0.2,
+  }
 
-  tl.to(cursor, { x: -105, y: -40 }).set(left_1, { fill, fillOpacity }).set(left_1, { fill, fillOpacity: 0, delay }).to(cursor, { y: -10 }).set(left_2, { fill, fillOpacity }).set(left_2, { fill, fillOpacity: 0, delay }).to(cursor, { y: 20 }).set(left_3, { fill, fillOpacity })
+  const main = {
+    selector: [getChild('main_1'), getChild('main_2'), getChild('main_3'), getChild('main_4')],
+    duration: 0.4,
+    delay: 0.2,
+  }
+
+  cursor.tl = gsap.timeline({ defaults: { duration: cursor.duration } })
+
+  boxes.tl = gsap.timeline({ defaults: { duration: boxes.duration } })
+
+  main.tl = gsap.timeline({ defaults: { duration: main.duration } })
+
+  main.sequence = function () {
+    main.selector.forEach((selector) => main.tl.set(selector, { fill, fillOpacity, stroke: 'none' }))
+    return main.tl.to(main.selector, { opacity: 1, stagger: 0.2 })
+  }
+
+  cursor.tl.to(cursor.selector, { x: -105, y: -45 }).to(cursor.selector, { y: 15, duration: 1.2, delay: cursor.delay }).add(main.sequence)
+
+  boxes.tl
+    .set(boxes.selector[0], {
+      fill,
+      fillOpacity,
+      delay: (cursor.duration -= 0.2),
+    })
+    .set(boxes.selector[0], { clearProps: 'all', delay: (boxes.delay += 0.2) })
+    .set(boxes.selector[1], {
+      fill,
+      fillOpacity,
+      delay: (boxes.duration -= 0.1),
+    })
+    .set(boxes.selector[1], { clearProps: 'all', delay: (boxes.delay -= 0.1) })
+    .set(boxes.selector[2], { fill, fillOpacity, delay: boxes.duration })
 }
 
 export { marquee, window, wifi, clock, hero }
