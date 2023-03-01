@@ -1,5 +1,10 @@
 @import 'styles/global/mixins';
 
+@mixin grid-position {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
 .container[id='606d7'] {
   @include hero-colors($c-hero-a...);
 }
@@ -23,11 +28,6 @@
   display: grid;
 }
 
-@mixin grid-position {
-  grid-column: 1/2;
-  grid-row: 1/2;
-}
-
 .name {
   @include grid-position;
   line-height: $line-height-md;
@@ -46,5 +46,5 @@
 
 .svg {
   @include grid-position;
-  transform: scale(2);
+  transform: scale(2.2);
 }
