@@ -27,5 +27,11 @@
 
   a {
     background-color: $c;
+
+    @include focus-visible {
+      background-color: black;
+      outline: none;
+      color: $c;
+    }
   }
 }
