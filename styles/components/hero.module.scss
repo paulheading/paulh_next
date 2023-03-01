@@ -28,14 +28,14 @@
   display: grid;
 }
 
-.container a {
+.name a {
+  line-height: $line-height;
   letter-spacing: -0.01em;
   text-decoration: none;
 }
 
 .name {
   @include grid-position;
-  line-height: $line-height-md;
   padding-right: 2rem;
   padding-left: 2rem;
   z-index: 2;

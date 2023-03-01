@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import duration from 'data/duration'
 
 function useCount(heroes) {
-  // return 1
+  return 1
   if (!heroes) return 0
 
   const [count, setCount] = useState(0)
