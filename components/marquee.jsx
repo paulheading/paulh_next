@@ -31,18 +31,10 @@ function Tab({ more }) {
     href: '/404',
   }
 
-  return (
-    <div className={styles.tab_container}>
-      {more ? (
-        <CreateLink {...createProps}>{message}</CreateLink>
-      ) : (
-        <NotFound {...notProps}>{message}</NotFound>
-      )}
-    </div>
-  )
+  return <div className={styles.tab_container}>{more ? <CreateLink {...createProps}>{message}</CreateLink> : <NotFound {...notProps}>{message}</NotFound>}</div>
 }
 
-function Row({ marquee, more }) {
+function Row({ marquee, more, id }) {
   function Repeat() {
     let print = ''
     const repeat = new Array(10).fill(0)
@@ -60,8 +52,11 @@ function Row({ marquee, more }) {
     start('#repeat')
   })
 
+  const loop = 'loop_' + id.slice(0, 5)
+  const customClass = `${styles.row_container} ${styles[loop]}`
+
   return (
-    <div className={styles.row_container}>
+    <div className={customClass}>
       {more ? (
         <CreateLink href={more.url}>
           <Repeat />
@@ -77,6 +72,7 @@ function Row({ marquee, more }) {
 
 function Marquee({ hero }) {
   const { more } = hero
+
   return (
     <div className={styles.marquee_container}>
       <Tab more={more} />

@@ -5,11 +5,11 @@
   grid-row: 1/2;
 }
 
-.container[id='606d7'] {
+.container.loop_606d7 {
   @include hero-colors($c-hero-a...);
 }
 
-.container[id='60734'] {
+.container.loop_60734 {
   @include hero-colors($c-hero-b...);
 
   path[id='cursor'] {

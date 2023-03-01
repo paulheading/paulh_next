@@ -6,9 +6,8 @@ import { hero as animation } from 'scripts/animation'
 
 function Hero({ hero }) {
   const { id, name, more, svg } = hero
-  const slice = id.slice(0, 5)
-  const containerProps = { className: styles.container, id: slice }
-  const loop = 'loop_' + slice
+  const loop = 'loop_' + id.slice(0, 5)
+  const containerProps = { className: `${styles.container} ${styles[loop]}` }
   const ref = useRef(null)
 
   const createProps = {
