@@ -46,24 +46,12 @@
 
   a {
     padding-bottom: $padding;
-    display: inline-block;
     padding-top: $padding;
+    display: inline-block;
 
-    @include focus-visible {
+    @include focus {
       background-color: $c-focus;
     }
-  }
-}
-
-.row_container.loop_606d7 a {
-  @include focus-visible {
-    background-color: var(--c-hero-a3);
-  }
-}
-
-.row_container.loop_60734 a {
-  @include focus-visible {
-    background-color: var(--c-hero-b3);
   }
 }
 

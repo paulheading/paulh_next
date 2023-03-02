@@ -25,23 +25,30 @@ export default function Menu() {
 
     function isActive() {
       let active = false
-      if ('/' + title === router.pathname) active = true
+      if ('/' + title.toLowerCase() === router.pathname) active = true
       return active
     }
 
-    const activeClass = isActive() ? styles.active : null
-
     function customClass() {
-      if (title === 'About') return styles.about_link
-      if (title === 'Resume') return styles.resume_link
-      return styles.link
+      switch (title) {
+        case 'About':
+          return styles.about_link
+        case 'Resume':
+          return styles.resume_link
+        default:
+          return styles.link
+      }
     }
 
-    const className = `${customClass()} ${activeClass}`
+    function className() {
+      let result = customClass()
+      if (isActive()) result += ' ' + styles.active
+      return result
+    }
 
     const props = {
       href: title.toLowerCase(),
-      className,
+      className: className(),
     }
 
     return <Link {...props}>{children}</Link>

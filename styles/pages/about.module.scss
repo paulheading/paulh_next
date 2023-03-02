@@ -1,4 +1,4 @@
-@import 'styles/global/variables';
+@import 'styles/global/mixins';
 
 .container {
   padding-bottom: 8rem;
@@ -12,4 +12,11 @@
 .copy {
   font-size: 1.5rem;
   font-weight: 400;
+
+  a {
+    @include focus {
+      @include single-box($c-focus-dark);
+      background-color: $c-focus-dark;
+    }
+  }
 }

@@ -1,5 +1,29 @@
 @import 'styles/global/mixins';
 
+@mixin link {
+  padding-bottom: $padding-link;
+  padding-top: $padding-link;
+  text-decoration: none;
+  align-items: center;
+  font-size: 1.5rem;
+  line-height: 1;
+  display: flex;
+
+  svg {
+    fill: currentColor;
+  }
+}
+
+@mixin about_active {
+  @include single-box(black);
+  background-color: white;
+  color: black;
+}
+
+@mixin resume_active {
+  border-bottom-color: black;
+}
+
 .home_container {
   padding-right: 2rem;
   padding-left: 2rem;
@@ -24,10 +48,6 @@
   display: flex;
 }
 
-.active {
-  background: red;
-}
-
 .links {
   gap: $padding-link * 2;
   align-content: center;
@@ -35,22 +55,12 @@
 }
 
 .link {
-  padding-bottom: $padding-link;
-  padding-top: $padding-link;
-  text-decoration: none;
-  align-items: center;
-  font-size: 1.5rem;
-  line-height: 1;
-  display: flex;
-
-  svg {
-    fill: currentColor;
-  }
+  @include link;
 }
 
 .link_home {
-  composes: link;
-  border-bottom: 5px solid transparent;
+  @include link;
+  border-bottom: 0.3125rem dashed transparent;
 
   &,
   svg {
@@ -58,31 +68,36 @@
   }
 
   @include focus {
-    border-bottom-color: black;
+    @include resume_active;
   }
 }
 
 .resume_link {
-  composes: link;
-  border-bottom: 5px solid transparent;
+  @include link;
+  border-bottom: 0.3125rem solid transparent;
+
+  &.active {
+    @include resume_active;
+  }
 
   @include focus {
-    border-bottom-color: black;
+    @include resume_active;
   }
 }
 
 .about_link {
-  $background-color: black;
-  $color: white;
-
-  composes: link;
-  background-color: $background-color;
+  @include link;
   padding-right: $padding-link;
   padding-left: $padding-link;
+  background-color: black;
   border-radius: 0.25rem;
-  color: $color;
+  color: white;
+
+  &.active {
+    @include about_active;
+  }
 
   @include focus {
-    @include single-box($color);
+    @include about_active;
   }
 }
