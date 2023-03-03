@@ -24,6 +24,11 @@
   border-bottom-color: black;
 }
 
+@mixin active_styles {
+  user-select: none;
+  cursor: default;
+}
+
 .home_container {
   padding-right: 2rem;
   padding-left: 2rem;
@@ -54,13 +59,9 @@
   display: flex;
 }
 
-.link {
+.home_link {
   @include link;
-}
-
-.link_home {
-  @include link;
-  border-bottom: 0.3125rem dashed transparent;
+  border-bottom: 0.3125rem solid transparent;
 
   &,
   svg {
@@ -78,6 +79,7 @@
 
   &.active {
     @include resume_active;
+    @include active_styles;
   }
 
   @include focus {
@@ -95,6 +97,7 @@
 
   &.active {
     @include about_active;
+    @include active_styles;
   }
 
   @include focus {

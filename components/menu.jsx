@@ -6,13 +6,14 @@ import Wrap from 'components/wrap'
 import useMediaQuery from 'hooks/useMediaQuery'
 import PaulHDesktop from 'logos/paulh/desktop'
 import PaulHMobile from 'logos/paulh/mobile'
+import { useState, useEffect } from 'react'
 
-function SmallUp({ children }) {
-  return <span className="small-up">{children}</span>
-}
+function Ready({ children }) {
+  const [loaded, setLoaded] = useState(false)
 
-function SmallDown({ children }) {
-  return <span className="small-down">{children}</span>
+  useEffect(() => setLoaded(true), [])
+
+  return loaded && children
 }
 
 export default function Menu() {
@@ -29,19 +30,8 @@ export default function Menu() {
       return active
     }
 
-    function customClass() {
-      switch (title) {
-        case 'About':
-          return styles.about_link
-        case 'Resume':
-          return styles.resume_link
-        default:
-          return styles.link
-      }
-    }
-
     function className() {
-      let result = customClass()
+      let result = styles[title.toLowerCase() + '_link']
       if (isActive()) result += ' ' + styles.active
       return result
     }
@@ -51,11 +41,11 @@ export default function Menu() {
       className: className(),
     }
 
-    return <Link {...props}>{children}</Link>
+    return isActive() ? <span className={className()}>{children}</span> : <Link {...props}>{children}</Link>
   }
 
   const linkProps = {
-    className: styles.link_home,
+    className: styles.home_link,
     href: '/',
   }
 
@@ -66,17 +56,9 @@ export default function Menu() {
   return (
     <div {...containerProps}>
       <Wrap className={styles.wrap}>
-        <Link {...linkProps}>
-          {desktop ? (
-            <SmallUp>
-              <PaulHDesktop />
-            </SmallUp>
-          ) : (
-            <SmallDown>
-              <PaulHMobile />
-            </SmallDown>
-          )}
-        </Link>
+        <Ready>
+          <Link {...linkProps}>{desktop ? <PaulHDesktop /> : <PaulHMobile />}</Link>
+        </Ready>
         <div className={styles.links}>
           {data.map(({ title, icon }, index) => {
             const props = {
@@ -84,9 +66,9 @@ export default function Menu() {
               index,
             }
             return (
-              <Links {...props} key={title + index}>
-                {desktop ? <SmallUp>{title}</SmallUp> : <SmallDown>{icon}</SmallDown>}
-              </Links>
+              <Ready key={title + index}>
+                <Links {...props}>{desktop ? title : icon}</Links>
+              </Ready>
             )
           })}
         </div>
