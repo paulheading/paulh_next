@@ -22,8 +22,8 @@
 
 .name {
   @include focus {
-    @include single-box($c-focus);
-    background-color: $c-focus;
+    @include single-box($c-lemon);
+    background-color: $c-lemon;
     color: black;
   }
 }

@@ -5,6 +5,12 @@
     box-shadow: $box-shadow-page;
     max-width: 50rem;
   }
+
+  a {
+    @include focus {
+      @include gold-box;
+    }
+  }
 }
 
 .label_wrap {

@@ -35,6 +35,9 @@ $c-teal--xxdark: darken($c-teal, 35%);
 $c-cyan: #17a2b8;
 $c-sky: #87cefa;
 
+$c-lemon: lightgoldenrodyellow;
+$c-gold: #f5c356;
+
 $c-hero-a1: hsl(230, 100%, 60%);
 $c-hero-a2: hsl(150, 100%, 60%);
 $c-hero-a3: hsl(170, 100%, 70%);
@@ -57,6 +60,3 @@ $c-status-error: hsl(0, 45%, 37%);
 $c-status-success-fade: hsl(120, 30%, 95%);
 $c-status-success-light: hsl(120, 30%, 75%);
 $c-status-success: hsl(120, 30%, 37%);
-
-$c-focus: lightgoldenrodyellow;
-$c-focus-dark: #f5c356;

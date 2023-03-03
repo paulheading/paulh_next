@@ -50,7 +50,7 @@
     display: inline-block;
 
     @include focus {
-      background-color: $c-focus;
+      background-color: $c-lemon;
     }
   }
 }

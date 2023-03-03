@@ -40,3 +40,15 @@
   position: relative;
   z-index: 2;
 }
+
+@mixin lemon-box {
+  @include single-box($c-lemon);
+  background-color: $c-lemon;
+  color: black;
+}
+
+@mixin gold-box {
+  @include single-box($c-gold);
+  background-color: $c-gold;
+  color: black;
+}

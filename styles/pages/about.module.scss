@@ -15,8 +15,7 @@
 
   a {
     @include focus {
-      @include single-box($c-focus-dark);
-      background-color: $c-focus-dark;
+      @include gold-box;
     }
   }
 }

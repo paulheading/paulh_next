@@ -12,8 +12,6 @@
 
 .link {
   @include focus {
-    @include single-box($c-focus);
-    background-color: $c-focus;
-    color: black;
+    @include lemon-box;
   }
 }
