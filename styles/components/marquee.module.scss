@@ -7,28 +7,28 @@
 
 .tab_container {
   position: absolute;
-  line-height: 1;
-  top: -3.125rem;
+  top: -3.25rem;
   width: 100%;
 }
 
-.tab_link {
-  $border: 0.25rem solid transparent;
+.tab_wrap {
   $border-radius: 0.25rem;
 
   border-top-right-radius: $border-radius;
   border-top-left-radius: $border-radius;
-  padding: 0.75rem 0.75rem 0.875rem;
-  text-decoration: underline;
+  padding: 0.625rem 0.75rem 0.75rem;
   background-color: black;
-  border-right: $border;
   display: inline-block;
-  border-left: $border;
-  border-top: $border;
+}
+
+.tab_link {
+  border-bottom: 0.125rem solid white;
+  text-decoration: none;
+  display: inline-block;
   color: white;
 
   @include focus {
-    @include single-box(white);
+    border-bottom-style: dashed;
   }
 }
 
