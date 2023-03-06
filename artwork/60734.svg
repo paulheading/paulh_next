@@ -3,62 +3,101 @@
   width="320"
   height="320"
   viewBox="0 0 320 320">
-  <path id="main_7" d="M212.8,231.3h-64v-14h64V231.3z" opacity="0" />
-  <path id="main_6" d="M202.8,212.5h-54v-14h54V212.5z" opacity="0" />
-  <path id="main_5" d="M224.8,193.8h-76v-14h76V193.8z" opacity="0" />
-  <path id="main_4" d="M188.8,175h-40v-14h40V175z" opacity="0" />
-  <path id="main_3" d="M212.8,156.3h-64v-14h64V156.3z" opacity="0" />
-  <path id="main_2" d="M202.8,137.5h-54v-14h54V137.5z" opacity="0" />
-  <path id="main_1" d="M224.8,118.8h-76v-14h76V118.8z" opacity="0" />
-  <path
-    id="main"
-    d="M264.2,235.8	H143.8v-136h120.3v136H264.2L264.2,235.8z"
-    fill="none"
-    stroke="#000000"
-    stroke-width="2"
-    stroke-linecap="square"
-    stroke-miterlimit="10" />
-  <path
-    id="left_5"
-    d="M131.8,235.8	h-76v-18.3h76V235.8z"
-    fill="none"
-    stroke="#000000"
-    stroke-width="2"
-    stroke-linecap="square"
-    stroke-miterlimit="10" />
-  <path
-    id="left_4"
-    d="M131.8,205.8	h-76v-18.3h76V205.8z"
-    fill="none"
-    stroke="#000000"
-    stroke-width="2"
-    stroke-linecap="square"
-    stroke-miterlimit="10" />
-  <path
-    id="left_3"
-    d="M131.8,175.8	h-76v-18.3h76V175.8z"
-    fill="none"
-    stroke="#000000"
-    stroke-width="2"
-    stroke-linecap="square"
-    stroke-miterlimit="10" />
-  <path
-    id="left_2"
-    d="M131.8,147h-76	v-18.3h76V147z"
-    fill="none"
-    stroke="#000000"
-    stroke-width="2"
-    stroke-linecap="square"
-    stroke-miterlimit="10" />
-  <path
-    id="left_1"
-    d="M131.8,118.2	h-76V99.8h76V118.2z"
-    fill="none"
-    stroke="#000000"
-    stroke-width="2"
-    stroke-linecap="square"
-    stroke-miterlimit="10" />
-  <path
-    id="cursor"
-    d="M208,168.1h-0.1c-0.1,0-0.2-0.1-0.2-0.2l-2.2-5.2l-2.8,2.6c-0.1,0.1-0.3,0.1-0.4,0.1c-0.1-0.1-0.2-0.2-0.2-0.4	v-12.7c0-0.2,0.1-0.3,0.2-0.4c0.1-0.1,0.3,0,0.4,0.1l9.2,8.6c0.1,0.1,0.2,0.3,0.1,0.4c0,0.1-0.2,0.2-0.3,0.3l-3.9,0.3l2.3,5.1	c0,0.1,0,0.2,0,0.3s-0.1,0.2-0.2,0.2l-1.7,0.8C208.1,168.1,208.1,168.1,208,168.1z" />
+  <g>
+    <path
+      id="main_7"
+      d="M212.8,228.5h-64v-14h64V228.5z"
+      fill-opacity="0"
+      stroke-width="0" />
+    <path
+      id="main_6"
+      d="M202.8,209.7h-54v-14h54V209.7z"
+      fill-opacity="0"
+      stroke-width="0" />
+    <path
+      id="main_5"
+      d="M224.8,191h-76v-14h76V191z"
+      fill-opacity="0"
+      stroke-width="0" />
+    <path
+      id="main_4"
+      d="M188.8,172.2h-40v-14h40V172.2z"
+      fill-opacity="0"
+      stroke-width="0" />
+    <path
+      id="main_3"
+      d="M212.8,153.5h-64v-14h64V153.5z"
+      fill-opacity="0"
+      stroke-width="0" />
+    <path
+      id="main_2"
+      d="M202.8,134.7h-54v-14h54V134.7z"
+      fill-opacity="0"
+      stroke-width="0" />
+    <path
+      id="main_1"
+      d="M224.8,116h-76v-14h76V116z"
+      fill-opacity="0"
+      stroke-width="0" />
+    <path
+      id="main"
+      d="M264.2,233H143.8 V97h120.3v136H264.2L264.2,233z"
+      fill="none"
+      stroke="#000000"
+      stroke-width="2"
+      stroke-linecap="square"
+      stroke-miterlimit="10" />
+    <path
+      id="left_5"
+      d="M131.8,233h-76 v-18.3h76V233z"
+      fill="none"
+      stroke="#000000"
+      stroke-width="2"
+      stroke-linecap="square"
+      stroke-miterlimit="10" />
+    <path
+      id="left_4"
+      d="M131.8,203h-76 v-18.3h76V203z"
+      fill="none"
+      stroke="#000000"
+      stroke-width="2"
+      stroke-linecap="square"
+      stroke-miterlimit="10" />
+    <path
+      id="left_3"
+      d="M131.8,173h-76 v-18.3h76V173z"
+      fill="none"
+      stroke="#000000"
+      stroke-width="2"
+      stroke-linecap="square"
+      stroke-miterlimit="10" />
+    <path
+      id="left_2"
+      d="M131.8,144.2 h-76v-18.3h76V144.2z"
+      fill="none"
+      stroke="#000000"
+      stroke-width="2"
+      stroke-linecap="square"
+      stroke-miterlimit="10" />
+    <path
+      id="left_1"
+      d="M131.8,115.4 h-76V97h76V115.4z"
+      fill="none"
+      stroke="#000000"
+      stroke-width="2"
+      stroke-linecap="square"
+      stroke-miterlimit="10" />
+    <path
+      id="cursor"
+      d="M208,171.3h-0.1c-0.1,0-0.2-0.1-0.2-0.2l-2.2-5.2l-2.8,2.6c-0.1,0.1-0.3,0.1-0.4,0.1c-0.1-0.1-0.2-0.2-0.2-0.4 v-12.7c0-0.2,0.1-0.3,0.2-0.4c0.1-0.1,0.3,0,0.4,0.1l9.2,8.6c0.1,0.1,0.2,0.3,0.1,0.4c0,0.1-0.2,0.2-0.3,0.3l-3.9,0.3l2.3,5.1 c0,0.1,0,0.2,0,0.3s-0.1,0.2-0.2,0.2l-1.7,0.8C208.1,171.3,208.1,171.3,208,171.3z" />
+  </g>
+  <g id="guides" display="none">
+    <rect
+      id="title"
+      y="150"
+      width="320"
+      height="28"
+      opacity="0.5"
+      fill="#FF00FF" />
+  </g>
 </svg>
