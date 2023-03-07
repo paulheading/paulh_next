@@ -22,7 +22,7 @@ function Hero({ hero }) {
   useEffect(() => {
     if (!ref || !animation[loop]) return
     animation[loop](ref.current)
-  })
+  }, [loop])
 
   return (
     <div {...containerProps}>

@@ -3,140 +3,158 @@
   width="320"
   height="320"
   viewBox="0 0 320 320">
-  <g id="list" display="none">
+  <g>
+    <g id="list" display="none">
+      <path
+        id="row_5"
+        d="M264.2,228H55.8v-18.3h208.4L264.2,228L264.2,228z"
+        display="inline"
+        fill="none"
+        stroke="#66FFE5"
+        stroke-width="2"
+        stroke-linecap="square"
+        stroke-miterlimit="10" />
+      <path
+        id="row_4"
+        d="M264.2,198H55.8v-18.3h208.4L264.2,198L264.2,198z"
+        display="inline"
+        fill="none"
+        stroke="#66FFE5"
+        stroke-width="2"
+        stroke-linecap="square"
+        stroke-miterlimit="10" />
+      <path
+        id="row_3"
+        d="M264.2,168H55.8v-18.3h208.4L264.2,168L264.2,168z"
+        display="inline"
+        fill="#66FFE5"
+        stroke="#66FFE5"
+        stroke-width="2"
+        stroke-linecap="square"
+        stroke-miterlimit="10" />
+      <path
+        id="row_2"
+        d="M264.2,139.2H55.8v-18.3h208.4L264.2,139.2L264.2,139.2z"
+        display="inline"
+        fill="none"
+        stroke="#66FFE5"
+        stroke-width="2"
+        stroke-linecap="square"
+        stroke-miterlimit="10" />
+      <path
+        id="row_1"
+        d="M264.2,110.4H55.8V92h208.4L264.2,110.4L264.2,110.4z"
+        display="inline"
+        fill="none"
+        stroke="#66FFE5"
+        stroke-width="2"
+        stroke-linecap="square"
+        stroke-miterlimit="10" />
+    </g>
+    <g id="gantt" display="none">
+      <path
+        id="bar_5"
+        d="M175.8,228h-120v-18.3h120V228z"
+        display="inline"
+        fill="none"
+        stroke="#66FFE5"
+        stroke-width="2"
+        stroke-linecap="square"
+        stroke-miterlimit="10" />
+      <path
+        id="bar_4"
+        d="M264.2,198h-140v-18.3h140V198z"
+        display="inline"
+        fill="none"
+        stroke="#66FFE5"
+        stroke-width="2"
+        stroke-linecap="square"
+        stroke-miterlimit="10" />
+      <path
+        id="bar_3"
+        d="M209.9,168h-140v-18.3h140V168z"
+        display="inline"
+        fill="#66FFE5"
+        stroke="#66FFE5"
+        stroke-width="2"
+        stroke-linecap="square"
+        stroke-miterlimit="10" />
+      <path
+        id="bar_2"
+        d="M264.2,139.2h-160v-18.3h160V139.2z"
+        display="inline"
+        fill="none"
+        stroke="#66FFE5"
+        stroke-width="2"
+        stroke-linecap="square"
+        stroke-miterlimit="10" />
+      <path
+        id="bar_1"
+        d="M145.8,110.4h-90V92h90V110.4z"
+        display="inline"
+        fill="none"
+        stroke="#66FFE5"
+        stroke-width="2"
+        stroke-linecap="square"
+        stroke-miterlimit="10" />
+    </g>
+    <g id="map">
+      <path
+        id="hall"
+        d="M100.2,121.6 c0-16.2-13.1-29.4-29.4-29.4s-29.3,13.2-29.3,29.4c0,16.2,13.1,29.4,29.4,29.4v17.6h46.9v-46.9h-17.6V121.6z"
+        fill="none"
+        stroke="#66FFE5"
+        stroke-width="2"
+        stroke-miterlimit="10" />
+      <path
+        id="garden"
+        d="M212.5,139.2 c0,16.2,13.1,29.4,29.4,29.4c16.2,0,29.4-13.1,29.4-29.4c0-16.2-13.1-29.4-29.4-29.4V92.2H195v46.9L212.5,139.2L212.5,139.2z"
+        fill="none"
+        stroke="#66FFE5"
+        stroke-width="2"
+        stroke-miterlimit="10" />
+      <path
+        id="corridor"
+        d="M215.5,241.3v-35.2h35.2v35.2 H215.5z"
+        fill="none"
+        stroke="#66FFE5"
+        stroke-width="2"
+        stroke-miterlimit="10" />
+      <path
+        id="lobby"
+        d="M139.7,127.4V92.2h35.2v35.2H139.7z"
+        fill="none"
+        stroke="#66FFE5"
+        stroke-width="2"
+        stroke-miterlimit="10" />
+      <path
+        id="sound"
+        d="M157.3,146.6l47.6,82.5h-95.2L157.3,146.6z"
+        opacity="0"
+        fill="#66FFE5" />
+      <path
+        id="stage"
+        d="M157.3,157.9l38.1,66h-76.1L157.3,157.9z"
+        fill="#66FFE5" />
+    </g>
     <path
-      id="row_5"
-      d="M264.2,228H55.8v-18.3h208.4L264.2,228L264.2,228z"
-      display="inline"
+      id="marker"
+      d="M157,77.5v165"
+      display="none"
       fill="none"
-      stroke="#000000"
-      stroke-width="2"
-      stroke-linecap="square"
-      stroke-miterlimit="10" />
-    <path
-      id="row_4"
-      d="M264.2,198H55.8v-18.3h208.4L264.2,198L264.2,198z"
-      display="inline"
-      fill="none"
-      stroke="#000000"
-      stroke-width="2"
-      stroke-linecap="square"
-      stroke-miterlimit="10" />
-    <path
-      id="row_3"
-      d="M264.2,168 H55.8v-18.3h208.4L264.2,168L264.2,168z"
-      display="inline"
-      stroke="#000000"
-      stroke-width="2"
-      stroke-linecap="square"
-      stroke-miterlimit="10" />
-    <path
-      id="row_2"
-      d="M264.2,139.2H55.8v-18.3h208.4L264.2,139.2L264.2,139.2z"
-      display="inline"
-      fill="none"
-      stroke="#000000"
-      stroke-width="2"
-      stroke-linecap="square"
-      stroke-miterlimit="10" />
-    <path
-      id="row_1"
-      d="M264.2,110.4H55.8V92h208.4L264.2,110.4L264.2,110.4z"
-      display="inline"
-      fill="none"
-      stroke="#000000"
+      stroke="#66FFE5"
       stroke-width="2"
       stroke-linecap="square"
       stroke-miterlimit="10" />
   </g>
-  <g id="gantt" display="none">
-    <path
-      id="bar_5"
-      d="M175.8,228h-120v-18.3h120V228z"
+  <g id="guides" display="none">
+    <rect
+      id="title"
+      y="150"
+      width="320"
+      height="28"
       display="inline"
-      fill="none"
-      stroke="#000000"
-      stroke-width="2"
-      stroke-linecap="square"
-      stroke-miterlimit="10" />
-    <path
-      id="bar_4"
-      d="M264.2,198h-140v-18.3h140V198z"
-      display="inline"
-      fill="none"
-      stroke="#000000"
-      stroke-width="2"
-      stroke-linecap="square"
-      stroke-miterlimit="10" />
-    <path
-      id="bar_3"
-      d="M209.9,168 h-140v-18.3h140V168z"
-      display="inline"
-      stroke="#000000"
-      stroke-width="2"
-      stroke-linecap="square"
-      stroke-miterlimit="10" />
-    <path
-      id="bar_2"
-      d="M264.2,139.2h-160v-18.3h160V139.2z"
-      display="inline"
-      fill="none"
-      stroke="#000000"
-      stroke-width="2"
-      stroke-linecap="square"
-      stroke-miterlimit="10" />
-    <path
-      id="bar_1"
-      d="M145.8,110.4h-90V92h90V110.4z"
-      display="inline"
-      fill="none"
-      stroke="#000000"
-      stroke-width="2"
-      stroke-linecap="square"
-      stroke-miterlimit="10" />
+      opacity="0.5"
+      fill="#FF00FF" />
   </g>
-  <g id="map">
-    <path
-      id="hall"
-      d="M88.3,118.1c0-14.7-11.9-26.7-26.7-26.7 S35,103.4,35,118.1s11.9,26.7,26.7,26.7v16h42.6v-42.6h-16V118.1z"
-      fill="none"
-      stroke="#000000"
-      stroke-width="2"
-      stroke-miterlimit="10" />
-    <path
-      id="garden"
-      d="M231.7,154.3 c0,14.7,11.9,26.7,26.7,26.7c14.7,0,26.7-11.9,26.7-26.7c0-14.7-11.9-26.7-26.7-26.7v-16h-42.6v42.6L231.7,154.3L231.7,154.3z"
-      fill="none"
-      stroke="#000000"
-      stroke-width="2"
-      stroke-miterlimit="10" />
-    <path
-      id="corridor"
-      d="M175.7,229V111.7H197V229H175.7z"
-      fill="none"
-      stroke="#000000"
-      stroke-width="2"
-      stroke-miterlimit="10" />
-    <path
-      id="lobby"
-      d="M128.3,127.7v-32h32v32H128.3z"
-      fill="none"
-      stroke="#000000"
-      stroke-width="2"
-      stroke-miterlimit="10" />
-    <path
-      id="sound"
-      d="M128.3,146.9l34.6,60H93.7L128.3,146.9z"
-      stroke-width="0"
-      fill-opacity="0" />
-    <path id="stage" d="M128.3,146.9l34.6,60H93.7L128.3,146.9z" stroke-width="0" />
-  </g>
-  <path
-    id="marker"
-    d="M114.8,84.9v150"
-    fill="none"
-    stroke="#000000"
-    stroke-width="2"
-    stroke-linecap="square"
-    stroke-miterlimit="10" />
 </svg>
