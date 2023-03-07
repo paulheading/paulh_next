@@ -76,7 +76,9 @@
 .resume_link {
   @include link;
   border-bottom: 0.3125rem solid transparent;
+}
 
+a.resume_link {
   &.active {
     @include resume_active;
     @include active_styles;
@@ -89,18 +91,32 @@
 
 .about_link {
   @include link;
-  padding-right: $padding-link;
-  padding-left: $padding-link;
-  background-color: black;
-  border-radius: 0.25rem;
-  color: white;
+  @include small-down {
+    border-bottom: 0.3125rem solid transparent;
+  }
+}
 
-  &.active {
-    @include about_active;
-    @include active_styles;
+a.about_link {
+  @include small-down {
+    @include focus {
+      @include resume_active;
+    }
   }
 
-  @include focus {
-    @include about_active;
+  @include small-up {
+    padding-right: $padding-link;
+    padding-left: $padding-link;
+    background-color: black;
+    border-radius: 0.25rem;
+    color: white;
+
+    &.active {
+      @include about_active;
+      @include active_styles;
+    }
+
+    @include focus {
+      @include about_active;
+    }
   }
 }

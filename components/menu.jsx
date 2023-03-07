@@ -17,7 +17,7 @@ function Ready({ children }) {
 }
 
 export default function Menu() {
-  const desktop = useMediaQuery(520)
+  const smallUp = useMediaQuery(520)
   const router = useRouter()
   const isHome = router.pathname === '/'
 
@@ -57,7 +57,7 @@ export default function Menu() {
     <div {...containerProps}>
       <Wrap className={styles.wrap}>
         <Ready>
-          <Link {...linkProps}>{desktop ? <PaulHDesktop /> : <PaulHMobile />}</Link>
+          <Link {...linkProps}>{smallUp ? <PaulHDesktop /> : <PaulHMobile />}</Link>
         </Ready>
         <div className={styles.links}>
           {data.map(({ title, icon }, index) => {
@@ -67,7 +67,7 @@ export default function Menu() {
             }
             return (
               <Ready key={title + index}>
-                <Links {...props}>{desktop ? title : icon}</Links>
+                <Links {...props}>{smallUp ? title : icon}</Links>
               </Ready>
             )
           })}
