@@ -1,6 +1,36 @@
 @import 'styles/global/mixins';
 
-@mixin link {
+$border-radius-links: 2.375rem;
+
+@mixin mobile-link {
+  padding: 0.5rem 0.5rem;
+
+  &:first-child {
+    border-bottom-left-radius: $border-radius-links;
+    border-top-left-radius: $border-radius-links;
+    padding-left: 0.75rem;
+  }
+
+  &:last-child {
+    border-bottom-right-radius: $border-radius-links;
+    border-top-right-radius: $border-radius-links;
+    padding-right: 0.75rem;
+  }
+
+  @include focus {
+    background-color: black;
+  }
+
+  &.active {
+    background-color: black;
+  }
+
+  svg {
+    display: block;
+  }
+}
+
+@mixin desktop-link {
   padding-bottom: $padding-link;
   padding-top: $padding-link;
   text-decoration: none;
@@ -12,6 +42,11 @@
   svg {
     fill: currentColor;
   }
+
+  &.active {
+    user-select: none;
+    cursor: default;
+  }
 }
 
 @mixin about_active {
@@ -22,11 +57,6 @@
 
 @mixin resume_active {
   border-bottom-color: black;
-}
-
-@mixin active_styles {
-  user-select: none;
-  cursor: default;
 }
 
 .home_container {
@@ -54,13 +84,21 @@
 }
 
 .links {
-  gap: $padding-link * 2;
-  align-content: center;
   display: flex;
+
+  @include small-up {
+    gap: 1.5rem;
+  }
+
+  @include small-down {
+    background-color: rgba(black, 0.5);
+    border-radius: $border-radius-links;
+    border: 0.25rem solid;
+  }
 }
 
 .home_link {
-  @include link;
+  @include desktop-link;
   border-bottom: 0.3125rem solid transparent;
 
   &,
@@ -74,36 +112,31 @@
 }
 
 .resume_link {
-  @include link;
-  border-bottom: 0.3125rem solid transparent;
-}
-
-a.resume_link {
-  &.active {
-    @include resume_active;
-    @include active_styles;
-  }
-
-  @include focus {
-    @include resume_active;
-  }
-}
-
-.about_link {
-  @include link;
   @include small-down {
+    @include mobile-link;
+  }
+
+  @include small-up {
+    @include desktop-link;
     border-bottom: 0.3125rem solid transparent;
-  }
-}
 
-a.about_link {
-  @include small-down {
+    &.active {
+      @include resume_active;
+    }
+
     @include focus {
       @include resume_active;
     }
   }
+}
+
+.about_link {
+  @include small-down {
+    @include mobile-link;
+  }
 
   @include small-up {
+    @include desktop-link;
     padding-right: $padding-link;
     padding-left: $padding-link;
     background-color: black;
@@ -112,7 +145,6 @@ a.about_link {
 
     &.active {
       @include about_active;
-      @include active_styles;
     }
 
     @include focus {
