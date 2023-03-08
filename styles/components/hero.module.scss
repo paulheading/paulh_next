@@ -11,16 +11,10 @@
 
 .container.loop_60734 {
   @include hero-colors($c-hero-b...);
-
-  path[id='cursor'] {
-    fill: $c-hero-b3;
-    stroke: none;
-  }
 }
 
 .container {
   background-color: lightgrey;
-  grid-template: repeat(2, 1fr);
   height: $height-section;
   place-items: center;
   text-align: center;
@@ -52,4 +46,6 @@
 .svg {
   @include grid-position;
   transform: scale(2);
+  position: relative;
+  top: 2rem;
 }

@@ -6,20 +6,13 @@ import Wrap from 'components/wrap'
 import useMediaQuery from 'hooks/useMediaQuery'
 import PaulHDesktop from 'logos/paulh/desktop'
 import PaulHMobile from 'logos/paulh/mobile'
-import { useState, useEffect } from 'react'
+import Ready from 'components/ready'
 
-function Ready({ children }) {
-  const [loaded, setLoaded] = useState(false)
-
-  useEffect(() => setLoaded(true), [])
-
-  return loaded && children
-}
-
-export default function Menu() {
+function Menu({ hero }) {
   const smallUp = useMediaQuery(520)
   const router = useRouter()
   const isHome = router.pathname === '/'
+  const loop = 'loop_' + hero.id.slice(0, 5)
 
   function Links({ title, children }) {
     if (title === 'Home') return
@@ -31,7 +24,7 @@ export default function Menu() {
     }
 
     function className() {
-      let result = styles[title.toLowerCase() + '_link']
+      let result = `${styles.link} ${styles[title.toLowerCase() + '_link']}`
       if (isActive()) result += ' ' + styles.active
       return result
     }
@@ -53,13 +46,19 @@ export default function Menu() {
     className: isHome ? styles.home_container : styles.container,
   }
 
+  function linksStyles() {
+    let result = styles.links
+    if (isHome) result += ' ' + styles[loop]
+    return result
+  }
+
   return (
     <div {...containerProps}>
       <Wrap className={styles.wrap}>
         <Ready>
           <Link {...linkProps}>{smallUp ? <PaulHDesktop /> : <PaulHMobile />}</Link>
         </Ready>
-        <div className={styles.links}>
+        <div className={linksStyles()}>
           {data.map(({ title, icon }, index) => {
             const props = {
               title,
@@ -76,3 +75,5 @@ export default function Menu() {
     </div>
   )
 }
+
+export default Menu

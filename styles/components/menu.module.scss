@@ -2,6 +2,18 @@
 
 $border-radius-links: 2.375rem;
 
+@mixin mobile-focus($color) {
+  @include small-down {
+    @include focus {
+      background-color: $color;
+    }
+
+    &.active {
+      background-color: $color;
+    }
+  }
+}
+
 @mixin mobile-link {
   padding: 0.5rem 0.5rem;
 
@@ -15,14 +27,6 @@ $border-radius-links: 2.375rem;
     border-bottom-right-radius: $border-radius-links;
     border-top-right-radius: $border-radius-links;
     padding-right: 0.75rem;
-  }
-
-  @include focus {
-    background-color: black;
-  }
-
-  &.active {
-    background-color: black;
   }
 
   svg {
@@ -56,7 +60,7 @@ $border-radius-links: 2.375rem;
 }
 
 @mixin resume_active {
-  border-bottom-color: black;
+  border-bottom-color: currentColor;
 }
 
 .home_container {
@@ -91,9 +95,35 @@ $border-radius-links: 2.375rem;
   }
 
   @include small-down {
-    background-color: rgba(black, 0.5);
+    background-color: rgba(white, 50%);
     border-radius: $border-radius-links;
-    border: 0.25rem solid;
+    border: 0.25rem solid black;
+  }
+}
+
+@mixin link-color($color) {
+  @include small-down {
+    background-color: $color;
+  }
+}
+
+.link {
+  @include mobile-focus($c-gray-5);
+}
+
+.links.loop_606d7 {
+  @include link-color($c-hero-a2);
+
+  .link {
+    @include mobile-focus($c-hero-a1);
+  }
+}
+
+.links.loop_60734 {
+  @include link-color($c-hero-b2);
+
+  .link {
+    @include mobile-focus($c-hero-b1);
   }
 }
 

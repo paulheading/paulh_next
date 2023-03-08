@@ -3,54 +3,7 @@
   width="320"
   height="320"
   viewBox="0 0 320 320">
-  <g>
-    <g id="list" display="none">
-      <path
-        id="row_5"
-        d="M264.2,228H55.8v-18.3h208.4L264.2,228L264.2,228z"
-        display="inline"
-        fill="none"
-        stroke="#66FFE5"
-        stroke-width="2"
-        stroke-linecap="square"
-        stroke-miterlimit="10" />
-      <path
-        id="row_4"
-        d="M264.2,198H55.8v-18.3h208.4L264.2,198L264.2,198z"
-        display="inline"
-        fill="none"
-        stroke="#66FFE5"
-        stroke-width="2"
-        stroke-linecap="square"
-        stroke-miterlimit="10" />
-      <path
-        id="row_3"
-        d="M264.2,168H55.8v-18.3h208.4L264.2,168L264.2,168z"
-        display="inline"
-        fill="#66FFE5"
-        stroke="#66FFE5"
-        stroke-width="2"
-        stroke-linecap="square"
-        stroke-miterlimit="10" />
-      <path
-        id="row_2"
-        d="M264.2,139.2H55.8v-18.3h208.4L264.2,139.2L264.2,139.2z"
-        display="inline"
-        fill="none"
-        stroke="#66FFE5"
-        stroke-width="2"
-        stroke-linecap="square"
-        stroke-miterlimit="10" />
-      <path
-        id="row_1"
-        d="M264.2,110.4H55.8V92h208.4L264.2,110.4L264.2,110.4z"
-        display="inline"
-        fill="none"
-        stroke="#66FFE5"
-        stroke-width="2"
-        stroke-linecap="square"
-        stroke-miterlimit="10" />
-    </g>
+  <g id="content">
     <g id="gantt" display="none">
       <path
         id="bar_5"
@@ -74,7 +27,7 @@
         id="bar_3"
         d="M209.9,168h-140v-18.3h140V168z"
         display="inline"
-        fill="#66FFE5"
+        fill="none"
         stroke="#66FFE5"
         stroke-width="2"
         stroke-linecap="square"
@@ -101,41 +54,43 @@
     <g id="map">
       <path
         id="hall"
-        d="M100.2,121.6 c0-16.2-13.1-29.4-29.4-29.4s-29.3,13.2-29.3,29.4c0,16.2,13.1,29.4,29.4,29.4v17.6h46.9v-46.9h-17.6V121.6z"
+        d="M100.2,123.8 c0-16.2-13.1-29.4-29.4-29.4s-29.3,13.2-29.3,29.4s13.1,29.4,29.4,29.4v17.6h46.9V124h-17.6V123.8z"
         fill="none"
         stroke="#66FFE5"
         stroke-width="2"
         stroke-miterlimit="10" />
       <path
         id="garden"
-        d="M212.5,139.2 c0,16.2,13.1,29.4,29.4,29.4c16.2,0,29.4-13.1,29.4-29.4c0-16.2-13.1-29.4-29.4-29.4V92.2H195v46.9L212.5,139.2L212.5,139.2z"
+        d="M212.5,145.4 c0,16.2,13.1,29.4,29.4,29.4c16.2,0,29.4-13.1,29.4-29.4c0-16.2-13.1-29.4-29.4-29.4V98.4H195v46.9L212.5,145.4L212.5,145.4z"
         fill="none"
         stroke="#66FFE5"
         stroke-width="2"
         stroke-miterlimit="10" />
       <path
         id="corridor"
-        d="M215.5,241.3v-35.2h35.2v35.2 H215.5z"
-        fill="none"
-        stroke="#66FFE5"
-        stroke-width="2"
-        stroke-miterlimit="10" />
-      <path
-        id="lobby"
-        d="M139.7,127.4V92.2h35.2v35.2H139.7z"
+        d="M209.5,224.6v-35.2h35.2v35.2H209.5z"
         fill="none"
         stroke="#66FFE5"
         stroke-width="2"
         stroke-miterlimit="10" />
       <path
         id="sound"
-        d="M157.3,146.6l47.6,82.5h-95.2L157.3,146.6z"
-        opacity="0"
+        d="M139.7,123.7V88.4h35.2v35.2C174.9,123.6,139.7,123.6,139.7,123.7z"
         fill="#66FFE5" />
       <path
+        id="lobby"
+        d="M139.7,123.7V88.4h35.2v35.2 C174.9,123.6,139.7,123.6,139.7,123.7z"
+        fill="none"
+        stroke="#66FFE5"
+        stroke-width="2"
+        stroke-miterlimit="10" />
+      <path
         id="stage"
-        d="M157.3,157.9l38.1,66h-76.1L157.3,157.9z"
-        fill="#66FFE5" />
+        d="M157.3,147.1l35,60h-70L157.3,147.1z"
+        fill="none"
+        stroke="#66FFE5"
+        stroke-width="2"
+        stroke-miterlimit="10" />
     </g>
     <path
       id="marker"
@@ -147,14 +102,7 @@
       stroke-linecap="square"
       stroke-miterlimit="10" />
   </g>
-  <g id="guides" display="none">
-    <rect
-      id="title"
-      y="150"
-      width="320"
-      height="28"
-      display="inline"
-      opacity="0.5"
-      fill="#FF00FF" />
+  <g id="guides" display="none" opacity="0.5">
+    <path id="title" d="M0,133h320v28H0V133z" display="inline" fill="#FF00FF" />
   </g>
 </svg>

@@ -18,7 +18,7 @@ export default function Main({ children, heroes, projects, spotify, gem, npm }) 
 
   return (
     <div>
-      <Menu />
+      <Menu hero={hero} />
       {children}
       <Marquee hero={hero} />
       <Desktop {...desktopProps} />

@@ -21,10 +21,6 @@
 ) {
   background: linear-gradient(0deg, $a 0%, $b 100%);
 
-  path {
-    stroke: $c;
-  }
-
   a {
     background-color: $c;
 
