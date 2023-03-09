@@ -10,11 +10,6 @@ const about = {
   desc: "I built this site using React.js, GSAP for animations, Netlify for form handling and several external api's. I use Trello as my CMS and pull data from Spotify, Medium, Github and TeamTreehouse",
 }
 
-const blog = {
-  title: 'Paul Heading | Blog | Full Stack Designer',
-  desc: "I'm still writing this bit... You know how it is. I fully intend to begin writing tantilising design nuggets over at https://paulheading.medium.com/",
-}
-
 const resume = {
   title: 'Paul Heading | Resume | Full Stack Designer',
   keywords: 'portfolio, front end developer, front end designer, bourne st, team treehouse, london',
@@ -27,4 +22,4 @@ const notfound = {
   desc: 'Oh no... this page is missing. Maybe the url is incorrect? If something looks broken, please email me: hello@paulh.biz',
 }
 
-export { home, about, blog, resume, notfound }
+export { home, about, resume, notfound }
