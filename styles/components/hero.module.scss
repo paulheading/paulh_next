@@ -48,4 +48,8 @@
   transform: scale(2);
   position: relative;
   top: 2rem;
+
+  @include small-down {
+    opacity: 0.7;
+  }
 }

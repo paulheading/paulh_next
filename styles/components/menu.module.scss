@@ -63,6 +63,12 @@ $border-radius-links: 2.375rem;
   border-bottom-color: currentColor;
 }
 
+@mixin link-color($color) {
+  @include small-down {
+    background-color: $color;
+  }
+}
+
 .home_container {
   padding-right: 2rem;
   padding-left: 2rem;
@@ -101,18 +107,12 @@ $border-radius-links: 2.375rem;
   }
 }
 
-@mixin link-color($color) {
-  @include small-down {
-    background-color: $color;
-  }
-}
-
 .link {
   @include mobile-focus($c-gray-5);
 }
 
 .links.loop_606d7 {
-  @include link-color($c-hero-a2);
+  @include link-color($c-hero-a3);
 
   .link {
     @include mobile-focus($c-hero-a1);
@@ -120,7 +120,7 @@ $border-radius-links: 2.375rem;
 }
 
 .links.loop_60734 {
-  @include link-color($c-hero-b2);
+  @include link-color($c-hero-b3);
 
   .link {
     @include mobile-focus($c-hero-b1);
