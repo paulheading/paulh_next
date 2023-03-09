@@ -3,10 +3,15 @@ import Layout from 'layouts/main'
 import { getLayoutData } from 'scripts'
 import Content from 'components/content'
 import Wrap from 'components/wrap'
+import { about as head } from 'data/seo'
 
 function About(props) {
+  const layoutProps = {
+    ...props,
+    head,
+  }
   return (
-    <Layout {...props}>
+    <Layout {...layoutProps}>
       <Content>
         <Wrap>
           <h1 className={styles.title}>About</h1>
