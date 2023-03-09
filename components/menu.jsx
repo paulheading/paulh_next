@@ -14,27 +14,23 @@ function Menu({ hero }) {
   const isHome = router.pathname === '/'
   const loop = 'loop_' + hero.id.slice(0, 5)
 
-  function Links({ title, children }) {
+  function Content({ title, children }) {
     if (title === 'Home') return
 
-    function isActive() {
-      let active = false
-      if ('/' + title.toLowerCase() === router.pathname) active = true
-      return active
-    }
+    const isActive = () => '/' + title.toLowerCase() === router.pathname
 
-    function className() {
-      let result = `${styles.link} ${styles[title.toLowerCase() + '_link']}`
+    function contentStyles() {
+      let result = styles.link + ' ' + styles[title.toLowerCase() + '_link']
       if (isActive()) result += ' ' + styles.active
       return result
     }
 
     const props = {
       href: title.toLowerCase(),
-      className: className(),
+      className: contentStyles(),
     }
 
-    return isActive() ? <span className={className()}>{children}</span> : <Link {...props}>{children}</Link>
+    return isActive() ? <span className={contentStyles()}>{children}</span> : <Link {...props}>{children}</Link>
   }
 
   const linkProps = {
@@ -42,9 +38,7 @@ function Menu({ hero }) {
     href: '/',
   }
 
-  const containerProps = {
-    className: isHome ? styles.home_container : styles.container,
-  }
+  const containerStyles = isHome ? styles.home_container : styles.container
 
   function linksStyles() {
     let result = styles.links
@@ -52,25 +46,25 @@ function Menu({ hero }) {
     return result
   }
 
+  function Links({ title, icon }, index) {
+    const props = {
+      title,
+      index,
+    }
+    return (
+      <Ready key={title + index}>
+        <Content {...props}>{smallUp ? title : icon}</Content>
+      </Ready>
+    )
+  }
+
   return (
-    <div {...containerProps}>
+    <div className={containerStyles}>
       <Wrap className={styles.wrap}>
         <Ready>
           <Link {...linkProps}>{smallUp ? <PaulHDesktop /> : <PaulHMobile />}</Link>
         </Ready>
-        <div className={linksStyles()}>
-          {data.map(({ title, icon }, index) => {
-            const props = {
-              title,
-              index,
-            }
-            return (
-              <Ready key={title + index}>
-                <Links {...props}>{smallUp ? title : icon}</Links>
-              </Ready>
-            )
-          })}
-        </div>
+        <div className={linksStyles()}>{data.map(Links)}</div>
       </Wrap>
     </div>
   )
