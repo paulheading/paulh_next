@@ -99,7 +99,7 @@
 .textarea {
   @include form_input;
   grid-column: 1 / 3;
-  height: 12rem;
+  height: 10rem;
   resize: none;
 
   @include large-up {
@@ -126,18 +126,10 @@
 
 .button.close {
   background-color: $c-red;
-
-  @include focus {
-    // @include double-box($topbar, $c-red);
-  }
 }
 
 .button.minimise {
   background-color: $c-yellow;
-
-  @include focus {
-    // @include double-box($topbar, $c-yellow);
-  }
 }
 
 .tag {
