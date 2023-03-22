@@ -1,6 +1,6 @@
 @import 'styles/global/mixins';
 
-$border-radius-links: 2.375rem;
+$border-radius-links: 0.25rem;
 
 @mixin mobile-focus($color) {
   @include small-down {
@@ -15,19 +15,8 @@ $border-radius-links: 2.375rem;
 }
 
 @mixin mobile-link {
-  padding: 0.5rem 0.5rem;
-
-  &:first-child {
-    border-bottom-left-radius: $border-radius-links;
-    border-top-left-radius: $border-radius-links;
-    padding-left: 0.75rem;
-  }
-
-  &:last-child {
-    border-bottom-right-radius: $border-radius-links;
-    border-top-right-radius: $border-radius-links;
-    padding-right: 0.75rem;
-  }
+  border-radius: $border-radius-links;
+  padding: 0.5rem;
 
   svg {
     display: block;
@@ -53,10 +42,10 @@ $border-radius-links: 2.375rem;
   }
 }
 
-@mixin about_active {
-  @include single-box(black);
-  background-color: white;
-  color: black;
+@mixin about_active($a, $b) {
+  @include single-box($a);
+  background-color: $b;
+  color: $a;
 }
 
 @mixin resume_active {
@@ -77,6 +66,14 @@ $border-radius-links: 2.375rem;
   z-index: 2;
   right: 0;
   left: 0;
+
+  &.loop_606d7 {
+    color: black;
+  }
+
+  &.loop_60734 {
+    color: black;
+  }
 }
 
 .container {
@@ -95,35 +92,22 @@ $border-radius-links: 2.375rem;
 
 .links {
   display: flex;
+  gap: 0.5rem;
 
   @include small-up {
     gap: 1.5rem;
-  }
-
-  @include small-down {
-    background-color: rgba(white, 50%);
-    border-radius: $border-radius-links;
-    border: 0.25rem solid black;
   }
 }
 
 .link {
   @include mobile-focus($c-gray-5);
-}
 
-.links.loop_606d7 {
-  @include link-color($c-hero-a3);
-
-  .link {
-    @include mobile-focus($c-hero-a1);
+  &.loop_606d7 {
+    @include mobile-focus($c-606d7-b);
   }
-}
 
-.links.loop_60734 {
-  @include link-color($c-hero-b3);
-
-  .link {
-    @include mobile-focus($c-hero-b1);
+  &.loop_60734 {
+    @include mobile-focus($c-60734-b);
   }
 }
 
@@ -135,7 +119,9 @@ $border-radius-links: 2.375rem;
   svg {
     display: block;
   }
+}
 
+a.home_link {
   @include focus {
     @include resume_active;
   }
@@ -161,24 +147,28 @@ $border-radius-links: 2.375rem;
 }
 
 .about_link {
+  $background-color: black;
+  $color: white;
+
   @include small-down {
     @include mobile-link;
+    border-radius: 50%;
   }
 
   @include small-up {
     @include desktop-link;
+    background-color: $background-color;
     padding-right: $padding-link;
     padding-left: $padding-link;
-    background-color: black;
     border-radius: 0.25rem;
-    color: white;
+    color: $color;
 
     &.active {
-      @include about_active;
+      @include about_active(black, white);
     }
 
     @include focus {
-      @include about_active;
+      @include about_active(black, white);
     }
   }
 }

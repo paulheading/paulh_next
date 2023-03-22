@@ -5,14 +5,6 @@
   grid-row: 1/2;
 }
 
-.container.loop_606d7 {
-  @include hero-colors($c-hero-a...);
-}
-
-.container.loop_60734 {
-  @include hero-colors($c-hero-b...);
-}
-
 .container {
   background-color: lightgrey;
   height: $height-section;
@@ -20,18 +12,21 @@
   text-align: center;
   overflow: hidden;
   display: grid;
-}
 
-.name a {
-  line-height: $line-height;
-  letter-spacing: -0.01em;
-  text-decoration: none;
+  &.loop_606d7 {
+    background-color: $c-606d7-a;
+  }
+
+  &.loop_60734 {
+    background-color: $c-60734-a;
+  }
 }
 
 .name {
   @include grid-position;
   padding-right: 2rem;
   padding-left: 2rem;
+  position: relative;
   z-index: 2;
 
   @include small-down {
@@ -41,15 +36,37 @@
 
 .link {
   padding: 0.375rem;
+
+  @include focus-visible {
+    outline: none;
+  }
+
+  &.loop_606d7 {
+    @include focus-visible {
+      background-color: $c-606d7-b;
+    }
+  }
+
+  &.loop_60734 {
+    @include focus-visible {
+      background-color: $c-60734-b;
+    }
+  }
 }
 
-.svg {
+@mixin svg {
   @include grid-position;
   transform: scale(2);
   position: relative;
-  top: 2rem;
+  top: 1rem;
+}
 
-  @include small-down {
-    opacity: 0.7;
-  }
+.front {
+  @include svg;
+  z-index: 3;
+}
+
+.back {
+  @include svg;
+  z-index: 1;
 }

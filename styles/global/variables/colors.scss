@@ -38,16 +38,14 @@ $c-sky: #87cefa;
 $c-lemon: lightgoldenrodyellow;
 $c-gold: #f5c356;
 
-$c-hero-a1: hsl(230, 100%, 60%);
-$c-hero-a2: hsl(150, 100%, 60%);
-$c-hero-a3: hsl(170, 100%, 70%);
+$c-606d7-a: #6db946;
+$c-606d7-b: #e1f042;
 
-$c-hero-b1: hsl(45, 100%, 50%);
-$c-hero-b2: hsl(1, 100%, 65%);
-$c-hero-b3: hsl(50, 100%, 70%);
+$c-60734-a: #f2800d;
+$c-60734-b: #ffea00;
 
-$c-hero-a: $c-hero-a1, $c-hero-a2, $c-hero-a3;
-$c-hero-b: $c-hero-b1, $c-hero-b2, $c-hero-b3;
+$c-606d7-group: $c-606d7-a, $c-606d7-b;
+$c-60734-group: $c-60734-a, $c-60734-b;
 
 $c-status-neutral-fade: hsl(205, 100%, 95%);
 $c-status-neutral-light: hsl(205, 100%, 75%);

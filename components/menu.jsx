@@ -13,6 +13,16 @@ function Menu({ hero }) {
   const router = useRouter()
   const isHome = router.pathname === '/'
   const loop = 'loop_' + hero.id.slice(0, 5)
+  const containerStyles = isHome ? styles.home_container + ' ' + styles[loop] : styles.container
+
+  function Logo() {
+    const props = {
+      className: styles.home_link,
+      href: '/',
+    }
+
+    return <Ready>{isHome ? <span className={props.className}>{smallUp ? <PaulHDesktop /> : <PaulHMobile />}</span> : <Link {...props}>{smallUp ? <PaulHDesktop /> : <PaulHMobile />}</Link>}</Ready>
+  }
 
   function Content({ title, children }) {
     if (title === 'Home') return
@@ -22,6 +32,7 @@ function Menu({ hero }) {
     function contentStyles() {
       let result = styles.link + ' ' + styles[title.toLowerCase() + '_link']
       if (isActive()) result += ' ' + styles.active
+      if (isHome) result += ' ' + styles[loop]
       return result
     }
 
@@ -30,20 +41,7 @@ function Menu({ hero }) {
       className: contentStyles(),
     }
 
-    return isActive() ? <span className={contentStyles()}>{children}</span> : <Link {...props}>{children}</Link>
-  }
-
-  const linkProps = {
-    className: styles.home_link,
-    href: '/',
-  }
-
-  const containerStyles = isHome ? styles.home_container : styles.container
-
-  function linksStyles() {
-    let result = styles.links
-    if (isHome) result += ' ' + styles[loop]
-    return result
+    return isActive() ? <span className={props.className}>{children}</span> : <Link {...props}>{children}</Link>
   }
 
   function Links({ title, icon }, index) {
@@ -61,10 +59,8 @@ function Menu({ hero }) {
   return (
     <div className={containerStyles}>
       <Wrap className={styles.wrap}>
-        <Ready>
-          <Link {...linkProps}>{smallUp ? <PaulHDesktop /> : <PaulHMobile />}</Link>
-        </Ready>
-        <div className={linksStyles()}>{data.map(Links)}</div>
+        <Logo />
+        <div className={styles.links}>{data.map(Links)}</div>
       </Wrap>
     </div>
   )

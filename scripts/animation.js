@@ -1,7 +1,10 @@
 import { SteppedEase, gsap } from 'gsap'
 import { Draggable } from 'gsap/dist/Draggable'
+
 import duration from 'data/duration'
-import hero from 'scripts/animation/hero'
+
+import loop_60734 from 'scripts/animation/60734'
+import loop_606d7 from 'scripts/animation/606d7'
 
 const marquee = {}
 
@@ -81,5 +84,10 @@ clock.blink = (target) => {
   const { next } = clock
   tl.to(target, next(0.5)).to(target, next(1))
 }
+
+const hero = {}
+
+hero.loop_60734 = loop_60734
+hero.loop_606d7 = loop_606d7
 
 export { marquee, window, wifi, clock, hero }
