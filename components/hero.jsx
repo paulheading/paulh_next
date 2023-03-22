@@ -46,6 +46,8 @@ function Hero({ hero }) {
     )
   })
 
+  Svg.displayName = 'Svg'
+
   return (
     <div className={containerStyles}>
       <Svg {...frontProps} />
