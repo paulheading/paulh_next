@@ -8,94 +8,88 @@
     d="M177.5,212.5h-120v-15h120V212.5z"
     display="none"
     fill="none"
-    stroke="#E1F042"
+    stroke="#F58A3D"
     stroke-width="6"
     stroke-linecap="square"
-    stroke-linejoin="round"
     stroke-miterlimit="10" />
   <path
     id="bar_3"
     d="M262.5,182.5h-140v-15h140V182.5z"
     display="none"
     fill="none"
-    stroke="#E1F042"
+    stroke="#F58A3D"
     stroke-width="6"
     stroke-linecap="square"
-    stroke-linejoin="round"
     stroke-miterlimit="10" />
   <path
     id="bar_2"
     d="M212.5,152.5h-140v-15h140V152.5z"
     display="none"
     fill="none"
-    stroke="#E1F042"
+    stroke="#F58A3D"
     stroke-width="6"
     stroke-linecap="square"
-    stroke-linejoin="round"
     stroke-miterlimit="10" />
   <path
     id="bar_1"
     d="M262.5,122.5h-160v-15h160V122.5z"
     display="none"
     fill="none"
-    stroke="#E1F042"
+    stroke="#F58A3D"
     stroke-width="6"
     stroke-linecap="square"
-    stroke-linejoin="round"
     stroke-miterlimit="10" />
   <path
     id="marker"
     d="M160,77.5v165"
     display="none"
     fill="none"
-    stroke="#E1F042"
-    stroke-width="6"
+    stroke="#F58A3D"
+    stroke-width="3"
     stroke-linecap="square"
-    stroke-linejoin="round"
     stroke-miterlimit="10" />
   <path
-    id="sound"
-    d="M142.4,136.2c-1.9,0-3.5-1.6-3.5-3.5V97.3c0-1.9,1.6-3.5,3.5-3.5h35.2	c1.9,0,3.5,1.6,3.5,3.5v35.2c0,1.9-1.6,3.5-3.5,3.5c-13.1,0-33,0-34.9,0.1C142.6,136.1,142.5,136.2,142.4,136.2z"
-    display="none"
-    fill="#E1F042" />
-  <path
     id="hall"
-    d="M100.6,136.2c0-16.2-13.1-29.4-29.4-29.4S41.8,120,41.8,136.2s13.1,29.4,29.4,29.4v17.6h46.9v-46.8h-17.6V136.2z"
+    d="M100.6,136.2c0-16.2-13.1-29.4-29.4-29.4S41.8,120,41.8,136.2s13.1,29.4,29.4,29.4v17.6h46.9v-46.8h-17.6L100.6,136.2L100.6,136.2z"
     display="none"
     fill="none"
-    stroke="#E1F042"
+    stroke="#F58A3D"
     stroke-width="6"
     stroke-linecap="square"
-    stroke-linejoin="round"
     stroke-miterlimit="10" />
   <path
     id="garden"
     d="M219.4,163.8c0,16.2,13.1,29.4,29.4,29.4c16.2,0,29.4-13.1,29.4-29.4c0-16.2-13.1-29.4-29.4-29.4v-17.6h-46.9v46.9L219.4,163.8	L219.4,163.8z"
     display="none"
     fill="none"
-    stroke="#E1F042"
+    stroke="#F58A3D"
     stroke-width="6"
     stroke-linecap="square"
-    stroke-linejoin="round"
-    stroke-miterlimit="10" />
-  <path
-    id="lobby"
-    d="M142.4,132.6V97.4h35.2v35.2C177.6,132.6,142.4,132.6,142.4,132.6z"
-    display="none"
-    fill="none"
-    stroke="#E1F042"
-    stroke-width="6"
-    stroke-linecap="square"
-    stroke-linejoin="round"
     stroke-miterlimit="10" />
   <path
     id="stage"
     d="M160,165l35,60h-70L160,165z"
     display="none"
     fill="none"
-    stroke="#E1F042"
+    stroke="#F58A3D"
     stroke-width="6"
     stroke-linecap="square"
-    stroke-linejoin="round"
+    stroke-miterlimit="10" />
+  <rect
+    id="sound"
+    x="139.4"
+    y="94.4"
+    width="41.2"
+    height="41.2"
+    display="none"
+    fill="#F58A3D" />
+  <path
+    id="lobby"
+    d="M177.6,132.6h-35.2V97.4h35.2V132.6z"
+    display="none"
+    fill="none"
+    stroke="#F58A3D"
+    stroke-width="6"
+    stroke-linecap="square"
     stroke-miterlimit="10" />
 </svg>

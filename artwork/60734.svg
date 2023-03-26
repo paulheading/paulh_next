@@ -9,16 +9,15 @@
     display="none"
     fill="none"
     stroke="#FFEA00"
-    stroke-width="7"
-    stroke-linecap="square"
-    stroke-linejoin="round" />
+    stroke-width="6"
+    stroke-linecap="square" />
   <path
     id="left_squiggle"
-    d="M62,100	h63l-63,30h63l-63,30h63l-63,30h63l-63,30h63"
+    d="M62,100h63l-63,30h63l-63,30h63l-63,30h63l-63,30h63"
     display="none"
     fill="none"
     stroke="#FFEA00"
-    stroke-width="7"
+    stroke-width="6"
     stroke-linecap="square"
     stroke-linejoin="round" />
   <path
@@ -27,16 +26,15 @@
     display="none"
     fill="none"
     stroke="#FFEA00"
-    stroke-width="7"
+    stroke-width="6"
     stroke-linecap="square"
     stroke-linejoin="round" />
   <path
     id="box"
-    d="M261,220H148V100	h113V220z"
+    d="M261,220H148V100h113V220z"
     display="none"
     fill="none"
     stroke="#FFEA00"
-    stroke-width="7"
-    stroke-linecap="square"
-    stroke-linejoin="round" />
+    stroke-width="6"
+    stroke-linecap="square" />
 </svg>
