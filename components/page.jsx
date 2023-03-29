@@ -47,7 +47,7 @@ function Page({ projects, roles, education, treehouse }) {
           <h3 className={styles.title_wrap}>Biography</h3>
           <div>
             <p>
-              Hi 👋 I&apos;ve been a Full Stack Designer since 2020. I work in the <strong>Digital Products</strong> team at the <a href="https://barbican.org.uk">Barbican</a> and write javascript for front-end frameworks such as Vue.js and React.
+              Hi 👋 I&apos;ve been a Front End Developer since November 2019. I work in the <strong>Digital Products</strong> team at the <a href="https://barbican.org.uk">Barbican</a> and write javascript for front-end frameworks such as Vue.js and React.
             </p>
           </div>
         </div>
