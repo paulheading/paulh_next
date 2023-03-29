@@ -28,6 +28,10 @@
   padding-left: 2rem;
   position: relative;
   z-index: 2;
+
+  @include small-down {
+    letter-spacing: -0.01em;
+  }
 }
 
 .link {

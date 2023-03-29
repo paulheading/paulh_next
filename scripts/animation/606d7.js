@@ -42,7 +42,7 @@ function loop_606d7(a, b) {
 
   const opacity = 0
 
-  const scale = 1.25
+  const scale = 1.5
 
   const clearProps = 'all'
 
