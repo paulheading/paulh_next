@@ -8,7 +8,7 @@
     d="M177.5,221.5h-120v-15h120V221.5z"
     display="none"
     fill="none"
-    stroke="#efe0ff"
+    stroke="#EFE0FF"
     stroke-width="5"
     stroke-linecap="square"
     stroke-miterlimit="10" />
@@ -17,7 +17,7 @@
     d="M262.5,185.5h-140v-15h140V185.5z"
     display="none"
     fill="none"
-    stroke="#efe0ff"
+    stroke="#EFE0FF"
     stroke-width="5"
     stroke-linecap="square"
     stroke-miterlimit="10" />
@@ -26,7 +26,7 @@
     d="M212.5,149.5h-140v-15h140V149.5z"
     display="none"
     fill="none"
-    stroke="#efe0ff"
+    stroke="#EFE0FF"
     stroke-width="5"
     stroke-linecap="square"
     stroke-miterlimit="10" />
@@ -35,16 +35,16 @@
     d="M262.5,113.5h-160v-15h160V113.5z"
     display="none"
     fill="none"
-    stroke="#efe0ff"
+    stroke="#EFE0FF"
     stroke-width="5"
     stroke-linecap="square"
     stroke-miterlimit="10" />
   <path
     id="marker"
-    d="M160,60v200"
+    d="M160,65v190"
     display="none"
     fill="none"
-    stroke="#efe0ff"
+    stroke="#EFE0FF"
     stroke-width="4"
     stroke-linecap="square"
     stroke-miterlimit="10" />
@@ -53,7 +53,7 @@
     d="M219.4,163.8c0,16.2,13.1,29.4,29.4,29.4c16.2,0,29.4-13.1,29.4-29.4c0-16.2-13.1-29.4-29.4-29.4v-17.6h-46.9v46.9L219.4,163.8	L219.4,163.8z"
     display="none"
     fill="none"
-    stroke="#efe0ff"
+    stroke="#EFE0FF"
     stroke-width="5"
     stroke-linecap="square"
     stroke-miterlimit="10" />
@@ -62,7 +62,7 @@
     d="M100.6,136.2c0-16.2-13.1-29.4-29.4-29.4c-16.2,0-29.4,13.1-29.4,29.4c0,16.2,13.1,29.4,29.4,29.4v17.6h46.9v-46.9L100.6,136.2	L100.6,136.2z"
     display="none"
     fill="none"
-    stroke="#efe0ff"
+    stroke="#EFE0FF"
     stroke-width="5"
     stroke-linecap="square"
     stroke-miterlimit="10" />
@@ -71,7 +71,7 @@
     d="M160,165l35,60h-70L160,165z"
     display="none"
     fill="none"
-    stroke="#efe0ff"
+    stroke="#EFE0FF"
     stroke-width="5"
     stroke-linecap="square"
     stroke-miterlimit="10" />
@@ -79,13 +79,13 @@
     id="sound"
     d="M177.6,132.6h-35.2V97.4h35.2V132.6z"
     display="none"
-    fill="#efe0ff" />
+    fill="#EFE0FF" />
   <path
     id="lobby"
     d="M177.6,132.6h-35.2V97.4h35.2V132.6z"
     display="none"
     fill="none"
-    stroke="#efe0ff"
+    stroke="#EFE0FF"
     stroke-width="5"
     stroke-linecap="square"
     stroke-miterlimit="10" />
