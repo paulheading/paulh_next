@@ -41,7 +41,7 @@
     stroke-miterlimit="10" />
   <path
     id="marker"
-    d="M160,61v190"
+    d="M160,74v164"
     display="none"
     fill="none"
     stroke="#F5EBFF"
