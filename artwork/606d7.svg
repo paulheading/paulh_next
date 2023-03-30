@@ -5,7 +5,7 @@
   viewBox="0 0 320 320">
   <path
     id="bar_4"
-    d="M177.5,221.5h-120v-15h120V221.5z"
+    d="M177.5,217.5h-120v-15h120V217.5z"
     display="none"
     fill="none"
     stroke="#EFE0FF"
@@ -14,7 +14,7 @@
     stroke-miterlimit="10" />
   <path
     id="bar_3"
-    d="M262.5,185.5h-140v-15h140V185.5z"
+    d="M262.5,181.5h-140v-15h140V181.5z"
     display="none"
     fill="none"
     stroke="#EFE0FF"
@@ -23,7 +23,7 @@
     stroke-miterlimit="10" />
   <path
     id="bar_2"
-    d="M212.5,149.5h-140v-15h140V149.5z"
+    d="M212.5,145.5h-140v-15h140V145.5z"
     display="none"
     fill="none"
     stroke="#EFE0FF"
@@ -32,7 +32,7 @@
     stroke-miterlimit="10" />
   <path
     id="bar_1"
-    d="M262.5,113.5h-160v-15h160V113.5z"
+    d="M262.5,109.5h-160v-15h160V109.5z"
     display="none"
     fill="none"
     stroke="#EFE0FF"
@@ -41,7 +41,7 @@
     stroke-miterlimit="10" />
   <path
     id="marker"
-    d="M160,65v190"
+    d="M160,61v190"
     display="none"
     fill="none"
     stroke="#EFE0FF"
@@ -50,7 +50,7 @@
     stroke-miterlimit="10" />
   <path
     id="garden"
-    d="M219.4,163.8c0,16.2,13.1,29.4,29.4,29.4c16.2,0,29.4-13.1,29.4-29.4c0-16.2-13.1-29.4-29.4-29.4v-17.6h-46.9v46.9L219.4,163.8	L219.4,163.8z"
+    d="M219.4,159.8c0,16.2,13.1,29.4,29.4,29.4c16.2,0,29.4-13.1,29.4-29.4c0-16.2-13.1-29.4-29.4-29.4v-17.6h-46.9v46.9L219.4,159.8	L219.4,159.8z"
     display="none"
     fill="none"
     stroke="#EFE0FF"
@@ -59,7 +59,7 @@
     stroke-miterlimit="10" />
   <path
     id="hall"
-    d="M100.6,136.2c0-16.2-13.1-29.4-29.4-29.4c-16.2,0-29.4,13.1-29.4,29.4c0,16.2,13.1,29.4,29.4,29.4v17.6h46.9v-46.9L100.6,136.2	L100.6,136.2z"
+    d="M100.6,132.2c0-16.2-13.1-29.4-29.4-29.4c-16.2,0-29.4,13.1-29.4,29.4c0,16.2,13.1,29.4,29.4,29.4v17.6h46.9v-46.9L100.6,132.2	L100.6,132.2z"
     display="none"
     fill="none"
     stroke="#EFE0FF"
@@ -68,7 +68,7 @@
     stroke-miterlimit="10" />
   <path
     id="stage"
-    d="M160,165l35,60h-70L160,165z"
+    d="M160,161l35,60h-70L160,161z"
     display="none"
     fill="none"
     stroke="#EFE0FF"
@@ -77,12 +77,12 @@
     stroke-miterlimit="10" />
   <path
     id="sound"
-    d="M177.6,132.6h-35.2V97.4h35.2V132.6z"
+    d="M177.6,128.6h-35.2V93.4h35.2V128.6z"
     display="none"
     fill="#EFE0FF" />
   <path
     id="lobby"
-    d="M177.6,132.6h-35.2V97.4h35.2V132.6z"
+    d="M177.6,128.6h-35.2V93.4h35.2V128.6z"
     display="none"
     fill="none"
     stroke="#EFE0FF"
