@@ -5,7 +5,7 @@
   viewBox="0 0 320 320">
   <path
     id="bar_4"
-    d="M177.5,217.5h-120v-15h120V217.5z"
+    d="M177.5,216h-120v-12h120V216z"
     display="none"
     fill="none"
     stroke="#F5EBFF"
@@ -14,7 +14,7 @@
     stroke-miterlimit="10" />
   <path
     id="bar_3"
-    d="M262.5,181.5h-140v-15h140V181.5z"
+    d="M272.5,180h-160v-12h160V180z"
     display="none"
     fill="none"
     stroke="#F5EBFF"
@@ -23,7 +23,7 @@
     stroke-miterlimit="10" />
   <path
     id="bar_2"
-    d="M212.5,145.5h-140v-15h140V145.5z"
+    d="M222.5,144h-160v-12h160V144z"
     display="none"
     fill="none"
     stroke="#F5EBFF"
@@ -32,7 +32,7 @@
     stroke-miterlimit="10" />
   <path
     id="bar_1"
-    d="M262.5,109.5h-160v-15h160V109.5z"
+    d="M262.5,108h-160V96h160V108z"
     display="none"
     fill="none"
     stroke="#F5EBFF"

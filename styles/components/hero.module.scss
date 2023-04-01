@@ -36,6 +36,11 @@
   @include small-down {
     letter-spacing: -0.01em;
     text-decoration: none;
+    line-height: 1.4;
+
+    @include focus-visible {
+      text-decoration: underline;
+    }
   }
 
   @include focus-visible {
@@ -43,12 +48,20 @@
   }
 
   &.loop_606d7 {
+    @include small-down {
+      background-color: $c-606d7-b;
+    }
+
     @include focus-visible {
       background-color: $c-606d7-b;
     }
   }
 
   &.loop_60734 {
+    @include small-down {
+      background-color: $c-60734-b;
+    }
+
     @include focus-visible {
       background-color: $c-60734-b;
     }
