@@ -12,10 +12,6 @@
   text-align: center;
   overflow: hidden;
   display: grid;
-
-  &.loop_60734 {
-    background-color: $c-60734-a;
-  }
 }
 
 .container.loop_606d7 {
@@ -50,6 +46,29 @@
 
     &[class='st2'] {
       fill: $c-606d7-b;
+    }
+  }
+}
+
+.container.loop_60734 {
+  background-color: $c-60734-a;
+
+  path {
+    &[class='st0'],
+    &[class='st1'] {
+      stroke-linecap: square;
+      stroke: $c-60734-b;
+      stroke-width: 6;
+      display: none;
+      fill: none;
+
+      @include small-down {
+        stroke: $c-60734-c;
+      }
+    }
+
+    &[class='st1'] {
+      stroke-linejoin: round;
     }
   }
 }

@@ -40,11 +40,11 @@ $c-gold: #f5c356;
 
 $c-606d7-a: #cd9dff;
 $c-606d7-b: #f5ebff;
-$c-606d7-c: lighten($c-606d7-a, 8%);
+$c-606d7-c: lighten($c-606d7-a, 10%);
 
 $c-60734-a: #f2800d;
 $c-60734-b: #fce0c5;
-$c-60734-c: lighten($c-606d7-a, 8%);
+$c-60734-c: lighten($c-60734-a, 20%);
 
 $c-606d7-group: $c-606d7-a, $c-606d7-b, $c-606d7-c;
 $c-60734-group: $c-60734-a, $c-60734-b, $c-60734-c;
