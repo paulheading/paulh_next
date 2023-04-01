@@ -13,12 +13,44 @@
   overflow: hidden;
   display: grid;
 
-  &.loop_606d7 {
-    background-color: $c-606d7-a;
-  }
-
   &.loop_60734 {
     background-color: $c-60734-a;
+  }
+}
+
+.container.loop_606d7 {
+  background-color: $c-606d7-a;
+
+  path {
+    &[class='st0'],
+    &[class='st1'] {
+      stroke-linecap: square;
+      stroke-miterlimit: 10;
+      stroke: $c-606d7-b;
+      fill: none;
+
+      @include small-down {
+        stroke: $c-606d7-c;
+      }
+    }
+
+    &[class='st0'],
+    &[class='st1'],
+    &[class='st2'] {
+      display: none;
+    }
+
+    &[class='st0'] {
+      stroke-width: 5;
+    }
+
+    &[class='st1'] {
+      stroke-width: 4;
+    }
+
+    &[class='st2'] {
+      fill: $c-606d7-b;
+    }
   }
 }
 
