@@ -7,9 +7,14 @@
 }
 
 .tab_container {
+  transition: top 300ms;
   position: absolute;
-  top: -2.75rem;
   width: 100%;
+  top: 0;
+
+  @include small-up {
+    top: -2.75rem;
+  }
 }
 
 .tab_wrap {

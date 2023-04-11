@@ -1,10 +1,9 @@
 @import 'styles/global/mixins';
 
 .container {
-  padding: 2rem 2rem 6rem;
+  padding: 4rem 2rem;
 
-  @include medium-up {
+  @include small-up {
     padding-bottom: 8rem;
-    padding-top: 4rem;
   }
 }

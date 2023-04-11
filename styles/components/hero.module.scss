@@ -7,26 +7,30 @@
 
 .container {
   background-color: lightgrey;
-  height: $height-section;
   place-items: center;
   text-align: center;
   overflow: hidden;
   display: grid;
+  height: 24rem;
+
+  @include small-up {
+    height: $height-section;
+  }
 }
 
 .container.loop_606d7 {
-  background-color: $c-606d7-a;
+  background-color: $c-606d7-bg;
 
   path {
     &[class='st0'],
     &[class='st1'] {
       stroke-linecap: square;
       stroke-miterlimit: 10;
-      stroke: $c-606d7-b;
+      stroke: $c-606d7-svg-lg;
       fill: none;
 
       @include small-down {
-        stroke: $c-606d7-c;
+        stroke: $c-606d7-svg-sm;
       }
     }
 
@@ -41,29 +45,29 @@
     }
 
     &[class='st1'] {
-      stroke-width: 4;
+      stroke-width: 3;
     }
 
     &[class='st2'] {
-      fill: $c-606d7-b;
+      fill: $c-606d7-svg-lg;
     }
   }
 }
 
 .container.loop_60734 {
-  background-color: $c-60734-a;
+  background-color: $c-60734-bg;
 
   path {
     &[class='st0'],
     &[class='st1'] {
       stroke-linecap: square;
-      stroke: $c-60734-b;
+      stroke: $c-60734-svg-lg;
       stroke-width: 6;
       display: none;
       fill: none;
 
       @include small-down {
-        stroke: $c-60734-c;
+        stroke: $c-60734-svg-sm;
       }
     }
 
@@ -95,13 +99,13 @@
 
   &.loop_606d7 {
     @include focus-visible {
-      background-color: $c-606d7-b;
+      background-color: $c-606d7-svg-lg;
     }
   }
 
   &.loop_60734 {
     @include focus-visible {
-      background-color: $c-60734-b;
+      background-color: $c-60734-svg-lg;
     }
   }
 }

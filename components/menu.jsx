@@ -17,7 +17,7 @@ function Menu({ hero }) {
 
   function Logo() {
     const props = {
-      className: styles.home_link,
+      className: styles.home_link + ' ' + styles[loop],
       href: '/',
     }
 
