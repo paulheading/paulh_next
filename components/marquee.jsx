@@ -31,11 +31,7 @@ function Tab({ more }) {
     href: '/404',
   }
 
-  return (
-    <div className={styles.tab_container}>
-      <div className={styles.tab_wrap}>{more ? <CreateLink {...createProps}>{message}</CreateLink> : <NotFound {...notProps}>{message}</NotFound>}</div>
-    </div>
-  )
+  return <div className={styles.tab_container}>{more ? <CreateLink {...createProps}>{message}</CreateLink> : <NotFound {...notProps}>{message}</NotFound>}</div>
 }
 
 function Row({ marquee, more, id }) {

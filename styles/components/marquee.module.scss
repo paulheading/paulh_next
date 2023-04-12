@@ -7,31 +7,34 @@
 }
 
 .tab_container {
-  transition: top 300ms;
   position: absolute;
   width: 100%;
-  top: 0;
-
-  @include small-up {
-    top: -2.75rem;
-  }
-}
-
-.tab_wrap {
-  $border-radius: 0.25rem;
-
-  border-top-right-radius: $border-radius;
-  border-top-left-radius: $border-radius;
-  background-color: black;
-  padding: 0.5rem 0.875rem;
-  letter-spacing: -0.01em;
-  display: inline-block;
 }
 
 .tab_link {
+  $border-radius: 0.25rem;
+  $top-focus: -2.75rem;
+
+  border-top-right-radius: $border-radius;
+  border-top-left-radius: $border-radius;
+  padding: 0.625rem 0.875rem;
+  background-color: black;
+  letter-spacing: -0.01em;
   text-decoration: none;
+  transition: top 300ms;
   display: inline-block;
+  position: relative;
   color: white;
+  top: 0;
+
+  @include focus {
+    @include single-box(white);
+    top: $top-focus;
+  }
+
+  @include small-up {
+    top: $top-focus;
+  }
 }
 
 .row_container {

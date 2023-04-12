@@ -1,20 +1,26 @@
 @import 'styles/global/mixins';
 
-@mixin grid-position {
-  grid-column: 1/2;
-  grid-row: 1/2;
+@mixin grid {
+  place-items: center;
+  display: grid;
 }
 
 .container {
+  @include grid;
   background-color: lightgrey;
-  place-items: center;
   text-align: center;
   overflow: hidden;
-  display: grid;
   height: 24rem;
 
   @include small-up {
     height: $height-section;
+    padding-top: 1.5rem;
+  }
+
+  > div,
+  > h1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
   }
 }
 
@@ -78,11 +84,11 @@
 }
 
 .name {
-  @include grid-position;
   padding-right: 2rem;
   padding-left: 2rem;
   position: relative;
   z-index: 2;
+  top: -0.5rem;
 }
 
 .link {
@@ -110,19 +116,8 @@
   }
 }
 
-@mixin svg {
-  @include grid-position;
+.back {
   transform: scale(2);
   position: relative;
-  top: 1rem;
-}
-
-.front {
-  @include svg;
-  z-index: 3;
-}
-
-.back {
-  @include svg;
   z-index: 1;
 }

@@ -7,7 +7,6 @@ import { hero as animation } from 'scripts/animation'
 function Hero({ hero }) {
   const { id, name, more, svg } = hero
   const loop = 'loop_' + id.slice(0, 5)
-  const front = useRef(null)
   const back = useRef(null)
 
   const containerStyles = styles.container + ' ' + styles[loop]
@@ -24,14 +23,9 @@ function Hero({ hero }) {
   }
 
   useEffect(() => {
-    if (!front || !back || !animation[loop]) return
-    animation[loop](back.current, front.current)
+    if (!back || !animation[loop]) return
+    animation[loop](back.current)
   }, [loop])
-
-  const frontProps = {
-    className: styles.front,
-    ref: front,
-  }
 
   const backProps = {
     className: styles.back,
@@ -50,7 +44,6 @@ function Hero({ hero }) {
 
   return (
     <div className={containerStyles}>
-      <Svg {...frontProps} />
       <h1 className={styles.name}>{more ? <CreateLink {...createProps}>{name}</CreateLink> : <NotFound {...notProps}>{name}</NotFound>}</h1>
       <Svg {...backProps} />
     </div>

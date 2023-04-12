@@ -125,42 +125,23 @@ $gap-links: 1.5rem;
 .home_link {
   @include block-svg;
   @include active-style;
-
-  @include small-up {
-    position: relative;
-    left: -0.375rem;
-  }
+  margin: -0.25rem;
 }
 
 a.home_link {
   @include focus {
+    @include id(logo) {
+      @include small-up {
+        fill: transparent;
+      }
+    }
+
     @include id(focus) {
       display: block;
+      fill: white;
 
-      @include small-down {
-        fill: white;
-      }
-    }
-  }
-}
-
-a.home_link {
-  &.loop_606d7 {
-    @include focus {
-      @include id(focus) {
-        @include small-up {
-          fill: $c-606d7-bg;
-        }
-      }
-    }
-  }
-
-  &.loop_60734 {
-    @include focus {
-      @include id(focus) {
-        @include small-up {
-          fill: $c-60734-bg;
-        }
+      @include small-up {
+        fill: black;
       }
     }
   }
