@@ -25,11 +25,13 @@ $gap-links: 1.5rem;
 }
 
 @mixin container {
+  $border: 0.25rem solid black;
   padding: $gap-links;
 
   @include small-down {
-    border-bottom: 0.25rem solid black;
     background-color: $c-body-svg-sm;
+    border-bottom: $border;
+    border-top: $border;
   }
 
   @include small-up {
