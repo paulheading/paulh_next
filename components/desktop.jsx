@@ -21,13 +21,13 @@ function Topbar({ count }) {
     const { current } = wifi_ref
     const { search } = wifi
     search(current)
-    setTime(getTime())
   }, [count])
 
   useEffect(() => {
     if (!dots_ref) return
     const { current } = dots_ref
     const { blink } = clock
+    setTime(getTime())
     blink(current)
   }, [])
 
