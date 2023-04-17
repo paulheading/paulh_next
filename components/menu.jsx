@@ -8,16 +8,15 @@ import PaulHDesktop from 'logos/paulh/desktop'
 import PaulHMobile from 'logos/paulh/mobile'
 import Ready from 'components/ready'
 
-function Menu({ hero }) {
+function Menu() {
   const smallUp = useMediaQuery(520)
   const router = useRouter()
   const isHome = router.pathname === '/'
-  const loop = 'loop_' + hero.id.slice(0, 5)
-  const containerStyles = isHome ? styles.home_container + ' ' + styles[loop] : styles.container
+  const containerStyles = isHome ? styles.home_container : styles.container
 
   function Logo() {
     const props = {
-      className: styles.home_link + ' ' + styles[loop],
+      className: styles.home_link,
       href: '/',
     }
 

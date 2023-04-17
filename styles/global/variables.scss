@@ -18,7 +18,12 @@ $font-size-body: 1.25rem;
 $font-size-h5: 1.125rem;
 $font-size-h6: 1rem;
 
-$border-radius-lg: 0.5rem;
+$border-banner-width: 0.25rem;
+
+$border-banner: $border-banner-width solid black;
+
+$border-radius-sm: 0.25rem;
+$border-radius-lg: $border-radius-sm * 2;
 
 $min-width-site: 20rem;
 
@@ -35,6 +40,9 @@ $padding-tag: 0.5rem 0.75rem;
 
 $height-section: 32rem;
 $height-windows: 25rem;
+$height-banner: 5.5rem;
 
 $box-shadow-window: 0 0 0.375rem rgba(black, 0.3);
 $box-shadow-page: 0 0 0.5rem #dee2e6;
+
+$gap-links: 1.5rem;

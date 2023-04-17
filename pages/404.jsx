@@ -4,19 +4,15 @@ import { getLayoutData } from 'scripts'
 import Content from 'components/content'
 import { CreateLink } from 'components/marquee'
 import Wrap from 'components/wrap'
-import { notfound as head } from 'data/seo'
+import { Fragment } from 'react'
 
 function NotFound(props) {
   const linkProps = {
     className: styles.link,
     href: 'mailto:hello@paulh.biz',
   }
-  const layoutProps = {
-    ...props,
-    head,
-  }
   return (
-    <Layout {...layoutProps}>
+    <Fragment>
       <Content>
         <Wrap className={styles.wrap}>
           <h1 className={styles.title}>Page Not Found 🤬</h1>
@@ -25,7 +21,8 @@ function NotFound(props) {
           </h3>
         </Wrap>
       </Content>
-    </Layout>
+      <Layout {...props} />
+    </Fragment>
   )
 }
 

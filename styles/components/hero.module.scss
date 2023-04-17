@@ -5,6 +5,20 @@
   display: grid;
 }
 
+.banner {
+  @include small-down {
+    height: $height-banner + ($border-banner-width * 2);
+
+    &.loop_606d7 {
+      background-color: $c-606d7-svg-sm;
+    }
+
+    &.loop_60734 {
+      background-color: $c-60734-svg-sm;
+    }
+  }
+}
+
 .container {
   @include grid;
   background-color: lightgrey;
@@ -14,7 +28,6 @@
 
   @include small-up {
     height: $height-section;
-    padding-top: 1.5rem;
   }
 
   > div,
@@ -87,8 +100,12 @@
   padding-right: 2rem;
   padding-left: 2rem;
   position: relative;
+  bottom: 0.5rem;
   z-index: 2;
-  top: -0.5rem;
+
+  @include small-up {
+    bottom: -0.5rem;
+  }
 }
 
 .link {
@@ -119,5 +136,10 @@
 .back {
   transform: scale(2);
   position: relative;
+  bottom: -0.5rem;
   z-index: 1;
+
+  @include small-up {
+    bottom: -1rem;
+  }
 }

@@ -1,6 +1,6 @@
 @import 'styles/global/mixins';
 
-$border-radius-links: 0.25rem;
+$border-radius-sm: 0.25rem;
 $gap-links: 1.5rem;
 
 @mixin block-svg {
@@ -158,7 +158,7 @@ a.home_link {
   }
 
   @include small-up {
-    border-radius: $border-radius-links;
+    border-radius: $border-radius-sm;
     padding: $padding-link;
   }
 }
@@ -184,7 +184,7 @@ a.about_link {
   @include active-style;
 
   @include small-down {
-    border-radius: $border-radius-links;
+    border-radius: $border-radius-sm;
   }
 
   @include small-up {

@@ -3,15 +3,11 @@ import Layout from 'layouts/main'
 import { getLayoutData } from 'scripts'
 import Content from 'components/content'
 import Wrap from 'components/wrap'
-import { about as head } from 'data/seo'
+import { Fragment } from 'react'
 
 function About(props) {
-  const layoutProps = {
-    ...props,
-    head,
-  }
   return (
-    <Layout {...layoutProps}>
+    <Fragment>
       <Content>
         <Wrap>
           <h1 className={styles.title}>About</h1>
@@ -25,7 +21,8 @@ function About(props) {
           </div>
         </Wrap>
       </Content>
-    </Layout>
+      <Layout {...props} />
+    </Fragment>
   )
 }
 

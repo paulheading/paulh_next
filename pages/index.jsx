@@ -2,22 +2,18 @@ import Layout from 'layouts/main'
 import Hero from 'components/hero'
 import { getLayoutData } from 'scripts'
 import useCount from 'hooks/useCount'
-import { home as head } from 'data/seo'
+import { Fragment } from 'react'
 
 function Home(props) {
   const { heroes } = props
   const count = useCount(heroes)
   const hero = heroes[count]
 
-  const layoutProps = {
-    ...props,
-    head,
-  }
-
   return (
-    <Layout {...layoutProps}>
+    <Fragment>
       <Hero hero={hero} />
-    </Layout>
+      <Layout {...props} />
+    </Fragment>
   )
 }
 
