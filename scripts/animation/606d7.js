@@ -33,18 +33,22 @@ function loop_606d7(target) {
 
   const clearProps = 'all'
 
+  const x = 35
+
+  const animateSound = (delay) => ({ display, opacity, scale, delay: delay ? delay : null })
+
   const tl = gsap.timeline({ defaults: { transformOrigin, duration } })
 
   tl.set(all, { clearProps })
     .set(rooms, { display })
-    .to(sound, { display, opacity, scale, delay: duration })
+    .to(sound, { ...animateSound(duration) })
     .set(sound, { clearProps })
-    .to(sound, { display, opacity, scale })
+    .to(sound, { ...animateSound() })
     .to(lobby, { morphSVG: bar_1 }, 'next')
     .to(hall, { morphSVG: bar_2 }, 'next')
     .to(stage, { morphSVG: bar_3 }, 'next')
     .to(garden, { morphSVG: bar_4 }, 'next')
-    .fromTo(marker, { x: -30 }, { display, x: 30, duration: duration * 2 })
+    .fromTo(marker, { x: -x }, { display, x, duration: duration * 2 })
 }
 
 export default loop_606d7
