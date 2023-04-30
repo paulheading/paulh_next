@@ -37,11 +37,11 @@ function PrintDue(value, variant) {
 }
 
 function Columns(project, index) {
+  const [clicked, setClicked] = useState(false)
+
   if (index > 2) return
 
   if (!project.variant) project.variant = 'default'
-
-  const [clicked, setClicked] = useState(false)
 
   const { id, more, name, dueComplete, due, variant, start } = project
   let { labels, desc } = project
