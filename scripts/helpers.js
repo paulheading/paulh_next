@@ -31,35 +31,41 @@ create.label = function ({ name, color = 'purple' }, index) {
 
 const chop = {}
 
-chop.desc = function (desc) {
+chop.limit = 100
+
+chop.needed = function (content) {
+  if (!content.props) return false
+
+  let { limit } = chop
+  let { children } = content.props
+
+  return children.length > limit
+}
+
+chop.content = function (clicked, content) {
   let result = []
-  let limit = 100
+  let { limit } = chop
+  let { children } = content.props
 
-  if (desc.props) {
-    let { children } = desc.props
+  if (clicked || !chop.needed(content)) return children
 
-    children.split(' ').forEach((word) => {
-      if (limit > word.length) {
-        result.push(word)
-        limit = limit - word.length
-      }
-    })
+  children.split(' ').forEach((word) => {
+    if (limit <= word.length) return
+    result.push(word)
+    limit = limit - word.length
+  })
 
-    let last = result.length - 1
+  let last = result.length - 1
 
-    if (result[last].length === 1) result.pop()
+  if (result[last].length === 1) result.pop()
 
-    if (result[last]) {
-      let last_place = result[last]
-      let last_letter = last_place.substr(last_place.length - 1)
-
-      if (last_letter === ',' || last_letter === '.') {
-        result[last] = result[last].slice(0, -1)
-      }
-    }
-
-    return result.join(' ') + '...'
+  if (result[last]) {
+    let last_place = result[last]
+    let last_letter = last_place.substr(last_place.length - 1)
+    if (last_letter === ',' || last_letter === '.') result[last] = result[last].slice(0, -1)
   }
+
+  return result.join(' ')
 }
 
 const toggle = {}

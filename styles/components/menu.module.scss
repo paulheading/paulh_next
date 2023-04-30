@@ -1,37 +1,17 @@
 @import 'styles/global/mixins';
 
-$border-radius-sm: 0.25rem;
-$gap-links: 1.5rem;
-
-@mixin block-svg {
-  &,
-  svg {
-    display: block;
-  }
-}
-
-@mixin active-style {
-  &.active {
-    user-select: none;
-    cursor: default;
-  }
-}
-
-@mixin flex {
-  justify-content: center;
-  align-items: center;
-  gap: $gap-links;
-  display: flex;
-}
-
 @mixin container {
-  $border: 0.25rem solid black;
-  padding: $gap-links;
+  min-width: $min-width-site;
+  padding-right: $gap-links;
+  padding-left: $gap-links;
 
   @include small-down {
-    background-color: $c-body-svg-sm;
-    border-bottom: $border;
-    border-top: $border;
+    border-bottom: $border-banner;
+    border-top: $border-banner;
+
+    .wrap {
+      height: $height-banner;
+    }
   }
 
   @include small-up {
@@ -39,28 +19,10 @@ $gap-links: 1.5rem;
   }
 }
 
-@mixin small-focus {
-  @include small-down {
-    @include focus {
-      @content;
-    }
-
-    &.active {
-      @content;
-    }
-  }
-}
-
-@mixin focus_about($a, $b) {
-  @include small-up {
-    @include single-box($a);
-    background-color: $b;
-    color: $a;
-  }
-}
-
-@mixin focus_resume {
-  border-color: black;
+@mixin flex-links {
+  align-items: center;
+  gap: $gap-links;
+  display: flex;
 }
 
 @mixin id($id) {
@@ -69,72 +31,69 @@ $gap-links: 1.5rem;
   }
 }
 
-.container {
-  @include container;
+@mixin block-svg {
+  &,
+  svg {
+    display: block;
+  }
+}
+
+@mixin style-active {
+  user-select: none;
+  cursor: default;
+}
+
+@mixin focus-link {
+  @include single-box(white, 0.375rem);
+  background-color: white;
+}
+
+@mixin focus-about($a, $b) {
+  @include single-box($a);
+  background-color: $b;
+  color: $a;
+}
+
+@mixin focus-resume {
+  border-color: black;
 }
 
 .home_container {
   @include container;
-
-  @include small-up {
-    position: absolute;
-    z-index: 4;
-    right: 0;
-    left: 0;
-  }
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  left: 0;
 }
 
-.home_container {
-  &.loop_606d7 {
-    @include small-down {
-      background-color: $c-606d7-svg-sm;
-    }
-  }
+.away_container {
+  @include container;
 
-  &.loop_60734 {
-    @include small-down {
-      background-color: $c-60734-svg-sm;
-    }
+  @include small-down {
+    background-color: $c-body-svg-sm;
   }
 }
 
 .wrap {
-  @include flex;
+  @include flex-links;
+  justify-content: center;
 
   @include small-up {
     justify-content: space-between;
   }
 }
 
-.links {
-  @include flex;
-}
-
-.link {
-  @include small-up {
-    font-size: 1.5rem;
-    line-height: 1.2;
-  }
-}
-
-.link {
-  @include small-focus {
-    @include single-box(white, 0.375rem);
-    background-color: white;
-  }
-}
-
-.home_link {
-  @include block-svg;
-  @include active-style;
+.logo {
+  position: relative;
+  bottom: -0.25rem;
   margin: -0.25rem;
 }
 
-a.home_link {
+.logo_link {
   @include focus {
     @include id(logo) {
       @include small-up {
-        fill: transparent;
+        fill: $c-body-bg;
       }
     }
 
@@ -149,10 +108,43 @@ a.home_link {
   }
 }
 
-.about_link {
-  @include block-svg;
-  @include active-style;
+.links {
+  @include flex-links;
+}
 
+.link {
+  @include block-svg;
+
+  @include small-up {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+}
+
+.link {
+  @include small-down {
+    @include focus {
+      @include focus-link;
+    }
+  }
+}
+
+.link.active {
+  @include small-down {
+    @include focus-link;
+  }
+}
+
+a.link {
+  @include small-down {
+    @include focus {
+      @include single-box(white, 0.375rem);
+      background-color: white;
+    }
+  }
+}
+
+.about_link {
   @include small-down {
     border-radius: 50%;
   }
@@ -163,10 +155,6 @@ a.home_link {
   }
 }
 
-.about_link.active {
-  @include focus_about(black, white);
-}
-
 a.about_link {
   @include small-up {
     background-color: black;
@@ -174,15 +162,19 @@ a.about_link {
     color: white;
 
     @include focus {
-      @include focus_about(black, white);
+      @include focus-about(black, white);
     }
   }
 }
 
-.resume_link {
-  @include block-svg;
-  @include active-style;
+.about_link.active {
+  @include style-active;
+  @include small-up {
+    @include focus-about(black, white);
+  }
+}
 
+.resume_link {
   @include small-down {
     border-radius: $border-radius-sm;
   }
@@ -193,14 +185,16 @@ a.about_link {
   }
 }
 
-.resume_link.active {
-  @include focus_resume;
-}
-
 a.resume_link {
   @include small-up {
     @include focus {
-      @include focus_resume;
+      @include focus-resume;
     }
+  }
+}
+
+.resume_link.active {
+  @include small-up {
+    @include focus-resume;
   }
 }

@@ -1,37 +1,35 @@
 import styles from 'styles/components/menu.module.scss'
-import { useRouter } from 'next/router'
-import Link from 'next/link'
-import data from 'data/menu'
+import Desktop from 'logos/paulh/desktop'
+import Mobile from 'logos/paulh/mobile'
 import Wrap from 'components/wrap'
+import { useRouter } from 'next/router'
 import useMediaQuery from 'hooks/useMediaQuery'
-import PaulHDesktop from 'logos/paulh/desktop'
-import PaulHMobile from 'logos/paulh/mobile'
+import data from 'data/menu'
 import Ready from 'components/ready'
+import Link from 'next/link'
+import { Fragment } from 'react'
+import Head from 'components/head'
+
+function Logo() {
+  const smallUp = useMediaQuery(520)
+  return <div className={styles.logo}>{smallUp ? <Desktop /> : <Mobile />}</div>
+}
 
 function Menu() {
+  const { pathname } = useRouter()
+  const isHome = pathname === '/'
   const smallUp = useMediaQuery(520)
-  const router = useRouter()
-  const isHome = router.pathname === '/'
-  const containerStyles = isHome ? styles.home_container : styles.container
 
-  function Logo() {
-    const props = {
-      className: styles.home_link,
-      href: '/',
-    }
-
-    return <Ready>{isHome ? <span className={props.className}>{smallUp ? <PaulHDesktop /> : <PaulHMobile />}</span> : <Link {...props}>{smallUp ? <PaulHDesktop /> : <PaulHMobile />}</Link>}</Ready>
-  }
+  const containerStyles = isHome ? styles.home_container : styles.away_container
 
   function Content({ title, children }) {
     if (title === 'Home') return
 
-    const isActive = () => '/' + title.toLowerCase() === router.pathname
+    const isActive = () => '/' + title.toLowerCase() === pathname
 
     function contentStyles() {
       let result = styles.link + ' ' + styles[title.toLowerCase() + '_link']
       if (isActive()) result += ' ' + styles.active
-      if (isHome) result += ' ' + styles[loop]
       return result
     }
 
@@ -55,13 +53,31 @@ function Menu() {
     )
   }
 
-  return (
-    <div className={containerStyles}>
-      <Wrap className={styles.wrap}>
+  function WrapLogo() {
+    if (isHome) return <Logo />
+
+    const props = {
+      className: styles.logo_link,
+      href: '/',
+    }
+
+    return (
+      <a {...props}>
         <Logo />
-        <div className={styles.links}>{data.map(Links)}</div>
-      </Wrap>
-    </div>
+      </a>
+    )
+  }
+
+  return (
+    <Fragment>
+      <Head />
+      <div className={containerStyles}>
+        <Wrap className={styles.wrap}>
+          <WrapLogo />
+          <div className={styles.links}>{data.map(Links)}</div>
+        </Wrap>
+      </div>
+    </Fragment>
   )
 }
 

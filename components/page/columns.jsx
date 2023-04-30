@@ -4,6 +4,7 @@ import { CreateLink, NotFound } from 'components/marquee'
 import Label from 'components/page/label'
 import parse from 'html-react-parser'
 import { DateTime } from 'luxon'
+import { useState } from 'react'
 
 function ProjectLabels({ name, color, variant }, index) {
   const props = {
@@ -40,8 +41,12 @@ function Columns(project, index) {
 
   if (!project.variant) project.variant = 'default'
 
+  const [clicked, setClicked] = useState(false)
+
   const { id, more, name, dueComplete, due, variant, start } = project
   let { labels, desc } = project
+
+  const content = parse(desc)
 
   function dateTest() {
     const today = new Date()
@@ -75,6 +80,11 @@ function Columns(project, index) {
     href: '/404',
   }
 
+  const buttonProps = {
+    className: styles.more,
+    onClick: () => setClicked(!clicked),
+  }
+
   return (
     <div className={styles.column} key={id}>
       <div className={styles.label_wrap}>{labels.map(ProjectLabels)}</div>
@@ -82,7 +92,10 @@ function Columns(project, index) {
       <div className={styles.due_wrap}>
         <em>{dueComplete ? PrintDue(due, variant) : 'Ongoing'}</em>
       </div>
-      <div className={styles.desc_wrap}>{chop.desc(parse(desc))}</div>
+      <div className={styles.desc_wrap}>
+        {chop.content(clicked, content)}
+        {chop.needed(content) && <button {...buttonProps}>{clicked ? 'less' : 'more'}</button>}
+      </div>
     </div>
   )
 }
