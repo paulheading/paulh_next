@@ -4,11 +4,9 @@ import SettingsIcon from 'icons/settings'
 import Label from 'components/page/label'
 import Window from 'components/desktop/window'
 import { Fragment } from 'react'
+import { contains } from 'scripts/helpers'
 
-function Projects(project, index) {
-  if (index >= 2) return
-  const { name, more, labels } = project
-
+function Projects({ name, more, labels }, index) {
   const createProps = {
     className: styles.card,
     href: more ? more.url : null,
@@ -57,6 +55,8 @@ function Projects(project, index) {
 }
 
 function TrelloWindow({ name, folders, projects, style }) {
+  projects = projects.filter(({ labels }) => !contains.label(labels, 'Staging'))
+
   const windowProps = {
     name,
     folders,
@@ -73,10 +73,7 @@ function TrelloWindow({ name, folders, projects, style }) {
           </div>
         </header>
         <main>{projects.map(Projects)}</main>
-        <footer className={styles.footer}>
-          <div>+ See more</div>
-          <div>icon</div>
-        </footer>
+        <footer className={styles.footer}>{projects.length > 2 && <div>+ See more</div>}</footer>
       </div>
     </Window>
   )

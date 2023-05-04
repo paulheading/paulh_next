@@ -82,4 +82,16 @@ toggle.folders = function (name, folder) {
   return folder
 }
 
-export { find, create, chop, toggle }
+const contains = {}
+
+contains.label = function (labels, check) {
+  let match = false
+
+  labels.forEach(({ name }) => {
+    if (name === check) match = true
+  })
+
+  return match
+}
+
+export { find, create, chop, toggle, contains }
