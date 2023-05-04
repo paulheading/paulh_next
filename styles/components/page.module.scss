@@ -96,6 +96,12 @@
 }
 
 .more {
+  background-color: transparent;
+  border: 1px solid $c-gray-7;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  color: $c-gray-7;
   cursor: pointer;
   margin: 0.25rem;
 }
