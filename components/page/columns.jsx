@@ -36,6 +36,8 @@ function PrintDue(value, variant) {
 }
 
 function Columns(project) {
+  const [clicked, setClicked] = useState(false)
+
   if (!project.variant) project.variant = 'default'
 
   const { id, more, name, dueComplete, due, variant, start } = project
@@ -45,8 +47,6 @@ function Columns(project) {
   if (contains.label(labels, 'Staging')) return
 
   labels = labels.filter(({ name }) => name !== 'Staging')
-
-  const [clicked, setClicked] = useState(false)
 
   const content = parse(desc)
 
