@@ -96,14 +96,19 @@
 }
 
 .more {
+  padding: 0.1875rem 0.375rem 0.25rem;
   background-color: transparent;
   border: 1px solid $c-gray-7;
   font-size: $font-size-h6;
-  padding: 0.1875rem 0.375rem 0.25rem;
   border-radius: 0.25rem;
   font-weight: bold;
   color: $c-gray-7;
   cursor: pointer;
   margin: 0.25rem;
   line-height: 1;
+
+  @include focus {
+    background-color: $c-gray-7;
+    color: white;
+  }
 }
