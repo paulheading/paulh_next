@@ -22,8 +22,6 @@
 .container {
   @include grid;
   background-color: lightgrey;
-  padding-right: 2rem;
-  padding-left: 2rem;
   text-align: center;
   overflow: hidden;
   height: 24rem;
@@ -100,6 +98,8 @@
 
 .name {
   max-width: $max-width-wrap;
+  padding-right: 2rem;
+  padding-left: 2rem;
   position: relative;
   bottom: 0.5rem;
   z-index: 2;
