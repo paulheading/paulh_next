@@ -1,9 +1,8 @@
 import styles from 'styles/components/page.module.scss'
-import { chop } from 'scripts/helpers'
+import { chop, contains, create } from 'scripts/helpers'
 import { CreateLink, NotFound } from 'components/marquee'
 import Label from 'components/page/label'
 import parse from 'html-react-parser'
-import { DateTime } from 'luxon'
 import { useState } from 'react'
 
 function ProjectLabels({ name, color, variant }, index) {
@@ -36,41 +35,24 @@ function PrintDue(value, variant) {
   return due
 }
 
-function Columns(project, index) {
-  const [clicked, setClicked] = useState(false)
-
-  if (index > 2) return
-
+function Columns(project) {
   if (!project.variant) project.variant = 'default'
 
   const { id, more, name, dueComplete, due, variant, start } = project
+
   let { labels, desc } = project
+
+  if (contains.label(labels, 'Staging')) return
+
+  labels = labels.filter(({ name }) => name !== 'Staging')
+
+  const [clicked, setClicked] = useState(false)
 
   const content = parse(desc)
 
-  function dateTest() {
-    const today = new Date()
-    const startDate = DateTime.fromISO(start)
-    const dueDate = dueComplete ? DateTime.fromISO(due) : DateTime.fromJSDate(today)
-    const diff = dueDate.diff(startDate, ['years', 'months']).toObject()
+  if (!labels.length) labels.push({ name: 'Personal', color: 'grey' })
 
-    diff.months = Math.round(diff.months)
-
-    const { years, months } = diff
-
-    const print = {
-      years: years > 1 ? 'years' : 'year',
-      months: months > 1 ? 'months' : 'month',
-    }
-
-    const year_month = Math.floor(months * 0.83)
-
-    if (years < 1) return `${months} ${print.months}`
-
-    return `${years}${year_month > 0 ? `.${year_month} ` : ` `} ${print.years}`
-  }
-
-  labels = [...labels, { name: dateTest(), color: labels[0].color, variant: 'outline' }]
+  labels.push({ name: create.date_span(start, due, dueComplete), color: labels[0].color, variant: 'outline' })
 
   const createProps = {
     href: more ? more.url : null,
