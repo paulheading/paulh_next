@@ -1,0 +1,41 @@
+@import 'styles/global/mixins';
+
+$margin-button: $padding-row + 1.5rem;
+
+@mixin button {
+  position: absolute;
+  text-align: center;
+
+  @include medium-down {
+    right: 0;
+    left: 0;
+  }
+
+  @include medium-up {
+    top: 6.75rem;
+  }
+}
+
+.prev_button {
+  @include button;
+
+  @include medium-down {
+    top: -1rem;
+  }
+
+  @include medium-up {
+    left: -$margin-button;
+  }
+}
+
+.next_button {
+  @include button;
+
+  @include medium-down {
+    bottom: -2.5rem;
+  }
+
+  @include medium-up {
+    right: -$margin-button;
+  }
+}

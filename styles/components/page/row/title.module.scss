@@ -1,0 +1,11 @@
+@import 'styles/global/mixins';
+
+.title_wrap {
+  @include title_wrap;
+
+  @include medium-down {
+    padding-right: 1.75rem;
+    padding-left: 1.75rem;
+    padding-top: 1.75rem;
+  }
+}

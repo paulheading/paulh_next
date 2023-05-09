@@ -1,26 +1,18 @@
 import styles from 'styles/components/page/row.module.scss'
 
-function Row({ children, override, alignItems }) {
-  const containerProps = {
-    className: styleContainer(),
-    style: alignItems && { alignItems },
+function Row({ children, columns, align }) {
+  function wrapStyles() {
+    let wrap = styles.wrap
+    if (align === 'center') wrap = `${wrap} ${styles.center}`
+    if (columns === 2) return `${styles.double} ${wrap}`
+    return wrap
   }
 
-  function styleContainer() {
-    const container = styles.container
-    const length = override ? override : children.length
-
-    switch (length) {
-      case 3:
-        return `${styles.triple} ${container}`
-      case 2:
-        return `${styles.double} ${container}`
-      default:
-        return container
-    }
-  }
-
-  return <div {...containerProps}>{children}</div>
+  return (
+    <div className={styles.container}>
+      <div className={wrapStyles()}>{children}</div>
+    </div>
+  )
 }
 
 export default Row

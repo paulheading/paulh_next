@@ -2,8 +2,12 @@ import styles from 'styles/components/page.module.scss'
 import Wrap from 'components/wrap'
 import personal from 'data/personal'
 import Row from 'components/page/row'
+import RowTitle from 'components/page/row/title'
+import RowGrid from 'components/page/row/grid'
 import Label from 'components/page/label'
 import Columns from 'components/page/columns'
+import { contains, environment } from 'scripts/helpers'
+import { useState } from 'react'
 
 function TreehouseSkills({ title, score }, index) {
   const props = {
@@ -18,22 +22,32 @@ function TreehouseSkills({ title, score }, index) {
 }
 
 function Page({ projects, roles, education, treehouse }) {
-  function TripleTitle({ children }) {
-    const containerProps = {
-      className: styles.section_title_wrap,
-      style: { gridColumn: '1/4' },
-    }
+  const items = 3
+  const range = 2
+  const [maxProject, setMaxProject] = useState(items)
 
-    return (
-      <div {...containerProps}>
-        <h3>{children}</h3>
-      </div>
-    )
+  if (!environment.isLocal()) projects = projects.filter(({ labels }) => !contains.label(labels, environment.local))
+
+  const controls = projects.length > items
+
+  const projectProps = {
+    setProjectRange: (value) => setMaxProject(value),
+    length: projects.length,
+    maxProject,
+    controls,
   }
+
+  projects = projects.filter((_, index) => {
+    index = index + 1
+    if (index >= maxProject - range) {
+      if (index <= maxProject) return true
+    }
+    return false
+  })
 
   return (
     <Wrap className={styles.wrap}>
-      <Row alignItems="center">
+      <Row columns={2} align="center">
         <div className={styles.left_column}>
           <h1>{personal.name}</h1>
         </div>
@@ -42,7 +56,7 @@ function Page({ projects, roles, education, treehouse }) {
           <div>{personal.email_link}</div>
         </div>
       </Row>
-      <Row>
+      <Row columns={2}>
         <div className={styles.left_column}>
           <h3 className={styles.title_wrap}>Biography</h3>
           <div>
@@ -56,23 +70,25 @@ function Page({ projects, roles, education, treehouse }) {
           <div>{personal.medium_link}</div>
         </div>
       </Row>
-      <Row override={3}>
-        <TripleTitle>Projects</TripleTitle>
-        {projects.map(Columns)}
+      <Row>
+        <RowTitle>Projects</RowTitle>
+        <RowGrid {...projectProps}>
+          {projects.map((project, index) => (
+            <Columns {...project} key={'project' + index} />
+          ))}
+        </RowGrid>
       </Row>
       <Row>
-        <div>
-          <TripleTitle>Skills</TripleTitle>
-          <div className={styles.skills_wrap}>{treehouse.map(TreehouseSkills)}</div>
-        </div>
+        <RowTitle>Skills</RowTitle>
+        <div className={styles.skills_wrap}>{treehouse.map(TreehouseSkills)}</div>
       </Row>
-      <Row override={3}>
-        <TripleTitle>Roles</TripleTitle>
-        {roles.map((role, index) => Columns({ ...role, variant: 'role' }, index))}
+      <Row>
+        <RowTitle>Roles</RowTitle>
+        <RowGrid>{roles.map((role, index) => Columns({ ...role, variant: 'role' }, index))}</RowGrid>
       </Row>
-      <Row override={3}>
-        <TripleTitle>Education</TripleTitle>
-        {education.map(Columns)}
+      <Row>
+        <RowTitle>Education</RowTitle>
+        <RowGrid>{education.map(Columns)}</RowGrid>
       </Row>
     </Wrap>
   )

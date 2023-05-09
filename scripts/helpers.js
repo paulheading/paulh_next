@@ -118,4 +118,15 @@ contains.label = function (labels, check) {
   return match
 }
 
-export { find, create, chop, toggle, contains }
+function environmentCreator(name) {
+  this.name = name
+  this.local = 'local'
+}
+
+environmentCreator.prototype.isLocal = function () {
+  return this.local == String(this.name)
+}
+
+const environment = new environmentCreator(process.env.NEXT_PUBLIC_ENVIRONMENT)
+
+export { find, create, chop, toggle, contains, environment }

@@ -1,5 +1,5 @@
 import styles from 'styles/components/page.module.scss'
-import { chop, contains, create } from 'scripts/helpers'
+import { chop, create, environment } from 'scripts/helpers'
 import { CreateLink, NotFound } from 'components/marquee'
 import Label from 'components/page/label'
 import parse from 'html-react-parser'
@@ -35,18 +35,12 @@ function PrintDue(value, variant) {
   return due
 }
 
-function Columns(project) {
+function Columns({ id, more, name, dueComplete, due, variant, start, labels, desc }) {
   const [clicked, setClicked] = useState(false)
 
-  if (!project.variant) project.variant = 'default'
+  if (!variant) variant = 'default'
 
-  const { id, more, name, dueComplete, due, variant, start } = project
-
-  let { labels, desc } = project
-
-  if (contains.label(labels, 'Staging')) return
-
-  labels = labels.filter(({ name }) => name !== 'Staging')
+  labels = labels.filter(({ name }) => name !== environment.local)
 
   const content = parse(desc)
 
@@ -58,10 +52,6 @@ function Columns(project) {
     href: more ? more.url : null,
   }
 
-  const notProps = {
-    href: '/404',
-  }
-
   const buttonProps = {
     className: styles.more,
     onClick: () => setClicked(!clicked),
@@ -70,7 +60,7 @@ function Columns(project) {
   return (
     <div className={styles.column} key={id}>
       <div className={styles.label_wrap}>{labels.map(ProjectLabels)}</div>
-      {more ? <CreateLink {...createProps}>{name}</CreateLink> : <NotFound {...notProps}>{name}</NotFound>}
+      {more ? <CreateLink {...createProps}>{name}</CreateLink> : <NotFound href="/404">{name}</NotFound>}
       <div className={styles.due_wrap}>
         <em>{dueComplete ? PrintDue(due, variant) : 'Ongoing'}</em>
       </div>

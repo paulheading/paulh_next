@@ -4,7 +4,7 @@ import SettingsIcon from 'icons/settings'
 import Label from 'components/page/label'
 import Window from 'components/desktop/window'
 import { Fragment } from 'react'
-import { contains } from 'scripts/helpers'
+import { contains, environment } from 'scripts/helpers'
 
 function Projects({ name, more, labels }, index) {
   const createProps = {
@@ -55,7 +55,7 @@ function Projects({ name, more, labels }, index) {
 }
 
 function TrelloWindow({ name, folders, projects, style }) {
-  projects = projects.filter(({ labels }) => !contains.label(labels, 'Staging'))
+  if (!environment.isLocal()) projects = projects.filter(({ labels }) => !contains.label(labels, environment.local))
 
   const windowProps = {
     name,

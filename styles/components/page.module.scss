@@ -19,14 +19,9 @@
 
 .column {
   @include medium-down {
+    border-top: 0.125rem dashed #dee2e6;
     padding-right: 1.75rem;
     padding-left: 1.75rem;
-  }
-}
-
-.column + .column {
-  @include medium-down {
-    border-top: 0.125rem dashed #dee2e6;
     padding-top: 1.75rem;
     margin-top: 1.75rem;
   }
@@ -41,24 +36,8 @@
   }
 }
 
-@mixin title_wrap {
-  margin-bottom: 1.25rem;
-  line-height: 1;
-  display: block;
-}
-
 .title_wrap {
   @include title_wrap;
-}
-
-.section_title_wrap {
-  @include title_wrap;
-
-  @include medium-down {
-    padding-right: 1.75rem;
-    padding-left: 1.75rem;
-    padding-top: 1.75rem;
-  }
 }
 
 .copy_wrap {

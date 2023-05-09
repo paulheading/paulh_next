@@ -2,24 +2,12 @@
 
 .container {
   background-color: white;
-  padding-bottom: 1.75rem;
-
-  @include medium-up {
-    padding-right: 1.75rem;
-    padding-left: 1.75rem;
-    padding-top: 1.75rem;
-    column-gap: 1.75rem;
-    display: grid;
-  }
-
-  @include medium-down {
-    box-shadow: $box-shadow-page;
-  }
+  position: relative;
 }
 
 .container + .container {
   @include medium-down {
-    margin-top: 1.75rem;
+    margin-top: $padding-row;
   }
 
   @include medium-up {
@@ -27,10 +15,30 @@
   }
 }
 
-.double.container {
-  grid-template-columns: 2fr 1fr;
+.wrap {
+  padding-bottom: $padding-row;
+
+  @include medium-up {
+    padding-right: $padding-row;
+    padding-left: $padding-row;
+    padding-top: $padding-row;
+  }
+
+  @include medium-down {
+    box-shadow: $box-shadow-page;
+  }
 }
 
-.triple.container {
-  grid-template-columns: repeat(3, 1fr);
+.center.wrap {
+  @include medium-up {
+    align-items: center;
+  }
+}
+
+.double.wrap {
+  @include medium-up {
+    grid-template-columns: 2fr 1fr;
+    column-gap: $padding-row;
+    display: grid;
+  }
 }

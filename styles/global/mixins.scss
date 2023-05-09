@@ -68,3 +68,9 @@
   background-color: white;
   color: $c-teal--dark;
 }
+
+@mixin title_wrap {
+  margin-bottom: 1.25rem;
+  line-height: 1;
+  display: block;
+}
