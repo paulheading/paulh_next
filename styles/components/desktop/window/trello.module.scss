@@ -47,8 +47,12 @@ $c-trello-shadow: #5f6c84;
 }
 
 .footer {
-  @include header;
+  grid-template-columns: 1.875rem auto 1.875rem;
   color: $c-trello-shadow;
+  align-items: center;
+  text-align: center;
+  padding: 0.625rem;
+  display: grid;
 }
 
 .label_wrap {

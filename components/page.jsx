@@ -6,7 +6,7 @@ import RowTitle from 'components/page/row/title'
 import RowGrid from 'components/page/row/grid'
 import Label from 'components/page/label'
 import Columns from 'components/page/columns'
-import { contains, environment } from 'scripts/helpers'
+import { contains, environment, chop } from 'scripts/helpers'
 import { useState } from 'react'
 
 function TreehouseSkills({ title, score }, index) {
@@ -22,28 +22,20 @@ function TreehouseSkills({ title, score }, index) {
 }
 
 function Page({ projects, roles, education, treehouse }) {
-  const items = 3
-  const range = 2
-  const [maxProject, setMaxProject] = useState(items)
+  const page = 3
+  const [max, setMax] = useState(page)
 
   if (!environment.isLocal()) projects = projects.filter(({ labels }) => !contains.label(labels, environment.local))
 
-  const controls = projects.length > items
-
   const projectProps = {
-    setProjectRange: (value) => setMaxProject(value),
+    setPageRange: (value) => setMax(value),
+    controls: projects.length > page,
     length: projects.length,
-    maxProject,
-    controls,
+    page,
+    max,
   }
 
-  projects = projects.filter((_, index) => {
-    index = index + 1
-    if (index >= maxProject - range) {
-      if (index <= maxProject) return true
-    }
-    return false
-  })
+  projects = chop.results(projects, max, page)
 
   return (
     <Wrap className={styles.wrap}>

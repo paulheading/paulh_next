@@ -1,8 +1,6 @@
 @import 'styles/global/mixins';
 
-$margin-button: $padding-row + 1.5rem;
-
-@mixin button {
+@mixin wrap-button {
   position: absolute;
   text-align: center;
 
@@ -17,7 +15,11 @@ $margin-button: $padding-row + 1.5rem;
 }
 
 .prev_button {
-  @include button;
+  @include wrap-button;
+
+  button {
+    @include row-button('prev', 1.25rem);
+  }
 
   @include medium-down {
     top: -1rem;
@@ -29,7 +31,11 @@ $margin-button: $padding-row + 1.5rem;
 }
 
 .next_button {
-  @include button;
+  @include wrap-button;
+
+  button {
+    @include row-button('next', 1.25rem);
+  }
 
   @include medium-down {
     bottom: -2.5rem;

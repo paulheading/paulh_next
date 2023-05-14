@@ -3,8 +3,9 @@ import { CreateLink, NotFound } from 'components/marquee'
 import SettingsIcon from 'icons/settings'
 import Label from 'components/page/label'
 import Window from 'components/desktop/window'
-import { Fragment } from 'react'
-import { contains, environment } from 'scripts/helpers'
+import Footer from 'components/desktop/window/trello/footer'
+import { Fragment, useState } from 'react'
+import { contains, environment, chop } from 'scripts/helpers'
 
 function Projects({ name, more, labels }, index) {
   const createProps = {
@@ -55,6 +56,9 @@ function Projects({ name, more, labels }, index) {
 }
 
 function TrelloWindow({ name, folders, projects, style }) {
+  const page = 2
+  const [max, setMax] = useState(page)
+
   if (!environment.isLocal()) projects = projects.filter(({ labels }) => !contains.label(labels, environment.local))
 
   const windowProps = {
@@ -62,6 +66,18 @@ function TrelloWindow({ name, folders, projects, style }) {
     folders,
     style,
   }
+
+  const controls = projects.length > page
+
+  const footerProps = {
+    setPageRange: (value) => setMax(value),
+    className: styles.footer,
+    length: projects.length,
+    page,
+    max,
+  }
+
+  projects = chop.results(projects, max, page)
 
   return (
     <Window {...windowProps}>
@@ -72,8 +88,12 @@ function TrelloWindow({ name, folders, projects, style }) {
             <SettingsIcon />
           </div>
         </header>
-        <main>{projects.map(Projects)}</main>
-        <footer className={styles.footer}>{projects.length > 2 && <div>+ See more</div>}</footer>
+        <main>
+          {projects.map((project, index) => (
+            <Projects {...project} key={'project' + index} />
+          ))}
+        </main>
+        {controls && <Footer {...footerProps} />}
       </div>
     </Window>
   )

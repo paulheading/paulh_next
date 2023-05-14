@@ -1,24 +1,34 @@
 import styles from 'styles/components/page/row/grid.module.scss'
 import RowButton from 'components/page/row/button'
+import PrevIcon from 'icons/prev'
+import NextIcon from 'icons/next'
 
-function RowGrid({ controls, children, length, maxProject, setProjectRange }) {
+function RowGrid({ controls, children, length, max, setPageRange, page }) {
   const prevProps = {
     className: styles.prev_button,
-    onClick: () => setProjectRange(maxProject - 1),
-    active: maxProject > 3,
+    onClick: () => setPageRange(max - 1),
+    active: max > page,
   }
 
   const nextProps = {
     className: styles.next_button,
-    onClick: () => setProjectRange(maxProject + 1),
-    active: length > maxProject,
+    onClick: () => setPageRange(max + 1),
+    active: length > max,
   }
 
   return (
     <div className={styles.container}>
-      {controls && <RowButton {...prevProps}>prev</RowButton>}
+      {controls && (
+        <RowButton {...prevProps}>
+          <PrevIcon />
+        </RowButton>
+      )}
       <div className={styles.wrap}>{children}</div>
-      {controls && <RowButton {...nextProps}>next</RowButton>}
+      {controls && (
+        <RowButton {...nextProps}>
+          <NextIcon />
+        </RowButton>
+      )}
     </div>
   )
 }
