@@ -117,10 +117,11 @@ toggle.folders = function (name, folder) {
 const contains = {}
 
 contains.label = function (labels, check) {
+  var result = false
   labels.forEach(({ name }) => {
-    if (name == check) return true
+    if (name == check) result = true
   })
-  return false
+  return result
 }
 
 class environmentCreator {
