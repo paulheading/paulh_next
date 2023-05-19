@@ -79,9 +79,7 @@ function Canvas({ projects, spotify, gem, npm, count }) {
 
       const siblings = find.sibling_windows(active)
 
-      siblings.forEach((sibling) => {
-        unbump(sibling)
-      })
+      siblings.forEach((sibling) => unbump(sibling))
 
       bump(closest)
     })

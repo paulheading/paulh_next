@@ -67,10 +67,9 @@ function TrelloWindow({ name, folders, projects, style }) {
     style,
   }
 
-  const controls = projects.length > page
-
   const footerProps = {
     setPageRange: (value) => setMax(value),
+    controls: projects.length > page,
     className: styles.footer,
     length: projects.length,
     page,
@@ -93,7 +92,7 @@ function TrelloWindow({ name, folders, projects, style }) {
             <Projects {...project} key={'project' + index} />
           ))}
         </main>
-        {controls && <Footer {...footerProps} />}
+        <Footer {...footerProps} />
       </div>
     </Window>
   )

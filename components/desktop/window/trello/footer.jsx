@@ -12,7 +12,7 @@ function TrelloButton({ active, children, className, onClick }) {
   )
 }
 
-function TrelloFooter({ className, setPageRange, max, length, page }) {
+function TrelloFooter({ className, setPageRange, max, length, page, controls }) {
   const prevProps = {
     onClick: () => setPageRange(max - page),
     className: styles.prev_button,
@@ -27,19 +27,23 @@ function TrelloFooter({ className, setPageRange, max, length, page }) {
 
   return (
     <footer className={className}>
-      <div>
-        <TrelloButton {...prevProps}>
-          <PrevIcon />
-        </TrelloButton>
-      </div>
-      <div>
-        {max / page} of {length / page}
-      </div>
-      <div>
-        <TrelloButton {...nextProps}>
-          <NextIcon />
-        </TrelloButton>
-      </div>
+      {controls && (
+        <div>
+          <div>
+            <TrelloButton {...prevProps}>
+              <PrevIcon />
+            </TrelloButton>
+          </div>
+          <div>
+            {max / page} of {length / page}
+          </div>
+          <div>
+            <TrelloButton {...nextProps}>
+              <NextIcon />
+            </TrelloButton>
+          </div>
+        </div>
+      )}
     </footer>
   )
 }
