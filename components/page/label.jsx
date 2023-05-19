@@ -16,6 +16,7 @@ function Label({ color, children, size = 'sm', variant = 'solid' }) {
       display: 'inline-block',
       fontSize: fontSize(),
       margin: '0.25rem',
+      maxWidth: '15rem',
     }
 
     if (variant === 'outline') {

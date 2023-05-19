@@ -1,14 +1,10 @@
-const personal = {
+export default {
   name: 'Paul Heading',
   email: 'hello@paulh.biz',
-  location: 'Camberwell, London',
-  github: 'https://github.com/paulheading',
-  medium: 'https://blog.paulh.biz',
-  link: (content, title = content) => <a href={`${content}`}>{title}</a>,
+  location: 'Herne Hill, London',
+  platforms: [
+    { name: 'Github', url: 'https://github.com/paulheading' },
+    { name: 'Medium', url: 'https://blog.paulh.biz' },
+    { name: 'Udemy', url: 'https://www.udemy.com/user/paul-heading-2' },
+  ],
 }
-
-personal.email_link = <a href={`mailto:${personal.email}`}>{personal.email}</a>
-personal.github_link = personal.link(personal.github, 'Github')
-personal.medium_link = personal.link(personal.medium, 'Medium')
-
-export default personal

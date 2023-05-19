@@ -1,5 +1,10 @@
 const subject = (title, score) => ({ title, score })
 
-const getTreehouseData = () => [subject('Javascript', 9652), subject('CSS', 1159), subject('Dev Tools', 1024), subject('Databases', 864), subject('HTML', 493), subject('Computer Science', 292), subject('PHP', 165), subject('Design', 148), subject('Business', 112)]
+const getTreehouseData = () => [
+  subject('HTML5 Game from scratch step by step learning JavaScript', '78%'),
+  subject('The complete guide to testing javascript & node applications', '100%'),
+  subject('JavaScript: Understanding the Weird Parts', '95%'),
+  subject('JavaScript: Understanding the Weird Parts', '95%'),
+]
 
 export default getTreehouseData

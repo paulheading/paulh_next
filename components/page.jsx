@@ -1,13 +1,15 @@
 import styles from 'styles/components/page.module.scss'
 import Wrap from 'components/wrap'
-import personal from 'data/personal'
+import details from 'data/personal'
 import Row from 'components/page/row'
 import RowTitle from 'components/page/row/title'
 import RowGrid from 'components/page/row/grid'
 import Label from 'components/page/label'
 import Columns from 'components/page/columns'
-import { contains, environment, chop } from 'scripts/helpers'
+import { contains, environment, chop, Person } from 'scripts/helpers'
 import { useState } from 'react'
+
+const paul = new Person(details)
 
 function TreehouseSkills({ title, score }, index) {
   const props = {
@@ -41,11 +43,11 @@ function Page({ projects, roles, education, treehouse }) {
     <Wrap className={styles.wrap}>
       <Row columns={2} align="center">
         <div className={styles.left_column}>
-          <h1>{personal.name}</h1>
+          <h1>{paul.name}</h1>
         </div>
         <div className={styles.copy_wrap}>
-          <div>{personal.location}</div>
-          <div>{personal.email_link}</div>
+          <div>{paul.location}</div>
+          <div>{paul.email.link}</div>
         </div>
       </Row>
       <Row columns={2}>
@@ -58,8 +60,9 @@ function Page({ projects, roles, education, treehouse }) {
           </div>
         </div>
         <div className={styles.link_wrap}>
-          <div>{personal.github_link}</div>
-          <div>{personal.medium_link}</div>
+          {paul.platforms.map(({ name, link }) => (
+            <div key={name}>{link}</div>
+          ))}
         </div>
       </Row>
       <Row>
@@ -71,7 +74,7 @@ function Page({ projects, roles, education, treehouse }) {
         </RowGrid>
       </Row>
       <Row>
-        <RowTitle>Skills</RowTitle>
+        <RowTitle>Courses</RowTitle>
         <div className={styles.skills_wrap}>{treehouse.map(TreehouseSkills)}</div>
       </Row>
       <Row>

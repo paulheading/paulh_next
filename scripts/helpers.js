@@ -134,4 +134,26 @@ environmentCreator.prototype.isLocal = function () {
 
 const environment = new environmentCreator(process.env.NEXT_PUBLIC_ENVIRONMENT)
 
-export { find, create, chop, toggle, contains, environment }
+function Person({ name, email, location, platforms }) {
+  this.name = name
+  this.email = this.createEmail(email)
+  this.location = location
+  this.platforms = platforms.map(this.createPlatform)
+}
+
+Person.prototype.link = function (name, url, custom) {
+  if (custom) url = custom + url
+  return <a href={url}>{name}</a>
+}
+
+Person.prototype.createPlatform = function ({ name, url }) {
+  const { link } = Person.prototype
+  return { name, url, link: link(name, url) }
+}
+
+Person.prototype.createEmail = function (email) {
+  const { link } = Person.prototype
+  return { address: email, link: link(email, email, 'mailto:') }
+}
+
+export { find, create, chop, toggle, contains, environment, Person }
