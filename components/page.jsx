@@ -27,6 +27,9 @@ function Page({ projects, roles, education, treehouse }) {
   const page = 3
   const [max, setMax] = useState(page)
 
+  console.log('is local? ', environment.isLocal())
+  console.log('name: ', environment.name)
+
   if (!environment.isLocal()) projects = projects.filter(({ labels }) => !contains.label(labels, environment.local))
 
   const projectProps = {
