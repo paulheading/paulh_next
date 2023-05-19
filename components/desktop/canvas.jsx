@@ -65,7 +65,7 @@ function Canvas({ projects, spotify, gem, npm, count }) {
     playlist: _2020,
   }
 
-  const creditProps = { className: styles.credit_link, href: 'https://google.com' }
+  const creditProps = { className: styles.credit_link, href: 'https://www.flaticon.com/authors/dinosoftlabs' }
 
   useEffect(() => {
     document.addEventListener('keyup', ({ key }) => {
