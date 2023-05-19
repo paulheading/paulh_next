@@ -74,7 +74,7 @@ function Page({ projects, roles, education, treehouse }) {
         </RowGrid>
       </Row>
       <Row>
-        <RowTitle>Courses</RowTitle>
+        <RowTitle>Udemy</RowTitle>
         <div className={styles.skills_wrap}>{treehouse.map(TreehouseSkills)}</div>
       </Row>
       <Row>
