@@ -2,12 +2,12 @@ export default {
   home: {
     title: 'Paul Heading | Portfolio | Full Stack Designer',
     keywords: 'portfolio, front end developer, front end designer, react, vue, frameworks, barbican, london',
-    desc: "I'm a Full Stack Designer. I design and build with the React.js and Vue.js frameworks. I currently work for the Barbican in London and have just over 1 years experience",
+    desc: "I'm a Full Stack Designer. I design and build with the React.js and Vue.js frameworks. I currently work for the Barbican in London and have just over 1 years experience.",
   },
   about: {
     title: 'Paul Heading | About | Full Stack Designer',
     keywords: 'portfolio, front end developer, front end designer, react, vue, gsap, netlify, trello',
-    desc: "I built this site using React.js, GSAP for animations, Netlify for form handling and several external api's. I use Trello as my CMS and pull data from Spotify, Medium, Github and TeamTreehouse",
+    desc: "I built this site using React.js, GSAP for animations, Netlify for form handling and several external api's. I use Trello as my CMS and pull data from Spotify, Medium, Github.",
   },
   resume: {
     title: 'Paul Heading | Resume | Full Stack Designer',

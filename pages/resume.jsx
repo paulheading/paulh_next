@@ -4,13 +4,13 @@ import Content from 'components/content'
 import Page from 'components/page'
 import { Fragment } from 'react'
 
-function Resume({ heroes, projects, gem, npm, spotify, roles, education, treehouse }) {
+function Resume({ heroes, projects, gem, npm, spotify, roles, education, udemy }) {
   const layoutProps = { heroes, projects, gem, npm, spotify }
   const pageProps = {
     projects,
     roles,
     education,
-    treehouse,
+    udemy,
   }
   return (
     <Fragment>

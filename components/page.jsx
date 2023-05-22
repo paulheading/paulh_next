@@ -11,24 +11,11 @@ import { useState } from 'react'
 
 const paul = new Person(details)
 
-function TreehouseSkills({ title, score }, index) {
-  const props = {
-    color: 'purple',
-    size: 'md',
-  }
-  return (
-    <Label key={'label' + index} {...props}>
-      {`${title} ${score}`}
-    </Label>
-  )
-}
+const Courses = ({ title, score }) => <button key={title} className={styles.course}>{`${title} ${score}`}</button>
 
-function Page({ projects, roles, education, treehouse }) {
+function Page({ projects, roles, education, udemy }) {
   const page = 3
   const [max, setMax] = useState(page)
-
-  console.log('is local? ', environment.isLocal())
-  console.log('name: ', environment.name)
 
   if (!environment.isLocal()) projects = projects.filter(({ labels }) => !contains.label(labels, environment.local))
 
@@ -40,7 +27,13 @@ function Page({ projects, roles, education, treehouse }) {
     max,
   }
 
+  const courseProps = {
+    style: { alignItems: 'flex-start' },
+  }
+
   projects = chop.results(projects, max, page)
+
+  roles = roles.map((role) => ({ ...role, variant: 'role' }))
 
   return (
     <Wrap className={styles.wrap}>
@@ -70,19 +63,15 @@ function Page({ projects, roles, education, treehouse }) {
       </Row>
       <Row>
         <RowTitle>Projects</RowTitle>
-        <RowGrid {...projectProps}>
-          {projects.map((project, index) => (
-            <Columns {...project} key={'project' + index} />
-          ))}
-        </RowGrid>
+        <RowGrid {...projectProps}>{projects.map(Columns)}</RowGrid>
       </Row>
       <Row>
         <RowTitle>Udemy</RowTitle>
-        <div className={styles.skills_wrap}>{treehouse.map(TreehouseSkills)}</div>
+        <RowGrid {...courseProps}>{udemy.map(Courses)}</RowGrid>
       </Row>
       <Row>
         <RowTitle>Roles</RowTitle>
-        <RowGrid>{roles.map((role, index) => Columns({ ...role, variant: 'role' }, index))}</RowGrid>
+        <RowGrid>{roles.map(Columns)}</RowGrid>
       </Row>
       <Row>
         <RowTitle>Education</RowTitle>

@@ -1,5 +1,7 @@
 @import 'styles/global/mixins';
 
+$c-more: $c-gray-7;
+
 .wrap {
   @include medium-up {
     box-shadow: $box-shadow-page;
@@ -75,19 +77,36 @@
 }
 
 .more {
-  padding: 0.1875rem 0.375rem 0.25rem;
   background-color: transparent;
-  border: 1px solid $c-gray-7;
-  font-size: $font-size-h6;
+  border: 1px solid $c-more;
+  padding-right: 0.375rem;
   border-radius: 0.25rem;
+  padding-left: 0.375rem;
+  margin-left: 0.25rem;
+  font-size: inherit;
   font-weight: bold;
-  color: $c-gray-7;
   cursor: pointer;
-  margin: 0.25rem;
-  line-height: 1;
+  color: $c-more;
 
   @include focus {
-    background-color: $c-gray-7;
+    background-color: $c-more;
+    color: white;
+  }
+}
+
+.course {
+  border-radius: $border-radius-lg;
+  padding: $border-radius-lg;
+  background-color: white;
+  border: 1px solid $c-more;
+  font-weight: bold;
+  text-align: left;
+  font-size: 1rem;
+  cursor: pointer;
+  color: $c-more;
+
+  @include focus {
+    background-color: $c-more;
     color: white;
   }
 }

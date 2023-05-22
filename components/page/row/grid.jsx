@@ -3,7 +3,12 @@ import RowButton from 'components/page/row/button'
 import PrevIcon from 'icons/prev'
 import NextIcon from 'icons/next'
 
-function RowGrid({ controls, children, length, max, setPageRange, page }) {
+function RowGrid({ controls, children, length, max, setPageRange, page, style }) {
+  const wrapProps = {
+    className: styles.wrap,
+    style: style ? style : null,
+  }
+
   const prevProps = {
     className: styles.prev_button,
     onClick: () => setPageRange(max - 1),
@@ -23,7 +28,7 @@ function RowGrid({ controls, children, length, max, setPageRange, page }) {
           <PrevIcon />
         </RowButton>
       )}
-      <div className={styles.wrap}>{children}</div>
+      <div {...wrapProps}>{children}</div>
       {controls && (
         <RowButton {...nextProps}>
           <NextIcon />

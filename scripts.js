@@ -2,7 +2,7 @@ import getTrelloData from 'scripts/trello'
 import getSpotifyData from 'scripts/spotify'
 import getGemData from 'scripts/gem'
 import getNpmData from 'scripts/npm'
-import getTreehouseData from 'scripts/treehouse'
+import getUdemyData from 'scripts/udemy'
 
 async function getLayoutData() {
   return {
@@ -18,7 +18,7 @@ async function getResumeData() {
   return {
     roles: await getTrelloData('roles'),
     education: await getTrelloData('education'),
-    treehouse: getTreehouseData(),
+    udemy: getUdemyData(),
   }
 }
 
