@@ -1,24 +1,23 @@
+import parse from 'html-react-parser'
 import styles from 'styles/pages/about.module.scss'
 import Layout from 'layouts/main'
-import { getLayoutData } from 'scripts'
+import { getLayoutData, getPagesData } from 'scripts'
 import Content from 'components/content'
 import Wrap from 'components/wrap'
 import { Fragment } from 'react'
 
 function About(props) {
+  const { pages } = props
+  const page = pages.filter((page) => page.name == 'About')[0]
+
+  console.log(page.desc)
+
   return (
     <Fragment>
       <Content>
         <Wrap>
-          <h1 className={styles.title}>About</h1>
-          <div className={styles.copy}>
-            <p>
-              Hi 👋 I&apos;ve been a Full Stack Designer since Nov 2019. I work in the <strong>Digital Products</strong> team at the <a href="https://barbican.org.uk">Barbican</a> and write javascript for modern front-end frameworks.
-            </p>
-            <p>
-              Before this, I was a <a href="https://www.creativelivesinprogress.com/article/paul-heading">Designer</a> 👨‍🎨 in the Barbican <a href="https://www.creativelivesinprogress.com/article/barbican">Design Team</a>.
-            </p>
-          </div>
+          <h1 className={styles.title}>{parse(page.name)}</h1>
+          <div className={styles.copy}>{parse(page.desc)}</div>
         </Wrap>
       </Content>
       <Layout {...props} />
@@ -30,6 +29,7 @@ export async function getStaticProps() {
   return {
     props: {
       ...(await getLayoutData()),
+      ...(await getPagesData()),
     },
   }
 }

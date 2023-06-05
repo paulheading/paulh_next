@@ -1,14 +1,5 @@
 @import 'styles/global/mixins';
 
-:root {
-  --c-hero-a1: hsl(230, 100%, 60%);
-  --c-hero-a2: hsl(150, 100%, 60%);
-  --c-hero-a3: hsl(170, 100%, 70%);
-  --c-hero-b1: hsl(45, 100%, 50%);
-  --c-hero-b2: hsl(1, 100%, 65%);
-  --c-hero-b3: rgb(255, 230, 102);
-}
-
 body {
   font-family: $font-family-body;
   font-weight: $font-weight-bold;
@@ -32,52 +23,50 @@ a {
 }
 
 h1 {
+  $h1-drop: $font-size-h1 * 0.5;
+
   font-family: $font-family-headings;
-  font-size: $font-size-h2;
+  font-size: $font-size-h1;
+  margin: 0 0 $h1-drop;
   line-height: 1.2;
-  margin: 0;
 }
 
 h2 {
   font-family: $font-family-headings;
-  margin: 0;
+  font-size: $font-size-h2;
+  margin: 0 0 1rem;
 }
 
 h3 {
   font-family: $font-family-headings;
   font-size: $font-size-h3;
-  margin: 0;
+  margin: 0 0 1rem;
 }
 
 h4 {
   font-family: $font-family-headings;
   font-size: $font-size-h4;
-  margin: 0;
+  margin: 0 0 1rem;
 }
 
 h5 {
   font-family: $font-family-headings;
   font-size: $font-size-h5;
-  margin: 0;
+  margin: 0 0 1rem;
 }
 
 h6 {
   font-size: $font-size-h6;
-  margin: 0;
+  margin: 0 0 1rem;
 }
 
 p {
-  margin: 0;
+  font-weight: 400;
+  margin: 0 0 1rem;
 
-  &:not(:last-child) {
-    margin-bottom: $plusp;
-  }
-
-  a {
-    // @include focus {
-    //   @include single-box($focus--dark);
-    //   background-color: $focus--dark;
-    // }
+  + h3,
+  + h4 {
+    margin-top: 3rem;
   }
 }
 

@@ -1,19 +1,20 @@
+import parse from 'html-react-parser'
 import styles from 'styles/components/page.module.scss'
 import Wrap from 'components/wrap'
 import details from 'data/personal'
 import Row from 'components/page/row'
 import RowTitle from 'components/page/row/title'
 import RowGrid from 'components/page/row/grid'
-import Label from 'components/page/label'
 import Columns from 'components/page/columns'
 import { contains, environment, chop, Person } from 'scripts/helpers'
 import { useState } from 'react'
+import { find } from 'scripts/helpers'
 
 const paul = new Person(details)
 
 const Courses = ({ title, score }) => <button key={title} className={styles.course}>{`${title} ${score}`}</button>
 
-function Page({ projects, roles, education, udemy }) {
+function Page({ projects, roles, education, udemy, about }) {
   const page = 3
   const [max, setMax] = useState(page)
 
@@ -39,7 +40,7 @@ function Page({ projects, roles, education, udemy }) {
     <Wrap className={styles.wrap}>
       <Row columns={2} align="center">
         <div className={styles.left_column}>
-          <h1>{paul.name}</h1>
+          <h1 style={{ marginBottom: 0 }}>{paul.name}</h1>
         </div>
         <div className={styles.copy_wrap}>
           <div>{paul.location}</div>
@@ -49,11 +50,7 @@ function Page({ projects, roles, education, udemy }) {
       <Row columns={2}>
         <div className={styles.left_column}>
           <h3 className={styles.title_wrap}>Biography</h3>
-          <div>
-            <p>
-              Hi 👋 I&apos;ve been a Front End Developer since November 2019. I work in the <strong>Digital Products</strong> team at the <a href="https://barbican.org.uk">Barbican</a> and write javascript for front-end frameworks such as Vue.js and React.
-            </p>
-          </div>
+          <div>{parse(find.paragraph(2, about.desc))}</div>
         </div>
         <div className={styles.link_wrap}>
           {paul.platforms.map(({ name, link }) => (

@@ -11,6 +11,12 @@ find.sibling_windows = function (element) {
   return children.filter((child) => child != parent)
 }
 
+find.paragraph = function (value, text) {
+  text = text.split('<p>')
+  text = text.filter((_, index) => index == value)
+  return '<p>' + text
+}
+
 const create = {}
 
 create.label = function ({ name, color = 'purple' }, index) {

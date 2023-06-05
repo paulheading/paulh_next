@@ -2,8 +2,6 @@ import axios from 'axios'
 import { list } from 'scripts/trello/variables'
 import { removeHero, makeHtml, cardType, prepLabels, readmore, trelloCards, trelloAttachments, trelloActions } from 'scripts/trello/helpers'
 
-const { projects, roles, education } = list
-
 async function getTrelloAttachments(target) {
   if (!target) return
   const { data } = await axios.get(trelloAttachments(target))
@@ -79,11 +77,12 @@ function getTrelloHeroes(projects) {
 
 async function getTrelloData(type) {
   if (type === 'projects' || type === 'heroes') {
-    const cards = await getTrelloCards(projects)
+    const cards = await getTrelloCards(list.projects)
     return type === 'projects' ? getTrelloProjects(cards) : getTrelloHeroes(cards)
   }
-  if (type === 'roles') return await getTrelloCards(roles)
-  if (type === 'education') return await getTrelloCards(education)
+  if (type === 'roles') return await getTrelloCards(list.roles)
+  if (type === 'education') return await getTrelloCards(list.education)
+  if (type === 'pages') return await getTrelloCards(list.pages)
 }
 
 export default getTrelloData
