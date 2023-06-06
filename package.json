@@ -17,9 +17,11 @@
     "html-react-parser": "^3.0.16",
     "luxon": "^3.2.1",
     "next": "^13.3.0",
+    "raw-loader": "^4.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.41.1",
+    "react-markdown": "^8.0.7",
     "sass": "^1.57.1",
     "showdown": "^2.1.0"
   }

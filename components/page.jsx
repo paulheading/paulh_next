@@ -1,4 +1,3 @@
-import parse from 'html-react-parser'
 import styles from 'styles/components/page.module.scss'
 import Wrap from 'components/wrap'
 import details from 'data/personal'
@@ -8,13 +7,15 @@ import RowGrid from 'components/page/row/grid'
 import Columns from 'components/page/columns'
 import { contains, environment, chop, Person } from 'scripts/helpers'
 import { useState } from 'react'
-import { find } from 'scripts/helpers'
+import ReactMarkdown from 'react-markdown'
 
 const paul = new Person(details)
 
 const Courses = ({ title, score }) => <button key={title} className={styles.course}>{`${title} ${score}`}</button>
 
-function Page({ projects, roles, education, udemy, about }) {
+const Platforms = ({ name, link }) => <div key={name}>{link}</div>
+
+function Page({ projects, roles, education, udemy, markdown }) {
   const page = 3
   const [max, setMax] = useState(page)
 
@@ -50,13 +51,11 @@ function Page({ projects, roles, education, udemy, about }) {
       <Row columns={2}>
         <div className={styles.left_column}>
           <h3 className={styles.title_wrap}>Biography</h3>
-          <div>{parse(find.paragraph(2, about.desc))}</div>
+          <div>
+            <ReactMarkdown>{markdown}</ReactMarkdown>
+          </div>
         </div>
-        <div className={styles.link_wrap}>
-          {paul.platforms.map(({ name, link }) => (
-            <div key={name}>{link}</div>
-          ))}
-        </div>
+        <div className={styles.link_wrap}>{paul.platforms.map(Platforms)}</div>
       </Row>
       <Row>
         <RowTitle>Projects</RowTitle>

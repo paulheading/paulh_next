@@ -1,18 +1,17 @@
 import Layout from 'layouts/main'
-import { getLayoutData, getResumeData, getPagesData } from 'scripts'
+import { getLayoutData, getResumeData } from 'scripts'
 import Content from 'components/content'
 import Page from 'components/page'
 import { Fragment } from 'react'
 
-function Resume({ heroes, projects, gem, npm, spotify, roles, education, udemy, pages }) {
-  const about = pages.filter((page) => page.name == 'About')[0]
+function Resume({ heroes, projects, gem, npm, spotify, roles, education, udemy, markdown }) {
   const layoutProps = { heroes, projects, gem, npm, spotify }
   const pageProps = {
     projects,
     roles,
     education,
     udemy,
-    about,
+    markdown,
   }
   return (
     <Fragment>
@@ -25,11 +24,13 @@ function Resume({ heroes, projects, gem, npm, spotify, roles, education, udemy, 
 }
 
 export async function getStaticProps() {
+  const markdown = await import(`../markdown/biography.md`)
+
   return {
     props: {
       ...(await getLayoutData()),
       ...(await getResumeData()),
-      ...(await getPagesData()),
+      markdown: markdown.default,
     },
   }
 }

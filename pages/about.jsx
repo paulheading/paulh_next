@@ -1,23 +1,22 @@
-import parse from 'html-react-parser'
 import styles from 'styles/pages/about.module.scss'
 import Layout from 'layouts/main'
-import { getLayoutData, getPagesData } from 'scripts'
+import { getLayoutData } from 'scripts'
 import Content from 'components/content'
 import Wrap from 'components/wrap'
 import { Fragment } from 'react'
+import ReactMarkdown from 'react-markdown'
 
 function About(props) {
-  const { pages } = props
-  const page = pages.filter((page) => page.name == 'About')[0]
-
-  console.log(page.desc)
+  const { markdown } = props
 
   return (
     <Fragment>
       <Content>
         <Wrap>
-          <h1 className={styles.title}>{parse(page.name)}</h1>
-          <div className={styles.copy}>{parse(page.desc)}</div>
+          <h1 className={styles.title}>About</h1>
+          <div className={styles.copy}>
+            <ReactMarkdown>{markdown}</ReactMarkdown>
+          </div>
         </Wrap>
       </Content>
       <Layout {...props} />
@@ -26,10 +25,12 @@ function About(props) {
 }
 
 export async function getStaticProps() {
+  const markdown = await import(`../markdown/about.md`)
+
   return {
     props: {
       ...(await getLayoutData()),
-      ...(await getPagesData()),
+      markdown: markdown.default,
     },
   }
 }
