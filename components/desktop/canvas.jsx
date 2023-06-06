@@ -100,7 +100,7 @@ function Canvas({ projects, spotify, gem, npm, count }) {
       </Wrap>
       <Wrap className={styles.credit_wrap}>
         <CreateLink {...creditProps}>
-          <h6>Icons made by DinosoftLabs</h6>
+          <h6 style={{ marginBottom: 0 }}>Icons made by DinosoftLabs</h6>
         </CreateLink>
       </Wrap>
     </div>
