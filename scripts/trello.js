@@ -82,7 +82,6 @@ async function getTrelloData(type) {
   }
   if (type === 'roles') return await getTrelloCards(list.roles)
   if (type === 'education') return await getTrelloCards(list.education)
-  if (type === 'pages') return await getTrelloCards(list.pages)
 }
 
 export default getTrelloData
