@@ -4,7 +4,8 @@ import Content from 'components/content'
 import Page from 'components/page'
 import { Fragment } from 'react'
 
-function Resume({ heroes, projects, gem, npm, spotify, roles, education, udemy, markdown }) {
+function Resume(props) {
+  const { heroes, projects, gem, npm, spotify, roles, education, udemy, markdown } = props
   const layoutProps = { heroes, projects, gem, npm, spotify }
   const pageProps = {
     projects,
@@ -13,6 +14,7 @@ function Resume({ heroes, projects, gem, npm, spotify, roles, education, udemy, 
     udemy,
     markdown,
   }
+
   return (
     <Fragment>
       <Content>

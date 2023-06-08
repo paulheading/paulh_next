@@ -1,56 +1,28 @@
-import showdown from "showdown";
-import { api, list, user } from "scripts/trello/variables";
+import showdown from 'showdown'
+import { list } from 'scripts/trello/variables'
 
-const trello = (target) =>
-  `${api.base}${target}?key=${api.key}&token=${user.token}`;
+const create = {}
 
-const trelloCards = (target) => trello(`list/${target}/cards/`);
+create.labels = (target) => (!target.length ? [{ name: 'Personal', color: 'grey' }] : target.map(({ name, color }) => ({ name, color })))
 
-const trelloAttachments = (target) => trello(`cards/${target}/attachments`);
+create.html = (target) => new showdown.Converter().makeHtml(target)
 
-const trelloActions = (target) => trello(`cards/${target}/actions`);
+create.readMore = (attachments) => {
+  const more = attachments.filter(({ name }) => name === 'Read more')
+  return more.length ? more[0] : null
+}
 
-const readmore = (value) => {
-  const result = value.filter(({ name }) => name === "Read more")[0];
-  return result !== undefined ? result : null;
-};
+create.type = (target) => {
+  const { pages, roles, projects, education } = list
+  if (target == pages) return 'pages'
+  if (target == roles) return 'roles'
+  if (target == projects) return 'projects'
+  if (target == education) return 'education'
+  return 'hero'
+}
 
-const prepLabels = (target) =>
-  !target.length
-    ? [{ name: "Personal", color: "grey" }]
-    : target.map(({ name, color }) => ({ name, color }));
+const remove = {}
 
-const shuffleArray = () => array.sort(() => Math.random() - 0.5);
+remove.hero = (name) => name.replace('Hero: ', '')
 
-const removeHero = (name) => name && name.replace("Hero: ", "");
-
-const makeHtml = (target) => new showdown.Converter().makeHtml(target);
-
-const cardType = (target) => {
-  const { pages, roles, projects, education } = list;
-  switch (target) {
-    case pages:
-      return "pages";
-    case roles:
-      return "roles";
-    case projects:
-      return "projects";
-    case education:
-      return "education";
-    default:
-      return "hero";
-  }
-};
-
-export {
-  removeHero,
-  makeHtml,
-  cardType,
-  readmore,
-  prepLabels,
-  shuffleArray,
-  trello,
-  trelloCards,
-  trelloAttachments,
-  trelloActions,
-};
+export { remove, create }

@@ -1,87 +1,73 @@
-import axios from 'axios'
-import { list } from 'scripts/trello/variables'
-import { removeHero, makeHtml, cardType, prepLabels, readmore, trelloCards, trelloAttachments, trelloActions } from 'scripts/trello/helpers'
+import { create, remove } from 'scripts/trello/helpers'
+import { string, list } from 'scripts/trello/variables'
+import get from 'scripts/helpers/get'
 
-async function getTrelloAttachments(target) {
+const getTrello = {}
+
+getTrello.JSON = async (target) => await get.JSON(string.url(target))
+
+getTrello.attachments = async (target) => {
   if (!target) return
-  const { data } = await axios.get(trelloAttachments(target))
-  return data.map(({ id, name, url }) => ({ id, name, url }))
+
+  const results = await getTrello.JSON(string.attachments(target))
+
+  return results.map(({ id, name, url }) => ({ id, name, url }))
 }
 
-async function getTrelloActions(target) {
+getTrello.actions = async (target) => {
   if (!target) return
-  const { data } = await axios.get(trelloActions(target))
-  return data
+  return await await getTrello.JSON(string.actions(target))
 }
 
-function getTrelloSvgs(target) {
-  if (target && target.length) {
-    const svg = target.filter(({ data }) => {
-      const { text } = data
-      if (text && text.startsWith('`<svg')) return true
-    })
-    if (svg.length) return svg[0].data.text.slice(1, -1)
-  }
-  return null
-}
-
-async function getTrelloCards(target) {
-  const { data } = await axios.get(trelloCards(target), {
-    headers: { Accept: 'application/json' },
+getTrello.svgs = (actions) => {
+  if (!actions.length) return null
+  const svg = actions.filter(({ data }) => {
+    const { text } = data
+    return text ? text.startsWith('`<svg') : false
   })
-  const type = cardType(target)
-
-  const result = data.map(async ({ desc, name, start, due, dueComplete, id, labels }) => {
-    let attachments,
-      actions,
-      more,
-      marquee,
-      svg = null
-
-    if (id && id !== undefined) {
-      attachments = await getTrelloAttachments(id)
-      actions = await getTrelloActions(id)
-    }
-
-    if (attachments && attachments !== undefined) more = readmore(attachments)
-    if (name && name !== undefined) marquee = removeHero(name)
-    if (desc !== undefined) desc = makeHtml(desc)
-    if (labels && labels !== undefined) labels = prepLabels(labels)
-    if (type === 'projects') svg = getTrelloSvgs(actions)
-
-    return {
-      svg,
-      marquee,
-      attachments,
-      actions,
-      more,
-      desc,
-      name,
-      start,
-      due,
-      dueComplete,
-      id,
-      labels,
-    }
-  })
-
-  return await Promise.all(result)
+  return svg.length ? svg[0].data.text.slice(1, -1) : null
 }
 
-const getTrelloProjects = (projects) => projects.map((project) => ({ ...project, name: project.name.replace('Hero: ', '') }))
+getTrello.projects = (cards) => cards.map((card) => ({ ...card, name: remove.hero(card.name) }))
 
-function getTrelloHeroes(projects) {
-  projects = projects.filter(({ name }) => name.startsWith('Hero: '))
-  return projects.map((project) => ({ ...project, name: project.name.replace('Hero: ', '') }))
+getTrello.heroes = (cards) => {
+  cards = cards.filter(({ name }) => name.startsWith('Hero: '))
+  return cards.map((card) => ({ ...card, name: remove.hero(card.name) }))
 }
 
-async function getTrelloData(type) {
-  if (type === 'projects' || type === 'heroes') {
-    const cards = await getTrelloCards(list.projects)
-    return type === 'projects' ? getTrelloProjects(cards) : getTrelloHeroes(cards)
+async function cardResults(result, list) {
+  result.type = create.type(list)
+  result.attachments = result.id ? await getTrello.attachments(result.id) : null
+  result.actions = result.id ? await getTrello.actions(result.id) : null
+  result.more = create.readMore(result.attachments)
+  result.marquee = result.name ? result.name.replace('Hero: ', '') : null
+  result.desc = result.desc ? create.html(result.desc) : null
+  result.labels = result.labels ? create.labels(result.labels) : null
+  result.svg = result.type == 'projects' ? getTrello.svgs(result.actions) : null
+  return result
+}
+
+getTrello.cards = async (list) => {
+  var results = await getTrello.JSON(string.cards(list))
+
+  results = results.map((result) => cardResults(result, list))
+
+  return await Promise.all(results)
+}
+
+getTrello.data = async (type) => {
+  if (type == 'projects') {
+    const cards = await getTrello.cards(list.projects)
+    return getTrello.projects(cards)
   }
-  if (type === 'roles') return await getTrelloCards(list.roles)
-  if (type === 'education') return await getTrelloCards(list.education)
+
+  if (type == 'heroes') {
+    const cards = await getTrello.cards(list.projects)
+    return getTrello.heroes(cards)
+  }
+
+  if (type === 'roles') return await getTrello.cards(list.roles)
+  if (type === 'education') return await getTrello.cards(list.education)
 }
 
-export default getTrelloData
+export default getTrello.data

@@ -1,19 +1,16 @@
+import get from 'scripts/helpers/get'
+
 async function getNpmData() {
-  let id = 'barbican-reset'
+  const name = 'barbican-reset'
+  const url = 'https://www.npmjs.com/package/' + name
 
-  let registry = `https://registry.npmjs.org/${id}`
-  registry = await fetch(registry)
-  registry = await registry.json()
+  const registry = await get.JSON('https://registry.npmjs.org/' + name)
+  const last_year = await get.JSON('https://api.npmjs.org/downloads/point/last-year/' + name)
 
-  let point = `https://api.npmjs.org/downloads/point/last-year/${id}`
-  point = await fetch(point)
-  point = await point.json()
+  const { latest } = registry['dist-tags']
+  const downloads = last_year['downloads']
 
-  const version = registry['dist-tags'].latest
-  const downloads = point['downloads']
-  const name = point['package']
-
-  return { name, version, downloads, url: 'https://www.npmjs.com/package/barbican-reset' }
+  return { name, version: latest, downloads, url }
 }
 
 export default getNpmData
