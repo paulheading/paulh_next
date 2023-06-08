@@ -42,4 +42,35 @@ create.date_span = function (start, due, dueComplete) {
   return `${years}${year_month > 0 ? `.${year_month} ` : ` `} ${print.years}`
 }
 
+create.environment = class {
+  constructor(name) {
+    this.name = name
+    this.local = 'local'
+  }
+  isLocal() {
+    return this.local == String(this.name)
+  }
+}
+
+create.person = class {
+  constructor({ name, email, location, platforms }) {
+    this.name = name
+    this.email = this.createEmail(email)
+    this.location = location
+    this.platforms = platforms.map(this.createPlatform)
+  }
+  link(name, url, custom) {
+    if (custom) url = custom + url
+    return <a href={url}>{name}</a>
+  }
+  createPlatform({ name, url }) {
+    const { link } = create.person.prototype
+    return { name, url, link: link(name, url) }
+  }
+  createEmail(email) {
+    const { link } = create.person.prototype
+    return { address: email, link: link(email, email, 'mailto:') }
+  }
+}
+
 export default create
