@@ -59,8 +59,6 @@ function TrelloWindow({ name, folders, projects, style }) {
   const page = 2
   const [max, setMax] = useState(page)
 
-  if (!environment.isLocal()) projects = projects.filter(({ labels }) => !contains.label(labels, environment.local))
-
   const windowProps = {
     name,
     folders,

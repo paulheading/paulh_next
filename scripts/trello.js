@@ -1,5 +1,6 @@
 import { create, remove } from 'scripts/trello/helpers'
 import { string, list } from 'scripts/trello/variables'
+import { contains, environment } from 'scripts/helpers'
 import get from 'scripts/helpers/get'
 
 const getTrello = {}
@@ -57,13 +58,21 @@ getTrello.cards = async (list) => {
 
 getTrello.data = async (type) => {
   if (type == 'projects') {
-    const cards = await getTrello.cards(list.projects)
-    return getTrello.projects(cards)
+    var cards = await getTrello.cards(list.projects)
+    var result = getTrello.projects(cards)
+
+    if (!environment.isLocal()) result = result.filter(({ labels }) => !contains.label(labels, environment.local))
+
+    return result
   }
 
   if (type == 'heroes') {
-    const cards = await getTrello.cards(list.projects)
-    return getTrello.heroes(cards)
+    var cards = await getTrello.cards(list.projects)
+    var result = getTrello.heroes(cards)
+
+    if (!environment.isLocal()) result = result.filter(({ labels }) => !contains.label(labels, environment.local))
+
+    return result
   }
 
   if (type === 'roles') return await getTrello.cards(list.roles)

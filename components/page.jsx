@@ -19,8 +19,6 @@ function Page({ projects, roles, education, udemy, markdown }) {
   const page = 3
   const [max, setMax] = useState(page)
 
-  if (!environment.isLocal()) projects = projects.filter(({ labels }) => !contains.label(labels, environment.local))
-
   const projectProps = {
     setPageRange: (value) => setMax(value),
     controls: projects.length > page,
