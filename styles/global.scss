@@ -60,22 +60,28 @@ h6 {
   margin: 0 0 1rem;
 }
 
+blockquote {
+  background-color: white;
+  display: inline-block;
+  margin: 0 0 2rem;
+  padding: 1rem;
+}
+
+blockquote p {
+  margin-bottom: 0;
+}
+
 p {
   font-weight: 400;
   margin: 0 0 1rem;
 
+  + blockquote {
+    margin-top: 1rem;
+  }
+
   + h3,
   + h4 {
     margin-top: 3rem;
-  }
-}
-
-blockquote,
-figure {
-  margin: 0;
-
-  &:not(:last-child) {
-    margin-bottom: $plusp;
   }
 }
 
