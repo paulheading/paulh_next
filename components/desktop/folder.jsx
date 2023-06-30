@@ -8,8 +8,11 @@ function Folder({ name, folders, setFolder, position, count }) {
   const open = state ? state.open : false
   const desktop = useMediaQuery(768)
 
+  // we want to determin if the count is odd or even
+  const oddOrEven = count % 2 ? 1 : 0
+
   const buttonProps = {
-    style: desktop ? { ...position[count] } : null,
+    style: desktop ? { ...position[oddOrEven] } : null,
     className: styles.folder_container,
     onClick: () => setFolder(name),
     id: name.replace(' ', '-'),
