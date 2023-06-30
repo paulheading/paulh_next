@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "remove:jsdoc": "rm -rf docs",
+    "build:jsdoc": "jsdoc -c jsdoc.json",
+    "jsdoc": "npm run remove:jsdoc && npm run build:jsdoc"
   },
   "dependencies": {
     "eslint": "8.30.0",
