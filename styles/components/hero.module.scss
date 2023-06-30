@@ -16,6 +16,10 @@
     &.loop_60734 {
       background-color: $c-60734-svg-sm;
     }
+
+    &.loop_6491c {
+      background-color: $c-6491c-svg-sm;
+    }
   }
 }
 
@@ -96,6 +100,31 @@
   }
 }
 
+.container.loop_6491c {
+  background-color: $c-6491c-bg;
+
+  path {
+    display: none;
+
+    &[class='st2'] {
+      fill: $c-6491c-svg-lg;
+      stroke: none;
+    }
+
+    &[class='st0'],
+    &[class='st1'] {
+      fill: none;
+      stroke: $c-6491c-svg-lg;
+      stroke-width: 2;
+      stroke-miterlimit: 10;
+    }
+
+    &[class='st1'] {
+      stroke-width: 3;
+    }
+  }
+}
+
 .name {
   max-width: $max-width-wrap;
   padding-right: 2rem;
@@ -112,11 +141,6 @@
 .link {
   padding: 0.375rem;
 
-  // @include small-down {
-  //   letter-spacing: -0.01em;
-  //   text-decoration: none;
-  // }
-
   @include focus {
     outline: none;
   }
@@ -132,9 +156,15 @@
       background-color: $c-60734-svg-lg;
     }
   }
+
+  &.loop_6491c {
+    @include focus {
+      background-color: $c-6491c-svg-lg;
+    }
+  }
 }
 
-.back {
+.artwork {
   transform: scale(2);
   position: relative;
   bottom: -0.5rem;

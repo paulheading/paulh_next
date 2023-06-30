@@ -16,9 +16,7 @@ const getTrello = {}
  * @returns {object}
  */
 getTrello.JSON = async function (target) {
-  /**
-   * string.url is the default trello url path
-   */
+  // string.url is the default trello url path
   return await get.JSON(string.url(target))
 }
 
@@ -31,9 +29,7 @@ getTrello.JSON = async function (target) {
 getTrello.attachments = async (target) => {
   if (!target) return
 
-  /**
-   * string.attachments is the default trello attachments path
-   */
+  // string.attachments is the default trello attachments path
   const results = await getTrello.JSON(string.attachments(target))
 
   return results.map(({ id, name, url }) => ({ id, name, url }))
@@ -48,9 +44,7 @@ getTrello.attachments = async (target) => {
 getTrello.actions = async function (target) {
   if (!target) return
 
-  /**
-   * string.attachments is the default trello actions path
-   */
+  // string.attachments is the default trello actions path
   return await await getTrello.JSON(string.actions(target))
 }
 
@@ -59,21 +53,18 @@ getTrello.actions = async function (target) {
  * @summary Filters the attached actions for svgs. Returns either the first svg or null
  * @param {array} actions
  * @returns {object | null}
+ * @deprecated Providing artwork locally instead of running it through trello
  */
 
 getTrello.svgs = function (actions) {
   if (!actions.length) return null
-  /**
-   * Filter content for svg tags.
-   */
+  // Filter content for svg tags.
   const svg = actions.filter(({ data }) => {
     const { text } = data
     return text ? text.startsWith('`<svg') : false
   })
-  /**
-   * If svg exists, return the first. Else return null.
-   */
-  return svg.length ? svg[0].data.text.slice(1, -1) : null
+  // If svg exists, return the first. Else return null.
+  return svg.length ? svg[0].data.text : null
 }
 
 /**
@@ -91,9 +82,7 @@ getTrello.projects = (cards) => cards.map((card) => ({ ...card, name: remove.her
 
 getTrello.heroes = (cards) => {
   cards = cards.filter(({ name }) => name.startsWith('Hero: '))
-  /**
-   * re-use getTrelloProjects to remove 'Hero: ' from the object.name
-   */
+  // re-use getTrelloProjects to remove 'Hero: ' from the object.name
   return getTrello.projects(cards)
 }
 
@@ -105,7 +94,10 @@ async function cardResults(result, list) {
   result.marquee = result.name ? result.name.replace('Hero: ', '') : null
   result.desc = result.desc ? create.html(result.desc) : null
   result.labels = result.labels ? create.labels(result.labels) : null
-  result.svg = result.type == 'projects' ? getTrello.svgs(result.actions) : null
+
+  // Providing artwork locally instead of running it through trello
+  // result.svg = result.type == 'projects' ? getTrello.svgs(result.actions) : null
+
   return result
 }
 
