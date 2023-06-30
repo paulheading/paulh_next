@@ -25,6 +25,6 @@ const Artwork = forwardRef(({ className, snippet }, ref) => {
   )
 })
 
-// Artwork.displayName = 'Artwork'
+Artwork.displayName = 'Artwork'
 
 export default Artwork
