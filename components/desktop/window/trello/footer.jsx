@@ -35,7 +35,7 @@ function TrelloFooter({ className, setPageRange, max, length, page, controls }) 
             </TrelloButton>
           </div>
           <div>
-            {max / page} of {length / page}
+            {max / page} of {Math.ceil(length / page)}
           </div>
           <div>
             <TrelloButton {...nextProps}>
