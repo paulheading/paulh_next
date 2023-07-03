@@ -15,7 +15,6 @@ function Project(props) {
     ...props,
     seo: {
       title: seo_title(name),
-      keywords: null,
       desc: local.desc,
     },
   }
