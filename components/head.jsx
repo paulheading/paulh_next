@@ -2,8 +2,8 @@ import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import seo from 'data/seo'
 
-function Head() {
-  const { pathname } = useRouter()
+function Head({ dynamic }) {
+  const { asPath } = useRouter()
 
   function metadata(pathname) {
     pathname = pathname.slice(1)
@@ -13,7 +13,17 @@ function Head() {
     return seo[pathname] ? seo[pathname] : seo['notfound']
   }
 
-  const { title, keywords, desc } = metadata(pathname)
+  const meta = metadata(asPath)
+
+  var title = meta.title
+  var keywords = meta.keywords
+  var desc = meta.desc
+
+  if (dynamic) {
+    if (dynamic.title) title = dynamic.title
+    if (dynamic.keywords) keywords = dynamic.keywords
+    if (dynamic.desc) desc = dynamic.desc
+  }
 
   return (
     <NextHead>

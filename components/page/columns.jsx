@@ -1,6 +1,6 @@
 import styles from 'styles/components/page.module.scss'
 import { chop, create, environment } from 'scripts/helpers'
-import { CreateLink, NotFound } from 'components/marquee'
+import { CreateLink } from 'components/marquee'
 import Label from 'components/page/label'
 import parse from 'html-react-parser'
 import { useState } from 'react'
@@ -35,38 +35,42 @@ function PrintDue(value, variant) {
   return due
 }
 
-function Columns({ id, more, name, dueComplete, due, variant, start, labels, desc }) {
+function Columns(props) {
+  const { id, more, name, dueComplete, due, start } = props
   const [clicked, setClicked] = useState(false)
+
+  var { variant, labels, local } = props
+  var { summary } = local
+
+  summary = parse(summary)
 
   if (!variant) variant = 'default'
 
   labels = labels.filter(({ name }) => name !== environment.local)
-
-  const content = parse(desc)
 
   if (!labels.length) labels.push({ name: 'Personal', color: 'grey' })
 
   labels.push({ name: create.date_span(start, due, dueComplete), color: labels[0].color, variant: 'outline' })
 
   const createProps = {
-    href: more ? more.url : null,
+    href: more ? more.url : local.url,
   }
 
   const buttonProps = {
-    className: styles.more,
+    className: styles.blog,
     onClick: () => setClicked(!clicked),
   }
 
   return (
     <div className={styles.column} key={id}>
       <div className={styles.label_wrap}>{labels.map(ProjectLabels)}</div>
-      {more ? <CreateLink {...createProps}>{name}</CreateLink> : <NotFound href="/404">{name}</NotFound>}
+      <CreateLink {...createProps}>{name}</CreateLink>
       <div className={styles.due_wrap}>
         <em>{dueComplete ? PrintDue(due, variant) : 'Ongoing'}</em>
       </div>
       <div className={styles.desc_wrap}>
-        {chop.content(clicked, content)}
-        {chop.needed(content) && <button {...buttonProps}>{clicked ? 'less' : 'more'}</button>}
+        {chop.content(clicked, summary)}
+        {chop.needed(summary) && <button {...buttonProps}>{clicked ? 'less' : 'more'}</button>}
       </div>
     </div>
   )

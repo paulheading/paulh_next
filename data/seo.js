@@ -1,6 +1,10 @@
+const title = (value) => 'Paul Heading | ' + value + ' | Full Stack Designer'
+
+export { title }
+
 export default {
   home: {
-    title: 'Paul Heading | Portfolio | Full Stack Designer',
+    title: title('Portfolio'),
     keywords: 'portfolio, front end developer, front end designer, react, vue, frameworks, barbican, london',
     desc: "I'm a Full Stack Designer. I design and build with the React.js and Vue.js frameworks. I currently work for the Barbican in London and have just over 1 years experience.",
   },

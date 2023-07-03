@@ -72,7 +72,13 @@ getTrello.svgs = function (actions) {
  * @param {array} cards - Array of trello project data objects
  * @returns {array} The same array with the string 'Hero: ' removed from the object.name
  */
-getTrello.projects = (cards) => cards.map((card) => ({ ...card, name: remove.hero(card.name) }))
+getTrello.projects = (cards) =>
+  cards.map(function (card) {
+    card.name = remove.hero(card.name)
+    card.local.pathname = card.name.replace(/\s+/g, '-').replace(/[.]/g, '').toLowerCase()
+    card.local.url = 'project/' + card.local.pathname
+    return card
+  })
 
 /**
  * @function getTrelloHeroes
@@ -87,12 +93,16 @@ getTrello.heroes = (cards) => {
 }
 
 async function cardResults(result, list) {
+  // locally interpreted formatting of data
+  result.local = {}
+  result.local.summary = result.desc ? create.summary(result.desc) : null
+  result.local.desc = result.desc ? create.desc(result.desc) : null
+
   result.type = create.type(list)
   result.attachments = result.id ? await getTrello.attachments(result.id) : null
   result.actions = result.id ? await getTrello.actions(result.id) : null
-  result.more = create.readMore(result.attachments)
+  result.blog = create.blog(result.attachments)
   result.marquee = result.name ? result.name.replace('Hero: ', '') : null
-  result.desc = result.desc ? create.html(result.desc) : null
   result.labels = result.labels ? create.labels(result.labels) : null
 
   // Providing artwork locally instead of running it through trello

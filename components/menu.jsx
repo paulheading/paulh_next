@@ -7,8 +7,6 @@ import useMediaQuery from 'hooks/useMediaQuery'
 import data from 'data/menu'
 import Ready from 'components/ready'
 import Link from 'next/link'
-import { Fragment } from 'react'
-import Head from 'components/head'
 
 function Logo() {
   const smallUp = useMediaQuery(520)
@@ -22,28 +20,29 @@ function Menu() {
 
   const containerStyles = isHome ? styles.home_container : styles.away_container
 
-  function Content({ title, children }) {
-    if (title === 'Home') return
+  function Content({ title, href, children }) {
+    if (title == 'Home') return
 
-    const isActive = () => '/' + title.toLowerCase() === pathname
+    const isActive = () => href == pathname
 
     function contentStyles() {
-      let result = styles.link + ' ' + styles[title.toLowerCase() + '_link']
+      var result = styles.link + ' ' + styles[title.toLowerCase() + '_link']
       if (isActive()) result += ' ' + styles.active
       return result
     }
 
     const props = {
-      href: title.toLowerCase(),
       className: contentStyles(),
+      href,
     }
 
     return isActive() ? <span className={props.className}>{children}</span> : <Link {...props}>{children}</Link>
   }
 
-  function Links({ title, icon }, index) {
+  function Links({ title, href, icon }, index) {
     const props = {
       title,
+      href,
       index,
     }
     return (
@@ -69,15 +68,12 @@ function Menu() {
   }
 
   return (
-    <Fragment>
-      <Head />
-      <div className={containerStyles}>
-        <Wrap className={styles.wrap}>
-          <WrapLogo />
-          <div className={styles.links}>{data.map(Links)}</div>
-        </Wrap>
-      </div>
-    </Fragment>
+    <div className={containerStyles}>
+      <Wrap className={styles.wrap}>
+        <WrapLogo />
+        <div className={styles.links}>{data.map(Links)}</div>
+      </Wrap>
+    </div>
   )
 }
 
