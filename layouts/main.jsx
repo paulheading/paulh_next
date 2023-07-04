@@ -6,10 +6,12 @@ import Footer from 'components/footer'
 import useCount from 'hooks/useCount'
 import Head from 'components/head'
 
-export default function Main({ heroes, projects, spotify, gem, npm, seo = null }) {
-  const count = useCount(heroes)
-  const hero = heroes[count]
-  const desktopProps = {
+function Main(props) {
+  var { projects, spotify, gem, npm, seo = null } = props
+  var heroes = projects.filter(({ hero }) => hero)
+  var count = useCount(heroes)
+  var hero = heroes[count]
+  var desktopProps = {
     projects,
     spotify,
     count,
@@ -27,3 +29,5 @@ export default function Main({ heroes, projects, spotify, gem, npm, seo = null }
     </Fragment>
   )
 }
+
+export default Main

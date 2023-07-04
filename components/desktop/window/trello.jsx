@@ -1,20 +1,17 @@
 import styles from 'styles/components/desktop/window/trello.module.scss'
+import { Fragment, useState } from 'react'
+import { chop } from 'scripts/helpers'
+
 import { CreateLink, NotFound } from 'components/marquee'
-import SettingsIcon from 'icons/settings'
 import Label from 'components/page/label'
 import Window from 'components/desktop/window'
 import Footer from 'components/desktop/window/trello/footer'
-import { Fragment, useState } from 'react'
-import { contains, environment, chop } from 'scripts/helpers'
+import SettingsIcon from 'icons/settings'
 
-function Projects({ name, more, labels }, index) {
+function Projects({ name, blog, local, labels }, index) {
   const createProps = {
     className: styles.card,
-    href: more ? more.url : null,
-  }
-  const notProps = {
-    className: styles.card,
-    href: '/404',
+    href: blog ? blog.url : local.url,
   }
 
   function LinkContent() {
@@ -32,25 +29,11 @@ function Projects({ name, more, labels }, index) {
     )
   }
 
-  function IsLink() {
-    return (
+  return (
+    <div key={'project' + index} className={styles.row}>
       <CreateLink {...createProps}>
         <LinkContent />
       </CreateLink>
-    )
-  }
-
-  function IsNotLink() {
-    return (
-      <NotFound {...notProps}>
-        <LinkContent />
-      </NotFound>
-    )
-  }
-
-  return (
-    <div key={'project' + index} className={styles.row}>
-      {more ? <IsLink /> : <IsNotLink />}
     </div>
   )
 }

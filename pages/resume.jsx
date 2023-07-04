@@ -6,9 +6,9 @@ import Content from 'components/content'
 import Page from 'components/page'
 
 function Resume(props) {
-  const { heroes, projects, gem, npm, spotify, roles, education, udemy, markdown } = props
-  const layoutProps = { heroes, projects, gem, npm, spotify }
-  const pageProps = {
+  var { projects, gem, npm, spotify, roles, education, udemy, markdown } = props
+  var layoutProps = { projects, gem, npm, spotify }
+  var pageProps = {
     projects,
     roles,
     education,
@@ -27,7 +27,7 @@ function Resume(props) {
 }
 
 export async function getStaticProps() {
-  const [markdown, layout, resume] = await Promise.all([import(`../markdown/biography.md`), getLayoutData(), getResumeData()])
+  var [markdown, layout, resume] = await Promise.all([import(`../markdown/biography.md`), getLayoutData(), getResumeData()])
 
   return {
     props: {

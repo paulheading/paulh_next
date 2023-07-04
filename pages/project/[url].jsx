@@ -63,10 +63,10 @@ export async function getStaticPaths() {
  * @returns {object} Props are then passed to the component for rendering
  */
 export async function getStaticProps(context) {
-  const layout = await getLayoutData()
-  const { projects } = layout
+  var layout = await getLayoutData()
+  var { projects } = layout
   // pass data from the project containing the correct local url, to the component
-  const project = projects.filter((project) => project.local.pathname == context.params.url)[0]
+  var project = projects.filter((project) => project.local.pathname == context.params.url)[0]
 
   return {
     props: {

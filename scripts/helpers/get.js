@@ -6,15 +6,17 @@ get.JSON = async function (url) {
   // const alreadyExists = cache.get(url)
 
   // if (alreadyExists) {
-  //   console.log('already exists: ', alreadyExists)
+  //   console.log('using cache')
   //   return alreadyExists
   // }
 
-  const data = await fetch(url)
+  var data = await fetch(url)
 
-  // cache.put(url, data, 180000)
+  data = data.json()
 
-  return data.json()
+  // cache.put(url, data, 60000)
+
+  return data
 }
 
 get.gql = async function (url, query, variables = {}) {

@@ -1,4 +1,3 @@
-import cache from 'memory-cache'
 import { create, remove } from 'scripts/trello/helpers'
 import { string, list } from 'scripts/trello/variables'
 import { contains, environment } from 'scripts/helpers'
@@ -9,6 +8,7 @@ import get from 'scripts/helpers/get'
  */
 
 const getTrello = {}
+const mapTrello = {}
 
 /**
  * @function getTrelloJSON
@@ -16,24 +16,7 @@ const getTrello = {}
  * @param {string} target - Trello path
  * @returns {object}
  */
-getTrello.JSON = async function (target, type) {
-  const url = string.url(target) // string.url is the default trello url path
-
-  if (type != 'projects') return await get.JSON(url)
-
-  const alreadyExists = cache.get(url)
-
-  if (alreadyExists) {
-    console.log('already exists')
-    return alreadyExists
-  }
-
-  const data = await get.JSON(url)
-
-  cache.put(url, data, 180000)
-
-  return data
-}
+getTrello.JSON = async (target) => await get.JSON(string.url(target)) // string.url is the default trello url path
 
 /**
  * @function getTrelloAttachments
@@ -85,28 +68,20 @@ getTrello.svgs = function (actions) {
 }
 
 /**
- * @function getTrelloProjects
- * @param {array} cards - Array of trello project data objects
- * @returns {array} The same array with the string 'Hero: ' removed from the object.name
- */
-getTrello.projects = (cards) =>
-  cards.map(function (card) {
-    card.name = remove.hero(card.name)
-    card.local.pathname = card.name.replace(/\s+/g, '-').replace(/[.]/g, '').toLowerCase()
-    card.local.url = 'project/' + card.local.pathname
-    return card
-  })
-
-/**
- * @function getTrelloHeroes
- * @param {array} cards - Array of trello project data objects
- * @returns {array} A filtered array of only hero projects
+ * @function mapTrelloProjects
+ * @param {object} card
+ * @returns {object}
  */
 
-getTrello.heroes = (cards) => {
-  cards = cards.filter(({ name }) => name.startsWith('Hero: '))
-  // re-use getTrelloProjects to remove 'Hero: ' from the object.name
-  return getTrello.projects(cards)
+mapTrello.projects = function (card) {
+  var isHero = card.name.startsWith('Hero: ') ? true : false
+
+  card.name = remove.hero(card.name)
+  card.hero = isHero
+  card.local.pathname = card.name.replace(/\s+/g, '-').replace(/[.]/g, '').toLowerCase()
+  card.local.url = '/project/' + card.local.pathname
+
+  return card
 }
 
 async function cardResults(result, list) {
@@ -138,26 +113,19 @@ getTrello.cards = async (list, type) => {
   return await Promise.all(results)
 }
 
-getTrello.data = async (type) => {
+getTrello.data = async function (type) {
   if (type == 'projects') {
-    var cards = await getTrello.cards(list.projects, 'projects')
-    var result = getTrello.projects(cards)
-
-    if (!environment.isLocal()) result = result.filter(({ labels }) => !contains.label(labels, environment.local))
-
-    return result
-  }
-
-  if (type == 'heroes') {
     var cards = await getTrello.cards(list.projects)
-    var result = getTrello.heroes(cards)
 
-    if (!environment.isLocal()) result = result.filter(({ labels }) => !contains.label(labels, environment.local))
+    cards = cards.map(mapTrello.projects)
 
-    return result
+    if (!environment.isLocal()) cards = cards.filter(({ labels }) => !contains.label(labels, environment.local))
+
+    return cards
   }
 
   if (type === 'roles') return await getTrello.cards(list.roles)
+
   if (type === 'education') return await getTrello.cards(list.education)
 }
 

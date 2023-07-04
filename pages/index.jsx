@@ -2,11 +2,12 @@ import { getLayoutData } from 'scripts'
 import useCount from 'hooks/useCount'
 import { Fragment } from 'react'
 
-import Layout from 'layouts/main'
 import Hero from 'components/hero'
+import Layout from 'layouts/main'
 
 function Home(props) {
-  var { heroes } = props
+  var { projects } = props
+  var heroes = projects.filter(({ hero }) => hero)
   var count = useCount(heroes)
   var hero = heroes[count]
 
@@ -19,9 +20,11 @@ function Home(props) {
 }
 
 export async function getStaticProps() {
+  const layout = await getLayoutData()
+
   return {
     props: {
-      ...(await getLayoutData()),
+      ...layout,
     },
   }
 }

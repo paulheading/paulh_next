@@ -28,9 +28,11 @@ function NotFound(props) {
 }
 
 export async function getStaticProps() {
+  var layout = await getLayoutData()
+
   return {
     props: {
-      ...(await getLayoutData()),
+      ...layout,
     },
   }
 }
