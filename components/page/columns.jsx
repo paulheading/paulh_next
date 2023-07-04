@@ -36,7 +36,7 @@ function PrintDue(value, variant) {
 }
 
 function Columns(props) {
-  const { id, more, name, dueComplete, due, start } = props
+  const { id, blog, name, dueComplete, due, start } = props
   const [clicked, setClicked] = useState(false)
 
   var { variant, labels, local } = props
@@ -53,7 +53,7 @@ function Columns(props) {
   labels.push({ name: create.date_span(start, due, dueComplete), color: labels[0].color, variant: 'outline' })
 
   const createProps = {
-    href: more ? more.url : local.url,
+    href: blog ? blog.url : local.url,
   }
 
   const buttonProps = {

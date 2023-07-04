@@ -5,7 +5,7 @@ import Row from 'components/page/row'
 import RowTitle from 'components/page/row/title'
 import RowGrid from 'components/page/row/grid'
 import Columns from 'components/page/columns'
-import { contains, environment, chop, create } from 'scripts/helpers'
+import { chop, create } from 'scripts/helpers'
 import { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 
