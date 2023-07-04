@@ -1,3 +1,4 @@
+import cache from 'memory-cache'
 import { create, remove } from 'scripts/trello/helpers'
 import { string, list } from 'scripts/trello/variables'
 import { contains, environment } from 'scripts/helpers'
@@ -15,9 +16,23 @@ const getTrello = {}
  * @param {string} target - Trello path
  * @returns {object}
  */
-getTrello.JSON = async function (target) {
-  // string.url is the default trello url path
-  return await get.JSON(string.url(target))
+getTrello.JSON = async function (target, type) {
+  const url = string.url(target) // string.url is the default trello url path
+
+  if (type != 'projects') return await get.JSON(url)
+
+  const alreadyExists = cache.get(url)
+
+  if (alreadyExists) {
+    console.log('already exists')
+    return alreadyExists
+  }
+
+  const data = await get.JSON(url)
+
+  cache.put(url, data, 180000)
+
+  return data
 }
 
 /**
@@ -113,8 +128,8 @@ async function cardResults(result, list) {
   return result
 }
 
-getTrello.cards = async (list) => {
-  var results = await getTrello.JSON(string.cards(list))
+getTrello.cards = async (list, type) => {
+  var results = await getTrello.JSON(string.cards(list), type)
 
   if (!results.length) return []
 
@@ -125,7 +140,7 @@ getTrello.cards = async (list) => {
 
 getTrello.data = async (type) => {
   if (type == 'projects') {
-    var cards = await getTrello.cards(list.projects)
+    var cards = await getTrello.cards(list.projects, 'projects')
     var result = getTrello.projects(cards)
 
     if (!environment.isLocal()) result = result.filter(({ labels }) => !contains.label(labels, environment.local))
