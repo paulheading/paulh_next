@@ -1,8 +1,9 @@
-import Layout from 'layouts/main'
-import Hero from 'components/hero'
 import { getLayoutData } from 'scripts'
 import useCount from 'hooks/useCount'
 import { Fragment } from 'react'
+
+import Layout from 'layouts/main'
+import Hero from 'components/hero'
 
 function Home(props) {
   var { heroes } = props

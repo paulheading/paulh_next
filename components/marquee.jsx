@@ -20,23 +20,23 @@ function NotFound({ href, className, children }) {
   return <Link {...props}>{children}</Link>
 }
 
-function Tab({ more }) {
+function Tab({ blog }) {
   const message = 'See Project'
   const createProps = {
     className: styles.tab_link,
-    href: more ? more.url : null,
+    href: blog ? blog.url : null,
   }
   const notProps = {
     className: styles.tab_link,
     href: '/404',
   }
 
-  return <div className={styles.tab_container}>{more ? <CreateLink {...createProps}>{message}</CreateLink> : <NotFound {...notProps}>{message}</NotFound>}</div>
+  return <div className={styles.tab_container}>{blog ? <CreateLink {...createProps}>{message}</CreateLink> : <NotFound {...notProps}>{message}</NotFound>}</div>
 }
 
-function Row({ marquee, more, id }) {
+function Row({ marquee, blog, id }) {
   function Repeat() {
-    let print = ''
+    var print = ''
     const repeat = new Array(10).fill(0)
     const printRepeat = () => (print += `<span>${marquee}</span>`)
     repeat.forEach(printRepeat)
@@ -57,8 +57,8 @@ function Row({ marquee, more, id }) {
 
   return (
     <div className={customClass}>
-      {more ? (
-        <CreateLink href={more.url}>
+      {blog ? (
+        <CreateLink href={blog.url}>
           <Repeat />
         </CreateLink>
       ) : (
@@ -71,11 +71,11 @@ function Row({ marquee, more, id }) {
 }
 
 function Marquee({ hero }) {
-  const { more } = hero
+  const { blog } = hero
 
   return (
     <div className={styles.marquee_container}>
-      <Tab more={more} />
+      <Tab blog={blog} />
       <Row {...hero} />
     </div>
   )

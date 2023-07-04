@@ -1,18 +1,18 @@
 import { Fragment } from 'react'
-import Layout from 'layouts/main'
 import { getLayoutData } from 'scripts'
-import Content from 'components/content'
-import Wrap from 'components/wrap'
 import getTrelloData from 'scripts/trello'
 import parse from 'html-react-parser'
 import { title as seo_title } from 'data/seo'
 
-function Project(props) {
-  const { project } = props
+import Layout from 'layouts/main'
+import Content from 'components/content'
+import Wrap from 'components/wrap'
+
+function Project({ layout, project }) {
   const { name, local } = project
 
   const layoutProps = {
-    ...props,
+    ...layout,
     seo: {
       title: seo_title(name),
       desc: local.desc,
@@ -63,14 +63,14 @@ export async function getStaticPaths() {
  * @returns {object} Props are then passed to the component for rendering
  */
 export async function getStaticProps(context) {
-  const { url } = context.params
-  const projects = await getTrelloData('projects')
+  const layout = await getLayoutData()
+  const { projects } = layout
   // pass data from the project containing the correct local url, to the component
-  const project = projects.filter((project) => project.local.pathname == url)[0]
+  const project = projects.filter((project) => project.local.pathname == context.params.url)[0]
 
   return {
     props: {
-      ...(await getLayoutData()),
+      layout,
       project,
     },
   }

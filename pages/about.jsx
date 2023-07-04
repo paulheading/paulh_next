@@ -1,10 +1,11 @@
 import styles from 'styles/pages/about.module.scss'
-import Layout from 'layouts/main'
 import { getLayoutData } from 'scripts'
-import Content from 'components/content'
-import Wrap from 'components/wrap'
 import { Fragment } from 'react'
 import ReactMarkdown from 'react-markdown'
+
+import Layout from 'layouts/main'
+import Content from 'components/content'
+import Wrap from 'components/wrap'
 
 function About(props) {
   const { markdown } = props
@@ -25,12 +26,12 @@ function About(props) {
 }
 
 export async function getStaticProps() {
-  const markdown = await import(`../markdown/about.md`)
+  const [markdown, layout] = await Promise.all([import(`markdown/about.md`), getLayoutData()])
 
   return {
     props: {
-      ...(await getLayoutData()),
       markdown: markdown.default,
+      ...layout,
     },
   }
 }

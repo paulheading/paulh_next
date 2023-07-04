@@ -3,7 +3,7 @@ import 'focus-visible/dist/focus-visible.min.js'
 import { Fragment } from 'react'
 import Menu from 'components/menu'
 
-export default function App({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
     <Fragment>
       <Menu />
@@ -11,3 +11,5 @@ export default function App({ Component, pageProps }) {
     </Fragment>
   )
 }
+
+export default App

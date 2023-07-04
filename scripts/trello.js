@@ -32,6 +32,8 @@ getTrello.attachments = async (target) => {
   // string.attachments is the default trello attachments path
   const results = await getTrello.JSON(string.attachments(target))
 
+  if (!results.length) return []
+
   return results.map(({ id, name, url }) => ({ id, name, url }))
 }
 
@@ -113,6 +115,8 @@ async function cardResults(result, list) {
 
 getTrello.cards = async (list) => {
   var results = await getTrello.JSON(string.cards(list))
+
+  if (!results.length) return []
 
   results = results.map((result) => cardResults(result, list))
 

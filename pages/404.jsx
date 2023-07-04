@@ -1,10 +1,11 @@
 import styles from 'styles/pages/404.module.scss'
-import Layout from 'layouts/main'
 import { getLayoutData } from 'scripts'
-import Content from 'components/content'
-import { CreateLink } from 'components/marquee'
-import Wrap from 'components/wrap'
 import { Fragment } from 'react'
+
+import Layout from 'layouts/main'
+import Content from 'components/content'
+import Wrap from 'components/wrap'
+import { CreateLink } from 'components/marquee'
 
 function NotFound(props) {
   const linkProps = {
@@ -17,7 +18,7 @@ function NotFound(props) {
         <Wrap className={styles.wrap}>
           <h1 className={styles.title}>Page Not Found 🤬</h1>
           <h3>
-            <CreateLink {...linkProps}>where da page go?</CreateLink>
+            <CreateLink {...linkProps}>where the page go?</CreateLink>
           </h3>
         </Wrap>
       </Content>

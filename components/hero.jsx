@@ -7,8 +7,8 @@ import Artwork from 'components/artwork'
 
 function Hero({ hero }) {
   const router = useRouter()
-  const isHome = router.pathname === '/'
-  const { id, name, more } = hero
+  const isHome = router.pathname == '/'
+  const { id, name, blog } = hero
   const snippet = id.slice(0, 5)
   const loop = 'loop_' + snippet
   const artwork = useRef(null)
@@ -20,7 +20,7 @@ function Hero({ hero }) {
   const bannerStyles = isHome && styles.banner + ' ' + styles[loop]
 
   const createProps = {
-    href: more ? more.url : null,
+    href: blog ? blog.url : null,
     className: linkStyles,
   }
   const notProps = {
@@ -43,7 +43,7 @@ function Hero({ hero }) {
     <Fragment>
       <div className={bannerStyles}></div>
       <div className={containerStyles}>
-        <h1 className={styles.name}>{more ? <CreateLink {...createProps}>{name}</CreateLink> : <NotFound {...notProps}>{name}</NotFound>}</h1>
+        <h1 className={styles.name}>{blog ? <CreateLink {...createProps}>{name}</CreateLink> : <NotFound {...notProps}>{name}</NotFound>}</h1>
         <Artwork {...artworkProps} />
       </div>
     </Fragment>
