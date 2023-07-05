@@ -35,16 +35,16 @@
   }
 
   path {
+    stroke-miterlimit: 10;
     display: none;
   }
 }
 
 .container.loop_606d7 path {
-  &[class='st0'],
-  &[class='st1'] {
+  &[class='st0'] {
     stroke-linecap: square;
-    stroke-miterlimit: 10;
     stroke: $c-606d7-svg;
+    stroke-width: 5;
     fill: none;
 
     @include small-down {
@@ -52,12 +52,15 @@
     }
   }
 
-  &[class='st0'] {
-    stroke-width: 5;
-  }
-
   &[class='st1'] {
+    stroke-linecap: square;
+    stroke: $c-606d7-svg;
     stroke-width: 3;
+    fill: none;
+
+    @include small-down {
+      stroke: $c-606d7-banner;
+    }
   }
 
   &[class='st2'] {
@@ -66,16 +69,13 @@
 }
 
 .container.loop_60734 path {
-  &[class='st0'],
-  &[class='st1'] {
-    stroke-linecap: square;
-    stroke: $c-60734-svg;
-    stroke-width: 6;
-    fill: none;
+  stroke-linecap: square;
+  stroke: $c-60734-svg;
+  stroke-width: 6;
+  fill: none;
 
-    @include small-down {
-      stroke: $c-60734-banner;
-    }
+  @include small-down {
+    stroke: $c-60734-banner;
   }
 
   &[class='st1'] {
@@ -84,29 +84,23 @@
 }
 
 .container.loop_6491c path {
-  &[class='st2'] {
-    fill: $c-6491c-svg;
-    stroke: none;
+  stroke: $c-6491c-svg;
+  fill: none;
 
-    @include small-down {
-      stroke: $c-6491c-banner;
-    }
+  @include small-down {
+    stroke: $c-6491c-banner;
   }
 
-  &[class='st0'],
-  &[class='st1'] {
-    stroke: $c-6491c-svg;
-    stroke-miterlimit: 10;
-    stroke-width: 2;
-    fill: none;
-
-    @include small-down {
-      stroke: $c-6491c-banner;
-    }
+  &[class='st0'] {
+    stroke-width: 7;
   }
 
   &[class='st1'] {
     stroke-width: 3;
+  }
+
+  &[class='st2'] {
+    stroke-width: 4;
   }
 }
 
