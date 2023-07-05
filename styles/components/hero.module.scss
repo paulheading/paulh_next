@@ -1,5 +1,11 @@
 @import 'styles/global/mixins';
 
+@each $hero, $map in $heroes {
+  @include ThemeBanner($hero, map-get($map, banner));
+  @include ThemeContainer($hero, map-get($map, bg));
+  @include ThemeLink($hero, map-get($map, svg));
+}
+
 @mixin grid {
   place-items: center;
   display: grid;
@@ -8,18 +14,6 @@
 .banner {
   @include small-down {
     height: $height-banner + ($border-banner-width * 2);
-
-    &.loop_606d7 {
-      background-color: $c-606d7-svg-sm;
-    }
-
-    &.loop_60734 {
-      background-color: $c-60734-svg-sm;
-    }
-
-    &.loop_6491c {
-      background-color: $c-6491c-svg-sm;
-    }
   }
 }
 
@@ -39,89 +33,80 @@
     grid-column: 1/2;
     grid-row: 1/2;
   }
-}
-
-.container.loop_606d7 {
-  background-color: $c-606d7-bg;
-
-  path {
-    &[class='st0'],
-    &[class='st1'] {
-      stroke-linecap: square;
-      stroke-miterlimit: 10;
-      stroke: $c-606d7-svg-lg;
-      fill: none;
-
-      @include small-down {
-        stroke: $c-606d7-svg-sm;
-      }
-    }
-
-    &[class='st0'],
-    &[class='st1'],
-    &[class='st2'] {
-      display: none;
-    }
-
-    &[class='st0'] {
-      stroke-width: 5;
-    }
-
-    &[class='st1'] {
-      stroke-width: 3;
-    }
-
-    &[class='st2'] {
-      fill: $c-606d7-svg-lg;
-    }
-  }
-}
-
-.container.loop_60734 {
-  background-color: $c-60734-bg;
-
-  path {
-    &[class='st0'],
-    &[class='st1'] {
-      stroke-linecap: square;
-      stroke: $c-60734-svg-lg;
-      stroke-width: 6;
-      display: none;
-      fill: none;
-
-      @include small-down {
-        stroke: $c-60734-svg-sm;
-      }
-    }
-
-    &[class='st1'] {
-      stroke-linejoin: round;
-    }
-  }
-}
-
-.container.loop_6491c {
-  background-color: $c-6491c-bg;
 
   path {
     display: none;
+  }
+}
 
-    &[class='st2'] {
-      fill: $c-6491c-svg-lg;
-      stroke: none;
-    }
+.container.loop_606d7 path {
+  &[class='st0'],
+  &[class='st1'] {
+    stroke-linecap: square;
+    stroke-miterlimit: 10;
+    stroke: $c-606d7-svg;
+    fill: none;
 
-    &[class='st0'],
-    &[class='st1'] {
-      fill: none;
-      stroke: $c-6491c-svg-lg;
-      stroke-width: 2;
-      stroke-miterlimit: 10;
+    @include small-down {
+      stroke: $c-606d7-banner;
     }
+  }
 
-    &[class='st1'] {
-      stroke-width: 3;
+  &[class='st0'] {
+    stroke-width: 5;
+  }
+
+  &[class='st1'] {
+    stroke-width: 3;
+  }
+
+  &[class='st2'] {
+    fill: $c-606d7-svg;
+  }
+}
+
+.container.loop_60734 path {
+  &[class='st0'],
+  &[class='st1'] {
+    stroke-linecap: square;
+    stroke: $c-60734-svg;
+    stroke-width: 6;
+    fill: none;
+
+    @include small-down {
+      stroke: $c-60734-banner;
     }
+  }
+
+  &[class='st1'] {
+    stroke-linejoin: round;
+  }
+}
+
+.container.loop_6491c path {
+  &[class='st2'] {
+    fill: $c-6491c-svg;
+    stroke: none;
+
+    @include small-down {
+      stroke: $c-6491c-banner;
+    }
+  }
+
+  &[class='st0'],
+  &[class='st1'] {
+    stroke: $c-6491c-svg;
+    stroke-miterlimit: 10;
+    stroke-width: 2;
+    fill: none;
+
+    @include small-down {
+      stroke: $c-6491c-banner;
+    }
+  }
+
+  &[class='st1'] {
+    stroke-width: 3;
   }
 }
 
@@ -143,24 +128,6 @@
 
   @include focus {
     outline: none;
-  }
-
-  &.loop_606d7 {
-    @include focus {
-      background-color: $c-606d7-svg-lg;
-    }
-  }
-
-  &.loop_60734 {
-    @include focus {
-      background-color: $c-60734-svg-lg;
-    }
-  }
-
-  &.loop_6491c {
-    @include focus {
-      background-color: $c-6491c-svg-lg;
-    }
   }
 }
 

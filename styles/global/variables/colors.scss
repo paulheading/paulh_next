@@ -39,19 +39,37 @@ $c-lemon: lightgoldenrodyellow;
 $c-gold: #f5c356;
 
 $c-body-bg: $c-gray-2;
-$c-body-svg-sm: darken($c-body-bg, 15%);
+$c-body-banner: darken($c-body-bg, 15%);
 
 $c-606d7-bg: hsl(270, 100%, 80%);
-$c-606d7-svg-lg: lighten($c-606d7-bg, 20%);
-$c-606d7-svg-sm: lighten($c-606d7-bg, 10%);
+$c-606d7-banner: lighten($c-606d7-bg, 10%);
+$c-606d7-svg: lighten($c-606d7-bg, 20%);
 
 $c-60734-bg: hsl(30, 90%, 50%);
-$c-60734-svg-lg: lighten($c-60734-bg, 35%);
-$c-60734-svg-sm: lighten($c-60734-bg, 20%);
+$c-60734-banner: lighten($c-60734-bg, 15%);
+$c-60734-svg: lighten($c-60734-bg, 30%);
 
 $c-6491c-bg: hsl(5, 100%, 70%);
-$c-6491c-svg-lg: lighten($c-6491c-bg, 35%);
-$c-6491c-svg-sm: lighten($c-6491c-bg, 20%);
+$c-6491c-banner: lighten($c-6491c-bg, 10%);
+$c-6491c-svg: lighten($c-6491c-bg, 20%);
+
+$heroes: (
+  '606d7': (
+    bg: $c-606d7-bg,
+    banner: $c-606d7-banner,
+    svg: $c-606d7-svg,
+  ),
+  '60734': (
+    bg: $c-60734-bg,
+    banner: $c-60734-banner,
+    svg: $c-60734-svg,
+  ),
+  '6491c': (
+    bg: $c-6491c-bg,
+    banner: $c-6491c-banner,
+    svg: $c-6491c-svg,
+  ),
+);
 
 $c-status-neutral-fade: hsl(205, 100%, 95%);
 $c-status-neutral-light: hsl(205, 100%, 75%);
