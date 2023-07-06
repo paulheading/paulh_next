@@ -90,8 +90,6 @@ async function cardResults(result, list) {
   result.local.summary = result.desc ? create.summary(result.desc) : null
   result.local.desc = result.desc ? create.desc(result.desc) : null
 
-  console.log('desc: ', result.local.desc)
-
   result.type = create.type(list)
   result.attachments = result.id ? await getTrello.attachments(result.id) : null
   result.actions = result.id ? await getTrello.actions(result.id) : null
