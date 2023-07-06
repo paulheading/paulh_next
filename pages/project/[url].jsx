@@ -1,3 +1,4 @@
+import styles from 'styles/project.module.scss'
 import { Fragment } from 'react'
 import { getLayoutData } from 'scripts'
 import getTrelloData from 'scripts/trello'
@@ -22,7 +23,7 @@ function Project({ layout, project }) {
   return (
     <Fragment>
       <Content>
-        <Wrap>
+        <Wrap className={styles.copy}>
           <h1>{name}</h1>
           <div>{parse(local.desc)}</div>
         </Wrap>
