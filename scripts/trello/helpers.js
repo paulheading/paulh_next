@@ -18,6 +18,11 @@ create.html = (target) => new showdown.Converter().makeHtml(target)
 create.snippet = function (target, position) {
   var hr = '---'
 
+  // (loop) if first character is a backtick, remove it
+  while (target.slice(0, 1) == '`') target = target.slice(1)
+  // (loop) if last character is a backtick, remove it
+  while (target.slice(-1) == '`') target = target.slice(0, -1)
+
   if (!target.includes(hr)) return create.html(target)
 
   var split = target.split(hr)

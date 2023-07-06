@@ -72,11 +72,11 @@ blockquote p {
 }
 
 p {
+  margin: 0 0 1.25rem;
   font-weight: 400;
-  margin: 0 0 1rem;
 
   + blockquote {
-    margin-top: 1rem;
+    margin-top: 0.75rem;
   }
 
   + h3,
@@ -85,10 +85,26 @@ p {
   }
 }
 
+ul {
+  padding-left: 1.25rem;
+  font-weight: 400;
+  margin: 0;
+
+  + h3,
+  + h4 {
+    margin-top: 3rem;
+  }
+}
+
+li + li {
+  margin-top: 0.25rem;
+}
+
 input,
 textarea {
   -webkit-appearance: none;
   border-radius: 0;
+  appearance: none;
   width: 100%;
   padding: 0;
 }

@@ -1,6 +1,6 @@
 Hey 👋 I'm Paul, a Front End Developer and Designer.
 
-I've been a Developer since 2020 and a Designer since... let's say 10 years. I currently work in the **Digital Products** team at the [Barbican](https://barbican.org.uk) and spend my time building/drawing better website-based experiences for the people there.
+I've been a Developer since 2020 and a Designer for over 10 years. I work in the **Digital Products** team at the [Barbican](https://barbican.org.uk) and spend my time building/drawing better website-based experiences.
 
 > Before 2020, I worked as a [Designer](https://www.creativelivesinprogress.com/article/paul-heading) 👨‍🎨 in the Barbican [Design Team](https://www.creativelivesinprogress.com/article/barbican).
 
@@ -24,8 +24,6 @@ Take a look at my [resume page](https://paulh.biz/resume) for more examples.
 
 ### Things I'm bad at
 
-Writing! 👨‍💻 It takes me such a long time to write content, but hey, I got this far!
-
-You can also apply this to learning Spanish and finishing portfolio sites. 😩
+Writing! 👨‍💻 It takes me such a long time to write content. But hey, I got this far!
 
 Thanks for dropping by!
