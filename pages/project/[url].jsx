@@ -23,9 +23,9 @@ function Project({ layout, project }) {
   return (
     <Fragment>
       <Content>
-        <Wrap className={styles.copy}>
-          <h1>{name}</h1>
-          <div>{parse(local.desc)}</div>
+        <Wrap>
+          <h1 className={styles.title}>{name}</h1>
+          <div className={styles.copy}>{parse(local.desc)}</div>
         </Wrap>
       </Content>
       <Layout {...layoutProps} />
