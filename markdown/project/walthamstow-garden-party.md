@@ -10,7 +10,7 @@ Build and animate the website for a community festival called Walthamstow Garden
 
 Sure, it's at [walthamstowgardenparty.com](https://walthamstowgardenparty.com)
 
-The code is in the [Barbican's](https://barbican.org.uk) private [Bitbucket](https://bitbucket.org) repository sadly.
+The code is in a private [Barbican](https://barbican.org.uk) [Bitbucket](https://bitbucket.org) repository sadly.
 
 ### How much did you do?
 

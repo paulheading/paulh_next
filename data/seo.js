@@ -1,4 +1,4 @@
-const title = (value) => 'Paul Heading | ' + value + ' | Full Stack Designer'
+const title = (value) => 'Paul Heading | ' + value + ' | Front End Developer and Designer'
 
 function keywords(value) {
   var basic = 'frontend developer, frontend designer, react, next.js, vue.js, gsap, team treehouse, barbican, london'
@@ -14,7 +14,7 @@ export default {
   home: {
     title: title('Portfolio'),
     keywords: keywords('portfolio'),
-    desc: "I'm a Full Stack Designer. I design and build with the React.js and Vue.js frameworks. I currently work for the Barbican in London and have just over 1 years experience.",
+    desc: "I'm a Front End Developer and Designer. I work in the Digital Products team at the Barbican (https://barbican.org.uk) and spend my time building/designing better website-based experiences.",
   },
   about: {
     title: title('About'),
@@ -24,7 +24,7 @@ export default {
   resume: {
     title: title('Resume'),
     keywords: keywords(),
-    desc: "I've been a designer for the last 10 years, becoming a front-end designer in the last year. My title 'Full Stack Designer', reflects my focus on user experience and animation. I currently work for the Barbican in London, as well as on freelance projects such as https://36bournestreet.com. Last year, I completed my Full Stack Techdegree, with https://teamtreehouse.com",
+    desc: "I've been a Developer since 2020 and a Designer for over 10 years. I work in the Digital Products team at the Barbican (https://barbican.org.uk) and spend my time building/designing better website-based experiences.",
   },
   notfound: {
     title: title('404'),
