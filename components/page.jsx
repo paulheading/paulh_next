@@ -59,10 +59,10 @@ function Page({ projects, roles, education, udemy, markdown }) {
         <RowTitle>Projects</RowTitle>
         <RowGrid {...projectProps}>{projects.map(Columns)}</RowGrid>
       </Row>
-      <Row>
+      {/* <Row>
         <RowTitle>Udemy</RowTitle>
         <RowGrid {...courseProps}>{udemy.map(Courses)}</RowGrid>
-      </Row>
+      </Row> */}
       <Row>
         <RowTitle>Roles</RowTitle>
         <RowGrid>{roles.map(Columns)}</RowGrid>
