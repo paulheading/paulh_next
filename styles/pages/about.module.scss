@@ -9,3 +9,13 @@
     }
   }
 }
+
+.tearoff {
+  @include medium-down {
+    border-top: 0.125rem dashed #dee2e6;
+    padding-right: 1.75rem;
+    padding-left: 1.75rem;
+    padding-top: 1.75rem;
+    margin-top: 1.75rem;
+  }
+}

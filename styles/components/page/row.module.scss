@@ -29,6 +29,10 @@
   }
 }
 
+.wrap.simple {
+  padding: $padding-row;
+}
+
 .center.wrap {
   @include medium-up {
     align-items: center;

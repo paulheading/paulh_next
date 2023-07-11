@@ -75,6 +75,10 @@ p {
   margin: 0 0 1.25rem;
   font-weight: 400;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   + blockquote {
     margin-top: 0.75rem;
   }
