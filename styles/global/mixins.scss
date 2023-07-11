@@ -30,11 +30,27 @@
     position: relative;
     display: flex;
 
+    @include medium-down {
+      transform: rotate(90deg);
+    }
+
     @if $mode == 'prev' {
-      left: -1px;
+      @include medium-up {
+        left: -1px;
+      }
+
+      @include medium-down {
+        top: -1px;
+      }
     }
     @if $mode == 'next' {
-      right: -1px;
+      @include medium-up {
+        right: -1px;
+      }
+
+      @include medium-down {
+        bottom: -1px;
+      }
     }
   }
 }

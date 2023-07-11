@@ -1,10 +1,12 @@
 @import 'styles/global/mixins';
 
-@mixin wrap-button {
+@mixin setup-button {
   position: absolute;
   text-align: center;
 
   @include medium-down {
+    justify-content: center;
+    display: flex;
     right: 0;
     left: 0;
   }
@@ -15,11 +17,7 @@
 }
 
 .prev_button {
-  @include wrap-button;
-
-  button {
-    @include row-button('prev', 1.25rem);
-  }
+  @include setup-button;
 
   @include medium-down {
     top: -1rem;
@@ -30,18 +28,22 @@
   }
 }
 
-.next_button {
-  @include wrap-button;
+.prev_button button {
+  @include row-button('prev', 1.25rem);
+}
 
-  button {
-    @include row-button('next', 1.25rem);
-  }
+.next_button {
+  @include setup-button;
 
   @include medium-down {
-    bottom: -2.5rem;
+    bottom: -2.625rem;
   }
 
   @include medium-up {
     right: -$margin-button;
   }
+}
+
+.next_button button {
+  @include row-button('next', 1.25rem);
 }
