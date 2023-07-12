@@ -1,33 +1,25 @@
-import styles from 'styles/pages/about.module.scss'
 import { getLayoutData } from 'scripts'
 import { Fragment } from 'react'
-import ReactMarkdown from 'react-markdown'
 
 import Layout from 'layouts/main'
 import Content from 'components/content'
-import Wrap from 'components/wrap'
-import Page from 'components/about_page'
-import PageRow from 'components/page/row'
+import Page from 'components/page'
+import CreatePageRows from 'components/page/row/create'
 
 function About(props) {
   const { markdown } = props
-  const h3 = '###'
-  const sections = markdown.split(h3)
 
-  function Tearoffs(section, index) {
-    if (index > 0) section = h3 + section
-    return (
-      <PageRow key={'row' + index} simple>
-        <ReactMarkdown>{section}</ReactMarkdown>
-      </PageRow>
-    )
+  const createProps = {
+    content: markdown,
+    markdown: true,
+    h3: '###',
   }
 
   return (
     <Fragment>
       <Content>
         <Page>
-          <div className={styles.copy}>{sections.map(Tearoffs)}</div>
+          <CreatePageRows {...createProps} />
         </Page>
       </Content>
       <Layout {...props} />

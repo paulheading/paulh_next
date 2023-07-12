@@ -1,4 +1,4 @@
-import styles from 'styles/components/page.module.scss'
+import styles from 'styles/components/page/columns.module.scss'
 import { chop, create, environment } from 'scripts/helpers'
 import { CreateLink } from 'components/marquee'
 import Label from 'components/page/label'

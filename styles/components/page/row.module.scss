@@ -1,5 +1,13 @@
 @import 'styles/global/mixins';
 
+@mixin double-row {
+  @include medium-up {
+    grid-template-columns: 2fr 1fr;
+    column-gap: $padding-row;
+    display: grid;
+  }
+}
+
 .container {
   background-color: white;
   position: relative;
@@ -16,33 +24,28 @@
 }
 
 .wrap {
-  padding-bottom: $padding-row;
-
-  @include medium-up {
-    padding-right: $padding-row;
-    padding-left: $padding-row;
-    padding-top: $padding-row;
-  }
+  padding: $padding-row;
 
   @include medium-down {
     box-shadow: $box-shadow-page;
   }
 }
 
-.wrap.simple {
-  padding: $padding-row;
+.wrap.grid_mode {
+  @include medium-down {
+    padding-bottom: 2.25rem;
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
-.center.wrap {
+.wrap.title_mode {
+  @include double-row;
   @include medium-up {
     align-items: center;
   }
 }
 
-.double.wrap {
-  @include medium-up {
-    grid-template-columns: 2fr 1fr;
-    column-gap: $padding-row;
-    display: grid;
-  }
+.wrap.double {
+  @include double-row;
 }

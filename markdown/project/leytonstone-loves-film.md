@@ -2,6 +2,8 @@ Build and animate the website for a community festival called Leytonstone Loves 
 
 ---
 
+# Leytonstone Loves Film
+
 ### Whats the Project?
 
 Build and animate the website for a community festival called Leytonstone Loves Film.

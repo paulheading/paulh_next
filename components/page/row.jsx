@@ -1,13 +1,13 @@
 import styles from 'styles/components/page/row.module.scss'
 
-function Row({ children, columns, align, simple = false }) {
+function Row({ children, columns, className, mode }) {
   function wrapStyles() {
     let wrap = styles.wrap
-    if (simple) return `${styles.simple} ${wrap}`
-    else {
-      if (align === 'center') wrap = `${wrap} ${styles.center}`
-      if (columns === 2) return `${styles.double} ${wrap}`
-    }
+
+    if (columns == 2) wrap = wrap + ' ' + styles.double
+    if (mode) wrap = wrap + ' ' + styles[mode + '_mode']
+    if (className) wrap = wrap + ' ' + className
+
     return wrap
   }
 

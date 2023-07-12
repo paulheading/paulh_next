@@ -34,7 +34,7 @@ chop.content = function (clicked, content) {
     if (last_letter == ',' || last_letter == '.') result[last] = result[last].slice(0, -1)
   }
 
-  return result.join(' ')
+  return result.join(' ') + ' '
 }
 
 chop.results = (items, max, page) =>

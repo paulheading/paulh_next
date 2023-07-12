@@ -1,10 +1,17 @@
 @import 'styles/global/mixins';
 
 .container {
+  font-size: 1.375rem;
   padding: 4rem 2rem;
 
   @include small-up {
     padding-bottom: 9rem;
     padding-top: 3rem;
+  }
+}
+
+.container a {
+  @include focus {
+    @include gold-box;
   }
 }

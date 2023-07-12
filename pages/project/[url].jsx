@@ -1,16 +1,23 @@
-import styles from 'styles/project.module.scss'
+import styles from 'styles/pages/project.module.scss'
 import { Fragment } from 'react'
 import { getLayoutData } from 'scripts'
 import getTrelloData from 'scripts/trello'
-import parse from 'html-react-parser'
 import { title as seo_title } from 'data/seo'
 
 import Layout from 'layouts/main'
 import Content from 'components/content'
-import Wrap from 'components/wrap'
+import Page from 'components/page'
+
+import CreatePageRows from 'components/page/row/create'
 
 function Project({ layout, project }) {
   const { name, local } = project
+
+  const createProps = {
+    content: local.desc,
+    markdown: false,
+    h3: '<h3',
+  }
 
   const layoutProps = {
     ...layout,
@@ -23,10 +30,9 @@ function Project({ layout, project }) {
   return (
     <Fragment>
       <Content>
-        <Wrap>
-          <h1 className={styles.title}>{name}</h1>
-          <div className={styles.copy}>{parse(local.desc)}</div>
-        </Wrap>
+        <Page className={styles.content}>
+          <CreatePageRows {...createProps} />
+        </Page>
       </Content>
       <Layout {...layoutProps} />
     </Fragment>
