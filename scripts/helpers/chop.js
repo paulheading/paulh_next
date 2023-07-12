@@ -2,39 +2,33 @@ const chop = {}
 
 chop.limit = 100
 
-chop.needed = function (content) {
-  if (!content.props) return false
-
-  let { limit } = chop
-  let { children } = content.props
-
-  return children.length > limit
-}
+chop.needed = (content) => content.length > chop.limit
 
 chop.content = function (clicked, content) {
-  let result = []
-  let { limit } = chop
-  let { children } = content.props
+  var { children } = content.props
 
-  if (clicked || !chop.needed(content)) return children
+  if (!chop.needed(children)) return children
 
-  children.split(' ').forEach((word) => {
-    if (limit <= word.length) return
-    result.push(word)
-    limit = limit - word.length
+  if (clicked) return (children += ' ')
+
+  var words = children.split(' ')
+  var { limit } = chop
+  var result = ''
+  var finished = false
+
+  words.forEach((word) => {
+    if (limit < word.length) finished = true
+
+    if (finished) return
+
+    if (!result == '') result += ' '
+
+    result += word
+
+    limit -= word.length
   })
 
-  let last = result.length - 1
-
-  if (result[last].length == 1) result.pop()
-
-  if (result[last]) {
-    let last_place = result[last]
-    let last_letter = last_place.substr(last_place.length - 1)
-    if (last_letter == ',' || last_letter == '.') result[last] = result[last].slice(0, -1)
-  }
-
-  return result.join(' ') + ' '
+  return (result += ' ')
 }
 
 chop.results = (items, max, page) =>

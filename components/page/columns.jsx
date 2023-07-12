@@ -56,9 +56,12 @@ function Columns(props) {
     href: blog ? blog.url : local.url,
   }
 
-  const buttonProps = {
-    className: styles.blog,
-    onClick: () => setClicked(!clicked),
+  function ToggleButton() {
+    const props = {
+      className: styles.blog,
+      onClick: () => setClicked(!clicked),
+    }
+    return <button {...props}>{clicked ? 'less' : 'more'}</button>
   }
 
   return (
@@ -70,7 +73,7 @@ function Columns(props) {
       </div>
       <div className={styles.desc_wrap}>
         {chop.content(clicked, summary)}
-        {chop.needed(summary) && <button {...buttonProps}>{clicked ? 'less' : 'more'}</button>}
+        {chop.needed(summary.props.children) && <ToggleButton />}
       </div>
     </div>
   )
