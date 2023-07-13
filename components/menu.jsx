@@ -1,22 +1,31 @@
 import styles from 'styles/components/menu.module.scss'
+import { useRouter } from 'next/router'
+import data from 'data/menu'
+import Link from 'next/link'
+
 import Desktop from 'logos/paulh/desktop'
 import Mobile from 'logos/paulh/mobile'
 import Wrap from 'components/wrap'
-import { useRouter } from 'next/router'
-import useMediaQuery from 'hooks/useMediaQuery'
-import data from 'data/menu'
 import Ready from 'components/ready'
-import Link from 'next/link'
+import SmallDown from 'components/media/small/down'
+import SmallUp from 'components/media/small/up'
 
 function Logo() {
-  const smallUp = useMediaQuery(520)
-  return <div className={styles.logo}>{smallUp ? <Desktop /> : <Mobile />}</div>
+  return (
+    <div className={styles.logo}>
+      <SmallUp>
+        <Desktop />
+      </SmallUp>
+      <SmallDown>
+        <Mobile />
+      </SmallDown>
+    </div>
+  )
 }
 
 function Menu() {
   const { pathname } = useRouter()
   const isHome = pathname === '/'
-  const smallUp = useMediaQuery(520)
 
   const containerStyles = isHome ? styles.home_container : styles.away_container
 
@@ -47,7 +56,10 @@ function Menu() {
     }
     return (
       <Ready key={title + index}>
-        <Content {...props}>{smallUp ? title : icon}</Content>
+        <Content {...props}>
+          <SmallUp>{title}</SmallUp>
+          <SmallDown>{icon}</SmallDown>
+        </Content>
       </Ready>
     )
   }

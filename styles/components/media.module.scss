@@ -1,0 +1,13 @@
+@import 'styles/global/mixins';
+
+.small_up {
+  @include small-down {
+    display: none;
+  }
+}
+
+.small_down {
+  @include small-up {
+    display: none;
+  }
+}
