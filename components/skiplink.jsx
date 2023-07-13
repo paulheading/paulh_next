@@ -1,9 +1,10 @@
 import { forwardRef } from 'react'
 import styles from 'styles/components/skiplink.module.scss'
 
-// DONT USE NEXT/LINK FOR THIS
+// @note: Don't use use Next/Link for this
 
-const SkipLink = forwardRef(({ href, children }, ref) => {
+const SkipLink = forwardRef((props, ref) => {
+  const { href, children } = props
   const linkProps = {
     className: styles.skiplink,
     href,
