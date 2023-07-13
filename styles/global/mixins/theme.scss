@@ -1,19 +1,11 @@
-@mixin ThemeBanner($name, $color) {
-  .banner.loop_#{$name} {
-    background-color: $color;
+@mixin ThemeWindow($theme, $color) {
+  .window.#{$theme} {
+    border-color: $color;
   }
 }
 
-@mixin ThemeContainer($name, $color) {
-  .container.loop_#{$name} {
-    background-color: $color;
-  }
-}
-
-@mixin ThemeLink($name, $color) {
-  .link.loop_#{$name} {
-    @include focus {
-      background-color: $color;
-    }
+@mixin ThemeVersion($theme, $color) {
+  .version.#{$theme} {
+    color: $color;
   }
 }

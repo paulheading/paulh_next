@@ -1,5 +1,10 @@
 @import 'styles/global/mixins';
 
+@each $theme, $color in $themes {
+  @include ThemeWindow($theme, $color);
+  @include ThemeVersion($theme, $color);
+}
+
 .outer {
   position: absolute;
   text-align: left;

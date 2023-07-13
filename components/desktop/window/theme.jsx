@@ -4,11 +4,7 @@ import GraphIcon from 'icons/graph'
 
 function ThemeWindow({ name, folders, data, color, style }) {
   const { downloads, version } = data
-
-  const innerProps = {
-    style: { borderColor: color },
-    className: styles.window,
-  }
+  const customStyle = styles[data.name]
 
   const graphProps = {
     className: styles.graph,
@@ -28,7 +24,7 @@ function ThemeWindow({ name, folders, data, color, style }) {
 
   return (
     <Window {...windowProps}>
-      <div {...innerProps}>
+      <div className={styles.window + ' ' + customStyle}>
         <div className={styles.copy}>
           <div>
             <div>
@@ -36,7 +32,7 @@ function ThemeWindow({ name, folders, data, color, style }) {
             </div>
             <div>{downloads}</div>
           </div>
-          <div style={{ color }}>{version}</div>
+          <div className={styles.version + ' ' + customStyle}>{version}</div>
         </div>
         <GraphIcon {...graphProps} />
       </div>

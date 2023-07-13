@@ -71,6 +71,11 @@ $heroes: (
   ),
 );
 
+$themes: (
+  'futuro': blue,
+  'barbican-reset': red,
+);
+
 $c-status-neutral-fade: hsl(205, 100%, 95%);
 $c-status-neutral-light: hsl(205, 100%, 75%);
 $c-status-neutral: hsl(205, 100%, 37%);
