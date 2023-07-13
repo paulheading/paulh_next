@@ -1,13 +1,20 @@
 import styles from 'styles/components/desktop/window/trello/footer.module.scss'
+
 import PrevIcon from 'icons/prev'
 import NextIcon from 'icons/next'
+import Button from 'components/button'
 
-function TrelloButton({ active, children, className, onClick }) {
+function TrelloButton({ active, children, className, onClick, title }) {
   if (!active) return
+
+  const buttonProps = {
+    onClick,
+    title,
+  }
 
   return (
     <div className={className}>
-      <button onClick={onClick}>{children}</button>
+      <Button {...buttonProps}>{children}</Button>
     </div>
   )
 }
@@ -16,12 +23,14 @@ function TrelloFooter({ className, setPageRange, max, length, page, controls }) 
   const prevProps = {
     onClick: () => setPageRange(max - page),
     className: styles.prev_button,
+    title: 'previous projects page',
     active: max > page,
   }
 
   const nextProps = {
     onClick: () => setPageRange(max + page),
     className: styles.next_button,
+    title: 'next projects page',
     active: length > max,
   }
 
