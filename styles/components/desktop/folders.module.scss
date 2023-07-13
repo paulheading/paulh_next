@@ -27,6 +27,11 @@
   }
 }
 
+.folder_title {
+  font-size: $h6-font-size;
+  font-weight: 600;
+}
+
 .folder_words {
   @include folder_words;
 }

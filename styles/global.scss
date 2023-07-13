@@ -23,40 +23,40 @@ a {
 }
 
 h1 {
-  $h1-drop: $font-size-h1 * 0.5;
+  $h1-drop: $h1-font-size * 0.5;
 
   font-family: $font-family-headings;
-  font-size: $font-size-h1;
+  font-size: $h1-font-size;
   margin: 0 0 $h1-drop;
   line-height: 1.2;
 }
 
 h2 {
   font-family: $font-family-headings;
-  font-size: $font-size-h2;
+  font-size: $h2-font-size;
   margin: 0 0 1rem;
 }
 
 h3 {
   font-family: $font-family-headings;
-  font-size: $font-size-h3;
+  font-size: $h3-font-size;
   margin: 0 0 1rem;
 }
 
 h4 {
   font-family: $font-family-headings;
-  font-size: $font-size-h4;
+  font-size: $h4-font-size;
   margin: 0 0 1rem;
 }
 
 h5 {
   font-family: $font-family-headings;
-  font-size: $font-size-h5;
+  font-size: $h5-font-size;
   margin: 0 0 1rem;
 }
 
 h6 {
-  font-size: $font-size-h6;
+  font-size: $h6-font-size;
   margin: 0 0 1rem;
 }
 

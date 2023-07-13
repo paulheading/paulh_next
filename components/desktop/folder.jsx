@@ -8,7 +8,7 @@ function Folder({ name, folders, setFolder, position, count }) {
   const open = state ? state.open : false
   const desktop = useMediaQuery(768)
 
-  // we want to determin if the count is odd or even
+  // determin if the count is odd or even
   const oddOrEven = count % 2 ? 1 : 0
 
   const buttonProps = {
@@ -27,7 +27,7 @@ function Folder({ name, folders, setFolder, position, count }) {
   return (
     <button {...buttonProps}>
       {open ? <OpenFolder /> : <ClosedFolder />}
-      <h6 className={styles.folder_title}>{name.split(' ').map(Words)}</h6>
+      <div className={styles.folder_title}>{name.split(' ').map(Words)}</div>
     </button>
   )
 }
