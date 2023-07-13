@@ -1,8 +1,10 @@
 @mixin track_name {
   @include text-overflow;
-  display: inline-block;
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
   line-height: 1.2;
   max-width: 100%;
+  display: block;
 
   @include focus {
     @include single-box($c-lemon);
