@@ -31,7 +31,7 @@ function animation(target) {
   tl.set(everything, { clearProps: 'all' })
     .to(star_1, { display: 'block', rotation: 540 })
     .to(stars, { display: 'block', stagger: 0.1 })
-    .to([star_1, stars], { opacity: 0, y: -30 })
+    .to([star_1, stars], { opacity: 0, y: -30, duration: 0.3 })
     .to(face, { display: 'block' })
     .to(echoes, { display: 'block', stagger: 0.1 })
 }
