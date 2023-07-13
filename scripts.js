@@ -1,5 +1,6 @@
 import getTrelloData from 'scripts/trello'
 import getSpotifyData from 'scripts/spotify'
+import getGemData from 'scripts/gem'
 import getNpmData from 'scripts/npm'
 import udemy from 'scripts/udemy'
 
@@ -10,8 +11,10 @@ async function getLayoutData() {
   const hashnode = await get.gql('https://api.hashnode.com/', GET_USER_ARTICLES, { page: 0 }).then(({ data }) => data.user.publication.posts)
   const projects = await getTrelloData('projects')
   const spotify = await getSpotifyData()
-  const gem = await get.JSON('https://rubygems.org/api/v1/gems/futuro')
+  const gem = await getGemData()
   const npm = await getNpmData()
+
+  console.log('gem: ', gem)
 
   return {
     hashnode,
