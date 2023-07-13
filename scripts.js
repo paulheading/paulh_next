@@ -14,8 +14,6 @@ async function getLayoutData() {
   const gem = await getGemData()
   const npm = await getNpmData()
 
-  console.log('gem: ', gem)
-
   return {
     hashnode,
     projects,
