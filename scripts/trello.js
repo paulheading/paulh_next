@@ -77,6 +77,7 @@ mapTrello.projects = function (card) {
   var isHero = card.name.startsWith('Hero: ') ? true : false
 
   card.name = remove.hero(card.name)
+  card.marquee = card.name
   card.hero = isHero
   card.local.pathname = card.name.replace(/\s+/g, '-').replace(/[.]/g, '').toLowerCase()
   card.local.url = '/project/' + card.local.pathname
@@ -94,7 +95,6 @@ async function cardResults(result, list) {
   result.attachments = result.id ? await getTrello.attachments(result.id) : null
   result.actions = result.id ? await getTrello.actions(result.id) : null
   result.blog = create.blog(result.attachments)
-  result.marquee = result.name ? result.name : null
 
   return result
 }
