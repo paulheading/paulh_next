@@ -6,6 +6,7 @@
 @import 'styles/global/mixins/spotify';
 @import 'styles/global/mixins/hero';
 @import 'styles/global/mixins/theme';
+@import 'styles/global/mixins/label';
 
 @mixin size($value) {
   height: $value;

@@ -1,11 +1,11 @@
-@mixin ThemeWindow($theme, $color) {
-  .window.#{$theme} {
-    border-color: $color;
+@mixin ThemeWindow($key, $value) {
+  .window.#{$key} {
+    border-color: $value;
   }
 }
 
-@mixin ThemeVersion($theme, $color) {
-  .version.#{$theme} {
-    color: $color;
+@mixin ThemeVersion($key, $value) {
+  .version.#{$key} {
+    color: $value;
   }
 }

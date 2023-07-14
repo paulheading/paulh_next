@@ -1,8 +1,8 @@
 @import 'styles/global/mixins';
 
-@each $theme, $color in $themes {
-  @include ThemeWindow($theme, $color);
-  @include ThemeVersion($theme, $color);
+@each $key, $value in $themes {
+  @include ThemeWindow($key, $value);
+  @include ThemeVersion($key, $value);
 }
 
 .outer {

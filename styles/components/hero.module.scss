@@ -1,9 +1,9 @@
 @import 'styles/global/mixins';
 
-@each $hero, $map in $heroes {
-  @include HeroBanner($hero, map-get($map, banner));
-  @include HeroContainer($hero, map-get($map, bg));
-  @include HeroLink($hero, map-get($map, svg));
+@each $key, $value in $heroes {
+  @include HeroBanner($key, map-get($value, banner));
+  @include HeroContainer($key, map-get($value, bg));
+  @include HeroLink($key, map-get($value, svg));
 }
 
 @mixin grid {

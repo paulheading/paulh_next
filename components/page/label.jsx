@@ -1,40 +1,14 @@
+import styles from 'styles/components/page/label.module.scss'
+
 function Label({ color, children, size = 'sm', variant = 'solid' }) {
-  function fontSize() {
-    switch (size) {
-      case 'md':
-        return '1rem'
-      default:
-        return '0.875rem'
-    }
+  function labelStyles() {
+    var result = styles[variant + '_label']
+    if (size) result += ' ' + styles[size]
+    if (color) result += ' ' + styles[color]
+    return result
   }
 
-  function style() {
-    let basic = {
-      border: `1px solid ${color}`,
-      padding: '0.25rem 0.5rem',
-      borderRadius: '0.25rem',
-      display: 'inline-block',
-      fontSize: fontSize(),
-      margin: '0.25rem',
-      maxWidth: '15rem',
-    }
-
-    if (variant === 'outline') {
-      return {
-        ...basic,
-        backgroundColor: 'white',
-        color,
-      }
-    } else {
-      return {
-        ...basic,
-        backgroundColor: color,
-        color: 'white',
-      }
-    }
-  }
-
-  return <div style={style()}>{children}</div>
+  return <div className={labelStyles()}>{children}</div>
 }
 
 export default Label
