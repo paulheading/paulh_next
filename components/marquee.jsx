@@ -36,13 +36,21 @@ function Tab({ blog }) {
 
 function Row({ marquee, blog, id }) {
   function Repeat() {
-    var print = ''
-    const repeat = new Array(10).fill(0)
-    const printRepeat = () => (print += `<span>${marquee}</span>`)
-    repeat.forEach(printRepeat)
+    var word_spans = ''
+    var words = marquee.split(' ')
+
+    for (let index = 0; index < words.length; index++) {
+      if (index > 0) word_spans += ' '
+      word_spans += `<span style="visibility: hidden;">${words[index]}</span>`
+    }
+
+    var sentence_spans = ''
+
+    for (let index = 0; index < 10; index++) sentence_spans += `<span>${word_spans}</span>`
+
     return (
       <div id="repeat" className={styles.repeat_container}>
-        {parse(print)}
+        {parse(sentence_spans)}
       </div>
     )
   }
