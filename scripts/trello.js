@@ -94,11 +94,7 @@ async function cardResults(result, list) {
   result.attachments = result.id ? await getTrello.attachments(result.id) : null
   result.actions = result.id ? await getTrello.actions(result.id) : null
   result.blog = create.blog(result.attachments)
-  result.marquee = result.name ? result.name.replace('Hero: ', '') : null
-  result.labels = result.labels ? create.labels(result.labels) : null
-
-  // Providing artwork locally instead of running it through trello
-  // result.svg = result.type == 'projects' ? getTrello.svgs(result.actions) : null
+  result.marquee = result.name ? result.name : null
 
   return result
 }
@@ -119,7 +115,7 @@ getTrello.data = async function (type) {
 
     cards = cards.map(mapTrello.projects)
 
-    if (!environment.isLocal()) cards = cards.filter(({ labels }) => !contains.label(labels, environment.local))
+    if (!environment.isLocal()) cards = cards.filter(({ labels }) => !contains.label(labels, environment.local_label))
 
     return cards
   }

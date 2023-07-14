@@ -3,8 +3,6 @@ import { list } from 'scripts/trello/variables'
 
 const create = {}
 
-create.labels = (target) => (!target.length ? [{ name: 'Personal', color: 'grey' }] : target.map(({ name, color }) => ({ name, color })))
-
 /**
  * @summary Formats strings into HTML arrays
  * @param {string} target

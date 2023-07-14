@@ -2,24 +2,6 @@ import { DateTime } from 'luxon'
 
 const create = {}
 
-create.label = function ({ name, color = 'purple' }, index) {
-  const style = {
-    padding: '0.25rem 0.5rem',
-    borderRadius: '0.25rem',
-    display: 'inline-block',
-    backgroundColor: color,
-    fontSize: '0.875rem',
-    margin: '0.25rem',
-    color: 'white',
-  }
-
-  return (
-    <div key={'label' + index} style={style}>
-      {name}
-    </div>
-  )
-}
-
 create.date_span = function (start, due, dueComplete) {
   const today = new Date()
   const start_date = DateTime.fromISO(start)
@@ -45,10 +27,10 @@ create.date_span = function (start, due, dueComplete) {
 create.environment = class {
   constructor(name) {
     this.name = name
-    this.local = 'local'
+    this.local_label = 'Local'
   }
   isLocal() {
-    return this.local == String(this.name)
+    return this.local_label == String(this.name)
   }
 }
 

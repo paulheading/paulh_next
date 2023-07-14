@@ -41,7 +41,7 @@ function Resume(props) {
         <Page>
           <PageRow mode="title">
             <div className={styles.wrap_copy}>
-              <h1 style={{ marginBottom: 0 }}>{paul.name}</h1>
+              <h1 className={styles.copy_title}>{paul.name}</h1>
             </div>
             <div>
               <div>{paul.location}</div>

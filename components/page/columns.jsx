@@ -46,11 +46,13 @@ function Columns(props) {
 
   if (!variant) variant = 'default'
 
-  labels = labels.filter(({ name }) => name !== environment.local)
+  const durationProps = {
+    name: create.date_span(start, due, dueComplete),
+    color: labels[0].color,
+    variant: 'outline',
+  }
 
-  if (!labels.length) labels.push({ name: 'Personal', color: 'grey' })
-
-  labels.push({ name: create.date_span(start, due, dueComplete), color: labels[0].color, variant: 'outline' })
+  labels = [...labels, durationProps]
 
   const createProps = {
     href: blog ? blog.url : local.url,
