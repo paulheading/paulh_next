@@ -52,6 +52,7 @@ function CreateLink(props) {
 
   const linkProps = {
     className: contentStyles(),
+    'aria-label': children,
     href,
   }
 
