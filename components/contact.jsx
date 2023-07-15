@@ -4,16 +4,11 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Row from 'components/contact/row'
 
-function Button({ children, className }) {
-  const customClass = `${styles.button} ${className}`
-  return <div className={customClass}>{children}</div>
-}
-
 function Topbar() {
   return (
     <div className={styles.topbar}>
-      <Button className={styles.close}>close</Button>
-      <Button className={styles.minimise}>minimise</Button>
+      <div className={styles.button + ' ' + styles.close} />
+      <div className={styles.button + ' ' + styles.minimise} />
     </div>
   )
 }

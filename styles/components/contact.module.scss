@@ -121,15 +121,14 @@
   padding: 0.75rem;
   cursor: pointer;
   font-size: 0;
-  border: 0;
 }
 
 .button.close {
-  background-color: $c-close-btn;
+  background-color: $c-red;
 }
 
 .button.minimise {
-  background-color: $c-minimise-btn;
+  background-color: $c-yellow;
 }
 
 .tag {
