@@ -17,11 +17,8 @@ function Window({ name, folders, style, children }) {
   }, [open, ref])
 
   const outerProps = {
-    className: `window ${styles.outer}`,
-    style: {
-      ...style,
-      display: open ? 'block' : 'none',
-    },
+    className: 'window' + ' ' + styles.outer,
+    style,
     ref,
   }
 

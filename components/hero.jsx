@@ -1,5 +1,5 @@
 import styles from 'styles/components/hero.module.scss'
-import { CreateLink, NotFound } from 'components/marquee'
+import { CreateLink } from 'components/marquee'
 import { useRef, useEffect, Fragment } from 'react'
 import { hero as animation } from 'scripts/animation'
 import { useRouter } from 'next/router'
@@ -8,7 +8,7 @@ import Artwork from 'components/artwork'
 function Hero({ hero }) {
   const router = useRouter()
   const isHome = router.pathname == '/'
-  const { id, name, blog } = hero
+  const { id, name, local } = hero
   const snippet = id.slice(0, 5)
   const loop = 'loop_' + snippet
   const artwork = useRef(null)
@@ -20,12 +20,8 @@ function Hero({ hero }) {
   const bannerStyles = isHome && styles.banner + ' ' + styles[loop]
 
   const createProps = {
-    href: blog ? blog.url : null,
     className: linkStyles,
-  }
-  const notProps = {
-    className: linkStyles,
-    href: '/404',
+    href: local.url,
   }
 
   useEffect(() => {
@@ -43,7 +39,9 @@ function Hero({ hero }) {
     <Fragment>
       <div className={bannerStyles}></div>
       <div className={containerStyles}>
-        <h1 className={styles.name}>{blog ? <CreateLink {...createProps}>{name}</CreateLink> : <NotFound {...notProps}>{name}</NotFound>}</h1>
+        <h1 className={styles.name}>
+          <CreateLink {...createProps}>{name}</CreateLink>
+        </h1>
         <Artwork {...artworkProps} />
       </div>
     </Fragment>

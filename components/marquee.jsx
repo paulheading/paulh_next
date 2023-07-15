@@ -1,40 +1,37 @@
-import Link from 'next/link'
 import parse from 'html-react-parser'
 import styles from 'styles/components/marquee.module.scss'
 import { useEffect } from 'react'
 import { marquee as animate } from 'scripts/animation'
 
-function CreateLink({ href, className, children }) {
-  const props = {
-    className: className ? className : null,
+function CreateLink(props) {
+  const { href, className = '', children } = props
+
+  const linkProps = {
+    className,
     href,
   }
-  return <a {...props}>{children}</a>
+  return <a {...linkProps}>{children}</a>
 }
 
-function NotFound({ href, className, children }) {
-  const props = {
-    className: className ? className : null,
-    href,
-  }
-  return <Link {...props}>{children}</Link>
-}
-
-function Tab({ blog }) {
+function Tab(props) {
+  const { href } = props
   const message = 'See Project'
-  const createProps = {
+
+  const linkProps = {
     className: styles.tab_link,
-    href: blog ? blog.url : null,
-  }
-  const notProps = {
-    className: styles.tab_link,
-    href: '/404',
+    href,
   }
 
-  return <div className={styles.tab_container}>{blog ? <CreateLink {...createProps}>{message}</CreateLink> : <NotFound {...notProps}>{message}</NotFound>}</div>
+  return (
+    <div className={styles.tab_container}>
+      <CreateLink {...linkProps}>{message}</CreateLink>
+    </div>
+  )
 }
 
-function Row({ marquee, blog, id }) {
+function Row(props) {
+  const { marquee, local, id } = props
+
   function Repeat() {
     var word_spans = ''
     var words = marquee.split(' ')
@@ -65,30 +62,24 @@ function Row({ marquee, blog, id }) {
 
   return (
     <div className={customClass}>
-      {blog ? (
-        <CreateLink href={blog.url}>
-          <Repeat />
-        </CreateLink>
-      ) : (
-        <NotFound href="/404">
-          <Repeat />
-        </NotFound>
-      )}
+      <CreateLink href={local.url}>
+        <Repeat />
+      </CreateLink>
     </div>
   )
 }
 
-function Marquee({ hero }) {
-  const { blog } = hero
+function Marquee(props) {
+  const { local } = props.hero
 
   return (
     <div className={styles.marquee_container}>
-      <Tab blog={blog} />
-      <Row {...hero} />
+      <Tab href={local.url} />
+      <Row {...props.hero} />
     </div>
   )
 }
 
-export { CreateLink, NotFound }
+export { CreateLink }
 
 export default Marquee

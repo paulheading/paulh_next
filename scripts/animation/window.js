@@ -10,6 +10,7 @@ window.defaults = {
 window.open = function (target) {
   const tl = gsap.timeline()
   const { duration } = window.defaults
+
   tl.set(target, { display: 'block' }).to(target, {
     scale: 1,
     opacity: 1,

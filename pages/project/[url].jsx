@@ -46,9 +46,6 @@ function Project({ layout, project }) {
 export async function getStaticPaths() {
   var projects = await getTrelloData('projects')
 
-  // remove the projects that have a full blog post
-  projects = projects.filter((project) => !project.blog)
-
   // map projects data into an array of params.url
   const paths = projects.map(function (project) {
     return {

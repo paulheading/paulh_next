@@ -16,7 +16,7 @@ function Canvas({ projects, spotify, gem, npm, count }) {
 
   const setFolder = (name) => setFolders(folders.map((folder) => toggle.folders(name, folder)))
 
-  const style = (top, left) => ({ top: top + 'rem', left: left + 'rem' })
+  const style = (top = 0, left = 0) => ({ top: top + 'rem', left: left + 'rem' })
 
   const windowProps = (name) => ({ name, folders })
 

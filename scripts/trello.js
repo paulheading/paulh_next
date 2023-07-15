@@ -94,7 +94,6 @@ async function cardResults(result, list) {
   result.type = create.type(list)
   result.attachments = result.id ? await getTrello.attachments(result.id) : null
   result.actions = result.id ? await getTrello.actions(result.id) : null
-  result.blog = create.blog(result.attachments)
 
   return result
 }

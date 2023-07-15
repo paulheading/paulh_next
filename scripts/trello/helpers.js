@@ -40,11 +40,6 @@ create.summary = (target) => create.snippet(target, 0)
  */
 create.desc = (target) => create.snippet(target, 1)
 
-create.blog = (attachments) => {
-  const more = attachments.filter(({ name }) => name === 'Read more')
-  return more.length ? more[0] : null
-}
-
 create.type = (target) => {
   const { pages, roles, projects, education } = list
   if (target == pages) return 'pages'

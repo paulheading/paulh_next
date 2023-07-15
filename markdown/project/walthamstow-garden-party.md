@@ -4,7 +4,7 @@ Build and animate the website for a community festival called Walthamstow Garden
 
 # Walthamstow Garden Party
 
-### Whats the Project?
+### What's the Project?
 
 Build and animate the website for a community festival called Walthamstow Garden Party.
 
@@ -18,9 +18,9 @@ The code is in a private [Barbican](https://barbican.org.uk) [Bitbucket](https:/
 
 Everything on the frontend, which includes:
 
-- Building the site in [Nuxt.js](https://nuxt.com)
-- Animating the brand artwork in [GSAP](https://greensock.com)
-- Writing the [SCSS](https://sass-lang.com)
+- 💻 Building the site in [Nuxt.js](https://nuxt.com)
+- 🚀 Animating the brand artwork in [GSAP](https://greensock.com)
+- 📝 Writing the [SCSS](https://sass-lang.com)
 
 ### What are the interesting parts?
 
