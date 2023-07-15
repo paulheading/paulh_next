@@ -59,7 +59,7 @@
 
 @mixin form_row {
   + .row {
-    border-top: 1px solid $c-topbar;
+    border-top: 1px solid $c-gray-5;
   }
 }
 
@@ -108,7 +108,7 @@
 }
 
 @mixin folder_words {
-  background-color: $c-teal--dark;
+  background-color: $c-teal--xdark;
   padding: 0.25rem 0.5rem;
   display: inline-block;
   color: white;
@@ -116,7 +116,7 @@
 
 @mixin folder_words--focus {
   background-color: white;
-  color: $c-teal--dark;
+  color: $c-teal--xdark;
 }
 
 @mixin title_wrap {

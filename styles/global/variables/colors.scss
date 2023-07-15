@@ -2,9 +2,8 @@ $spotify-bg: #0d100a;
 $spotify-header: #222b1b;
 $spotify-text: #a0a19e;
 
-$trello-bg: #ebecf0;
-$trello-text: #172b4e;
-$trello-text--faded: #5f6c84;
+$c-trello-text: #172b4e;
+$c-trello-background: #ebecf0;
 
 $c-gray-1: #f8f9fa;
 $c-gray-2: #e9ecef;
@@ -16,8 +15,6 @@ $c-gray-7: #495057;
 $c-gray-8: #343a40;
 $c-gray-9: #212529;
 
-$c-topbar: $c-gray-5;
-
 $c-blue: #007bff;
 $c-indigo: #6610f2;
 $c-purple: #6f42c1;
@@ -26,6 +23,9 @@ $c-red: #dc3545;
 $c-orange: #fd7e14;
 $c-yellow: #ffc107;
 $c-green: #28a745;
+
+$c-close-btn: darken($c-red, 11%);
+$c-minimise-btn: darken($c-orange, 23%);
 
 $c-teal: #20c997;
 $c-teal--dark: darken($c-teal, 10%);
