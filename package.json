@@ -26,6 +26,9 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.41.1",
     "react-markdown": "^8.0.7",
-    "sass": "^1.57.1"
+    "sass": "^1.57.1",
+    "luxon": "^3.3.0",
+    "node-fetch": "^2.5.0",
+    "showdown": "^2.1.0"
   }
 }
