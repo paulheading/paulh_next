@@ -13,7 +13,7 @@
   width: $value;
 }
 
-@mixin row-button($mode: '', $size: 1rem) {
+@mixin row-button($mode: '', $size: 1rem, $rotate: false) {
   border: 1px solid $c-gray-5;
   background-color: white;
   justify-content: center;
@@ -32,8 +32,10 @@
     position: relative;
     display: flex;
 
-    @include medium-down {
-      transform: rotate(90deg);
+    @if $rotate {
+      @include medium-down {
+        transform: rotate(90deg);
+      }
     }
 
     @if $mode == 'prev' {
