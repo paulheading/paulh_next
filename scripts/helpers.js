@@ -1,7 +1,7 @@
-import create from 'scripts/helpers/create'
-import find from 'scripts/helpers/find'
-import chop from 'scripts/helpers/chop'
-import get from 'scripts/helpers/get'
+import create from './helpers/create.js'
+import find from './helpers/find.js'
+import chop from './helpers/chop.js'
+import get from './helpers/get.js'
 
 const toggle = {}
 
@@ -27,6 +27,4 @@ contains.label = function (labels, check) {
   return result
 }
 
-const environment = new create.environment(process.env.NEXT_PUBLIC_ENVIRONMENT)
-
-export { find, create, chop, toggle, contains, environment, get }
+export { find, create, chop, toggle, contains, get }

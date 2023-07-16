@@ -1,5 +1,4 @@
 import styles from 'styles/pages/resume.module.scss'
-import { getLayoutData, getResumeData } from 'scripts'
 import { Fragment, useState } from 'react'
 
 import Layout from 'layouts/main'
@@ -14,18 +13,22 @@ import details from 'data/personal'
 import { create, chop } from 'scripts/helpers'
 import ReactMarkdown from 'react-markdown'
 
-const paul = new create.person(details)
+import markdown from 'markdown/biography.md'
+import layout from 'data/layout.json'
+import resume from 'data/resume.json'
+
+var paul = new create.person(details)
 
 const Platforms = ({ name, link }) => <div key={name}>{link}</div>
 
-function Resume(props) {
-  var { projects, gem, npm, spotify, roles, education, markdown } = props
-  var layoutProps = { projects, gem, npm, spotify }
+function Resume() {
+  var { projects } = layout
+  var { roles, education } = resume
 
   const page = 3
   const [max, setMax] = useState(page)
 
-  const projectProps = {
+  const props = {
     setPageRange: (value) => setMax(value),
     controls: projects.length > page,
     length: projects.length,
@@ -57,7 +60,7 @@ function Resume(props) {
           </PageRow>
           <PageRow mode="grid">
             <RowTitle mode="grid">Projects</RowTitle>
-            <RowGrid {...projectProps}>{projects.map(PageColumns)}</RowGrid>
+            <RowGrid {...props}>{projects.map(PageColumns)}</RowGrid>
           </PageRow>
           <PageRow mode="grid">
             <RowTitle mode="grid">Roles</RowTitle>
@@ -69,21 +72,9 @@ function Resume(props) {
           </PageRow>
         </Page>
       </Content>
-      <Layout {...layoutProps} />
+      <Layout />
     </Fragment>
   )
-}
-
-export async function getStaticProps() {
-  var [markdown, layout, resume] = await Promise.all([import(`../markdown/biography.md`), getLayoutData(), getResumeData()])
-
-  return {
-    props: {
-      markdown: markdown.default,
-      ...layout,
-      ...resume,
-    },
-  }
 }
 
 export default Resume

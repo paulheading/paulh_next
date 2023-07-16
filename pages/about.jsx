@@ -1,4 +1,3 @@
-import { getLayoutData } from 'scripts'
 import { Fragment } from 'react'
 
 import Layout from 'layouts/main'
@@ -6,10 +5,10 @@ import Content from 'components/content'
 import Page from 'components/page'
 import CreatePageRows from 'components/page/row/create'
 
-function About(props) {
-  const { markdown } = props
+import markdown from 'markdown/about.md'
 
-  const createProps = {
+function About() {
+  const props = {
     content: markdown,
     markdown: true,
     h3: '###',
@@ -19,23 +18,12 @@ function About(props) {
     <Fragment>
       <Content>
         <Page>
-          <CreatePageRows {...createProps} />
+          <CreatePageRows {...props} />
         </Page>
       </Content>
-      <Layout {...props} />
+      <Layout />
     </Fragment>
   )
-}
-
-export async function getStaticProps() {
-  const [markdown, layout] = await Promise.all([import(`markdown/about.md`), getLayoutData()])
-
-  return {
-    props: {
-      markdown: markdown.default,
-      ...layout,
-    },
-  }
 }
 
 export default About

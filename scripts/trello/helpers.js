@@ -1,5 +1,5 @@
 import showdown from 'showdown'
-import { list } from 'scripts/trello/variables'
+import { list } from './variables.js'
 
 const create = {}
 

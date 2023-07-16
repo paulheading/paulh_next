@@ -43,7 +43,7 @@ create.person = class {
   }
   link(name, url, custom) {
     if (custom) url = custom + url
-    return <a href={url}>{name}</a>
+    return `<a href="${url}">${name}</a>`
   }
   createPlatform({ name, url }) {
     const { link } = create.person.prototype

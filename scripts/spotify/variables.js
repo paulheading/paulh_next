@@ -1,14 +1,14 @@
 const id = {
-  user: process.env.NEXT_PUBLIC_SPOTIFY_ID_USER,
-  client: process.env.NEXT_PUBLIC_SPOTIFY_ID_CLIENT,
+  user: process.env.SPOTIFY_ID_USER,
+  client: process.env.SPOTIFY_ID_CLIENT,
 }
 
 const playlist = {
-  _2020: process.env.NEXT_PUBLIC_SPOTIFY_PLAYLIST_2020,
-  _2021: process.env.NEXT_PUBLIC_SPOTIFY_PLAYLIST_2021,
-  _2022: process.env.NEXT_PUBLIC_SPOTIFY_PLAYLIST_2022,
-  _year: process.env.NEXT_PUBLIC_SPOTIFY_PLAYLIST_YEAR,
-  _weird: process.env.NEXT_PUBLIC_SPOTIFY_PLAYLIST_WEIRD,
+  _2020: process.env.SPOTIFY_PLAYLIST_2020,
+  _2021: process.env.SPOTIFY_PLAYLIST_2021,
+  _2022: process.env.SPOTIFY_PLAYLIST_2022,
+  _year: process.env.SPOTIFY_PLAYLIST_YEAR,
+  _weird: process.env.SPOTIFY_PLAYLIST_WEIRD,
 }
 
 const base = {
@@ -17,7 +17,7 @@ const base = {
 }
 
 const secret = {
-  client: process.env.NEXT_PUBLIC_SPOTIFY_SECRET_CLIENT,
+  client: process.env.SPOTIFY_SECRET_CLIENT,
 }
 
 const string = {}

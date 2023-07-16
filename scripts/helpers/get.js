@@ -1,7 +1,9 @@
+import fetch from 'node-fetch'
+
 const get = {}
 
-get.JSON = async function (url) {
-  var data = await fetch(url)
+get.JSON = async function (url, options) {
+  var data = await fetch(url, options)
   return data.json()
 }
 

@@ -1,9 +1,10 @@
-import { string, playlist, id, secret, base } from 'scripts/spotify/variables'
+import { string, playlist, id, secret, base } from './spotify/variables.js'
+import get from './helpers/get.js'
 
 const getSpotify = {}
 
-getSpotify.token = async () => {
-  const data = await fetch(base.token, {
+getSpotify.token = async function () {
+  const data = await get.JSON(base.token, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -12,12 +13,10 @@ getSpotify.token = async () => {
     body: 'grant_type=client_credentials',
   })
 
-  const json = await data.json()
-
-  return json.access_token
+  return data.access_token
 }
 
-function trackResults({ track }) {
+function trackData({ track }) {
   const { name, artists, album, external_urls, popularity } = track
   return {
     artist: {
@@ -33,20 +32,19 @@ function trackResults({ track }) {
 
 getSpotify.playlist = async (target) => {
   const token = await getSpotify.token()
-  const data = await fetch(string.playlist(target), { headers: { Authorization: 'Bearer ' + token } })
-  const result = await data.json()
+  const data = await get.JSON(string.playlist(target), { headers: { Authorization: 'Bearer ' + token } })
 
-  result.profile = 'https://open.spotify.com/user/' + result.owner.display_name
-  result.url = result.external_urls.spotify
-  result.followers = result.followers.total
-  result.image = result.images[0].url
-  result.owner = {
-    name: result.owner.display_name,
-    url: result.owner.external_urls.spotify,
+  data.profile = 'https://open.spotify.com/user/' + data.owner.display_name
+  data.url = data.external_urls.spotify
+  data.followers = data.followers.total
+  data.image = data.images[0].url
+  data.owner = {
+    name: data.owner.display_name,
+    url: data.owner.external_urls.spotify,
   }
-  result.tracks = result.tracks.items.map(trackResults)
+  data.tracks = data.tracks.items.map(trackData)
 
-  return result
+  return data
 }
 
 getSpotify.data = async () => ({

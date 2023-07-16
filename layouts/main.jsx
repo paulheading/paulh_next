@@ -6,8 +6,12 @@ import Footer from 'components/footer'
 import useCount from 'hooks/useCount'
 import Head from 'components/head'
 
+import layout from 'data/layout.json'
+
 function Main(props) {
-  var { projects, spotify, gem, npm, seo = null } = props
+  var { projects, spotify, gem, npm } = layout
+  var { seo = null } = props
+
   var heroes = projects.filter(({ hero }) => hero)
   var count = useCount(heroes)
   var hero = heroes[count]

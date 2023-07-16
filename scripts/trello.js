@@ -1,11 +1,7 @@
-import { create, remove } from 'scripts/trello/helpers'
-import { string, list } from 'scripts/trello/variables'
-import { contains, environment } from 'scripts/helpers'
-import get from 'scripts/helpers/get'
-
-/**
- * @summary Object containing Trello data and helper functions
- */
+import { create, remove } from './trello/helpers.js'
+import { string, list } from './trello/variables.js'
+import { contains } from './helpers.js'
+import get from './helpers/get.js'
 
 const getTrello = {}
 const mapTrello = {}
@@ -86,8 +82,7 @@ mapTrello.projects = function (card) {
 }
 
 async function cardResults(result, list) {
-  // locally interpreted formatting of data
-  result.local = {}
+  result.local = {} // locally interpreted formatting of data
   result.local.summary = result.desc ? create.summary(result.desc) : null
   result.local.desc = result.desc ? create.desc(result.desc) : null
 
@@ -114,7 +109,7 @@ getTrello.data = async function (type) {
 
     cards = cards.map(mapTrello.projects)
 
-    if (!environment.isLocal()) cards = cards.filter(({ labels }) => !contains.label(labels, environment.local_label))
+    cards = cards.filter(({ labels }) => !contains.label(labels, 'Local')) // remove local projects in production
 
     return cards
   }
