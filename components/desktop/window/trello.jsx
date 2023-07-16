@@ -2,7 +2,7 @@ import styles from 'styles/components/desktop/window/trello.module.scss'
 import { Fragment, useState } from 'react'
 import { chop } from 'scripts/helpers'
 
-import { CreateLink, NotFound } from 'components/marquee'
+import { CreateLink } from 'components/marquee'
 import Label from 'components/page/label'
 import Window from 'components/desktop/window'
 import Footer from 'components/desktop/window/trello/footer'

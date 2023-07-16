@@ -1,34 +1,37 @@
 {
-  "name": "paulh3",
+  "name": "paulh.biz",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "analyze": "ANALYZE=true npm run build",
-    "scrape": "cd scripts && node scraper.mjs",
     "start": "next start",
     "lint": "next lint",
+    "analyze": "ANALYZE=true npm run build",
+    "scrape": "cd scripts && node scraper.mjs",
     "remove:jsdoc": "rm -rf docs",
     "build:jsdoc": "jsdoc -c jsdoc.json",
     "jsdoc": "npm run remove:jsdoc && npm run build:jsdoc"
   },
   "dependencies": {
-    "gsap": "npm:@gsap/shockingly@^3.11.4",
     "@next/bundle-analyzer": "^13.4.10",
-    "eslint": "8.30.0",
-    "eslint-config-next": "^13.3.0",
     "focus-visible": "^5.2.0",
+    "gsap": "npm:@gsap/shockingly@^3.11.4",
     "html-react-parser": "^3.0.16",
+    "luxon": "^3.3.0",
     "next": "^13.3.0",
+    "node-fetch": "^2.5.0",
     "raw-loader": "^4.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.41.1",
     "react-markdown": "^8.0.7",
     "sass": "^1.57.1",
-    "luxon": "^3.3.0",
-    "node-fetch": "^2.5.0",
     "showdown": "^2.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.45.0",
+    "eslint-config-next": "^13.3.0",
+    "eslint-plugin-unused-imports": "^3.0.0"
   }
 }
