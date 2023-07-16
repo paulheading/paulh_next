@@ -14,6 +14,7 @@
     "jsdoc": "npm run remove:jsdoc && npm run build:jsdoc"
   },
   "dependencies": {
+    "gsap": "npm:@gsap/shockingly@^3.11.4",
     "@next/bundle-analyzer": "^13.4.10",
     "eslint": "8.30.0",
     "eslint-config-next": "^13.3.0",
