@@ -1,5 +1,6 @@
 import styles from 'styles/pages/resume.module.scss'
 import { Fragment, useState } from 'react'
+import parse from 'html-react-parser'
 
 import Layout from 'layouts/main'
 import Content from 'components/content'
@@ -19,7 +20,7 @@ import resume from 'data/resume.json'
 
 var paul = new create.person(details)
 
-const Platforms = ({ name, link }) => <div key={name}>{link}</div>
+const Platforms = ({ name, link }) => <div key={name}>{parse(link)}</div>
 
 function Resume() {
   var { projects } = layout
@@ -48,7 +49,7 @@ function Resume() {
             </div>
             <div>
               <div>{paul.location}</div>
-              <div>{paul.email.link}</div>
+              <div>{parse(paul.email.link)}</div>
             </div>
           </PageRow>
           <PageRow columns={2}>
