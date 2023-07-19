@@ -23,9 +23,12 @@ function Projects({ name, blog, local, labels }, index) {
             const labelProps = {
               variant: !color ? 'outline' : 'solid',
               color: color ? color : labels[0].color,
-              key: 'label' + index,
             }
-            return <Label {...labelProps}>{name}</Label>
+            return (
+              <Label {...labelProps} key={'label' + index}>
+                {name}
+              </Label>
+            )
           })}
         </div>
       </Fragment>
