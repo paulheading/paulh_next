@@ -39,7 +39,7 @@
       "checkItemStates": [],
       "closed": false,
       "dueComplete": false,
-      "dateLastActivity": "2023-07-15T18:01:47.777Z",
+      "dateLastActivity": "2023-07-19T16:29:39.792Z",
       "desc": "```\nBuild a website/app for staff at the [Barbican](https://barbican.org.uk) to see which spaces are available to book.\n\n---\n\n# Organising Spaces with GraphQL\n\n### What's the Project?\n\nBuild a website/app for staff at the [Barbican](https://barbican.org.uk) to see which spaces are available to book.\n\n### Can I see it?\n\nUnfortunately not, it's only available for Barbican staff at [dev.event.barbican.org.uk](https://dev.event.barbican.org.uk)\n\nThe code is in a private [Barbican](https://barbican.org.uk) [Bitbucket](https://bitbucket.org) repository sadly.\n\nI have started writing about [this project](https://blog.paulh.biz/organising-spaces-with-graphql-1) on [my blog](https://blog.paulh.biz).\n\n### How much did you do?\n\nMost things on the frontend, which includes:\n\n- 💻 Building the app in [Vue 3](https://vuejs.org)\n- 🎨 Designing the user journey with [Figma](https://figma.com)\n- 💾 Consuming data from the [Barbican](https://barbican.org.uk) [GraphQL](https://graphql.org) feed.\n- 📝 Writing the [SCSS](https://sass-lang.com)\n\n### What are the interesting parts?\n\nThis project is all about democratising information. There is already an event management system in place, but only a few staff members know how to use it. The original system is very technical and has been manipulated/misused over time. Our task is to build a more intuitive/accessible front end for anyone at the [Barbican](https://barbican.org.uk) to use.\n\nWe're using [GraphQL](https://graphql.org) to pull data from the original system, and are using [Vue.js](https://vuejs.org) to present a more intuitive view of everything that is happening at the centre.\n\n### What needs improving?\n\n- **Documentation** 😥 It really should include [JSDoc](https://jsdoc.app) and [SassDoc](https://sassdoc.com). The code is well structured but will be tricky to maintain without notes.\n```",
       "descData": {
         "emoji": {}
@@ -61,10 +61,26 @@
           "name": "Barbican",
           "color": "green",
           "uses": 8
+        },
+        {
+          "id": "64b80eedd3cb846ab0943db4",
+          "idBoard": "5fb002b217fa6a2ca13512f7",
+          "name": "Vue.js",
+          "color": null,
+          "uses": 2
+        },
+        {
+          "id": "64b80f73bdf98a4131949e44",
+          "idBoard": "5fb002b217fa6a2ca13512f7",
+          "name": "GraphQL",
+          "color": null,
+          "uses": 1
         }
       ],
       "idLabels": [
-        "5fb002b2cdabcf46c03cf423"
+        "5fb002b2cdabcf46c03cf423",
+        "64b80eedd3cb846ab0943db4",
+        "64b80f73bdf98a4131949e44"
       ],
       "manualCoverAttachment": false,
       "name": "Organising spaces with GraphQL",
@@ -123,7 +139,7 @@
       "checkItemStates": [],
       "closed": false,
       "dueComplete": true,
-      "dateLastActivity": "2023-07-15T18:01:58.092Z",
+      "dateLastActivity": "2023-07-19T16:30:01.162Z",
       "desc": "```\nBuild and animate the website for Stephanie Cannon, a professional Voice-over Artist.\n\n---\n\n# Sparking the Cannon with Next.js\n\n### What's the Project?\n\nBuild and animate the website for Stephanie Cannon, a professional Voice-over Artist.\n\n### Can I see it?\n\nSure, it's at [sparkthecannon.com](https://sparkthecannon.com)\n\nThe code is in my public [Github](https://github.com) [repository](https://github.com/paulheading/steph23).\n\nI've started writing about [this project](https://blog.paulh.biz/preview/64908a776fdc99000f5daf42) on [my blog](https://blog.paulh.biz).\n\n### How much did you do?\n\nEverything! Except the wonderful illustration. This includes:\n\n- 💻 Building the site in [Next.js](https://nextjs.org)\n- 🎨 Designing the layouts with [Figma](https://figma.com)\n- 🚀 Animating the brand artwork in [GSAP](https://greensock.com)\n- 📝 Writing the [SCSS](https://sass-lang.com)\n\n### What are the interesting parts?\n\nDefinitely the various bespoke playlists and audio players. Note to self: write a case study on those. The animations are also pretty cute and the brand colour palette is delicious.\n\n### What needs improving?\n\n- **Documentation** 😥 It really should include [JSDoc](https://jsdoc.app) and [SassDoc](https://sassdoc.com). The code is well structured but will be tricky to maintain without notes.\n- **Accessibility** 😥 It's pretty limited. Areas like [color contrast](https://webaim.org/resources/contrastchecker) and [focus states](https://design-system.service.gov.uk/get-started/focus-states) need further consideration.\n```",
       "descData": {
         "emoji": {}
@@ -145,10 +161,18 @@
           "name": "Freelance",
           "color": "purple",
           "uses": 1
+        },
+        {
+          "id": "64b80f8953c59efd3011ee02",
+          "idBoard": "5fb002b217fa6a2ca13512f7",
+          "name": "Next.js",
+          "color": null,
+          "uses": 1
         }
       ],
       "idLabels": [
-        "6491c7d859cf65f7b465cf91"
+        "6491c7d859cf65f7b465cf91",
+        "64b80f8953c59efd3011ee02"
       ],
       "manualCoverAttachment": false,
       "name": "Sparking the cannon with Next.js",
@@ -207,7 +231,7 @@
       "checkItemStates": [],
       "closed": false,
       "dueComplete": false,
-      "dateLastActivity": "2023-07-19T13:34:22.554Z",
+      "dateLastActivity": "2023-07-19T16:30:31.397Z",
       "desc": "```\nBuild the [Barbican Reset](https://www.npmjs.com/package/barbican-reset). An [NPM package](https://docs.npmjs.com/about-packages-and-modules) that can be used across the [Barbican's](https://barbican.org.uk) many digital products to provide consistent styling and functionality.\n\n---\n\n# Themeing with NPM\n\n### What's the Project?\n\nBuild the [Barbican Reset](https://www.npmjs.com/package/barbican-reset). An [NPM package](https://docs.npmjs.com/about-packages-and-modules) that can be used across the [Barbican's](https://barbican.org.uk) many digital products to provide consistent styling and functionality.\n\n### Can I see it?\n\nSure, it's at [npmjs.com/package/barbican-reset](https://www.npmjs.com/package/barbican-reset)\n\nThe code is in a private [Barbican](https://barbican.org.uk) [Bitbucket](https://bitbucket.org) repository sadly. But feel free to download the [Barbican Reset](https://www.npmjs.com/package/barbican-reset) and review the production code.\n\n### How much did you do?\n\nPretty much everything, which includes:\n\n- 💻 Building the package for [NPM](https://www.npmjs.com/)\n- 💡 Creating components for [Vue.js](https://vuejs.org)\n- 📝 Writing the [SCSS](https://sass-lang.com)\n\n### What are the interesting parts?\n\nThis was the first time I created an NPM package, so that was new and interesting for me. Understanding how to provide functionality for both vue and drupal was also a challenge, providing both styled components and a set of useful mixins that would make replicating those components easy.\n\n### What needs improving?\n\n- **Compatibility** 😥 We're currently in the process of moving the project to vue 3 and removing dependency on Bootstrap.\n- **Documentation** 😥 It really should include [JSDoc](https://jsdoc.app) and [SassDoc](https://sassdoc.com). The code is well structured but will be tricky to maintain without notes.\n```",
       "descData": {
         "emoji": {}
@@ -229,10 +253,18 @@
           "name": "Barbican",
           "color": "green",
           "uses": 8
+        },
+        {
+          "id": "64b80fa76e02b0365160d280",
+          "idBoard": "5fb002b217fa6a2ca13512f7",
+          "name": "Node.js",
+          "color": null,
+          "uses": 1
         }
       ],
       "idLabels": [
-        "5fb002b2cdabcf46c03cf423"
+        "5fb002b2cdabcf46c03cf423",
+        "64b80fa76e02b0365160d280"
       ],
       "manualCoverAttachment": true,
       "name": "Themeing with NPM",
@@ -291,7 +323,7 @@
       "checkItemStates": [],
       "closed": false,
       "dueComplete": true,
-      "dateLastActivity": "2023-07-15T18:02:06.169Z",
+      "dateLastActivity": "2023-07-19T16:30:55.022Z",
       "desc": "```\nBuild and animate the website for a community festival called Leytonstone Loves Film.\n\n---\n\n# Leytonstone Loves Film\n\n### What's the Project?\n\nBuild and animate the website for a community festival called Leytonstone Loves Film.\n\n### Can I see it?\n\nSure, it's at [leytonstonelovesfilm.com](https://leytonstonelovesfilm.com)\n\nThe code is in a private [Barbican](https://barbican.org.uk) [Bitbucket](https://bitbucket.org) repository sadly.\n\n### How much did you do?\n\nEverything on the frontend, which includes:\n\n- 💻 Building the site in [Nuxt.js](https://nuxt.com)\n- 🚀 Animating the brand artwork in [GSAP](https://greensock.com)\n- 📝 Writing the [SCSS](https://sass-lang.com)\n\n### What are the interesting parts?\n\nI'd say the build itself was pretty interesting for this one. We had a large group of stakeholders who needed to update the site content, so we used a Drupal CMS for the backend and Nuxt.js for consuming CMS data on the frontend. It was definitely a journey learning how to build with that data and understanding the different forms it may arrive in.\n\n### What needs improving?\n\n- **Documentation** 😥 It really should include [JSDoc](https://jsdoc.app) and [SassDoc](https://sassdoc.com). The code is well structured but will be tricky to maintain without notes.\n- **Accessibility** 😥 It has none. Areas like [color contrast](https://webaim.org/resources/contrastchecker) and [focus states](https://design-system.service.gov.uk/get-started/focus-states) were not considered at build time.\n```",
       "descData": {
         "emoji": {}
@@ -313,10 +345,18 @@
           "name": "Barbican",
           "color": "green",
           "uses": 8
+        },
+        {
+          "id": "64b80fbffbbbe0940125f1a4",
+          "idBoard": "5fb002b217fa6a2ca13512f7",
+          "name": "Nuxt",
+          "color": null,
+          "uses": 2
         }
       ],
       "idLabels": [
-        "5fb002b2cdabcf46c03cf423"
+        "5fb002b2cdabcf46c03cf423",
+        "64b80fbffbbbe0940125f1a4"
       ],
       "manualCoverAttachment": false,
       "name": "Leytonstone Loves Film",
@@ -375,7 +415,7 @@
       "checkItemStates": [],
       "closed": false,
       "dueComplete": true,
-      "dateLastActivity": "2023-07-15T18:02:14.070Z",
+      "dateLastActivity": "2023-07-19T16:31:10.524Z",
       "desc": "```\nBuild and animate the website for a community festival called Walthamstow Garden Party.\n\n---\n\n# Walthamstow Garden Party\n\n### What's the Project?\n\nBuild and animate the website for a community festival called Walthamstow Garden Party.\n\n### Can I see it?\n\nSure, it's at [walthamstowgardenparty.com](https://walthamstowgardenparty.com)\n\nThe code is in a private [Barbican](https://barbican.org.uk) [Bitbucket](https://bitbucket.org) repository sadly.\n\n### How much did you do?\n\nEverything on the frontend, which includes:\n\n- Building the site in [Nuxt.js](https://nuxt.com)\n- Animating the brand artwork in [GSAP](https://greensock.com)\n- Writing the [SCSS](https://sass-lang.com)\n\n### What are the interesting parts?\n\nI'd say the build itself was pretty interesting for this one. We had a large group of stakeholders who needed to update the site content, so we used a Drupal CMS for the backend and Nuxt.js for consuming CMS data on the frontend. It was definitely a journey learning how to build with that data and understanding the different forms it may arrive in.\n\n### What needs improving?\n\n- **Documentation** 😥 It really should include [JSDoc](https://jsdoc.app) and [SassDoc](https://sassdoc.com). The code is well structured but will be tricky to maintain without notes.\n- **Accessibility** 😥 It has none. Areas like [color contrast](https://webaim.org/resources/contrastchecker) and [focus states](https://design-system.service.gov.uk/get-started/focus-states) were not considered at build time.\n```",
       "descData": {
         "emoji": {}
@@ -397,10 +437,18 @@
           "name": "Barbican",
           "color": "green",
           "uses": 8
+        },
+        {
+          "id": "64b80fbffbbbe0940125f1a4",
+          "idBoard": "5fb002b217fa6a2ca13512f7",
+          "name": "Nuxt",
+          "color": null,
+          "uses": 2
         }
       ],
       "idLabels": [
-        "5fb002b2cdabcf46c03cf423"
+        "5fb002b2cdabcf46c03cf423",
+        "64b80fbffbbbe0940125f1a4"
       ],
       "manualCoverAttachment": false,
       "name": "Walthamstow Garden Party",
@@ -459,7 +507,7 @@
       "checkItemStates": [],
       "closed": false,
       "dueComplete": true,
-      "dateLastActivity": "2023-07-15T18:18:40.451Z",
+      "dateLastActivity": "2023-07-19T16:27:25.595Z",
       "desc": "```\nUpdate the [Barbican ticketing platform](https://tickets.barbican.org.uk) with a modular design that better reflects the brand and offers a wider range of functionality.\n\n---\n\n# Designing Account Areas in Vue.js\n\n### What's the Project?\n\nUpdate the [Barbican ticketing platform](https://tickets.barbican.org.uk) with a modular design that better reflects the brand and offers a wider range of functionality.\n\n### Can I see it?\n\nSure, it's at [tickets.barbican.org.uk](https://tickets.barbican.org.uk)\n\nThe code is in a private [Barbican](https://barbican.org.uk) [Bitbucket](https://bitbucket.org) repository sadly.\n\nI have started writing about [this project](https://blog.paulh.biz/designing-account-areas-in-vuejs) on [my blog](https://blog.paulh.biz).\n\n### How much did you do?\n\nMost things on the frontend, which includes:\n\n- 💻 Building the app in [Vue.js](https://vuejs.org)\n- 🎨 Designing the user journey with [Figma](https://figma.com)\n- 📝 Writing the [SCSS](https://sass-lang.com)\n\n### What are the interesting parts?\n\nThe platform is built in [Vue.js](https://vuejs.org) and combines [Drupal](https://drupal.org) data from the [main website](https://barbican.org.uk) with ticketing data from [Spektrix](https://spektrix.com). It's been at the centre of user-focussed innovation at the [Barbican](https://barbican.org.uk) for the last 3 years.\n\n### What needs improving?\n\n- **Documentation** 😥 It really should include [JSDoc](https://jsdoc.app) and [SassDoc](https://sassdoc.com). The code is well structured but will be tricky to maintain without notes.\n```",
       "descData": {
         "emoji": {}
@@ -481,10 +529,18 @@
           "name": "Barbican",
           "color": "green",
           "uses": 8
+        },
+        {
+          "id": "64b80eedd3cb846ab0943db4",
+          "idBoard": "5fb002b217fa6a2ca13512f7",
+          "name": "Vue.js",
+          "color": null,
+          "uses": 2
         }
       ],
       "idLabels": [
-        "5fb002b2cdabcf46c03cf423"
+        "5fb002b2cdabcf46c03cf423",
+        "64b80eedd3cb846ab0943db4"
       ],
       "manualCoverAttachment": true,
       "name": "Designing account areas in Vue.js",
@@ -543,7 +599,7 @@
       "checkItemStates": [],
       "closed": false,
       "dueComplete": false,
-      "dateLastActivity": "2023-07-19T14:14:07.954Z",
+      "dateLastActivity": "2023-07-19T16:31:27.232Z",
       "desc": "```\nBuild and brand [36 Bourne Street](https://36bournestreet.com). An online store, built in [Wordpress](https://wordpress.com) for a leather and fabric retailer off the [Pimlico Road, London](https://www.sothebys.com/en/digital-catalogues/the-pimlico-road-londons-design-antiques-district).\n\n---\n\n# Selling designer fabric with Wordpress\n\n### What's the Project?\n\nBuild and brand [36 Bourne Street](https://36bournestreet.com). An online store, built in [Wordpress](https://wordpress.com) for a leather and fabric retailer off the [Pimlico Road, London](https://www.sothebys.com/en/digital-catalogues/the-pimlico-road-londons-design-antiques-district).\n\n### Can I see it?\n\nSure, it's at [36bournestreet.com](https://www.36bournestreet.com)\n\nThe code is in my public [Github](https://github.com) [repository](https://github.com/paulheading/BourneSt).\n\n### How much did you do?\n\nPretty much everything, which includes:\n\n- 💻 Building a child theme for [Wordpress](https://wordpress.com/)\n- 🎨 Designing the layouts with [Figma](https://figma.com)\n- 🚀 Animating the brand artwork in [GSAP](https://greensock.com)\n- 📝 Writing the [SCSS](https://sass-lang.com)\n\n### What are the interesting parts?\n\nThe handdrawn artwork was pretty interesting to work on and adapt for the website. This was also my first time coding for a [CMS](https://www.wpbeginner.com/glossary/content-management-system-cms), using [template partials in Wordpress](https://www.sitepoint.com/build-wordpress-theme-from-scratch-first-steps) and building functionality with the [Advanced Custom Fields](https://www.advancedcustomfields.com) plugin.\n\n### What needs improving?\n\n- **Documentation** 😥 It really should include [JSDoc](https://jsdoc.app) and [SassDoc](https://sassdoc.com). The code is well structured but will be tricky to maintain without notes.\n```",
       "descData": {
         "emoji": {}
@@ -565,10 +621,18 @@
           "name": "Bourne St",
           "color": "red",
           "uses": 1
+        },
+        {
+          "id": "64b80fdfe485c8ac9019185e",
+          "idBoard": "5fb002b217fa6a2ca13512f7",
+          "name": "Wordpress",
+          "color": null,
+          "uses": 1
         }
       ],
       "idLabels": [
-        "5fb002b2cdabcf46c03cf428"
+        "5fb002b2cdabcf46c03cf428",
+        "64b80fdfe485c8ac9019185e"
       ],
       "manualCoverAttachment": true,
       "name": "Selling designer fabric with Wordpress",
@@ -898,7 +962,7 @@
       "images": [
         {
           "height": null,
-          "url": "https://i.scdn.co/image/ab67706c0000bebbaec19d00d18a627f927663d1",
+          "url": "https://images-ak.spotifycdn.com/image/ab67706c0000bebbaec19d00d18a627f927663d1",
           "width": null
         }
       ],
@@ -1016,7 +1080,7 @@
       "uri": "spotify:playlist:2uGfm83zVuJGUfUFy8xnq7",
       "profile": "https://open.spotify.com/user/pheading86",
       "url": "https://open.spotify.com/playlist/2uGfm83zVuJGUfUFy8xnq7",
-      "image": "https://i.scdn.co/image/ab67706c0000bebbaec19d00d18a627f927663d1"
+      "image": "https://images-ak.spotifycdn.com/image/ab67706c0000bebbaec19d00d18a627f927663d1"
     }
   },
   "gem": {

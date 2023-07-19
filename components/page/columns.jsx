@@ -5,20 +5,6 @@ import Label from 'components/page/label'
 import parse from 'html-react-parser'
 import { useState } from 'react'
 
-function ProjectLabels({ name, color, variant }, index) {
-  const props = {
-    size: 'md',
-    variant,
-    color,
-  }
-
-  return (
-    <Label key={'label' + index} {...props}>
-      {name}
-    </Label>
-  )
-}
-
 function PrintDue(value, variant) {
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
   const date = new Date(value)
@@ -46,13 +32,25 @@ function Columns(props) {
 
   if (!variant) variant = 'default'
 
-  const durationProps = {
-    name: create.date_span(start, due, dueComplete),
-    color: labels[0].color,
-    variant: 'outline',
+  function ProjectLabels({ name, color, variant }, index) {
+    const props = {
+      color: color ? color : labels[0].color,
+      variant: !color ? 'outline' : 'solid',
+      size: 'md',
+    }
+
+    return (
+      <Label key={'label' + index} {...props}>
+        {name}
+      </Label>
+    )
   }
 
-  labels = [...labels, durationProps]
+  const durationLabel = {
+    name: create.date_span(start, due, dueComplete),
+  }
+
+  labels = [...labels, durationLabel]
 
   const createProps = {
     href: blog ? blog.url : local.url,

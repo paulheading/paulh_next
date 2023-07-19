@@ -14,7 +14,7 @@ $sizes: (
 }
 
 @mixin label-setup {
-  border: 1px solid grey;
+  border: 1px solid dimgrey;
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
   display: inline-block;
@@ -24,12 +24,12 @@ $sizes: (
 
 .solid_label {
   @include label-setup;
-  background-color: grey;
+  background-color: dimgrey;
   color: white;
 }
 
 .outline_label {
   @include label-setup;
   background-color: white;
-  color: grey;
+  color: dimgrey;
 }

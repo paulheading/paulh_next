@@ -19,11 +19,14 @@ function Projects({ name, blog, local, labels }, index) {
       <Fragment>
         <div className={styles.name}>{name}</div>
         <div className={styles.label_wrap}>
-          {labels.map(({ name, color }, index) => (
-            <Label key={'label' + index} color={color}>
-              {name}
-            </Label>
-          ))}
+          {labels.map(function ({ name, color }, index) {
+            const labelProps = {
+              variant: !color ? 'outline' : 'solid',
+              color: color ? color : labels[0].color,
+              key: 'label' + index,
+            }
+            return <Label {...labelProps}>{name}</Label>
+          })}
         </div>
       </Fragment>
     )

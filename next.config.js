@@ -1,7 +1,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['mosaic.scdn.co', 'i.scdn.co'],
+    domains: ['mosaic.scdn.co', 'i.scdn.co', 'images-ak.spotifycdn.com'],
   },
   webpack: function (config) {
     config.module.rules.push({

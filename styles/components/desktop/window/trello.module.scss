@@ -32,7 +32,7 @@
 .card {
   box-shadow: 0 0.125rem $c-trello-text;
   background-color: white;
-  padding: 0.25rem 0.75rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 0.25rem;
   overflow: hidden;
   display: block;
@@ -57,4 +57,5 @@
 .label_wrap {
   margin-right: -0.25rem;
   margin-left: -0.25rem;
+  margin-top: 0.25rem;
 }
