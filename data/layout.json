@@ -60,7 +60,7 @@
           "idBoard": "5fb002b217fa6a2ca13512f7",
           "name": "Barbican",
           "color": "green",
-          "uses": 7
+          "uses": 8
         }
       ],
       "idLabels": [
@@ -181,6 +181,90 @@
       "hero": true
     },
     {
+      "id": "64b7e3a314038c0ef3b3350a",
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "checkItemsEarliestDue": null,
+        "comments": 0,
+        "attachments": 0,
+        "description": true,
+        "due": null,
+        "dueComplete": false,
+        "start": "2020-11-02T08:00:00.000Z"
+      },
+      "checkItemStates": [],
+      "closed": false,
+      "dueComplete": false,
+      "dateLastActivity": "2023-07-19T13:34:22.554Z",
+      "desc": "```\nBuild the [Barbican Reset](https://www.npmjs.com/package/barbican-reset). An [NPM package](https://docs.npmjs.com/about-packages-and-modules) that can be used across the [Barbican's](https://barbican.org.uk) many digital products to provide consistent styling and functionality.\n\n---\n\n# Themeing with NPM\n\n### What's the Project?\n\nBuild the [Barbican Reset](https://www.npmjs.com/package/barbican-reset). An [NPM package](https://docs.npmjs.com/about-packages-and-modules) that can be used across the [Barbican's](https://barbican.org.uk) many digital products to provide consistent styling and functionality.\n\n### Can I see it?\n\nSure, it's at [npmjs.com/package/barbican-reset](https://www.npmjs.com/package/barbican-reset)\n\nThe code is in a private [Barbican](https://barbican.org.uk) [Bitbucket](https://bitbucket.org) repository sadly. But feel free to download the [Barbican Reset](https://www.npmjs.com/package/barbican-reset) and review the production code.\n\n### How much did you do?\n\nPretty much everything, which includes:\n\n- 💻 Building the package for [NPM](https://www.npmjs.com/)\n- 💡 Creating components for [Vue.js](https://vuejs.org)\n- 📝 Writing the [SCSS](https://sass-lang.com)\n\n### What are the interesting parts?\n\nThis was the first time I created an NPM package, so that was new and interesting for me. Understanding how to provide functionality for both vue and drupal was also a challenge, providing both styled components and a set of useful mixins that would make replicating those components easy.\n\n### What needs improving?\n\n- **Compatibility** 😥 We're currently in the process of moving the project to vue 3 and removing dependency on Bootstrap.\n- **Documentation** 😥 It really should include [JSDoc](https://jsdoc.app) and [SassDoc](https://sassdoc.com). The code is well structured but will be tricky to maintain without notes.\n```",
+      "descData": {
+        "emoji": {}
+      },
+      "due": null,
+      "dueReminder": -1,
+      "email": null,
+      "idBoard": "5fb002b217fa6a2ca13512f7",
+      "idChecklists": [],
+      "idList": "5fb2238ca12fa82e01b9c819",
+      "idMembers": [],
+      "idMembersVoted": [],
+      "idShort": 29,
+      "idAttachmentCover": null,
+      "labels": [
+        {
+          "id": "5fb002b2cdabcf46c03cf423",
+          "idBoard": "5fb002b217fa6a2ca13512f7",
+          "name": "Barbican",
+          "color": "green",
+          "uses": 8
+        }
+      ],
+      "idLabels": [
+        "5fb002b2cdabcf46c03cf423"
+      ],
+      "manualCoverAttachment": true,
+      "name": "Themeing with NPM",
+      "pos": 35839.453125,
+      "shortLink": "Xenp0qa2",
+      "shortUrl": "https://trello.com/c/Xenp0qa2",
+      "start": "2020-11-02T08:00:00.000Z",
+      "subscribed": false,
+      "url": "https://trello.com/c/Xenp0qa2/29-themeing-with-npm",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "dark",
+        "idPlugin": null
+      },
+      "isTemplate": false,
+      "cardRole": null,
+      "local": {
+        "summary": "<p>Build the <a href=\"https://www.npmjs.com/package/barbican-reset\">Barbican Reset</a>. An <a href=\"https://docs.npmjs.com/about-packages-and-modules\">NPM package</a> that can be used across the <a href=\"https://barbican.org.uk\">Barbican's</a> many digital products to provide consistent styling and functionality.</p>",
+        "desc": "<h1 id=\"themeingwithnpm\">Themeing with NPM</h1>\n<h3 id=\"whatstheproject\">What's the Project?</h3>\n<p>Build the <a href=\"https://www.npmjs.com/package/barbican-reset\">Barbican Reset</a>. An <a href=\"https://docs.npmjs.com/about-packages-and-modules\">NPM package</a> that can be used across the <a href=\"https://barbican.org.uk\">Barbican's</a> many digital products to provide consistent styling and functionality.</p>\n<h3 id=\"caniseeit\">Can I see it?</h3>\n<p>Sure, it's at <a href=\"https://www.npmjs.com/package/barbican-reset\">npmjs.com/package/barbican-reset</a></p>\n<p>The code is in a private <a href=\"https://barbican.org.uk\">Barbican</a> <a href=\"https://bitbucket.org\">Bitbucket</a> repository sadly. But feel free to download the <a href=\"https://www.npmjs.com/package/barbican-reset\">Barbican Reset</a> and review the production code.</p>\n<h3 id=\"howmuchdidyoudo\">How much did you do?</h3>\n<p>Pretty much everything, which includes:</p>\n<ul>\n<li>💻 Building the package for <a href=\"https://www.npmjs.com/\">NPM</a></li>\n<li>💡 Creating components for <a href=\"https://vuejs.org\">Vue.js</a></li>\n<li>📝 Writing the <a href=\"https://sass-lang.com\">SCSS</a></li>\n</ul>\n<h3 id=\"whataretheinterestingparts\">What are the interesting parts?</h3>\n<p>This was the first time I created an NPM package, so that was new and interesting for me. Understanding how to provide functionality for both vue and drupal was also a challenge, providing both styled components and a set of useful mixins that would make replicating those components easy.</p>\n<h3 id=\"whatneedsimproving\">What needs improving?</h3>\n<ul>\n<li><strong>Compatibility</strong> 😥 We're currently in the process of moving the project to vue 3 and removing dependency on Bootstrap.</li>\n<li><strong>Documentation</strong> 😥 It really should include <a href=\"https://jsdoc.app\">JSDoc</a> and <a href=\"https://sassdoc.com\">SassDoc</a>. The code is well structured but will be tricky to maintain without notes.</li>\n</ul>",
+        "pathname": "themeing-with-npm",
+        "url": "/project/themeing-with-npm"
+      },
+      "type": "projects",
+      "attachments": [],
+      "actions": [],
+      "marquee": "Themeing with NPM",
+      "hero": false
+    },
+    {
       "id": "64a6bdfeea6cc13792990d17",
       "badges": {
         "attachmentsByType": {
@@ -228,7 +312,7 @@
           "idBoard": "5fb002b217fa6a2ca13512f7",
           "name": "Barbican",
           "color": "green",
-          "uses": 7
+          "uses": 8
         }
       ],
       "idLabels": [
@@ -312,7 +396,7 @@
           "idBoard": "5fb002b217fa6a2ca13512f7",
           "name": "Barbican",
           "color": "green",
-          "uses": 7
+          "uses": 8
         }
       ],
       "idLabels": [
@@ -396,7 +480,7 @@
           "idBoard": "5fb002b217fa6a2ca13512f7",
           "name": "Barbican",
           "color": "green",
-          "uses": 7
+          "uses": 8
         }
       ],
       "idLabels": [
@@ -431,6 +515,90 @@
       "actions": [],
       "marquee": "Designing account areas in Vue.js",
       "hero": true
+    },
+    {
+      "id": "64b7ebc40642ef9285ec9c0d",
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "checkItemsEarliestDue": null,
+        "comments": 0,
+        "attachments": 0,
+        "description": true,
+        "due": null,
+        "dueComplete": false,
+        "start": "2017-01-01T08:00:00.000Z"
+      },
+      "checkItemStates": [],
+      "closed": false,
+      "dueComplete": false,
+      "dateLastActivity": "2023-07-19T14:14:07.954Z",
+      "desc": "```\nBuild and brand [36 Bourne Street](https://36bournestreet.com). An online store, built in [Wordpress](https://wordpress.com) for a leather and fabric retailer off the [Pimlico Road, London](https://www.sothebys.com/en/digital-catalogues/the-pimlico-road-londons-design-antiques-district).\n\n---\n\n# Selling designer fabric with Wordpress\n\n### What's the Project?\n\nBuild and brand [36 Bourne Street](https://36bournestreet.com). An online store, built in [Wordpress](https://wordpress.com) for a leather and fabric retailer off the [Pimlico Road, London](https://www.sothebys.com/en/digital-catalogues/the-pimlico-road-londons-design-antiques-district).\n\n### Can I see it?\n\nSure, it's at [36bournestreet.com](https://www.36bournestreet.com)\n\nThe code is in my public [Github](https://github.com) [repository](https://github.com/paulheading/BourneSt).\n\n### How much did you do?\n\nPretty much everything, which includes:\n\n- 💻 Building a child theme for [Wordpress](https://wordpress.com/)\n- 🎨 Designing the layouts with [Figma](https://figma.com)\n- 🚀 Animating the brand artwork in [GSAP](https://greensock.com)\n- 📝 Writing the [SCSS](https://sass-lang.com)\n\n### What are the interesting parts?\n\nThe handdrawn artwork was pretty interesting to work on and adapt for the website. This was also my first time coding for a [CMS](https://www.wpbeginner.com/glossary/content-management-system-cms), using [template partials in Wordpress](https://www.sitepoint.com/build-wordpress-theme-from-scratch-first-steps) and building functionality with the [Advanced Custom Fields](https://www.advancedcustomfields.com) plugin.\n\n### What needs improving?\n\n- **Documentation** 😥 It really should include [JSDoc](https://jsdoc.app) and [SassDoc](https://sassdoc.com). The code is well structured but will be tricky to maintain without notes.\n```",
+      "descData": {
+        "emoji": {}
+      },
+      "due": null,
+      "dueReminder": -1,
+      "email": null,
+      "idBoard": "5fb002b217fa6a2ca13512f7",
+      "idChecklists": [],
+      "idList": "5fb2238ca12fa82e01b9c819",
+      "idMembers": [],
+      "idMembersVoted": [],
+      "idShort": 30,
+      "idAttachmentCover": null,
+      "labels": [
+        {
+          "id": "5fb002b2cdabcf46c03cf428",
+          "idBoard": "5fb002b217fa6a2ca13512f7",
+          "name": "Bourne St",
+          "color": "red",
+          "uses": 1
+        }
+      ],
+      "idLabels": [
+        "5fb002b2cdabcf46c03cf428"
+      ],
+      "manualCoverAttachment": true,
+      "name": "Selling designer fabric with Wordpress",
+      "pos": 327679,
+      "shortLink": "JRu8JTVU",
+      "shortUrl": "https://trello.com/c/JRu8JTVU",
+      "start": "2017-01-01T08:00:00.000Z",
+      "subscribed": false,
+      "url": "https://trello.com/c/JRu8JTVU/30-selling-designer-fabric-with-wordpress",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "dark",
+        "idPlugin": null
+      },
+      "isTemplate": false,
+      "cardRole": null,
+      "local": {
+        "summary": "<p>Build and brand <a href=\"https://36bournestreet.com\">36 Bourne Street</a>. An online store, built in <a href=\"https://wordpress.com\">Wordpress</a> for a leather and fabric retailer off the <a href=\"https://www.sothebys.com/en/digital-catalogues/the-pimlico-road-londons-design-antiques-district\">Pimlico Road, London</a>.</p>",
+        "desc": "<h1 id=\"sellingdesignerfabricwithwordpress\">Selling designer fabric with Wordpress</h1>\n<h3 id=\"whatstheproject\">What's the Project?</h3>\n<p>Build and brand <a href=\"https://36bournestreet.com\">36 Bourne Street</a>. An online store, built in <a href=\"https://wordpress.com\">Wordpress</a> for a leather and fabric retailer off the <a href=\"https://www.sothebys.com/en/digital-catalogues/the-pimlico-road-londons-design-antiques-district\">Pimlico Road, London</a>.</p>\n<h3 id=\"caniseeit\">Can I see it?</h3>\n<p>Sure, it's at <a href=\"https://www.36bournestreet.com\">36bournestreet.com</a></p>\n<p>The code is in my public <a href=\"https://github.com\">Github</a> <a href=\"https://github.com/paulheading/BourneSt\">repository</a>.</p>\n<h3 id=\"howmuchdidyoudo\">How much did you do?</h3>\n<p>Pretty much everything, which includes:</p>\n<ul>\n<li>💻 Building a child theme for <a href=\"https://wordpress.com/\">Wordpress</a></li>\n<li>🎨 Designing the layouts with <a href=\"https://figma.com\">Figma</a></li>\n<li>🚀 Animating the brand artwork in <a href=\"https://greensock.com\">GSAP</a></li>\n<li>📝 Writing the <a href=\"https://sass-lang.com\">SCSS</a></li>\n</ul>\n<h3 id=\"whataretheinterestingparts\">What are the interesting parts?</h3>\n<p>The handdrawn artwork was pretty interesting to work on and adapt for the website. This was also my first time coding for a <a href=\"https://www.wpbeginner.com/glossary/content-management-system-cms\">CMS</a>, using <a href=\"https://www.sitepoint.com/build-wordpress-theme-from-scratch-first-steps\">template partials in Wordpress</a> and building functionality with the <a href=\"https://www.advancedcustomfields.com\">Advanced Custom Fields</a> plugin.</p>\n<h3 id=\"whatneedsimproving\">What needs improving?</h3>\n<ul>\n<li><strong>Documentation</strong> 😥 It really should include <a href=\"https://jsdoc.app\">JSDoc</a> and <a href=\"https://sassdoc.com\">SassDoc</a>. The code is well structured but will be tricky to maintain without notes.</li>\n</ul>",
+        "pathname": "selling-designer-fabric-with-wordpress",
+        "url": "/project/selling-designer-fabric-with-wordpress"
+      },
+      "type": "projects",
+      "attachments": [],
+      "actions": [],
+      "marquee": "Selling designer fabric with Wordpress",
+      "hero": false
     }
   ],
   "spotify": {
@@ -504,7 +672,7 @@
             "url": "https://open.spotify.com/artist/7LTSTQkL7iK7zndjFQgHQo",
             "name": "O'Flynn"
           },
-          "popularity": 34,
+          "popularity": 33,
           "release_date": "2019-09-06",
           "url": "https://open.spotify.com/track/1SMLoRfenhQJjL4fbimctZ",
           "name": "Aletheia"
@@ -514,7 +682,7 @@
             "url": "https://open.spotify.com/artist/2dOnTAoXrpBwYAo1qIbemO",
             "name": "Steam Down"
           },
-          "popularity": 30,
+          "popularity": 29,
           "release_date": "2019-11-08",
           "url": "https://open.spotify.com/track/3a9BypAqVxHNCZgHQXfeG7",
           "name": "Free My Skin"
@@ -838,7 +1006,7 @@
             "url": "https://open.spotify.com/artist/6RQoLyY1nkArRcNc3sE86m",
             "name": "Ora the Molecule"
           },
-          "popularity": 29,
+          "popularity": 30,
           "release_date": "2021-07-23",
           "url": "https://open.spotify.com/track/0vydtoDOsW0qRhmFEHdyTT",
           "name": "Creator"
@@ -854,13 +1022,13 @@
   "gem": {
     "name": "futuro",
     "version": "1.1.8",
-    "downloads": 177176,
+    "downloads": 177294,
     "url": "https://rubygems.org/gems/futuro"
   },
   "npm": {
     "name": "barbican-reset",
     "version": "2.11.0",
-    "downloads": 13409,
+    "downloads": 13448,
     "url": "https://www.npmjs.com/package/barbican-reset"
   }
 }
