@@ -2,7 +2,7 @@ Build the [Barbican Reset](https://www.npmjs.com/package/barbican-reset). An [NP
 
 ---
 
-# Themeing with NPM
+# Resetting the Barbican with Node.js
 
 ### What's the Project?
 

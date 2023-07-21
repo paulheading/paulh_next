@@ -10,13 +10,16 @@ import { find, toggle } from 'scripts/helpers'
 import { CreateLink } from 'components/marquee'
 import { window } from 'scripts/animation'
 
-function Canvas({ projects, spotify, gem, npm, count }) {
-  const [folders, setFolders] = useState(data)
+import layout from 'data/layout.json'
+
+function Canvas({ gem, npm, count }) {
+  const { spotify } = layout
   const { _2020, _2021, _2022 } = spotify
+  const [folders, setFolders] = useState(data)
 
-  const setFolder = (name) => setFolders(folders.map((folder) => toggle.folders(name, folder)))
+  const setFolder = (name, subfolder) => setFolders(folders.map((folder) => toggle.folders(name, subfolder, folder)))
 
-  const style = (top = 0, left = 0) => ({ top: top + 'rem', left: left + 'rem' })
+  const position = (top = 0, left = 0) => ({ top: top + 'rem', left: left + 'rem' })
 
   const windowProps = (name) => ({ name, folders })
 
@@ -27,42 +30,49 @@ function Canvas({ projects, spotify, gem, npm, count }) {
     count,
   }
 
-  const trelloProps = {
-    ...windowProps(folders[0].name),
-    style: style(5),
-    projects,
+  const trelloWindowProps = {
+    ...windowProps('trello'),
+    position: position(4),
   }
 
-  const resetProps = {
-    ...windowProps(folders[1].name),
-    style: style(9, 6),
-    color: 'red',
-    data: npm,
+  const spotifyWindowProps = {
+    position: position(2, 4),
   }
 
-  const spotify2022Props = {
-    ...windowProps(folders[2].name),
-    style: style(2, 4),
-    playlist: _2022,
+  const spotify2020WindowProps = {
+    ...spotifyWindowProps,
+    ...windowProps('2020'),
+    playlist: _2020,
   }
 
-  const futuroProps = {
-    ...windowProps(folders[3].name),
-    color: 'dodgerblue',
-    style: style(9, 6),
-    data: gem,
-  }
-
-  const spotify2021Props = {
-    ...windowProps(folders[4].name),
-    style: style(2, 4),
+  const spotify2021WindowProps = {
+    ...spotifyWindowProps,
+    ...windowProps('2021'),
     playlist: _2021,
   }
 
-  const spotify2020Props = {
-    ...windowProps(folders[5].name),
-    style: style(2, 4),
-    playlist: _2020,
+  const spotify2022WindowProps = {
+    ...spotifyWindowProps,
+    ...windowProps('2022'),
+    playlist: _2022,
+  }
+
+  const themeWindowProps = {
+    position: position(10, 8),
+  }
+
+  const futuroWindowProps = {
+    ...themeWindowProps,
+    ...windowProps('futuro'),
+    color: 'dodgerblue',
+    data: gem,
+  }
+
+  const resetWindowProps = {
+    ...themeWindowProps,
+    ...windowProps('barbican reset'),
+    color: 'red',
+    data: npm,
   }
 
   const creditProps = { className: styles.credit_link, href: 'https://www.flaticon.com/authors/dinosoftlabs' }
@@ -89,12 +99,12 @@ function Canvas({ projects, spotify, gem, npm, count }) {
     <div className={styles.canvas_container}>
       <Wrap className={styles.canvas_wrap}>
         <div className={styles.windows}>
-          <SpotifyWindow {...spotify2020Props} />
-          <SpotifyWindow {...spotify2021Props} />
-          <ThemeWindow {...futuroProps} />
-          <SpotifyWindow {...spotify2022Props} />
-          <ThemeWindow {...resetProps} />
-          <TrelloWindow {...trelloProps} />
+          <TrelloWindow {...trelloWindowProps} />
+          <SpotifyWindow {...spotify2020WindowProps} />
+          <SpotifyWindow {...spotify2021WindowProps} />
+          <SpotifyWindow {...spotify2022WindowProps} />
+          <ThemeWindow {...futuroWindowProps} />
+          <ThemeWindow {...resetWindowProps} />
         </div>
         <Folders {...foldersProps} />
       </Wrap>

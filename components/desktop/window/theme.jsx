@@ -2,7 +2,8 @@ import styles from 'styles/components/desktop/window/theme.module.scss'
 import Window from 'components/desktop/window'
 import GraphIcon from 'icons/graph'
 
-function ThemeWindow({ name, folders, data, color, style }) {
+function ThemeWindow(props) {
+  const { name, folders, data, color, position } = props
   const { downloads, version } = data
   const customStyle = styles[data.name]
 
@@ -12,9 +13,9 @@ function ThemeWindow({ name, folders, data, color, style }) {
   }
 
   const windowProps = {
-    name,
+    position,
     folders,
-    style,
+    name,
   }
 
   const nameProps = {

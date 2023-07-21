@@ -1,17 +1,8 @@
 import styles from 'styles/components/contact.module.scss'
-import Wrap from 'components/wrap'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Row from 'components/contact/row'
-
-function Topbar() {
-  return (
-    <div className={styles.topbar}>
-      <div className={styles.button + ' ' + styles.close} />
-      <div className={styles.button + ' ' + styles.minimise} />
-    </div>
-  )
-}
+import Window from 'components/window'
 
 function Alert({ className, children }) {
   const containerClasses = `${styles.alert} ${className}`
@@ -44,7 +35,6 @@ function Form({ handleSetSuccess }) {
 
   const formProps = {
     onSubmit: handleSubmit(onSubmit),
-    className: styles.form,
     'data-netlify': true,
     name: 'contact',
     method: 'post',
@@ -114,25 +104,22 @@ function Contact() {
   }
 
   return (
-    <div className={styles.container}>
-      <Wrap className={styles.contact_wrap}>
-        <Topbar />
-        {!success ? (
-          <Form {...formProps} />
-        ) : (
-          <div className={styles.success_container}>
-            <div className={styles.success_wrap}>
-              <span className={styles.confetti}>🎉</span>
-              <h1 className={styles.success_title}>Success!</h1>
-              <p className={styles.success_tagline}>
-                Thanks for your message,
-                <br /> I&apos;ll be in touch soon :)
-              </p>
-            </div>
+    <Window className={styles.window}>
+      {!success ? (
+        <Form {...formProps} />
+      ) : (
+        <div className={styles.success_container}>
+          <div className={styles.success_wrap}>
+            <span className={styles.confetti}>🎉</span>
+            <h1 className={styles.success_title}>Success!</h1>
+            <p className={styles.success_tagline}>
+              Thanks for your message,
+              <br /> I&apos;ll be in touch soon :)
+            </p>
           </div>
-        )}
-      </Wrap>
-    </div>
+        </div>
+      )}
+    </Window>
   )
 }
 

@@ -1,4 +1,4 @@
-const folder = (name = '', position, open = false) => ({ name, position, open })
+const folder = (name = '', position, open = false, group = null) => ({ name, position, open, group })
 
 const position = (a, b, c, d) => [
   {
@@ -11,13 +11,17 @@ const position = (a, b, c, d) => [
   },
 ]
 
+const group = (items = [], open = false) => ({
+  open,
+  items,
+})
+
+const group_item = (name, open = false) => ({ name, open })
+
 const folders = [
   folder('trello', position(10, 20, 20, 40), true),
-  folder('barbican reset', position(100, 100, 30, 170), true),
-  folder('spotify 2022', position(200, 40, 140, 90), true),
-  folder('futuro', position(190, 210, 240, 130)),
-  folder('spotify 2021', position(280, 160, 330, 90)),
-  folder('spotify 2020', position(30, 240, 180, 250)),
+  folder('spotify', position(200, 40, 140, 90), false, group([group_item('2020'), group_item('2021'), group_item('2022', true)])),
+  folder('themes', position(100, 100, 30, 170), false, group([group_item('barbican reset', true), group_item('futuro')])),
 ]
 
 export default folders

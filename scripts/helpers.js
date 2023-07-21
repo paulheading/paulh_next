@@ -5,15 +5,17 @@ import get from './helpers/get.js'
 
 const toggle = {}
 
-toggle.folders = function (name, folder) {
-  if (name.includes('spotify') && folder.name.includes('spotify')) if (name != folder.name) folder.open = false
-
-  if (name.includes('futuro') && folder.name.includes('barbican reset')) folder.open = false
-
-  if (name.includes('barbican reset') && folder.name.includes('futuro')) folder.open = false
-
-  if (folder.name == name) folder.open = !folder.open
-
+toggle.folders = function (name, subfolder, folder) {
+  if (folder.name == name) {
+    if (!folder.group) folder.open = !folder.open
+    else {
+      folder.group.items.map(function (item) {
+        if (item.name == subfolder) item.open = !item.open
+        else item.open = false
+        return item
+      })
+    }
+  }
   return folder
 }
 

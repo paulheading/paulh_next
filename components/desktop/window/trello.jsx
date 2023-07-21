@@ -8,7 +8,11 @@ import Window from 'components/desktop/window'
 import Footer from 'components/desktop/window/trello/footer'
 import SettingsIcon from 'icons/settings'
 
-function Projects({ name, blog, local, labels }, index) {
+import layout from 'data/layout.json'
+
+function Projects(props, index) {
+  var { name, blog, local, labels } = props
+
   const createProps = {
     className: styles.card,
     href: blog ? blog.url : local.url,
@@ -44,14 +48,17 @@ function Projects({ name, blog, local, labels }, index) {
   )
 }
 
-function TrelloWindow({ name, folders, projects, style }) {
+function TrelloWindow(props) {
+  var { name, folders, position } = props
+  var { projects } = layout
+
   const page = 2
   const [max, setMax] = useState(page)
 
   const windowProps = {
-    name,
+    position,
     folders,
-    style,
+    name,
   }
 
   const footerProps = {

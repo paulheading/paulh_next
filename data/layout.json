@@ -231,8 +231,8 @@
       "checkItemStates": [],
       "closed": false,
       "dueComplete": false,
-      "dateLastActivity": "2023-07-19T16:30:31.397Z",
-      "desc": "```\nBuild the [Barbican Reset](https://www.npmjs.com/package/barbican-reset). An [NPM package](https://docs.npmjs.com/about-packages-and-modules) that can be used across the [Barbican's](https://barbican.org.uk) many digital products to provide consistent styling and functionality.\n\n---\n\n# Themeing with NPM\n\n### What's the Project?\n\nBuild the [Barbican Reset](https://www.npmjs.com/package/barbican-reset). An [NPM package](https://docs.npmjs.com/about-packages-and-modules) that can be used across the [Barbican's](https://barbican.org.uk) many digital products to provide consistent styling and functionality.\n\n### Can I see it?\n\nSure, it's at [npmjs.com/package/barbican-reset](https://www.npmjs.com/package/barbican-reset)\n\nThe code is in a private [Barbican](https://barbican.org.uk) [Bitbucket](https://bitbucket.org) repository sadly. But feel free to download the [Barbican Reset](https://www.npmjs.com/package/barbican-reset) and review the production code.\n\n### How much did you do?\n\nPretty much everything, which includes:\n\n- 💻 Building the package for [NPM](https://www.npmjs.com/)\n- 💡 Creating components for [Vue.js](https://vuejs.org)\n- 📝 Writing the [SCSS](https://sass-lang.com)\n\n### What are the interesting parts?\n\nThis was the first time I created an NPM package, so that was new and interesting for me. Understanding how to provide functionality for both vue and drupal was also a challenge, providing both styled components and a set of useful mixins that would make replicating those components easy.\n\n### What needs improving?\n\n- **Compatibility** 😥 We're currently in the process of moving the project to vue 3 and removing dependency on Bootstrap.\n- **Documentation** 😥 It really should include [JSDoc](https://jsdoc.app) and [SassDoc](https://sassdoc.com). The code is well structured but will be tricky to maintain without notes.\n```",
+      "dateLastActivity": "2023-07-20T16:05:46.770Z",
+      "desc": "```\nBuild the [Barbican Reset](https://www.npmjs.com/package/barbican-reset). An [NPM package](https://docs.npmjs.com/about-packages-and-modules) that can be used across the [Barbican's](https://barbican.org.uk) many digital products to provide consistent styling and functionality.\n\n---\n\n# Resetting the Barbican with Node.js\n\n### What's the Project?\n\nBuild the [Barbican Reset](https://www.npmjs.com/package/barbican-reset). An [NPM package](https://docs.npmjs.com/about-packages-and-modules) that can be used across the [Barbican's](https://barbican.org.uk) many digital products to provide consistent styling and functionality.\n\n### Can I see it?\n\nSure, it's at [npmjs.com/package/barbican-reset](https://www.npmjs.com/package/barbican-reset)\n\nThe code is in a private [Barbican](https://barbican.org.uk) [Bitbucket](https://bitbucket.org) repository sadly. But feel free to download the [Barbican Reset](https://www.npmjs.com/package/barbican-reset) and review the production code.\n\n### How much did you do?\n\nPretty much everything, which includes:\n\n- 💻 Building the package for [NPM](https://www.npmjs.com/)\n- 💡 Creating components for [Vue.js](https://vuejs.org)\n- 📝 Writing the [SCSS](https://sass-lang.com)\n\n### What are the interesting parts?\n\nThis was the first time I created an NPM package, so that was new and interesting for me. Understanding how to provide functionality for both vue and drupal was also a challenge, providing both styled components and a set of useful mixins that would make replicating those components easy.\n\n### What needs improving?\n\n- **Compatibility** 😥 We're currently in the process of moving the project to vue 3 and removing dependency on Bootstrap.\n- **Documentation** 😥 It really should include [JSDoc](https://jsdoc.app) and [SassDoc](https://sassdoc.com). The code is well structured but will be tricky to maintain without notes.\n```",
       "descData": {
         "emoji": {}
       },
@@ -267,13 +267,13 @@
         "64b80fa76e02b0365160d280"
       ],
       "manualCoverAttachment": true,
-      "name": "Themeing with NPM",
+      "name": "Resetting the Barbican with Node.js",
       "pos": 35839.453125,
       "shortLink": "Xenp0qa2",
       "shortUrl": "https://trello.com/c/Xenp0qa2",
       "start": "2020-11-02T08:00:00.000Z",
       "subscribed": false,
-      "url": "https://trello.com/c/Xenp0qa2/29-themeing-with-npm",
+      "url": "https://trello.com/c/Xenp0qa2/29-resetting-the-barbican-with-nodejs",
       "cover": {
         "idAttachment": null,
         "color": null,
@@ -286,14 +286,14 @@
       "cardRole": null,
       "local": {
         "summary": "<p>Build the <a href=\"https://www.npmjs.com/package/barbican-reset\">Barbican Reset</a>. An <a href=\"https://docs.npmjs.com/about-packages-and-modules\">NPM package</a> that can be used across the <a href=\"https://barbican.org.uk\">Barbican's</a> many digital products to provide consistent styling and functionality.</p>",
-        "desc": "<h1 id=\"themeingwithnpm\">Themeing with NPM</h1>\n<h3 id=\"whatstheproject\">What's the Project?</h3>\n<p>Build the <a href=\"https://www.npmjs.com/package/barbican-reset\">Barbican Reset</a>. An <a href=\"https://docs.npmjs.com/about-packages-and-modules\">NPM package</a> that can be used across the <a href=\"https://barbican.org.uk\">Barbican's</a> many digital products to provide consistent styling and functionality.</p>\n<h3 id=\"caniseeit\">Can I see it?</h3>\n<p>Sure, it's at <a href=\"https://www.npmjs.com/package/barbican-reset\">npmjs.com/package/barbican-reset</a></p>\n<p>The code is in a private <a href=\"https://barbican.org.uk\">Barbican</a> <a href=\"https://bitbucket.org\">Bitbucket</a> repository sadly. But feel free to download the <a href=\"https://www.npmjs.com/package/barbican-reset\">Barbican Reset</a> and review the production code.</p>\n<h3 id=\"howmuchdidyoudo\">How much did you do?</h3>\n<p>Pretty much everything, which includes:</p>\n<ul>\n<li>💻 Building the package for <a href=\"https://www.npmjs.com/\">NPM</a></li>\n<li>💡 Creating components for <a href=\"https://vuejs.org\">Vue.js</a></li>\n<li>📝 Writing the <a href=\"https://sass-lang.com\">SCSS</a></li>\n</ul>\n<h3 id=\"whataretheinterestingparts\">What are the interesting parts?</h3>\n<p>This was the first time I created an NPM package, so that was new and interesting for me. Understanding how to provide functionality for both vue and drupal was also a challenge, providing both styled components and a set of useful mixins that would make replicating those components easy.</p>\n<h3 id=\"whatneedsimproving\">What needs improving?</h3>\n<ul>\n<li><strong>Compatibility</strong> 😥 We're currently in the process of moving the project to vue 3 and removing dependency on Bootstrap.</li>\n<li><strong>Documentation</strong> 😥 It really should include <a href=\"https://jsdoc.app\">JSDoc</a> and <a href=\"https://sassdoc.com\">SassDoc</a>. The code is well structured but will be tricky to maintain without notes.</li>\n</ul>",
-        "pathname": "themeing-with-npm",
-        "url": "/project/themeing-with-npm"
+        "desc": "<h1 id=\"resettingthebarbicanwithnodejs\">Resetting the Barbican with Node.js</h1>\n<h3 id=\"whatstheproject\">What's the Project?</h3>\n<p>Build the <a href=\"https://www.npmjs.com/package/barbican-reset\">Barbican Reset</a>. An <a href=\"https://docs.npmjs.com/about-packages-and-modules\">NPM package</a> that can be used across the <a href=\"https://barbican.org.uk\">Barbican's</a> many digital products to provide consistent styling and functionality.</p>\n<h3 id=\"caniseeit\">Can I see it?</h3>\n<p>Sure, it's at <a href=\"https://www.npmjs.com/package/barbican-reset\">npmjs.com/package/barbican-reset</a></p>\n<p>The code is in a private <a href=\"https://barbican.org.uk\">Barbican</a> <a href=\"https://bitbucket.org\">Bitbucket</a> repository sadly. But feel free to download the <a href=\"https://www.npmjs.com/package/barbican-reset\">Barbican Reset</a> and review the production code.</p>\n<h3 id=\"howmuchdidyoudo\">How much did you do?</h3>\n<p>Pretty much everything, which includes:</p>\n<ul>\n<li>💻 Building the package for <a href=\"https://www.npmjs.com/\">NPM</a></li>\n<li>💡 Creating components for <a href=\"https://vuejs.org\">Vue.js</a></li>\n<li>📝 Writing the <a href=\"https://sass-lang.com\">SCSS</a></li>\n</ul>\n<h3 id=\"whataretheinterestingparts\">What are the interesting parts?</h3>\n<p>This was the first time I created an NPM package, so that was new and interesting for me. Understanding how to provide functionality for both vue and drupal was also a challenge, providing both styled components and a set of useful mixins that would make replicating those components easy.</p>\n<h3 id=\"whatneedsimproving\">What needs improving?</h3>\n<ul>\n<li><strong>Compatibility</strong> 😥 We're currently in the process of moving the project to vue 3 and removing dependency on Bootstrap.</li>\n<li><strong>Documentation</strong> 😥 It really should include <a href=\"https://jsdoc.app\">JSDoc</a> and <a href=\"https://sassdoc.com\">SassDoc</a>. The code is well structured but will be tricky to maintain without notes.</li>\n</ul>",
+        "pathname": "resetting-the-barbican-with-nodejs",
+        "url": "/project/resetting-the-barbican-with-nodejs"
       },
       "type": "projects",
       "attachments": [],
       "actions": [],
-      "marquee": "Themeing with NPM",
+      "marquee": "Resetting the Barbican with Node.js",
       "hero": false
     },
     {
@@ -726,7 +726,7 @@
             "url": "https://open.spotify.com/artist/1GFkwGetxvXluztDxPShGo",
             "name": "Rina Mushonga"
           },
-          "popularity": 45,
+          "popularity": 44,
           "release_date": "2019-02-15",
           "url": "https://open.spotify.com/track/3OyedWlIaMQWvx1qAiILAA",
           "name": "Narcisc0"
@@ -786,7 +786,7 @@
             "url": "https://open.spotify.com/artist/3uOdNUjwD6hhOh1z2dQEIn",
             "name": "lau.ra"
           },
-          "popularity": 20,
+          "popularity": 19,
           "release_date": "2020-02-07",
           "url": "https://open.spotify.com/track/5rtAx0XN2V6P0RCkJSAXZ5",
           "name": "Sideways"
@@ -908,7 +908,7 @@
             "url": "https://open.spotify.com/artist/0Dy94lW3txJhWQHqNXP1BT",
             "name": "Laura Mvula"
           },
-          "popularity": 45,
+          "popularity": 44,
           "release_date": "2021-07-02",
           "url": "https://open.spotify.com/track/32YlBIj8qDpyXgsLJ4MfwR",
           "name": "Got Me"
@@ -938,7 +938,7 @@
             "url": "https://open.spotify.com/artist/1YvLqwm8xl6ENUT3KK6XMj",
             "name": "audiobooks"
           },
-          "popularity": 35,
+          "popularity": 34,
           "release_date": "2021-10-01",
           "url": "https://open.spotify.com/track/56CpzZPbczcpj3WGu2KYZ9",
           "name": "The Doll"
@@ -1020,7 +1020,7 @@
             "url": "https://open.spotify.com/artist/6CZhbpXpR3VJNQWFkwd2Ic",
             "name": "Noé Preszow"
           },
-          "popularity": 35,
+          "popularity": 34,
           "release_date": "2022-03-18",
           "url": "https://open.spotify.com/track/6sqYnu5QuI8e1JwxlbwFs4",
           "name": "Faire les choses bien - Version alternative"
@@ -1030,7 +1030,7 @@
             "url": "https://open.spotify.com/artist/0uAnwMXg0tsGQsOdVwudkb",
             "name": "Colourbox"
           },
-          "popularity": 35,
+          "popularity": 34,
           "release_date": "1985-08-12",
           "url": "https://open.spotify.com/track/3RlGLTcM9OwrAA0ErwJ2rA",
           "name": "The Moon Is Blue"
@@ -1040,7 +1040,7 @@
             "url": "https://open.spotify.com/artist/1iQhd9xO2v82j0dBbt4tHz",
             "name": "Superpoze"
           },
-          "popularity": 29,
+          "popularity": 30,
           "release_date": "2022-03-25",
           "url": "https://open.spotify.com/track/5YKffOovP69vePWQunFDdW",
           "name": "Geneva"
@@ -1086,13 +1086,13 @@
   "gem": {
     "name": "futuro",
     "version": "1.1.8",
-    "downloads": 177294,
+    "downloads": 177526,
     "url": "https://rubygems.org/gems/futuro"
   },
   "npm": {
     "name": "barbican-reset",
-    "version": "2.11.0",
-    "downloads": 13448,
+    "version": "2.12.0",
+    "downloads": 13648,
     "url": "https://www.npmjs.com/package/barbican-reset"
   }
 }

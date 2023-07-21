@@ -1,5 +1,10 @@
 @import 'styles/global/mixins';
 
+$folder_width: 4.25rem;
+$window_width: 6.75rem;
+
+$window_offset: ($window_width * 0.5) - ($folder_width * 0.5);
+
 .folders {
   position: relative;
 
@@ -10,11 +15,16 @@
 }
 
 .folder_container {
-  @include invisible-button;
+  position: relative;
+
   @include medium-up {
     transition: right 300ms steps(3), top 300ms steps(3);
     position: absolute;
   }
+}
+
+.folder_wrap {
+  @include invisible-button;
 
   @include medium-down {
     margin: 0.75rem;
@@ -34,4 +44,26 @@
 
 .folder_words {
   @include folder_words;
+  max-width: 6.25rem;
+}
+
+// .group_window {
+//   background-color: white;
+//   left: -$window_offset;
+//   position: absolute;
+//   padding: 0.5rem;
+//   display: grid;
+// }
+
+.button {
+  background-color: transparent;
+  padding: 0.375rem;
+  cursor: pointer;
+  display: block;
+  border: none;
+  width: 100%;
+}
+
+.button + .button {
+  border-top: 1px solid black;
 }

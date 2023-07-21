@@ -3,12 +3,15 @@ import Window from 'components/desktop/window'
 import Tracks from 'components/desktop/window/spotify/tracks'
 import Header from 'components/desktop/window/spotify/header'
 
-function SpotifyWindow({ name, folders, playlist, style }) {
+function SpotifyWindow(props) {
+  const { name, folders, position, playlist } = props
+
   const windowProps = {
-    name,
+    position,
     folders,
-    style,
+    name,
   }
+
   return (
     <Window {...windowProps}>
       <div className={styles.inner}>

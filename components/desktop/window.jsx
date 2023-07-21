@@ -3,9 +3,21 @@ import { useEffect, useRef } from 'react'
 import { window } from 'scripts/animation'
 import SkipLink from 'components/skiplink'
 
-function Window({ name, folders, style, children }) {
-  const state = folders.filter((folder) => folder.name === name)[0]
-  const open = state ? state.open : false
+function Window(props) {
+  var { name, folders, position, children } = props
+
+  var open = false
+
+  folders.forEach((folder) => {
+    if (folder.name == name) open = folder.open
+
+    if (folder.group) {
+      folder.group.items.map((item) => {
+        if (item.name == name) open = item.open
+      })
+    }
+  })
+
   const ref = useRef(null)
 
   useEffect(() => {
@@ -18,7 +30,7 @@ function Window({ name, folders, style, children }) {
 
   const outerProps = {
     className: 'window' + ' ' + styles.outer,
-    style,
+    style: position,
     ref,
   }
 
