@@ -58,10 +58,12 @@ $window_offset: ($window_width * 0.5) - ($folder_width * 0.5);
 
 .button {
   background-color: transparent;
+  font-size: $h6-font-size;
   white-space: nowrap;
   padding: 0.625rem;
   cursor: pointer;
   display: block;
+  color: inherit;
   border: none;
   width: 100%;
 }
