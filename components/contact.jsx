@@ -104,22 +104,24 @@ function Contact() {
   }
 
   return (
-    <Window className={styles.window}>
-      {!success ? (
-        <Form {...formProps} />
-      ) : (
-        <div className={styles.success_container}>
-          <div className={styles.success_wrap}>
-            <span className={styles.confetti}>🎉</span>
-            <h1 className={styles.success_title}>Success!</h1>
-            <p className={styles.success_tagline}>
-              Thanks for your message,
-              <br /> I&apos;ll be in touch soon :)
-            </p>
+    <div className={styles.container}>
+      <Window className={styles.window}>
+        {!success ? (
+          <Form {...formProps} />
+        ) : (
+          <div className={styles.success_container}>
+            <div className={styles.success_wrap}>
+              <span className={styles.confetti}>🎉</span>
+              <h1 className={styles.success_title}>Success!</h1>
+              <p className={styles.success_tagline}>
+                Thanks for your message,
+                <br /> I&apos;ll be in touch soon :)
+              </p>
+            </div>
           </div>
-        </div>
-      )}
-    </Window>
+        )}
+      </Window>
+    </div>
   )
 }
 

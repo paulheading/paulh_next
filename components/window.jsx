@@ -2,36 +2,52 @@ import styles from 'styles/components/window.module.scss'
 import Wrap from 'components/wrap'
 
 function Topbar(props) {
-  const { close } = props
+  const { close, size } = props
+
+  function topbarStyles() {
+    var result = styles.topbar
+    if (size) result += ' ' + styles[size]
+    return result
+  }
+
+  function closeStyles() {
+    var result = styles.button
+    result += ' ' + styles.close
+    if (size) result += ' ' + styles[size]
+    return result
+  }
 
   const closeProps = {
-    className: styles.button + ' ' + styles.close,
+    className: closeStyles(),
     onClick: () => close(),
   }
+
   return (
-    <div className={styles.topbar}>
+    <div className={topbarStyles()}>
       <button {...closeProps} />
-      {/* <div className={styles.button + ' ' + styles.minimise} /> */}
     </div>
   )
 }
 
 function Window(props) {
-  const { children, className, close } = props
+  const { children, className, close, size } = props
 
-  function containerStyles() {
-    var result = styles.container
+  function wrapStyles() {
+    var result = styles.wrap
     if (className) result += ' ' + className
     return result
   }
 
+  const topbarProps = {
+    close,
+    size,
+  }
+
   return (
-    <div className={containerStyles()}>
-      <Wrap className={styles.wrap}>
-        <Topbar close={close} />
-        <div className={styles.content}>{children}</div>
-      </Wrap>
-    </div>
+    <Wrap className={wrapStyles()}>
+      <Topbar {...topbarProps} />
+      <div className={styles.content}>{children}</div>
+    </Wrap>
   )
 }
 

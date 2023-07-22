@@ -1,19 +1,21 @@
 @import 'styles/global/mixins';
 
-.window {
-  padding-right: 7vw;
-  padding-left: 7vw;
-  padding-top: 2rem;
+.container {
+  padding: 2rem 7vw 0;
 
   @include small-up {
-    padding-right: 2rem;
-    padding-left: 2rem;
-    padding-top: 5rem;
+    padding: 5rem 2rem 0;
   }
 }
 
+.window {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  box-shadow: $box-shadow-page;
+}
+
 .success_container {
-  min-height: $height-windows * 0.8;
+  min-height: $height-section * 0.8;
   background-color: white;
   justify-content: center;
   padding-right: 2rem;

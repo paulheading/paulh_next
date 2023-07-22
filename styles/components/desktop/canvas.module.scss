@@ -12,7 +12,7 @@
 
   @include medium-up {
     justify-content: space-between;
-    height: $height-windows;
+    height: $height-section;
     display: flex;
   }
 }
@@ -23,9 +23,10 @@
 
 .windows {
   position: relative;
+  min-width: 16rem;
 
   @include medium-down {
-    height: $height-windows;
+    height: $height-section;
   }
 }
 

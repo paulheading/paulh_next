@@ -34,8 +34,15 @@ function Folder({ name, folders, setFolder, position, count }) {
     if (!groupOpen) return
 
     function Button(item, index) {
+      function buttonStyles() {
+        var result = styles.button
+        if (index % 2) result += ' ' + styles.even
+        if (item.open) result += ' ' + styles.open
+        return result
+      }
+
       const props = {
-        className: styles.button,
+        className: buttonStyles(),
         onClick: function () {
           setFolder(name, item.name)
           setGroupOpen(false)
@@ -49,7 +56,12 @@ function Folder({ name, folders, setFolder, position, count }) {
       )
     }
 
-    return <Window close={() => setGroupOpen(false)}>{current.group.items.map(Button)}</Window>
+    const windowProps = {
+      close: () => setGroupOpen(false),
+      size: 'sm',
+    }
+
+    return <Window {...windowProps}>{current.group.items.map(Button)}</Window>
   }
 
   function FolderButton() {
