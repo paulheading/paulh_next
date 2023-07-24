@@ -2,6 +2,7 @@ import parse from 'html-react-parser'
 import styles from 'styles/components/marquee.module.scss'
 import { useEffect } from 'react'
 import { marquee as animate } from 'scripts/animation'
+import { useRouter } from 'next/router'
 
 function CreateLink(props) {
   const { href, className = '', children } = props
@@ -15,16 +16,23 @@ function CreateLink(props) {
 
 function Tab(props) {
   const { href } = props
-  const message = 'See Project'
+  const { asPath } = useRouter()
+  const isHome = asPath == '/'
+
+  function tabStyles() {
+    var result = styles.tab_link
+    result += ' ' + styles[isHome ? 'home' : 'away']
+    return result
+  }
 
   const linkProps = {
-    className: styles.tab_link,
+    className: tabStyles(),
     href,
   }
 
   return (
     <div className={styles.tab_container}>
-      <CreateLink {...linkProps}>{message}</CreateLink>
+      <CreateLink {...linkProps}>See Project</CreateLink>
     </div>
   )
 }
@@ -57,11 +65,8 @@ function Row(props) {
     start('#repeat')
   })
 
-  const loop = 'loop_' + id.slice(0, 5)
-  const customClass = `${styles.row_container} ${styles[loop]}`
-
   return (
-    <div className={customClass}>
+    <div className={styles.row_container}>
       <CreateLink href={local.url}>
         <Repeat />
       </CreateLink>

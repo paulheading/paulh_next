@@ -13,7 +13,7 @@
 
 .tab_link {
   $border-radius: 0.25rem;
-  $top-focus: -2.75rem;
+  $top-focus: -2.875rem;
 
   border-top-right-radius: $border-radius;
   border-top-left-radius: $border-radius;
@@ -28,12 +28,25 @@
   top: 0;
 
   @include focus {
-    @include single-box(white);
     top: $top-focus;
   }
 
   @include small-up {
     top: $top-focus;
+  }
+}
+
+.tab_link.home {
+  @include focus {
+    @include single-box(white);
+  }
+}
+
+.tab_link.away {
+  @include focus {
+    @include single-box(black);
+    background-color: $c-lemon;
+    color: black;
   }
 }
 
