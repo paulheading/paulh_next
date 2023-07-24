@@ -113,6 +113,98 @@
       "hero": true
     },
     {
+      "id": "64be46a284472c83d0ead0f6",
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "checkItemsEarliestDue": null,
+        "comments": 1,
+        "attachments": 0,
+        "description": true,
+        "due": "2023-03-01T10:41:00.000Z",
+        "dueComplete": true,
+        "start": "2022-09-01T07:00:00.000Z"
+      },
+      "checkItemStates": [],
+      "closed": false,
+      "dueComplete": true,
+      "dateLastActivity": "2023-07-24T09:44:50.283Z",
+      "desc": "```\nBuild a portfolio site that is fast, engaging and showcases my abilities as a Designer/Developer.\n\n---\n\n# Building a Portfolio in Next.js\n\n### What's the Project?\n\nBuild a portfolio site that is fast, engaging and showcases my abilities as a Designer/Developer.\n\n### Can I see it?\n\nSure, you're looking at it 😉\n\nThe code is in my public [Github repository](https://github.com/paulheading/paulh3).\n\n### How much did you do?\n\nEverything! Which includes:\n\n- 💻 Building the app in [Next.js](https://nextjs.org)\n- 🎨 Designing the layout with [Figma](https://figma.com)\n- 🚀 Animating the brand artwork in [GSAP](https://greensock.com)\n- 📝 Writing the [SCSS](https://sass-lang.com)\n\n### What are the interesting parts?\n\nThis website creates content by combining data from multiple APIs. It scrapes and stores data during local development, rather than on deploy, so is super fast and consistent at build time.\n\nIt also makes use of [Next.js dynamic routing](https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes), [markdown for content generation](https://www.npmjs.com/package/raw-loader) and [GSAP](https://greensock.com/gsap) for web animation.\n\n### What needs improving?\n\n- **Documentation** 😥 It really should include [JSDoc](https://jsdoc.app) and [SassDoc](https://sassdoc.com). The code is well structured but will be tricky to maintain without notes.\n```",
+      "descData": {
+        "emoji": {}
+      },
+      "due": "2023-03-01T10:41:00.000Z",
+      "dueReminder": -1,
+      "email": null,
+      "idBoard": "5fb002b217fa6a2ca13512f7",
+      "idChecklists": [],
+      "idList": "5fb2238ca12fa82e01b9c819",
+      "idMembers": [],
+      "idMembersVoted": [],
+      "idShort": 31,
+      "idAttachmentCover": null,
+      "labels": [
+        {
+          "id": "6491c7d859cf65f7b465cf91",
+          "idBoard": "5fb002b217fa6a2ca13512f7",
+          "name": "Freelance",
+          "color": "purple",
+          "uses": 2
+        },
+        {
+          "id": "64b80f8953c59efd3011ee02",
+          "idBoard": "5fb002b217fa6a2ca13512f7",
+          "name": "Next.js",
+          "color": null,
+          "uses": 2
+        }
+      ],
+      "idLabels": [
+        "6491c7d859cf65f7b465cf91",
+        "64b80f8953c59efd3011ee02"
+      ],
+      "manualCoverAttachment": false,
+      "name": "Building a Portfolio in Next.js",
+      "pos": 33791.484375,
+      "shortLink": "HSU6I9yr",
+      "shortUrl": "https://trello.com/c/HSU6I9yr",
+      "start": "2022-09-01T07:00:00.000Z",
+      "subscribed": false,
+      "url": "https://trello.com/c/HSU6I9yr/31-building-a-portfolio-in-nextjs",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light",
+        "idPlugin": null
+      },
+      "isTemplate": false,
+      "cardRole": null,
+      "local": {
+        "summary": "<p>Build a portfolio site that is fast, engaging and showcases my abilities as a Designer/Developer.</p>",
+        "desc": "<h1 id=\"buildingaportfolioinnextjs\">Building a Portfolio in Next.js</h1>\n<h3 id=\"whatstheproject\">What's the Project?</h3>\n<p>Build a portfolio site that is fast, engaging and showcases my abilities as a Designer/Developer.</p>\n<h3 id=\"caniseeit\">Can I see it?</h3>\n<p>Sure, you're looking at it 😉</p>\n<p>The code is in my public <a href=\"https://github.com/paulheading/paulh3\">Github repository</a>.</p>\n<h3 id=\"howmuchdidyoudo\">How much did you do?</h3>\n<p>Everything! Which includes:</p>\n<ul>\n<li>💻 Building the app in <a href=\"https://nextjs.org\">Next.js</a></li>\n<li>🎨 Designing the layout with <a href=\"https://figma.com\">Figma</a></li>\n<li>🚀 Animating the brand artwork in <a href=\"https://greensock.com\">GSAP</a></li>\n<li>📝 Writing the <a href=\"https://sass-lang.com\">SCSS</a></li>\n</ul>\n<h3 id=\"whataretheinterestingparts\">What are the interesting parts?</h3>\n<p>This website creates content by combining data from multiple APIs. It scrapes and stores data during local development, rather than on deploy, so is super fast and consistent at build time.</p>\n<p>It also makes use of <a href=\"https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes\">Next.js dynamic routing</a>, <a href=\"https://www.npmjs.com/package/raw-loader\">markdown for content generation</a> and <a href=\"https://greensock.com/gsap\">GSAP</a> for web animation.</p>\n<h3 id=\"whatneedsimproving\">What needs improving?</h3>\n<ul>\n<li><strong>Documentation</strong> 😥 It really should include <a href=\"https://jsdoc.app\">JSDoc</a> and <a href=\"https://sassdoc.com\">SassDoc</a>. The code is well structured but will be tricky to maintain without notes.</li>\n</ul>",
+        "pathname": "building-a-portfolio-in-nextjs",
+        "url": "/project/building-a-portfolio-in-nextjs"
+      },
+      "type": "projects",
+      "attachments": [],
+      "actions": [],
+      "marquee": "Building a Portfolio in Next.js",
+      "hero": false
+    },
+    {
       "id": "6491c7bdb4a1fd40f80a1a99",
       "badges": {
         "attachmentsByType": {
@@ -160,14 +252,14 @@
           "idBoard": "5fb002b217fa6a2ca13512f7",
           "name": "Freelance",
           "color": "purple",
-          "uses": 1
+          "uses": 2
         },
         {
           "id": "64b80f8953c59efd3011ee02",
           "idBoard": "5fb002b217fa6a2ca13512f7",
           "name": "Next.js",
           "color": null,
-          "uses": 1
+          "uses": 2
         }
       ],
       "idLabels": [
@@ -848,7 +940,7 @@
             "url": "https://open.spotify.com/artist/6nbtlXRy0S6adYpDVoRdNi",
             "name": "Anna B Savage"
           },
-          "popularity": 24,
+          "popularity": 23,
           "release_date": "2021-01-29",
           "url": "https://open.spotify.com/track/4oUBPVqmxoP5u9HeXLU6To",
           "name": "Corncrakes"
