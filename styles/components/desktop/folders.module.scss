@@ -1,78 +1,10 @@
 @import 'styles/global/mixins';
 
-$folder_width: 4.25rem;
-$window_width: 6.75rem;
-
-$window_offset: ($window_width * 0.5) - ($folder_width * 0.5);
-
-.folders {
+.container {
   position: relative;
 
   @include medium-down {
     max-width: $height-section;
     margin: -0.75rem;
   }
-}
-
-.folder_container {
-  display: inline-block;
-  position: relative;
-
-  @include medium-up {
-    transition: right 300ms steps(3), top 300ms steps(3);
-    position: absolute;
-  }
-}
-
-.folder_wrap {
-  @include invisible-button;
-
-  @include medium-down {
-    margin: 0.75rem;
-  }
-
-  @include focus {
-    .folder_words {
-      @include folder_words--focus;
-    }
-  }
-}
-
-.folder_title {
-  font-size: $h6-font-size;
-  font-weight: 600;
-}
-
-.folder_words {
-  @include folder_words;
-  max-width: 6.25rem;
-}
-
-// .group_window {
-//   background-color: white;
-//   left: -$window_offset;
-//   position: absolute;
-//   padding: 0.5rem;
-//   display: grid;
-// }
-
-.button {
-  background-color: transparent;
-  font-size: $h6-font-size;
-  white-space: nowrap;
-  padding: 0.625rem;
-  cursor: pointer;
-  display: block;
-  color: inherit;
-  border: none;
-  width: 100%;
-}
-
-.button.even {
-  background-color: darken(white, 8%);
-}
-
-.button.open {
-  background-color: blue;
-  color: white;
 }

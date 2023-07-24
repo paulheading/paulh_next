@@ -15,7 +15,7 @@ function Folders({ folders, windowProps, setFolder, count }) {
   }
 
   const props = {
-    className: styles.folders,
+    className: styles.container,
     id: 'folders',
   }
 

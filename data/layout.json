@@ -820,17 +820,17 @@
       "images": [
         {
           "height": 640,
-          "url": "https://mosaic.scdn.co/640/ab67616d0000b2731d98009477885112499d615bab67616d0000b27392197a7a824838c99de8bda6ab67616d0000b273c45d9bd6bb6ff4075fdbe5e0ab67616d0000b273d2916ac503d283b68fc96a10",
+          "url": "https://mosaic.scdn.co/640/ab67616d0000b2731c750678a66148e7b191a493ab67616d0000b2731d98009477885112499d615bab67616d0000b2732bb4342cb575f914e2573ae4ab67616d0000b273c45d9bd6bb6ff4075fdbe5e0",
           "width": 640
         },
         {
           "height": 300,
-          "url": "https://mosaic.scdn.co/300/ab67616d0000b2731d98009477885112499d615bab67616d0000b27392197a7a824838c99de8bda6ab67616d0000b273c45d9bd6bb6ff4075fdbe5e0ab67616d0000b273d2916ac503d283b68fc96a10",
+          "url": "https://mosaic.scdn.co/300/ab67616d0000b2731c750678a66148e7b191a493ab67616d0000b2731d98009477885112499d615bab67616d0000b2732bb4342cb575f914e2573ae4ab67616d0000b273c45d9bd6bb6ff4075fdbe5e0",
           "width": 300
         },
         {
           "height": 60,
-          "url": "https://mosaic.scdn.co/60/ab67616d0000b2731d98009477885112499d615bab67616d0000b27392197a7a824838c99de8bda6ab67616d0000b273c45d9bd6bb6ff4075fdbe5e0ab67616d0000b273d2916ac503d283b68fc96a10",
+          "url": "https://mosaic.scdn.co/60/ab67616d0000b2731c750678a66148e7b191a493ab67616d0000b2731d98009477885112499d615bab67616d0000b2732bb4342cb575f914e2573ae4ab67616d0000b273c45d9bd6bb6ff4075fdbe5e0",
           "width": 60
         }
       ],
@@ -858,7 +858,7 @@
             "url": "https://open.spotify.com/artist/5K9Px0eeCuYatmBGFfhSOA",
             "name": "Orlando Weeks"
           },
-          "popularity": 22,
+          "popularity": 21,
           "release_date": "2021-06-16",
           "url": "https://open.spotify.com/track/0Zga9iWiTp760vRHHLNxFF",
           "name": "Big Skies, Silly Faces"
@@ -948,7 +948,7 @@
       "uri": "spotify:playlist:50LzfPmB6f0wAZULsP8wzp",
       "profile": "https://open.spotify.com/user/pheading86",
       "url": "https://open.spotify.com/playlist/50LzfPmB6f0wAZULsP8wzp",
-      "image": "https://mosaic.scdn.co/640/ab67616d0000b2731d98009477885112499d615bab67616d0000b27392197a7a824838c99de8bda6ab67616d0000b273c45d9bd6bb6ff4075fdbe5e0ab67616d0000b273d2916ac503d283b68fc96a10"
+      "image": "https://mosaic.scdn.co/640/ab67616d0000b2731c750678a66148e7b191a493ab67616d0000b2731d98009477885112499d615bab67616d0000b2732bb4342cb575f914e2573ae4ab67616d0000b273c45d9bd6bb6ff4075fdbe5e0"
     },
     "_2022": {
       "collaborative": false,
@@ -1086,13 +1086,13 @@
   "gem": {
     "name": "futuro",
     "version": "1.1.8",
-    "downloads": 177526,
+    "downloads": 177758,
     "url": "https://rubygems.org/gems/futuro"
   },
   "npm": {
     "name": "barbican-reset",
     "version": "2.12.0",
-    "downloads": 13646,
+    "downloads": 13713,
     "url": "https://www.npmjs.com/package/barbican-reset"
   }
 }

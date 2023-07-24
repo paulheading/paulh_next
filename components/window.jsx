@@ -19,7 +19,9 @@ function Topbar(props) {
 
   const closeProps = {
     className: closeStyles(),
-    onClick: () => close(),
+    onClick: function () {
+      if (close) return close()
+    },
   }
 
   return (

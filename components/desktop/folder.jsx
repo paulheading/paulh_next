@@ -1,4 +1,4 @@
-import styles from 'styles/components/desktop/folders.module.scss'
+import styles from 'styles/components/desktop/folder.module.scss'
 import OpenFolder from 'icons/folder/open'
 import ClosedFolder from 'icons/folder/closed'
 import useMediaQuery from 'hooks/useMediaQuery'
@@ -24,7 +24,7 @@ function Folder({ name, folders, setFolder, position, count }) {
 
   const containerProps = {
     style: desktop ? { ...position[oddOrEven] } : null,
-    className: styles.folder_container,
+    className: styles.container,
   }
 
   const FolderIcon = () => (open ? <OpenFolder /> : <ClosedFolder />)
@@ -58,6 +58,7 @@ function Folder({ name, folders, setFolder, position, count }) {
 
     const windowProps = {
       close: () => setGroupOpen(false),
+      className: styles.window,
       size: 'sm',
     }
 
@@ -65,9 +66,10 @@ function Folder({ name, folders, setFolder, position, count }) {
   }
 
   function FolderButton() {
+    if (current.group && groupOpen) return
+
     const wrapProps = {
-      style: { visibility: current.group && groupOpen ? 'hidden' : 'visible' },
-      className: styles.folder_wrap,
+      className: styles.wrap,
       id: name.replace(' ', '-'),
       onClick: function () {
         if (!current.group) return setFolder(name)
@@ -77,14 +79,14 @@ function Folder({ name, folders, setFolder, position, count }) {
 
     const Words = (name, index) => (
       <div key={'word' + index}>
-        <span className={styles.folder_words}>{name}</span>
+        <span className={styles.words}>{name}</span>
       </div>
     )
 
     return (
       <button {...wrapProps}>
         <FolderIcon />
-        <div className={styles.folder_title}>{name.split(' ').map(Words)}</div>
+        <div className={styles.title}>{name.split(' ').map(Words)}</div>
       </button>
     )
   }
