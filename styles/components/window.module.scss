@@ -38,6 +38,10 @@
 
 .button.close {
   background-color: $c-red;
+
+  @include focus {
+    @include double-box($c-gray-5, $c-red);
+  }
 }
 
 .button.minimise {

@@ -18,7 +18,7 @@
   }
 
   @include focus {
-    .folder_words {
+    .words {
       @include folder_words--focus;
     }
   }
@@ -44,13 +44,28 @@
   color: inherit;
   border: none;
   width: 100%;
+
+  @include focus {
+    background-color: black;
+    color: white;
+  }
 }
 
 .button.even {
   background-color: darken(white, 8%);
+
+  @include focus {
+    background-color: black;
+    color: white;
+  }
 }
 
 .button.open {
   background-color: blue;
   color: white;
+
+  @include focus {
+    background-color: black;
+    color: white;
+  }
 }

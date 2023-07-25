@@ -1132,7 +1132,7 @@
             "url": "https://open.spotify.com/artist/1iQhd9xO2v82j0dBbt4tHz",
             "name": "Superpoze"
           },
-          "popularity": 30,
+          "popularity": 29,
           "release_date": "2022-03-25",
           "url": "https://open.spotify.com/track/5YKffOovP69vePWQunFDdW",
           "name": "Geneva"
@@ -1142,7 +1142,7 @@
             "url": "https://open.spotify.com/artist/6Jrxnp0JgqmeUX1veU591p",
             "name": "Santigold"
           },
-          "popularity": 50,
+          "popularity": 49,
           "release_date": "2022-09-09",
           "url": "https://open.spotify.com/track/1vbayZm5FgNe4ou8BRNiDq",
           "name": "High Priestess"
@@ -1184,7 +1184,7 @@
   "npm": {
     "name": "barbican-reset",
     "version": "2.12.0",
-    "downloads": 13713,
+    "downloads": 13619,
     "url": "https://www.npmjs.com/package/barbican-reset"
   }
 }
