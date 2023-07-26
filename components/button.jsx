@@ -1,7 +1,8 @@
 function Button(props) {
-  const { children, title, onClick } = props
+  const { children, title, onClick, className } = props
 
   const buttonProps = {
+    className,
     onClick,
     title,
   }

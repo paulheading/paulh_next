@@ -14,8 +14,8 @@
 }
 
 @mixin row-button($mode: '', $size: 1rem, $rotate: false) {
-  border: 1px solid $c-gray-5;
   background-color: white;
+  border: 1px solid black;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
@@ -24,7 +24,8 @@
   display: flex;
 
   @include focus {
-    border-color: black;
+    background-color: black;
+    fill: white;
   }
 
   svg {
