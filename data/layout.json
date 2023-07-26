@@ -1054,7 +1054,7 @@
       "images": [
         {
           "height": null,
-          "url": "https://images-ak.spotifycdn.com/image/ab67706c0000bebbaec19d00d18a627f927663d1",
+          "url": "https://i.scdn.co/image/ab67706c0000bebbaec19d00d18a627f927663d1",
           "width": null
         }
       ],
@@ -1102,7 +1102,7 @@
             "url": "https://open.spotify.com/artist/3v8mFhjLFa50QK8zDvAMYN",
             "name": "Amanda Miguel"
           },
-          "popularity": 73,
+          "popularity": 72,
           "release_date": "1981-01-01",
           "url": "https://open.spotify.com/track/0hTao6s03MkTStWfxAmnGk",
           "name": "Así No Te Amará Jamás"
@@ -1172,19 +1172,19 @@
       "uri": "spotify:playlist:2uGfm83zVuJGUfUFy8xnq7",
       "profile": "https://open.spotify.com/user/pheading86",
       "url": "https://open.spotify.com/playlist/2uGfm83zVuJGUfUFy8xnq7",
-      "image": "https://images-ak.spotifycdn.com/image/ab67706c0000bebbaec19d00d18a627f927663d1"
+      "image": "https://i.scdn.co/image/ab67706c0000bebbaec19d00d18a627f927663d1"
     }
   },
   "gem": {
     "name": "futuro",
     "version": "1.1.8",
-    "downloads": 177758,
+    "downloads": 177880,
     "url": "https://rubygems.org/gems/futuro"
   },
   "npm": {
     "name": "barbican-reset",
     "version": "2.12.0",
-    "downloads": 13619,
+    "downloads": 13884,
     "url": "https://www.npmjs.com/package/barbican-reset"
   }
 }

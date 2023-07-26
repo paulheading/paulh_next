@@ -14,6 +14,7 @@ function Topbar(props) {
     var result = styles.button
     result += ' ' + styles.close
     if (size) result += ' ' + styles[size]
+    if (!close) result += ' ' + styles.fake
     return result
   }
 
@@ -24,11 +25,7 @@ function Topbar(props) {
     },
   }
 
-  return (
-    <div className={topbarStyles()}>
-      <button {...closeProps} />
-    </div>
-  )
+  return <div className={topbarStyles()}>{close ? <button {...closeProps} /> : <div className={closeProps.className} />}</div>
 }
 
 function Window(props) {

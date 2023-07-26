@@ -24,26 +24,34 @@
   background-color: white;
 }
 
+$buttons: (
+  'close': $c-red,
+  'minimise': $c-yellow,
+);
+
+@each $key, $value in $buttons {
+  .button.#{$key} {
+    background-color: $value;
+
+    &:not(.fake) {
+      @include focus {
+        @include double-box($c-gray-5, $value, 0.1875rem);
+      }
+    }
+  }
+}
+
 .button {
   border-radius: 50%;
   padding: 0.75rem;
-  cursor: pointer;
   font-size: 0;
   border: none;
+
+  &:not(.fake) {
+    cursor: pointer;
+  }
 }
 
 .button.sm {
   padding: 0.625rem;
-}
-
-.button.close {
-  background-color: $c-red;
-
-  @include focus {
-    @include double-box($c-gray-5, $c-red);
-  }
-}
-
-.button.minimise {
-  background-color: $c-yellow;
 }
