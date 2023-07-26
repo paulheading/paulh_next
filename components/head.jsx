@@ -27,7 +27,7 @@ function Head({ dynamic }) {
 
   return (
     <NextHead>
-      <title>{title ? title : 'Paul Heading | Front End Developer | Portfolio'}</title>
+      <title>{title ? title : seo.title('Portfolio')}</title>
       {keywords && <meta name="keywords" content={keywords} />}
       {desc && <meta name="description" content={desc} />}
       <meta name="author" content="Paul Heading" />
