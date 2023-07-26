@@ -42,11 +42,11 @@ create.desc = (target) => create.snippet(target, 1)
 
 create.type = (target) => {
   const { pages, roles, projects, education } = list
-  if (target == pages) return 'pages'
-  if (target == roles) return 'roles'
-  if (target == projects) return 'projects'
+  if (target == pages) return 'page'
+  if (target == roles) return 'role'
+  if (target == projects) return 'project'
   if (target == education) return 'education'
-  return 'hero'
+  return 'unknown'
 }
 
 const remove = {}

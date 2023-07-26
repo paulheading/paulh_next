@@ -63,51 +63,40 @@ getTrello.svgs = function (actions) {
   return svg.length ? svg[0].data.text : null
 }
 
-/**
- * @function mapTrelloProjects
- * @param {object} card
- * @returns {object}
- */
-
-mapTrello.projects = function (card) {
+async function processCard(card, list) {
   var isHero = card.name.startsWith('Hero: ') ? true : false
 
   card.name = remove.hero(card.name)
   card.marquee = card.name
   card.hero = isHero
-  card.local.pathname = card.name.replace(/\s+/g, '-').replace(/[.]/g, '').toLowerCase()
-  card.local.url = '/project/' + card.local.pathname
+  card.type = create.type(list)
+  card.attachments = card.id ? await getTrello.attachments(card.id) : null
+  card.actions = card.id ? await getTrello.actions(card.id) : null
+  card.local = {} // locally interpreted formatting of data
+  card.local.summary = card.desc ? create.summary(card.desc) : null
+  card.local.desc = card.desc ? create.desc(card.desc) : null
+
+  if (card.type == 'education') return card
+
+  card.local.pathname = card.name.replace(/\s+/g, '-').replace(/\//g, '-').replace(/[.]/g, '').toLowerCase()
+  card.local.url = '/' + card.type + '/' + card.local.pathname
 
   return card
 }
 
-async function cardResults(result, list) {
-  result.local = {} // locally interpreted formatting of data
-  result.local.summary = result.desc ? create.summary(result.desc) : null
-  result.local.desc = result.desc ? create.desc(result.desc) : null
-
-  result.type = create.type(list)
-  result.attachments = result.id ? await getTrello.attachments(result.id) : null
-  result.actions = result.id ? await getTrello.actions(result.id) : null
-
-  return result
-}
-
 getTrello.cards = async (list, type) => {
-  var results = await getTrello.JSON(string.cards(list), type)
+  var cards = await getTrello.JSON(string.cards(list), type)
 
-  if (!results.length) return []
+  if (!cards.length) return []
 
-  results = results.map((result) => cardResults(result, list))
+  cards = cards.map((card) => processCard(card, list))
 
-  return await Promise.all(results)
+  return await Promise.all(cards)
 }
 
 getTrello.data = async function (type) {
   if (type == 'projects') {
     var cards = await getTrello.cards(list.projects)
-
-    cards = cards.map(mapTrello.projects)
 
     cards = cards.filter(({ labels }) => !contains.label(labels, 'Local')) // remove local projects in production
 

@@ -72,10 +72,8 @@
       },
       "isTemplate": false,
       "cardRole": null,
-      "local": {
-        "summary": "<p>Realised I wanted to build things for a living. Learnt how to use Javascript.</p>",
-        "desc": "<p>Realised I wanted to build things for a living. Learnt how to use Javascript.</p>"
-      },
+      "marquee": "Full-Stack Javascript Techdegree",
+      "hero": false,
       "type": "education",
       "attachments": [
         {
@@ -84,7 +82,11 @@
           "url": "https://teamtreehouse.com/plans"
         }
       ],
-      "actions": []
+      "actions": [],
+      "local": {
+        "summary": "<p>Realised I wanted to build things for a living. Learnt how to use Javascript.</p>",
+        "desc": "<p>Realised I wanted to build things for a living. Learnt how to use Javascript.</p>"
+      }
     },
     {
       "id": "5fb26426e1197e5fe581b27c",
@@ -158,10 +160,8 @@
       },
       "isTemplate": false,
       "cardRole": null,
-      "local": {
-        "summary": "<p>Realised how I could get paid to design things. Learnt how to use InDesign.</p>",
-        "desc": "<p>Realised how I could get paid to design things. Learnt how to use InDesign.</p>"
-      },
+      "marquee": "Work Experience",
+      "hero": false,
       "type": "education",
       "attachments": [
         {
@@ -170,7 +170,11 @@
           "url": "https://www.publicisgroupe.com/en/services/services-publicis-media-en"
         }
       ],
-      "actions": []
+      "actions": [],
+      "local": {
+        "summary": "<p>Realised how I could get paid to design things. Learnt how to use InDesign.</p>",
+        "desc": "<p>Realised how I could get paid to design things. Learnt how to use InDesign.</p>"
+      }
     },
     {
       "id": "5fb26430a9be1e2de6e583b7",
@@ -244,10 +248,8 @@
       },
       "isTemplate": false,
       "cardRole": null,
-      "local": {
-        "summary": "<p>Realised I wanted to design things for a living. Learnt how to use Photoshop.</p>",
-        "desc": "<p>Realised I wanted to design things for a living. Learnt how to use Photoshop.</p>"
-      },
+      "marquee": "BA History",
+      "hero": false,
       "type": "education",
       "attachments": [
         {
@@ -256,7 +258,11 @@
           "url": "https://gold.ac.uk"
         }
       ],
-      "actions": []
+      "actions": [],
+      "local": {
+        "summary": "<p>Realised I wanted to design things for a living. Learnt how to use Photoshop.</p>",
+        "desc": "<p>Realised I wanted to design things for a living. Learnt how to use Photoshop.</p>"
+      }
     }
   ],
   "roles": [
@@ -287,8 +293,8 @@
       "checkItemStates": [],
       "closed": false,
       "dueComplete": false,
-      "dateLastActivity": "2023-06-30T05:09:02.898Z",
-      "desc": "I'm currently a Full Stack Designer. I design and build with the React.js and Vue.js frameworks. I currently work for the Barbican in London.",
+      "dateLastActivity": "2023-07-26T17:46:54.718Z",
+      "desc": "```\n[Front-end](https://en.wikipedia.org/wiki/Front-end_web_development) Designer and Developer working for the [Barbican](https://barbican.org.uk) in London. I create [wireframes](https://www.figma.com/blog/how-to-wireframe/) and [prototypes](https://www.uiprep.com/blog/ultimate-guide-to-prototyping-in-figma) in [Figma](https://figma.com), and build things in [Vue.js](https://vuejs.org). Outside of this role, I also like to build in [Next.js](https://nextjs.org)\n\n---\n\n# Front-end Designer and Developer\n\n### What's the Role?\n\n[Front-end](https://en.wikipedia.org/wiki/Front-end_web_development) Designer and Developer working for the [Barbican](https://barbican.org.uk) in London. I create [wireframes](https://www.figma.com/blog/how-to-wireframe/) and [prototypes](https://www.uiprep.com/blog/ultimate-guide-to-prototyping-in-figma) in [Figma](https://figma.com), and build things in [Vue.js](https://vuejs.org). Outside of this role, I also like to build in [Next.js](https://nextjs.org)\n```",
       "descData": {
         "emoji": {}
       },
@@ -315,13 +321,13 @@
         "5fb002b2cdabcf46c03cf423"
       ],
       "manualCoverAttachment": false,
-      "name": "Full Stack Designer",
+      "name": "Front-end Designer and Developer",
       "pos": 16384,
       "shortLink": "w7J6wjLT",
       "shortUrl": "https://trello.com/c/w7J6wjLT",
       "start": "2019-12-02T08:00:00.000Z",
       "subscribed": false,
-      "url": "https://trello.com/c/w7J6wjLT/17-full-stack-designer",
+      "url": "https://trello.com/c/w7J6wjLT/17-front-end-designer-and-developer",
       "cover": {
         "idAttachment": null,
         "color": null,
@@ -332,13 +338,17 @@
       },
       "isTemplate": false,
       "cardRole": null,
-      "local": {
-        "summary": "<p>I'm currently a Full Stack Designer. I design and build with the React.js and Vue.js frameworks. I currently work for the Barbican in London.</p>",
-        "desc": "<p>I'm currently a Full Stack Designer. I design and build with the React.js and Vue.js frameworks. I currently work for the Barbican in London.</p>"
-      },
-      "type": "roles",
+      "marquee": "Front-end Designer and Developer",
+      "hero": false,
+      "type": "role",
       "attachments": [],
-      "actions": []
+      "actions": [],
+      "local": {
+        "summary": "<p><a href=\"https://en.wikipedia.org/wiki/Front-end_web_development\">Front-end</a> Designer and Developer working for the <a href=\"https://barbican.org.uk\">Barbican</a> in London. I create <a href=\"https://www.figma.com/blog/how-to-wireframe/\">wireframes</a> and <a href=\"https://www.uiprep.com/blog/ultimate-guide-to-prototyping-in-figma\">prototypes</a> in <a href=\"https://figma.com\">Figma</a>, and build things in <a href=\"https://vuejs.org\">Vue.js</a>. Outside of this role, I also like to build in <a href=\"https://nextjs.org\">Next.js</a></p>",
+        "desc": "<h1 id=\"frontenddesigneranddeveloper\">Front-end Designer and Developer</h1>\n<h3 id=\"whatstherole\">What's the Role?</h3>\n<p><a href=\"https://en.wikipedia.org/wiki/Front-end_web_development\">Front-end</a> Designer and Developer working for the <a href=\"https://barbican.org.uk\">Barbican</a> in London. I create <a href=\"https://www.figma.com/blog/how-to-wireframe/\">wireframes</a> and <a href=\"https://www.uiprep.com/blog/ultimate-guide-to-prototyping-in-figma\">prototypes</a> in <a href=\"https://figma.com\">Figma</a>, and build things in <a href=\"https://vuejs.org\">Vue.js</a>. Outside of this role, I also like to build in <a href=\"https://nextjs.org\">Next.js</a></p>",
+        "pathname": "front-end-designer-and-developer",
+        "url": "/role/front-end-designer-and-developer"
+      }
     },
     {
       "id": "5fcfd001212e45767e76c7de",
@@ -412,13 +422,17 @@
       },
       "isTemplate": false,
       "cardRole": null,
+      "marquee": "Design Manager",
+      "hero": false,
+      "type": "role",
+      "attachments": [],
+      "actions": [],
       "local": {
         "summary": "<p>In my previous role, I created digital design content for marketing campaigns at the Barbican in London. I was also manager to one other Designer.</p>",
-        "desc": "<p>In my previous role, I created digital design content for marketing campaigns at the Barbican in London. I was also manager to one other Designer.</p>"
-      },
-      "type": "roles",
-      "attachments": [],
-      "actions": []
+        "desc": "<p>In my previous role, I created digital design content for marketing campaigns at the Barbican in London. I was also manager to one other Designer.</p>",
+        "pathname": "design-manager",
+        "url": "/role/design-manager"
+      }
     },
     {
       "id": "5fcfd05eea168a6c8d469cea",
@@ -492,13 +506,17 @@
       },
       "isTemplate": false,
       "cardRole": null,
+      "marquee": "Designer",
+      "hero": false,
+      "type": "role",
+      "attachments": [],
+      "actions": [],
       "local": {
         "summary": "<p>I created digital design content for marketing campaigns at the Barbican in London.</p>",
-        "desc": "<p>I created digital design content for marketing campaigns at the Barbican in London.</p>"
-      },
-      "type": "roles",
-      "attachments": [],
-      "actions": []
+        "desc": "<p>I created digital design content for marketing campaigns at the Barbican in London.</p>",
+        "pathname": "designer",
+        "url": "/role/designer"
+      }
     }
   ]
 }
