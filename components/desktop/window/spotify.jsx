@@ -1,7 +1,7 @@
 import styles from 'styles/components/desktop/window/spotify.module.scss'
 import Window from 'components/desktop/window'
-import Tracks from 'components/desktop/window/spotify/tracks'
 import Header from 'components/desktop/window/spotify/header'
+import Track from 'components/desktop/window/spotify/track'
 
 function SpotifyWindow(props) {
   const { name, folders, position, playlist } = props
@@ -16,7 +16,7 @@ function SpotifyWindow(props) {
     <Window {...windowProps}>
       <div className={styles.inner}>
         <Header {...playlist} />
-        <main className={styles.main}>{playlist.tracks.map(Tracks)}</main>
+        <main className={styles.main}>{playlist.tracks.map(Track)}</main>
       </div>
     </Window>
   )

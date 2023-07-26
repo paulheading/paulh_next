@@ -1,22 +1,30 @@
 @import 'styles/global/mixins';
 
-.track {
+.container {
   grid-template-columns: 2rem auto;
   display: grid;
 }
 
-.track_number {
+.number {
   padding-top: 0.25rem;
   color: #a0a19e;
 }
 
-.track_details {
+.details {
   padding-left: 0.25rem;
   overflow: hidden;
 }
 
-.track_name {
+.wrap_name {
+  display: flex;
+}
+
+.name {
   @include track_name;
+}
+
+.wrap_artist_name {
+  display: flex;
 }
 
 .artist_name {

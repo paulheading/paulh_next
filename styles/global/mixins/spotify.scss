@@ -1,7 +1,7 @@
 @mixin track_name {
   @include text-overflow;
-  padding-bottom: 0.25rem;
-  padding-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  margin-top: 0.25rem;
   line-height: 1.2;
   max-width: 100%;
   display: block;

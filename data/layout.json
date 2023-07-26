@@ -1054,7 +1054,7 @@
       "images": [
         {
           "height": null,
-          "url": "https://i.scdn.co/image/ab67706c0000bebbaec19d00d18a627f927663d1",
+          "url": "https://images-ak.spotifycdn.com/image/ab67706c0000bebbaec19d00d18a627f927663d1",
           "width": null
         }
       ],
@@ -1172,13 +1172,13 @@
       "uri": "spotify:playlist:2uGfm83zVuJGUfUFy8xnq7",
       "profile": "https://open.spotify.com/user/pheading86",
       "url": "https://open.spotify.com/playlist/2uGfm83zVuJGUfUFy8xnq7",
-      "image": "https://i.scdn.co/image/ab67706c0000bebbaec19d00d18a627f927663d1"
+      "image": "https://images-ak.spotifycdn.com/image/ab67706c0000bebbaec19d00d18a627f927663d1"
     }
   },
   "gem": {
     "name": "futuro",
     "version": "1.1.8",
-    "downloads": 177880,
+    "downloads": 177881,
     "url": "https://rubygems.org/gems/futuro"
   },
   "npm": {
