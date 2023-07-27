@@ -10,11 +10,11 @@ function Contact() {
   const [success, setSuccess] = useState(false)
 
   const formProps = {
-    'data-netlify': true,
     name: 'contact',
     method: 'POST',
     id: 'contact',
     onSubmit: function (e) {
+      console.log(e.currentTarget.elements)
       e.preventDefault()
     },
   }

@@ -35,7 +35,7 @@ function Form(props) {
     name: 'subject',
   }
   return (
-    <form {...props}>
+    <form data-netlify="true" {...props}>
       <TextInput {...inputProps}>Hey there!</TextInput>
       <SubmitButton>submit</SubmitButton>
     </form>
