@@ -14,26 +14,26 @@ function onSubmit(event) {
 
   body = body.map(({ name, value }) => encodeURIComponent(name) + '=' + encodeURIComponent(value)).join('&')
 
-  const method = 'POST'
-  const headers = { 'Content-Type': 'application/x-www-form-urlencoded' }
+  // const method = 'POST'
+  // const headers = { 'Content-Type': 'application/x-www-form-urlencoded' }
 
   console.log(body)
 
   return
 
-  fetch('/', {
-    method,
-    headers,
-    body,
-  }).catch((error) => alert(error))
+  // fetch('/', {
+  //   method,
+  //   headers,
+  //   body,
+  // }).catch((error) => alert(error))
 }
 
 function Contact() {
   const [success, setSuccess] = useState(false)
-  const {
-    register,
-    formState: { errors },
-  } = useForm()
+  // const {
+  //   register,
+  //   formState: { errors },
+  // } = useForm()
 
   const formProps = {
     'data-netlify': true,
