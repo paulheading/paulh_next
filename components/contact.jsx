@@ -12,7 +12,7 @@ function onSubmit(event) {
 
   var body = [...event.currentTarget.elements]
 
-  body = body.map(({ name, value }) => encodeURIComponent(name) + '=' + encodeURIComponent(value)).join('&')
+  // body = body.map(({ name, value }) => encodeURIComponent(name) + '=' + encodeURIComponent(value)).join('&')
 
   // const method = 'POST'
   // const headers = { 'Content-Type': 'application/x-www-form-urlencoded' }
