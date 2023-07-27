@@ -2,7 +2,7 @@ import useCount from 'hooks/useCount'
 import { Fragment } from 'react'
 
 import Hero from 'components/hero'
-// import Layout from 'layouts/main'
+import Layout from 'layouts/main'
 
 import layout from 'data/layout.json'
 
@@ -15,7 +15,7 @@ function Home() {
   return (
     <Fragment>
       <Hero hero={hero} />
-      {/* <Layout /> */}
+      <Layout />
     </Fragment>
   )
 }
