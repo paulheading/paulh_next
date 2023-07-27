@@ -29,14 +29,14 @@ import Success from 'components/form/success'
 function Contact() {
   const [success, setSuccess] = useState(false)
 
-  var action = '?success=true'
-
   const formProps = {
     'data-netlify': true,
     name: 'contact',
     method: 'POST',
     id: 'contact',
-    action,
+    onSubmit: function (e) {
+      e.preventDefault()
+    },
   }
 
   return (
