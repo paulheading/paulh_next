@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import Marquee from 'components/marquee'
+// import Marquee from 'components/marquee'
 // import Desktop from 'components/desktop'
 import Contact from 'components/contact'
 import Footer from 'components/footer'
@@ -14,7 +14,7 @@ function Main(props) {
 
   var heroes = projects.filter(({ hero }) => hero)
   var count = useCount(heroes)
-  var hero = heroes[count]
+  // var hero = heroes[count]
   // var desktopProps = {
   //   projects,
   //   spotify,
@@ -26,7 +26,7 @@ function Main(props) {
   return (
     <Fragment>
       <Head dynamic={seo} />
-      <Marquee hero={hero} />
+      {/* <Marquee hero={hero} /> */}
       {/* <Desktop {...desktopProps} /> */}
       <Contact />
       <Footer />
