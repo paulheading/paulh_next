@@ -1,5 +1,5 @@
 import styles from 'styles/components/contact.module.scss'
-import { useForm } from 'react-hook-form'
+// import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 
 import Window from 'components/window'
