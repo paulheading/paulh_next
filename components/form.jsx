@@ -37,7 +37,21 @@ function Form() {
 
   function onSubmit(event) {
     event.preventDefault()
-    console.log(event.currentTarget.elements)
+
+    var body = [...event.currentTarget.elements]
+
+    body = body.map(({ name, value }) => encodeURIComponent(name) + '=' + encodeURIComponent(value)).join('&')
+
+    const method = 'POST'
+    const headers = { 'Content-Type': 'application/x-www-form-urlencoded' }
+
+    console.log(body)
+
+    fetch('/', {
+      method,
+      headers,
+      body,
+    }).catch((error) => alert(error))
   }
 
   return (
