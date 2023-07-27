@@ -21,7 +21,7 @@ function Contact() {
 
   return (
     <div className={styles.container}>
-      <Window className={styles.window}>{!success ? <Form {...formProps} /> : <Success />}</Window>
+      <Window className={styles.window}>{!success ? <Form /> : <Success />}</Window>
     </div>
   )
 }
