@@ -41,7 +41,7 @@ function Form() {
   }
 
   return (
-    <form name="contact" method="POST" data-netlify="true" onSubmit={onSubmit}>
+    <form name="contact" method="POST" netlify onSubmit={onSubmit}>
       <TextInput {...inputProps}>Hey there!</TextInput>
       <SubmitButton>submit</SubmitButton>
     </form>
