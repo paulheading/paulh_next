@@ -1,130 +1,53 @@
 import styles from 'styles/components/contact.module.scss'
-import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import Row from 'components/contact/row'
+import { useState } from 'react'
+
 import Window from 'components/window'
+import Form from 'components/form'
+// import Alert from 'components/form/alert'
+import Success from 'components/form/success'
 
-function Alert({ className, children }) {
-  const containerClasses = `${styles.alert} ${className}`
-  return <div className={containerClasses}>{children}</div>
-}
+function onSubmit(event) {
+  event.preventDefault()
 
-const encode = (data) =>
-  Object.keys(data)
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join('&')
+  var body = [...event.currentTarget.elements]
 
-function Form({ handleSetSuccess }) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm()
-  function onSubmit(form) {
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...form }),
-    })
-      .then(() => {
-        handleSetSuccess(true)
-        setTimeout(() => handleSetSuccess(false), 3000)
-      })
-      .catch((error) => alert(error))
-  }
+  body = body.map(({ name, value }) => encodeURIComponent(name) + '=' + encodeURIComponent(value)).join('&')
 
-  const formProps = {
-    onSubmit: handleSubmit(onSubmit),
-    'data-netlify': true,
-    name: 'contact',
-    method: 'post',
-    id: 'form',
-  }
+  const method = 'POST'
+  const headers = { 'Content-Type': 'application/x-www-form-urlencoded' }
 
-  const rowProps = {
-    register,
-    errors,
-  }
+  console.log(body)
 
-  const subjectProps = {
-    placeholder: 'Hey there!',
-    label: 'Subject',
-    ...rowProps,
-  }
+  return
 
-  const fromProps = {
-    placeholder: 'friendly@visitor.org',
-    required: `Please fill in your email address`,
-    pattern: {
-      value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
-      message: `Is this mistyped? I can't accept this`,
-    },
-    label: 'From',
-    ...rowProps,
-  }
-
-  const messageProps = {
-    placeholder: 'Message',
-    label: 'Message',
-    type: 'textarea',
-    ...rowProps,
-  }
-
-  const submitProps = {
-    className: styles.submit,
-    type: 'submit',
-  }
-
-  return (
-    <form {...formProps}>
-      <div className={styles.wrap}>
-        <div className={styles.tag_row}>
-          <div className={styles.label}>To</div>
-          <div className={styles.tag_wrap}>
-            <span className={styles.tag}>hello@paulh.biz</span>
-          </div>
-        </div>
-        <Row {...subjectProps} />
-        <Row {...fromProps} />
-        <Row {...messageProps} />
-        <div className={styles.submit_wrap}>
-          <button {...submitProps}>Submit</button>
-        </div>
-      </div>
-    </form>
-  )
+  fetch('/', {
+    method,
+    headers,
+    body,
+  }).catch((error) => alert(error))
 }
 
 function Contact() {
   const [success, setSuccess] = useState(false)
-  const handleSetSuccess = (value) => setSuccess(value)
+  const {
+    register,
+    formState: { errors },
+  } = useForm()
 
   const formProps = {
-    handleSetSuccess,
+    'data-netlify': true,
+    name: 'contact',
+    method: 'POST',
+    id: 'contact',
+    onSubmit,
   }
 
   return (
     <div className={styles.container}>
-      <Window className={styles.window}>
-        {!success ? (
-          <Form {...formProps} />
-        ) : (
-          <div className={styles.success_container}>
-            <div className={styles.success_wrap}>
-              <span className={styles.confetti}>🎉</span>
-              <h1 className={styles.success_title}>Success!</h1>
-              <p className={styles.success_tagline}>
-                Thanks for your message,
-                <br /> I&apos;ll be in touch soon :)
-              </p>
-            </div>
-          </div>
-        )}
-      </Window>
+      <Window className={styles.window}>{!success ? <Form {...formProps} /> : <Success />}</Window>
     </div>
   )
 }
-
-export { Alert }
 
 export default Contact

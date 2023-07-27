@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import Marquee from 'components/marquee'
 import Desktop from 'components/desktop'
-// import Contact from 'components/contact'
+import Contact from 'components/contact'
 import Footer from 'components/footer'
 import useCount from 'hooks/useCount'
 import Head from 'components/head'
@@ -28,7 +28,7 @@ function Main(props) {
       <Head dynamic={seo} />
       <Marquee hero={hero} />
       <Desktop {...desktopProps} />
-      {/* <Contact /> */}
+      <Contact />
       <Footer />
     </Fragment>
   )
