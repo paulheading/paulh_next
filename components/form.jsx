@@ -30,12 +30,12 @@ function SubmitButton(props) {
   return <button {...submitProps}>{children}</button>
 }
 
-function Form(props) {
+function Form() {
   const inputProps = {
     name: 'subject',
   }
   return (
-    <form data-netlify="true" {...props}>
+    <form name="contact" method="POST" netlify>
       <TextInput {...inputProps}>Hey there!</TextInput>
       <SubmitButton>submit</SubmitButton>
     </form>

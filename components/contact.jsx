@@ -9,15 +9,15 @@ import Success from 'components/form/success'
 function Contact() {
   const [success, setSuccess] = useState(false)
 
-  const formProps = {
-    name: 'contact',
-    method: 'POST',
-    id: 'contact',
-    onSubmit: function (e) {
-      console.log(e.currentTarget.elements)
-      e.preventDefault()
-    },
-  }
+  // const formProps = {
+  //   name: 'contact',
+  //   method: 'POST',
+  //   id: 'contact',
+  //   onSubmit: function (e) {
+  //     console.log(e.currentTarget.elements)
+  //     e.preventDefault()
+  //   },
+  // }
 
   return (
     <div className={styles.container}>
