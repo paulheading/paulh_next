@@ -1,6 +1,5 @@
 import styles from 'styles/components/contact.module.scss'
 // import { useForm } from 'react-hook-form'
-import { useRouter } from 'next/router'
 import { useState } from 'react'
 
 import Window from 'components/window'
@@ -13,39 +12,31 @@ import Success from 'components/form/success'
 
 //   var body = [...event.currentTarget.elements]
 
-//   // body = body.map(({ name, value }) => encodeURIComponent(name) + '=' + encodeURIComponent(value)).join('&')
+//   body = body.map(({ name, value }) => encodeURIComponent(name) + '=' + encodeURIComponent(value)).join('&')
 
-//   // const method = 'POST'
-//   // const headers = { 'Content-Type': 'application/x-www-form-urlencoded' }
+//   const method = 'POST'
+//   const headers = { 'Content-Type': 'application/x-www-form-urlencoded' }
 
 //   console.log(body)
 
-//   return
-
-//   // fetch('/', {
-//   //   method,
-//   //   headers,
-//   //   body,
-//   // }).catch((error) => alert(error))
+//   fetch('/', {
+//     method,
+//     headers,
+//     body,
+//   }).catch((error) => alert(error))
 // }
 
 function Contact() {
-  const { pathname } = useRouter()
   const [success, setSuccess] = useState(false)
 
-  var action = '/?success=true'
-
-  if (pathname != '/') action = pathname + action
+  var action = '?success=true'
 
   const formProps = {
     'data-netlify': true,
     name: 'contact',
     method: 'POST',
     id: 'contact',
-    onSubmit: (event) => {
-      console.log('should submit')
-      event.preventDefault()
-    },
+    action,
   }
 
   return (

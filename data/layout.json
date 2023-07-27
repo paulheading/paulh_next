@@ -868,7 +868,7 @@
             "url": "https://open.spotify.com/artist/6aRJP31fKBf0jbvb6qYAGt",
             "name": "Iftin Band"
           },
-          "popularity": 15,
+          "popularity": 14,
           "release_date": "2019-12-13",
           "url": "https://open.spotify.com/track/2l8davPIbbdn8BxYgbkwtP",
           "name": "Sirmaqabe - No Secrets"
@@ -1183,7 +1183,7 @@
   },
   "npm": {
     "name": "barbican-reset",
-    "version": "2.12.0",
+    "version": "2.14.0",
     "downloads": 13844,
     "url": "https://www.npmjs.com/package/barbican-reset"
   }
