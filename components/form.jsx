@@ -34,8 +34,14 @@ function Form() {
   const inputProps = {
     name: 'subject',
   }
+
+  function onSubmit(event) {
+    event.preventDefault()
+    console.log(event.currentTarget.elements)
+  }
+
   return (
-    <form name="contact" method="POST" netlify>
+    <form name="contact" method="POST" data-netlify="true" onSubmit={onSubmit}>
       <TextInput {...inputProps}>Hey there!</TextInput>
       <SubmitButton>submit</SubmitButton>
     </form>
