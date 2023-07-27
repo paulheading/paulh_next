@@ -29,21 +29,6 @@ import Success from 'components/form/success'
 //   // }).catch((error) => alert(error))
 // }
 
-const handleSubmit = (event) => {
-  event.preventDefault()
-
-  const myForm = event.target
-  const formData = new FormData(myForm)
-
-  fetch('/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams(formData).toString(),
-  })
-    .then(() => console.log('Form successfully submitted'))
-    .catch((error) => alert(error))
-}
-
 function Contact() {
   const { pathname } = useRouter()
   const [success, setSuccess] = useState(false)
@@ -57,7 +42,10 @@ function Contact() {
     name: 'contact',
     method: 'POST',
     id: 'contact',
-    onSubmit: handleSubmit,
+    onSubmit: (event) => {
+      console.log('should submit')
+      event.preventDefault()
+    },
   }
 
   return (
