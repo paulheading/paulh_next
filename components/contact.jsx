@@ -1,21 +1,37 @@
-function handleSubmit(event) {
-  event.preventDefault()
+import styles from 'styles/components/contact.module.scss'
+import { useState } from 'react'
 
-  const myForm = event.target
-  const formData = new FormData(myForm)
+import Window from 'components/window'
 
-  fetch('/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams(formData).toString(),
-  })
-    .then(() => console.log('Form successfully submitted'))
-    .catch((error) => alert(error))
-}
+function Form(props) {
+  const { setSuccess } = props
 
-function Contact() {
+  function onSubmit(event) {
+    event.preventDefault()
+
+    const form = event.target
+    const formData = new FormData(form)
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => {
+        setSuccess(true)
+        setTimeout(() => setSuccess(false), 3000)
+      })
+      .catch((error) => alert(error))
+  }
+
+  const formProps = {
+    'data-netlify': true,
+    name: 'contact',
+    onSubmit,
+  }
+
   return (
-    <form name="contact" action="/success" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+    <form {...formProps}>
       <input type="hidden" name="form-name" value="contact" />
       <p>
         <label htmlFor="yourname">Your Name:</label>
@@ -32,6 +48,24 @@ function Contact() {
         <button type="submit">Send</button>
       </p>
     </form>
+  )
+}
+
+function Success() {
+  return <div>success</div>
+}
+
+function Contact() {
+  const [success, setSuccess] = useState(false)
+
+  const formProps = {
+    setSuccess,
+  }
+
+  return (
+    <div className={styles.container}>
+      <Window className={styles.window}>{!success ? <Form {...formProps} /> : <Success />}</Window>
+    </div>
   )
 }
 
