@@ -1,23 +1,67 @@
-import useCount from 'hooks/useCount'
-import { Fragment } from 'react'
+import Head from 'next/head'
+import Image from 'next/image'
+import styles from '../styles/Home.module.css'
 
-import Hero from 'components/hero'
-import Layout from 'layouts/main'
+function TextInput(props) {
+  const { children, name } = props
 
-import layout from 'data/layout.json'
+  const labelProps = {
+    htmlFor: name,
+  }
 
-function Home() {
-  var { projects } = layout
-  var heroes = projects.filter(({ hero }) => hero)
-  var count = useCount(heroes)
-  var hero = heroes[count]
+  const inputProps = {
+    placeholder: children,
+    type: 'text',
+    id: name,
+    name,
+  }
 
   return (
-    <Fragment>
-      <Hero hero={hero} />
-      <Layout />
-    </Fragment>
+    <div>
+      <label {...labelProps} />
+      <input {...inputProps} />
+    </div>
   )
 }
 
-export default Home
+function SubmitButton(props) {
+  const { children } = props
+
+  const submitProps = {
+    type: 'submit',
+  }
+
+  return <button {...submitProps}>{children}</button>
+}
+
+export default function Home() {
+  const inputProps = {
+    name: 'subject',
+  }
+
+  function onSubmit(event) {
+    var body = [...event.currentTarget.elements]
+
+    body = body.map(({ name, value }) => encodeURIComponent(name) + '=' + encodeURIComponent(value)).join('&')
+
+    const method = 'POST'
+    const headers = { 'Content-Type': 'application/x-www-form-urlencoded' }
+
+    console.log(body)
+
+    fetch('/', {
+      method,
+      headers,
+      body,
+    }).catch((error) => alert(error))
+
+    event.preventDefault()
+  }
+
+  return (
+    <form name="contact" method="POST" data-netlify="true" onSubmit={onSubmit}>
+      <TextInput {...inputProps}>Hey there!</TextInput>
+      <SubmitButton>submit</SubmitButton>
+    </form>
+  )
+}
