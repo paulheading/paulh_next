@@ -36,8 +36,6 @@ function Form() {
   }
 
   function onSubmit(event) {
-    event.preventDefault()
-
     var body = [...event.currentTarget.elements]
 
     body = body.map(({ name, value }) => encodeURIComponent(name) + '=' + encodeURIComponent(value)).join('&')
@@ -52,10 +50,12 @@ function Form() {
       headers,
       body,
     }).catch((error) => alert(error))
+
+    event.preventDefault()
   }
 
   return (
-    <form name="contact" method="POST" netlify onSubmit={onSubmit}>
+    <form name="contact" method="POST" data-netlify="true" onSubmit={onSubmit}>
       <TextInput {...inputProps}>Hey there!</TextInput>
       <SubmitButton>submit</SubmitButton>
     </form>
