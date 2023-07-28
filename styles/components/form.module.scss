@@ -1,0 +1,9 @@
+@import 'styles/global/mixins';
+
+.wrap {
+  padding-left: 1rem;
+
+  @include small-up {
+    padding-left: 2rem;
+  }
+}

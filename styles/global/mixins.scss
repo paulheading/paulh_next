@@ -76,19 +76,15 @@
 
 @mixin form_input {
   @include input-colors;
+  padding: 0.75rem 0.75rem 0.75rem 0;
   font-weight: $font-weight-bold;
   letter-spacing: -0.025rem;
-  padding-bottom: 0.75rem;
-  padding-right: 0.75rem;
-  padding-top: 0.75rem;
   font-family: inherit;
   font-size: inherit;
   border: none;
 
   @include large-up {
-    padding-bottom: 1rem;
-    padding-right: 1rem;
-    padding-top: 1rem;
+    padding: 1rem 1rem 1rem 0;
   }
 
   &:focus {

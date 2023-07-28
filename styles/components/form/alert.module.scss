@@ -1,0 +1,11 @@
+@import 'styles/global/mixins';
+
+.alert {
+  grid-column: 2;
+}
+
+.alert[data-error='true'] {
+  background-color: mistyrose;
+  padding: $padding-tag;
+  color: darkred;
+}
