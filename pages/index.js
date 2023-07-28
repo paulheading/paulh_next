@@ -1,6 +1,21 @@
+function handleSubmit(event) {
+  event.preventDefault()
+
+  const myForm = event.target
+  const formData = new FormData(myForm)
+
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => console.log('Form successfully submitted'))
+    .catch((error) => alert(error))
+}
+
 function Home() {
   return (
-    <form name="contact" action="/success" method="POST" data-netlify="true">
+    <form name="contact" action="/success" method="POST" data-netlify="true" onSubmit={handleSubmit}>
       <input type="hidden" name="form-name" value="contact" />
       <p>
         <label htmlFor="yourname">Your Name:</label>
@@ -19,22 +34,5 @@ function Home() {
     </form>
   )
 }
-
-function handleSubmit(event) {
-  event.preventDefault()
-
-  const myForm = event.target
-  const formData = new FormData(myForm)
-
-  fetch('/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams(formData).toString(),
-  })
-    .then(() => console.log('Form successfully submitted'))
-    .catch((error) => alert(error))
-}
-
-document.querySelector('form').addEventListener('submit', handleSubmit)
 
 export default Home
