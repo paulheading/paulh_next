@@ -1,4 +1,4 @@
-export default function Home() {
+function Home() {
   return (
     <form name="contact" action="/success" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="contact" />
@@ -19,3 +19,22 @@ export default function Home() {
     </form>
   )
 }
+
+function handleSubmit(event) {
+  event.preventDefault()
+
+  const myForm = event.target
+  const formData = new FormData(myForm)
+
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => console.log('Form successfully submitted'))
+    .catch((error) => alert(error))
+}
+
+document.querySelector('form').addEventListener('submit', handleSubmit)
+
+export default Home
