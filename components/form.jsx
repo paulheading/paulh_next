@@ -81,6 +81,7 @@ function Form(props) {
   }
 
   const fromProps = {
+    pattern: 
     placeholder: 'friendly@visitor.org',
     required: true,
     type: 'email',
