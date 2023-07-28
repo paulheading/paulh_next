@@ -1,0 +1,27 @@
+@import 'styles/global/mixins';
+
+.row {
+  @include form_row_content;
+  border-bottom: 1px solid $c-gray-5;
+  padding-bottom: $padding-row-hz;
+  padding-top: $padding-row-hz;
+
+  @include large-down {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+.tag_wrap {
+  padding-left: 1rem;
+}
+
+.tag {
+  background-color: $c-sky;
+  border-radius: 0.25rem;
+  padding: $padding-tag;
+  display: inline-block;
+  cursor: default;
+  color: black;
+}

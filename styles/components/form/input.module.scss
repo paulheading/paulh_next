@@ -1,0 +1,15 @@
+@import 'styles/global/mixins';
+
+.row {
+  @include form_row_content;
+  border-bottom: 1px solid $c-gray-5;
+}
+
+.input {
+  border: 2px solid transparent;
+  @include form_input;
+}
+
+.input[data-error='true'] {
+  border-color: red;
+}
