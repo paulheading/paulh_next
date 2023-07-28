@@ -9,10 +9,10 @@
 .textarea {
   @include form_input;
   display: block;
-  height: 8rem;
+  height: 5rem;
   resize: none;
 
   @include large-up {
-    height: 18rem;
+    height: 15rem;
   }
 }

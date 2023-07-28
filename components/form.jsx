@@ -59,7 +59,7 @@ function Form(props) {
     })
       .then(() => {
         setSuccess(true)
-        // setTimeout(() => setSuccess(false), 3000)
+        setTimeout(() => setSuccess(false), 3000)
       })
       .catch((error) => alert(error))
   }
