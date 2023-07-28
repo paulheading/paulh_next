@@ -6,7 +6,7 @@ function FormEmail(props) {
   return (
     <div className={styles.row}>
       <div className={styles.label}>{children}</div>
-      <div className={styles.tag_wrap}>
+      <div>
         <div className={styles.tag}>{placeholder}</div>
       </div>
     </div>

@@ -1,49 +1,23 @@
 import styles from 'styles/components/form.module.scss'
 import { useEffect } from 'react'
+import { addInputListener, checkSubmitError } from 'scripts/helpers/error'
 
 import FormEmail from 'components/form/email'
 import FormInput from 'components/form/input'
 import FormTextArea from 'components/form/textarea'
 import FormSubmit from 'components/form/submit'
 
-function inputError(input, error) {
-  if (input.validity.valid) {
-    input.removeAttribute('data-error')
-    error.removeAttribute('data-error')
-    error.textContent = ''
-  } else {
-    showError(input, error)
-  }
-}
-
-function showError(input, error) {
-  if (input.validity.valueMissing) {
-    error.textContent = 'You need to enter an email address.'
-  } else if (input.validity.typeMismatch) {
-    error.textContent = 'Entered value needs to be an email address.'
-  }
-
-  input.setAttribute('data-error', true)
-  error.setAttribute('data-error', true)
-}
-
-function submitError(event, input, error) {
-  if (!input.validity.valid) {
-    showError(input, error)
-    event.preventDefault()
-  }
-}
-
 function Form(props) {
   const { setSuccess } = props
 
   useEffect(function () {
-    const form = document.querySelector('form')
-    const from = document.getElementById('from')
-    const from_error = document.getElementById('from_error')
+    const items = ['subject', 'from', 'message']
 
-    from.addEventListener('input', () => inputError(from, from_error))
-    form.addEventListener('submit', (event) => submitError(event, from, from_error))
+    const submit = document.getElementById('submit')
+
+    items.forEach(addInputListener)
+
+    submit.addEventListener('click', (event) => items.forEach((title) => checkSubmitError(event, title)))
   }, [])
 
   function onSubmit(event) {
@@ -66,6 +40,7 @@ function Form(props) {
 
   const formProps = {
     'data-netlify': true,
+    noValidate: true,
     name: 'contact',
     onSubmit,
   }
@@ -77,19 +52,21 @@ function Form(props) {
   const subjectProps = {
     placeholder: 'Hey there!',
     name: 'subject',
+    required: true,
     type: 'text',
   }
 
   const fromProps = {
-    pattern: 
     placeholder: 'friendly@visitor.org',
     required: true,
     type: 'email',
+    minLength: 5,
     name: 'from',
   }
 
   const messageProps = {
     name: 'message',
+    required: true,
   }
 
   return (

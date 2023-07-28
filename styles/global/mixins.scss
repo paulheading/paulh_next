@@ -68,7 +68,7 @@
 
 @mixin form_row_content {
   @include large-up {
-    grid-template-columns: 7rem auto;
+    grid-template-columns: 8rem auto;
     align-items: center;
     display: grid;
   }
@@ -76,15 +76,15 @@
 
 @mixin form_input {
   @include input-colors;
+  padding: 0.75rem 0.75rem 0.75rem 0;
   font-weight: $font-weight-bold;
   letter-spacing: -0.025rem;
   font-family: inherit;
   font-size: inherit;
-  padding: 0.75rem;
   border: none;
 
   @include large-up {
-    padding: 1rem;
+    padding: 1rem 1rem 1rem 0;
   }
 
   &:focus {

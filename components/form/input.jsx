@@ -3,7 +3,7 @@ import styles from 'styles/components/form/input.module.scss'
 import FormAlert from 'components/form/alert'
 
 function FormInput(props) {
-  const { children, name, placeholder, type, required = false, pattern = null } = props
+  const { children, name, placeholder, type, required = false, minLength = null } = props
 
   const labelProps = {
     className: styles.label,
@@ -11,7 +11,7 @@ function FormInput(props) {
   }
 
   const inputProps = {
-    pattern: pattern ? pattern : null,
+    minLength: minLength ? minLength : null,
     className: styles.input,
     placeholder,
     required,

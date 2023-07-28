@@ -1,18 +1,13 @@
 @import 'styles/global/mixins';
 
-.label {
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-  display: block;
-}
-
 .textarea {
   @include form_input;
+  margin-top: 1rem;
   display: block;
-  height: 5rem;
+  height: 8rem;
   resize: none;
 
   @include large-up {
-    height: 15rem;
+    height: 18rem;
   }
 }
