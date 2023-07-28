@@ -1,0 +1,23 @@
+@import 'styles/global/variables';
+
+.desktop {
+  text-align: center;
+}
+
+.topbar {
+  border-bottom: 0.25rem $c-teal--xdark solid;
+  background-color: $c-teal--dark;
+  color: $c-teal--xxdark;
+  padding: 0.5rem;
+}
+
+.topbar_display {
+  display: inline-flex;
+  align-items: center;
+}
+
+.topbar_icon {
+  justify-content: center;
+  display: inline-flex;
+  width: 5rem;
+}

@@ -1,0 +1,7 @@
+@import 'styles/global/mixins';
+
+.container {
+  max-width: $max-width-wrap;
+  margin-right: auto;
+  margin-left: auto;
+}

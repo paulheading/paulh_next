@@ -1,0 +1,8 @@
+@mixin invisible-button {
+  background-color: transparent;
+  font-size: inherit;
+  cursor: pointer;
+  color: inherit;
+  border: none;
+  padding: 0;
+}

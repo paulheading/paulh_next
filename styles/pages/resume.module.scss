@@ -1,0 +1,11 @@
+@import 'styles/global/mixins';
+
+.wrap_copy {
+  @include medium-down {
+    margin-bottom: 1rem;
+  }
+}
+
+.copy_title {
+  margin-bottom: 0;
+}

@@ -1,0 +1,19 @@
+@mixin LabelColor($key, $value) {
+  .solid_label.#{$key} {
+    background-color: $value;
+    border: 1px solid $value;
+  }
+  .outline_label.#{$key} {
+    border: 1px solid $value;
+    color: $value;
+  }
+}
+
+@mixin LabelSize($key, $value) {
+  .solid_label.#{$key} {
+    font-size: $value;
+  }
+  .outline_label.#{$key} {
+    font-size: $value;
+  }
+}

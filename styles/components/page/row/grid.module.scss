@@ -1,0 +1,15 @@
+@import 'styles/global/mixins';
+@import 'styles/components/page/row/button.module';
+
+.container {
+  position: relative;
+}
+
+.wrap {
+  @include medium-up {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.75rem;
+    row-gap: 1.25rem;
+    display: grid;
+  }
+}

@@ -1,0 +1,49 @@
+@import 'styles/global/mixins';
+
+@mixin setup-button {
+  position: absolute;
+  text-align: center;
+
+  @include medium-down {
+    justify-content: center;
+    display: flex;
+    right: 0;
+    left: 0;
+  }
+
+  @include medium-up {
+    top: 6.75rem;
+  }
+}
+
+.prev_button {
+  @include setup-button;
+
+  @include medium-down {
+    top: -1rem;
+  }
+
+  @include medium-up {
+    left: -$margin-button;
+  }
+}
+
+.prev_button button {
+  @include row-button('prev', 1.25rem, true);
+}
+
+.next_button {
+  @include setup-button;
+
+  @include medium-down {
+    bottom: -3.25rem;
+  }
+
+  @include medium-up {
+    right: -$margin-button;
+  }
+}
+
+.next_button button {
+  @include row-button('next', 1.25rem, true);
+}

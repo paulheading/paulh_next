@@ -1,0 +1,41 @@
+@import 'styles/global/mixins';
+
+.canvas_container {
+  background-color: $c-teal;
+  padding: $padding-canvas;
+  overflow: hidden;
+}
+
+.canvas_wrap {
+  justify-content: center;
+  display: grid;
+
+  @include medium-up {
+    justify-content: space-between;
+    height: $height-section;
+    display: flex;
+  }
+}
+
+.canvas_wrap + .credit_wrap {
+  margin-top: $padding-canvas;
+}
+
+.windows {
+  position: relative;
+  min-width: 16rem;
+
+  @include medium-down {
+    height: $height-section - 2rem;
+  }
+}
+
+.credit_link {
+  @include folder_words;
+  font-size: $h6-font-size;
+  border-radius: 0.25rem;
+
+  @include focus {
+    @include folder_words--focus;
+  }
+}

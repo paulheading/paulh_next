@@ -1,0 +1,33 @@
+@mixin input-colors {
+  &,
+  &::placeholder {
+    color: inherit;
+  }
+
+  @include focus {
+    outline: none;
+
+    &,
+    &::placeholder {
+      color: black;
+    }
+  }
+}
+
+@mixin hero-colors(
+  $a: hsl(230, 100%, 60%),
+  $b: hsl(350, 100%, 60%),
+  $c: hsl(330, 100%, 70%)
+) {
+  background: linear-gradient(0deg, $a 0%, $b 100%);
+
+  a {
+    background-color: $c;
+
+    @include focus-visible {
+      background-color: black;
+      outline: none;
+      color: $c;
+    }
+  }
+}
