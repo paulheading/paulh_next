@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <form name="contact" method="POST" data-netlify="true">
+    <form name="contact" data-netlify="true">
       <p>
         <label>
           Your Name: <input type="text" name="name" />
