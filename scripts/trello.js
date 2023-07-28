@@ -4,7 +4,6 @@ import { contains } from './helpers.js'
 import get from './helpers/get.js'
 
 const getTrello = {}
-const mapTrello = {}
 
 /**
  * @function getTrelloJSON
