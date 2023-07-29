@@ -1,3 +1,12 @@
+@mixin label-setup {
+  border: 1px solid dimgrey;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  max-width: 15rem;
+  margin: 0.25rem;
+}
+
 @mixin LabelColor($key, $value) {
   .solid_label.#{$key} {
     background-color: $value;

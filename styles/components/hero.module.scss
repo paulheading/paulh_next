@@ -6,11 +6,6 @@
   @include HeroLink($key, map-get($value, svg));
 }
 
-@mixin grid {
-  place-items: center;
-  display: grid;
-}
-
 .banner {
   @include small-down {
     height: $height-banner + ($border-banner-width * 2);
@@ -18,10 +13,11 @@
 }
 
 .container {
-  @include grid;
   background-color: lightgrey;
+  place-items: center;
   text-align: center;
   overflow: hidden;
+  display: grid;
   height: 24rem;
 
   @include small-up {

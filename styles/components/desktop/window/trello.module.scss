@@ -1,12 +1,5 @@
 @import 'styles/global/mixins';
 
-@mixin header {
-  justify-content: space-between;
-  padding: $padding-trello;
-  align-items: center;
-  display: flex;
-}
-
 .outer {
   position: absolute;
   text-align: left;
@@ -22,7 +15,10 @@
 }
 
 .header {
-  @include header;
+  justify-content: space-between;
+  padding: $padding-trello;
+  align-items: center;
+  display: flex;
 }
 
 .row + .row {

@@ -1,13 +1,5 @@
 @import 'styles/global/mixins';
 
-@mixin double-row {
-  @include medium-up {
-    grid-template-columns: 2fr 1fr;
-    column-gap: $padding-row;
-    display: grid;
-  }
-}
-
 .container {
   background-color: white;
   position: relative;
