@@ -84,7 +84,7 @@
       ],
       "actions": [],
       "local": {
-        "summary": "<p>Realised I wanted to build things for a living. Learnt how to use Javascript.</p>",
+        "summary": "Realised I wanted to build things for a living. Learnt how to use Javascript.",
         "desc": "<p>Realised I wanted to build things for a living. Learnt how to use Javascript.</p>"
       }
     },
@@ -172,7 +172,7 @@
       ],
       "actions": [],
       "local": {
-        "summary": "<p>Realised how I could get paid to design things. Learnt how to use InDesign.</p>",
+        "summary": "Realised how I could get paid to design things. Learnt how to use InDesign.",
         "desc": "<p>Realised how I could get paid to design things. Learnt how to use InDesign.</p>"
       }
     },
@@ -260,7 +260,7 @@
       ],
       "actions": [],
       "local": {
-        "summary": "<p>Realised I wanted to design things for a living. Learnt how to use Photoshop.</p>",
+        "summary": "Realised I wanted to design things for a living. Learnt how to use Photoshop.",
         "desc": "<p>Realised I wanted to design things for a living. Learnt how to use Photoshop.</p>"
       }
     }
@@ -344,7 +344,7 @@
       "attachments": [],
       "actions": [],
       "local": {
-        "summary": "<p><a href=\"https://en.wikipedia.org/wiki/Front-end_web_development\">Front-end</a> Designer and Developer working for the <a href=\"https://barbican.org.uk\">Barbican</a> in London. I create <a href=\"https://www.figma.com/blog/how-to-wireframe/\">wireframes</a> and <a href=\"https://www.uiprep.com/blog/ultimate-guide-to-prototyping-in-figma\">prototypes</a> in <a href=\"https://figma.com\">Figma</a>, and build things in <a href=\"https://vuejs.org\">Vue.js</a>. Outside of this role, I also like to build in <a href=\"https://nextjs.org\">Next.js</a></p>",
+        "summary": "Front-end Designer and Developer working for the Barbican in London. I create wireframes and prototypes in Figma, and build things in Vue.js. Outside of this role, I also like to build in Next.js",
         "desc": "<h1 id=\"frontenddesigneranddeveloper\">Front-end Designer and Developer</h1>\n<h3 id=\"whatstherole\">What's the Role?</h3>\n<p><a href=\"https://en.wikipedia.org/wiki/Front-end_web_development\">Front-end</a> Designer and Developer working for the <a href=\"https://barbican.org.uk\">Barbican</a> in London. I create <a href=\"https://www.figma.com/blog/how-to-wireframe/\">wireframes</a> and <a href=\"https://www.uiprep.com/blog/ultimate-guide-to-prototyping-in-figma\">prototypes</a> in <a href=\"https://figma.com\">Figma</a>, and build things in <a href=\"https://vuejs.org\">Vue.js</a>. Outside of this role, I also like to build in <a href=\"https://nextjs.org\">Next.js</a></p>",
         "pathname": "front-end-designer-and-developer",
         "url": "/role/front-end-designer-and-developer"
@@ -428,7 +428,7 @@
       "attachments": [],
       "actions": [],
       "local": {
-        "summary": "<p>In my previous role, I created digital design content for marketing campaigns at the Barbican in London. I was also manager to one other Designer.</p>",
+        "summary": "In my previous role, I created digital design content for marketing campaigns at the Barbican in London. I was also manager to one other Designer.",
         "desc": "<p>In my previous role, I created digital design content for marketing campaigns at the Barbican in London. I was also manager to one other Designer.</p>",
         "pathname": "design-manager",
         "url": "/role/design-manager"
@@ -512,7 +512,7 @@
       "attachments": [],
       "actions": [],
       "local": {
-        "summary": "<p>I created digital design content for marketing campaigns at the Barbican in London.</p>",
+        "summary": "I created digital design content for marketing campaigns at the Barbican in London.",
         "desc": "<p>I created digital design content for marketing campaigns at the Barbican in London.</p>",
         "pathname": "designer",
         "url": "/role/designer"

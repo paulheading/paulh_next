@@ -1,3 +1,4 @@
+import { stripHtml } from 'string-strip-html'
 import showdown from 'showdown'
 import { list } from './variables.js'
 
@@ -32,7 +33,10 @@ create.snippet = function (target, position) {
  * @summary If possible, create text snippet from array position 0
  * @param {string} target - Trello markup
  */
-create.summary = (target) => create.snippet(target, 0)
+create.summary = function (target) {
+  target = create.snippet(target, 0)
+  return stripHtml(target).result
+}
 
 /**
  * @summary If possible, create text snippet from array position 1

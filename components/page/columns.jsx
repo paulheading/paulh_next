@@ -2,7 +2,6 @@ import styles from 'styles/components/page/columns.module.scss'
 import { chop, create } from 'scripts/helpers'
 import { CreateLink } from 'components/marquee'
 import Label from 'components/page/label'
-import parse from 'html-react-parser'
 import { useState } from 'react'
 
 function PrintDue(value, variant) {
@@ -28,11 +27,9 @@ function Columns(props) {
   var { variant, labels, local } = props
   var { summary } = local
 
-  summary = parse(summary)
-
   if (!variant) variant = 'default'
 
-  function ProjectLabels({ name, color, variant }, index) {
+  function ProjectLabels({ name, color }, index) {
     const props = {
       color: color ? color : labels[0].color,
       variant: !color ? 'outline' : 'solid',
@@ -73,7 +70,7 @@ function Columns(props) {
       </div>
       <div className={styles.desc_wrap}>
         {chop.content(clicked, summary)}
-        {chop.needed(summary.props.children) && <ToggleButton />}
+        {chop.needed(summary) && <ToggleButton />}
       </div>
     </div>
   )

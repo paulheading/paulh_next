@@ -27,7 +27,8 @@
     "react-hook-form": "^7.41.1",
     "react-markdown": "^8.0.7",
     "sass": "^1.57.1",
-    "showdown": "^2.1.0"
+    "showdown": "^2.1.0",
+    "string-strip-html": "^13.4.2"
   },
   "devDependencies": {
     "eslint": "^8.45.0",
