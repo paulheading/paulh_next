@@ -11,3 +11,7 @@
     height: 18rem;
   }
 }
+
+.textarea + .alert[data-error='true'] {
+  border-right: none;
+}

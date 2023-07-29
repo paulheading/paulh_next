@@ -1178,13 +1178,13 @@
   "gem": {
     "name": "futuro",
     "version": "1.1.8",
-    "downloads": 177894,
+    "downloads": 177897,
     "url": "https://rubygems.org/gems/futuro"
   },
   "npm": {
     "name": "barbican-reset",
     "version": "2.14.0",
-    "downloads": 13944,
+    "downloads": 13972,
     "url": "https://www.npmjs.com/package/barbican-reset"
   }
 }

@@ -1,11 +1,12 @@
 @import 'styles/global/mixins';
 
 .alert {
-  grid-column: 2;
+  font-size: $h5-font-size;
 }
 
 .alert[data-error='true'] {
   background-color: mistyrose;
   padding: $padding-tag;
+  border: 1px solid;
   color: darkred;
 }

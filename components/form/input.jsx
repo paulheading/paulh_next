@@ -21,6 +21,7 @@ function FormInput(props) {
   }
 
   const alertProps = {
+    className: styles.alert,
     'aria-live': 'polite',
     id: name + '_error',
   }

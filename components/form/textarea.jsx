@@ -22,14 +22,15 @@ function FormTextArea(props) {
   }
 
   const alertProps = {
+    className: styles.alert,
     'aria-live': 'polite',
     id: name + '_error',
   }
 
   return (
-    <div>
+    <div className={styles.row}>
       <label {...labelProps}>{children}</label>
-      <textarea {...textareaProps} minLength={1} />
+      <textarea {...textareaProps} />
       <FormAlert {...alertProps} />
     </div>
   )

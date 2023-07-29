@@ -2,14 +2,30 @@
 
 .row {
   @include form_row_content;
-  border-bottom: 1px solid $c-gray-5;
+
+  @include large-up {
+    border-bottom: 1px solid $c-gray-5;
+  }
+
+  @include large-down {
+    padding-top: 0.75rem;
+  }
 }
 
 .input {
-  border: 2px solid transparent;
   @include form_input;
 }
 
-.input[data-error='true'] {
-  border-color: red;
+.input + .alert {
+  @include large-up {
+    grid-column: 2;
+  }
+}
+
+.input + .alert[data-error='true'] {
+  border-right: none;
+
+  @include large-up {
+    border-bottom: none;
+  }
 }
