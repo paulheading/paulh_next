@@ -20,7 +20,7 @@ function Project(props) {
   const layoutProps = {
     seo: {
       title: 'Paul Heading | Project | ' + name,
-      desc: seo.strip_html(local.desc),
+      desc: local.summary,
     },
   }
 

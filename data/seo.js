@@ -3,19 +3,6 @@ const job = {
   description: 'I work in the Digital Products team at the Barbican. I spend my time building and designing better website-based experiences.',
 }
 
-function strip_html(value) {
-  // split desc at first open paragraph tag
-  value = value.split('<p')[1].slice(1)
-
-  // split remaining desc at close paragraph tag
-  value = value.split('p>')[0].slice(0, -2)
-
-  // remove anchor tags from desc
-  value = value.replace(/<\/?a[^>]*>/g, '')
-
-  return value
-}
-
 const title = (value, append = true) => (append ? 'Paul Heading | ' + value + ' | ' + job.title : value)
 
 function keywords(value) {
@@ -30,7 +17,6 @@ export default {
   job,
   title,
   keywords,
-  strip_html,
   home: {
     title: title('Portfolio'),
     keywords: keywords('portfolio'),

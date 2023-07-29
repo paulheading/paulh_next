@@ -1,6 +1,5 @@
 import styles from 'styles/pages/project.module.scss'
 import { Fragment } from 'react'
-import seo from 'data/seo'
 
 import Layout from 'layouts/main'
 import Content from 'components/content'
@@ -20,7 +19,7 @@ function Role(props) {
   const layoutProps = {
     seo: {
       title: 'Paul Heading | Role | ' + name,
-      desc: seo.strip_html(local.desc),
+      desc: local.summary,
     },
   }
 
