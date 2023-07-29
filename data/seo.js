@@ -25,7 +25,7 @@ export default {
   about: {
     title: title('About'),
     keywords: keywords(),
-    desc: "I built this site using Next.js, GSAP for animations, Netlify for form handling and several external api's. I use Trello as my CMS and pull data from Spotify, Hashnode and Github.",
+    desc: `Hey I'm Paul, a Front-end Designer and Developer. I've been a Developer since 2020 and a Designer for over 10 years. I work in the Digital Products team at the Barbican and spend my time building/designing better website-based experiences. Before 2020, I worked as a Designer in the Barbican Design Team.`,
   },
   resume: {
     title: title('Resume'),
