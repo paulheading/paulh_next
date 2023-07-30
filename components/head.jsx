@@ -1,36 +1,17 @@
 import NextHead from 'next/head'
-import { useRouter } from 'next/router'
 import seo from 'data/seo'
+import personal from 'data/personal'
 
-function Head({ dynamic }) {
-  const { asPath } = useRouter()
-
-  function metadata(pathname) {
-    pathname = pathname.slice(1)
-    if (pathname === '') return seo['home']
-    if (pathname === '404') return seo['notfound']
-
-    return seo[pathname] ? seo[pathname] : seo['notfound']
-  }
-
-  const meta = metadata(asPath)
-
-  var title = meta.title
-  var keywords = meta.keywords
-  var desc = meta.desc
-
-  if (dynamic) {
-    if (dynamic.title) title = dynamic.title
-    if (dynamic.keywords) keywords = dynamic.keywords
-    if (dynamic.desc) desc = dynamic.desc
-  }
+function Head(props) {
+  const { dynamic } = props
+  const { title, keywords, desc } = dynamic
 
   return (
     <NextHead>
       <title>{title ? title : seo.title('Portfolio')}</title>
       {keywords && <meta name="keywords" content={keywords} />}
       {desc && <meta name="description" content={desc} />}
-      <meta name="author" content="Paul Heading" />
+      <meta name="author" content={personal.name} />
       <link rel="icon" href="/favicon.png" />
     </NextHead>
   )
