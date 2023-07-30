@@ -848,7 +848,7 @@
             "url": "https://open.spotify.com/artist/1ooAqaFu4Ac3BO2HpL4V2R",
             "name": "Henrik Schwarz"
           },
-          "popularity": 32,
+          "popularity": 31,
           "release_date": "2020-03-20",
           "url": "https://open.spotify.com/track/7GA49BEANCELzwyBxQVxU1",
           "name": "Come Together"
@@ -1000,7 +1000,7 @@
             "url": "https://open.spotify.com/artist/0Dy94lW3txJhWQHqNXP1BT",
             "name": "Laura Mvula"
           },
-          "popularity": 44,
+          "popularity": 43,
           "release_date": "2021-07-02",
           "url": "https://open.spotify.com/track/32YlBIj8qDpyXgsLJ4MfwR",
           "name": "Got Me"
@@ -1162,7 +1162,7 @@
             "url": "https://open.spotify.com/artist/6RQoLyY1nkArRcNc3sE86m",
             "name": "Ora the Molecule"
           },
-          "popularity": 30,
+          "popularity": 29,
           "release_date": "2021-07-23",
           "url": "https://open.spotify.com/track/0vydtoDOsW0qRhmFEHdyTT",
           "name": "Creator"
@@ -1184,7 +1184,7 @@
   "npm": {
     "name": "barbican-reset",
     "version": "2.14.0",
-    "downloads": 13972,
+    "downloads": 14202,
     "url": "https://www.npmjs.com/package/barbican-reset"
   }
 }
