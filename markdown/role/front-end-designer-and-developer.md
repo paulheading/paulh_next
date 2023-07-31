@@ -12,6 +12,8 @@
 
 - ⏱️ Working as part of an Agile environment and estimating deadlines within a fortnightly workflow
 - 🗣️ Presenting at fortnightly demos to staff across the organisation
+- 🗣️ Beta testing and responding to user feedback
+- 👨‍🔬 Designing more inclusive and accessible online experiences 
 - 🎨 Designing wireframes and prototypes with Figma
 - 💻 Building functionality with Vue.js
 - 🚀 Animating user interactions with GSAP
