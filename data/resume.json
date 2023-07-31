@@ -377,8 +377,8 @@
       "checkItemStates": [],
       "closed": false,
       "dueComplete": true,
-      "dateLastActivity": "2021-04-20T16:51:30.630Z",
-      "desc": "In my previous role, I created digital design content for marketing campaigns at the Barbican in London. I was also manager to one other Designer.",
+      "dateLastActivity": "2023-07-31T20:10:18.279Z",
+      "desc": "```\nI worked in the [Barbican Design Studio](https://www.creativelivesinprogress.com/article/barbican), designing digital content for marketing campaigns, as well as managing one other Designer.\n\n---\n\n# Design Manager\n\n### What's the Role?\n\nI worked in the [Barbican Design Studio](https://www.creativelivesinprogress.com/article/barbican), designing digital content for marketing campaigns, as well as managing one other Designer.\n\n### What does this include?\n\n- 🎞️ Creating cinema trailers with Adobe After Effects\n- 🚀 Animating HTML 5 advertising with GSAP\n- 🎨 Designing layouts and concepts with Sketch\n- 👨‍💻 Managing workflow with Trello\n```",
       "descData": {
         "emoji": {}
       },
@@ -428,8 +428,8 @@
       "attachments": [],
       "actions": [],
       "local": {
-        "summary": "In my previous role, I created digital design content for marketing campaigns at the Barbican in London. I was also manager to one other Designer.",
-        "desc": "<p>In my previous role, I created digital design content for marketing campaigns at the Barbican in London. I was also manager to one other Designer.</p>",
+        "summary": "I worked in the Barbican Design Studio, designing digital content for marketing campaigns, as well as managing one other Designer.",
+        "desc": "<h1 id=\"designmanager\">Design Manager</h1>\n<h3 id=\"whatstherole\">What's the Role?</h3>\n<p>I worked in the <a href=\"https://www.creativelivesinprogress.com/article/barbican\">Barbican Design Studio</a>, designing digital content for marketing campaigns, as well as managing one other Designer.</p>\n<h3 id=\"whatdoesthisinclude\">What does this include?</h3>\n<ul>\n<li>🎞️ Creating cinema trailers with Adobe After Effects</li>\n<li>🚀 Animating HTML 5 advertising with GSAP</li>\n<li>🎨 Designing layouts and concepts with Sketch</li>\n<li>👨‍💻 Managing workflow with Trello</li>\n</ul>",
         "pathname": "design-manager",
         "url": "/role/design-manager"
       }
