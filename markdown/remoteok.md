@@ -6,8 +6,8 @@ I love building things, solving problems 🤓 and making a difference. I've alwa
 
 I joined the Barbican as a Designer in 2013, and moved into digital design, creating trailers for the in-house cinemas and animating HTML5 adverts.
 
-My portfolio is made from a combination of Next_js and a few external APIs. I use Trello to organise my case studies and pull some playlists from Spotify.
+My portfolio is made from a combination of NextJS and a few external APIs. I use Trello to organise my case studies and pull some playlists from Spotify.
 
-I'm currently building an events management app in Vue 3 for the Barbican and recently finished building https://sparkthecannon.com (also Next_js).
+I'm currently building an events management app in Vue 3 for the Barbican and recently finished building https://sparkthecannon.com (also NextJS).
 
 Please take a look at my resume page https://paulh.biz/resume for more examples.

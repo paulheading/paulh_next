@@ -970,7 +970,7 @@
             "url": "https://open.spotify.com/artist/4GZ18L0i6k1mxAjo3GzINM",
             "name": "Lou Hayter"
           },
-          "popularity": 23,
+          "popularity": 22,
           "release_date": "2021-05-28",
           "url": "https://open.spotify.com/track/2nJGzWo4AL574tQCvPaS9z",
           "name": "My Baby Just Cares for Me"
@@ -980,7 +980,7 @@
             "url": "https://open.spotify.com/artist/6SsTlCsuCYleNza6xGwynu",
             "name": "Agnes"
           },
-          "popularity": 49,
+          "popularity": 48,
           "release_date": "2021-10-22",
           "url": "https://open.spotify.com/track/7f0SiAYG8XjOoQyfGvgbLA",
           "name": "Fingers Crossed"
@@ -1082,7 +1082,7 @@
             "url": "https://open.spotify.com/artist/370nbSkMB9kDWyTypwWYak",
             "name": "Haruomi Hosono"
           },
-          "popularity": 35,
+          "popularity": 34,
           "release_date": "1978",
           "url": "https://open.spotify.com/track/6EN8xSFfwNPy3W3BD4hCLH",
           "name": "SPORTS MEN (2018 Yoshinori Sunahara Remastering)"
@@ -1178,13 +1178,13 @@
   "gem": {
     "name": "futuro",
     "version": "1.1.8",
-    "downloads": 177897,
+    "downloads": 178013,
     "url": "https://rubygems.org/gems/futuro"
   },
   "npm": {
     "name": "barbican-reset",
     "version": "2.14.0",
-    "downloads": 14202,
+    "downloads": 14195,
     "url": "https://www.npmjs.com/package/barbican-reset"
   }
 }
