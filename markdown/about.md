@@ -4,7 +4,7 @@ Hey 👋 I'm Paul, a Front-end Designer and Developer.
 
 I've been a Developer since 2020 and a Designer for over 10 years. I work in the **Digital Products** team at the [Barbican](https://barbican.org.uk) and spend my time building/designing better website-based experiences.
 
-Before 2020, I worked as a [Designer](https://www.creativelivesinprogress.com/article/paul-heading) 👨‍🎨 in the Barbican [Design Team](https://www.creativelivesinprogress.com/article/barbican).
+Before 2020, I worked as a [Designer](https://www.creativelivesinprogress.com/article/paul-heading) 👨‍🎨 in the [Barbican Design Studio](https://www.creativelivesinprogress.com/article/barbican).
 
 ### Why I do this
 

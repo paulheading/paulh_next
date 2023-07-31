@@ -1,21 +1,20 @@
 
-I worked in the [Barbican Design Studio](https://www.creativelivesinprogress.com/article/barbican), designing digital content for marketing campaigns, as well as managing one other Designer.
+I worked in the [Barbican Design Studio](https://www.creativelivesinprogress.com/article/paul-heading) designing digital content for marketing campaigns.
 
 ---
 
-# Design Manager
+# Junior Designer
 
 ### What's the Role?
 
-I worked in the [Barbican Design Studio](https://www.creativelivesinprogress.com/article/barbican), designing digital content for marketing campaigns, as well as managing one other Designer.
+I worked in the [Barbican Design Studio](https://www.creativelivesinprogress.com/article/paul-heading) designing digital content for marketing campaigns.
 
 ### What does this include?
 
 - 🗣️ Discussing and responding to design briefs with the Marketing team
-- 🎞️ Creating cinema trailers with Adobe After Effects
-- 🚀 Animating HTML 5 advertising with GSAP
+- 📺 Creating plasma trailers with Adobe After Effects
+- 🚀 Animating online advertising with Adobe Photoshop
 - 🎨 Designing layouts and concepts with Sketch
-- 👨‍💻 Managing workflow with Trello
 
 <!-- ### What are the interesting parts?
 
