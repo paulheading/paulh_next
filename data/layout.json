@@ -828,7 +828,7 @@
             "url": "https://open.spotify.com/artist/7LTSTQkL7iK7zndjFQgHQo",
             "name": "O'Flynn"
           },
-          "popularity": 33,
+          "popularity": 32,
           "release_date": "2019-09-06",
           "url": "https://open.spotify.com/track/1SMLoRfenhQJjL4fbimctZ",
           "name": "Aletheia"
@@ -838,7 +838,7 @@
             "url": "https://open.spotify.com/artist/2dOnTAoXrpBwYAo1qIbemO",
             "name": "Steam Down"
           },
-          "popularity": 29,
+          "popularity": 28,
           "release_date": "2019-11-08",
           "url": "https://open.spotify.com/track/3a9BypAqVxHNCZgHQXfeG7",
           "name": "Free My Skin"
@@ -858,7 +858,7 @@
             "url": "https://open.spotify.com/artist/0uo6UbyUYXbG4xBT7vBGSx",
             "name": "Wilma Archer"
           },
-          "popularity": 23,
+          "popularity": 22,
           "release_date": "2020-04-03",
           "url": "https://open.spotify.com/track/2C5Q2WNxzaW6NTucwChrAr",
           "name": "Cheater"
@@ -940,7 +940,7 @@
             "url": "https://open.spotify.com/artist/6nbtlXRy0S6adYpDVoRdNi",
             "name": "Anna B Savage"
           },
-          "popularity": 23,
+          "popularity": 22,
           "release_date": "2021-01-29",
           "url": "https://open.spotify.com/track/4oUBPVqmxoP5u9HeXLU6To",
           "name": "Corncrakes"
@@ -950,7 +950,7 @@
             "url": "https://open.spotify.com/artist/5K9Px0eeCuYatmBGFfhSOA",
             "name": "Orlando Weeks"
           },
-          "popularity": 21,
+          "popularity": 20,
           "release_date": "2021-06-16",
           "url": "https://open.spotify.com/track/0Zga9iWiTp760vRHHLNxFF",
           "name": "Big Skies, Silly Faces"
@@ -1020,7 +1020,7 @@
             "url": "https://open.spotify.com/artist/5R9d1YP5jtBw2IrQItGzQI",
             "name": "Michael Mayer"
           },
-          "popularity": 23,
+          "popularity": 22,
           "release_date": "2021-06-04",
           "url": "https://open.spotify.com/track/0x1eIudX2mUXc28RujjNl5",
           "name": "Brainwave Technology"
@@ -1030,7 +1030,7 @@
             "url": "https://open.spotify.com/artist/1YvLqwm8xl6ENUT3KK6XMj",
             "name": "audiobooks"
           },
-          "popularity": 34,
+          "popularity": 33,
           "release_date": "2021-10-01",
           "url": "https://open.spotify.com/track/56CpzZPbczcpj3WGu2KYZ9",
           "name": "The Doll"
@@ -1072,7 +1072,7 @@
             "url": "https://open.spotify.com/artist/4rqegcqfzES4oBRh4n8TM1",
             "name": "Ezéchiel Pailhès"
           },
-          "popularity": 47,
+          "popularity": 46,
           "release_date": "2022-10-07",
           "url": "https://open.spotify.com/track/2k9B3ifvsmef8V8L73BawX",
           "name": "Mélopée"
@@ -1092,7 +1092,7 @@
             "url": "https://open.spotify.com/artist/3I3Fz1DeUY0icXFvOjbXm7",
             "name": "Methyl Ethel"
           },
-          "popularity": 38,
+          "popularity": 37,
           "release_date": "2022-02-18",
           "url": "https://open.spotify.com/track/4QI59IbUG9W8oUo4gWoBxw",
           "name": "Proof (feat. Stella Donnelly)"
@@ -1122,7 +1122,7 @@
             "url": "https://open.spotify.com/artist/0uAnwMXg0tsGQsOdVwudkb",
             "name": "Colourbox"
           },
-          "popularity": 34,
+          "popularity": 33,
           "release_date": "1985-08-12",
           "url": "https://open.spotify.com/track/3RlGLTcM9OwrAA0ErwJ2rA",
           "name": "The Moon Is Blue"
@@ -1132,7 +1132,7 @@
             "url": "https://open.spotify.com/artist/1iQhd9xO2v82j0dBbt4tHz",
             "name": "Superpoze"
           },
-          "popularity": 29,
+          "popularity": 28,
           "release_date": "2022-03-25",
           "url": "https://open.spotify.com/track/5YKffOovP69vePWQunFDdW",
           "name": "Geneva"
@@ -1152,7 +1152,7 @@
             "url": "https://open.spotify.com/artist/0RwXnFrEoI8tltFvYpJgP6",
             "name": "Confidence Man"
           },
-          "popularity": 55,
+          "popularity": 54,
           "release_date": "2022-04-01",
           "url": "https://open.spotify.com/track/53wnscuzFnH8jaGymzqgfi",
           "name": "Holiday"
@@ -1162,7 +1162,7 @@
             "url": "https://open.spotify.com/artist/6RQoLyY1nkArRcNc3sE86m",
             "name": "Ora the Molecule"
           },
-          "popularity": 29,
+          "popularity": 30,
           "release_date": "2021-07-23",
           "url": "https://open.spotify.com/track/0vydtoDOsW0qRhmFEHdyTT",
           "name": "Creator"
@@ -1178,13 +1178,13 @@
   "gem": {
     "name": "futuro",
     "version": "1.1.8",
-    "downloads": 178013,
+    "downloads": 178247,
     "url": "https://rubygems.org/gems/futuro"
   },
   "npm": {
     "name": "barbican-reset",
     "version": "2.14.0",
-    "downloads": 14195,
+    "downloads": 13848,
     "url": "https://www.npmjs.com/package/barbican-reset"
   }
 }
