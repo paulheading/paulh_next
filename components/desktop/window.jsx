@@ -3,30 +3,35 @@ import { useEffect, useRef } from 'react'
 import { window } from 'scripts/animation'
 import SkipLink from 'components/skiplink'
 
-function Window(props) {
-  var { name, folders, position, children } = props
-
-  var open = false
+function getWindowSettings(name, folders) {
+  var settings = {}
 
   folders.forEach((folder) => {
-    if (folder.name == name) open = folder.open
+    if (folder.name == name) settings = { name: folder.name, open: folder.open, focus: folder.focus }
 
     if (folder.group) {
       folder.group.items.map((item) => {
-        if (item.name == name) open = item.open
+        if (item.name == name) settings = { name: item.name, open: item.open, focus: item.focus }
       })
     }
   })
+
+  return settings
+}
+
+function Window(props) {
+  var { name, folders, position, children } = props
+  var settings = getWindowSettings(name, folders)
 
   const ref = useRef(null)
 
   useEffect(() => {
     if (!ref) return
-    const { toggle, draggable } = window
     const { current } = ref
-    draggable(current)
-    toggle(open, current)
-  }, [open, ref])
+
+    window.draggable(current)
+    window.toggle(settings, current)
+  }, [settings, ref])
 
   const outerProps = {
     className: 'window' + ' ' + styles.outer,

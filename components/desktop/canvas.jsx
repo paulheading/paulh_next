@@ -85,13 +85,11 @@ function Canvas({ gem, npm, count }) {
 
       if (!closest) return
 
-      const { unbump, bump } = window
-
       const siblings = find.sibling_windows(active)
 
-      siblings.forEach((sibling) => unbump(sibling))
+      siblings.forEach((sibling) => window.unbump(sibling))
 
-      bump(closest)
+      window.bump(closest)
     })
   }, [])
 

@@ -6,7 +6,8 @@ import { useState } from 'react'
 
 import Window from 'components/window'
 
-function Folder({ name, folders, setFolder, position, count }) {
+function Folder(props) {
+  const { name, folders, setFolder, position, count } = props
   const current = folders.filter((folder) => folder.name == name)[0]
   const desktop = useMediaQuery(768)
   const [groupOpen, setGroupOpen] = useState(false)

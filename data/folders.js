@@ -1,4 +1,4 @@
-const folder = (name = '', position, open = false, group = null) => ({ name, position, open, group })
+const folder = (name = '', position, open = false, group = null, focus = false) => ({ name, position, open, group, focus })
 
 const position = (a, b, c, d) => [
   {
@@ -16,7 +16,7 @@ const group = (items = [], open = false) => ({
   items,
 })
 
-const group_item = (name, open = false) => ({ name, open })
+const group_item = (name, open = false, focus = false) => ({ name, open, focus })
 
 const folders = [
   folder('trello', position(10, 20, 20, 40), true),

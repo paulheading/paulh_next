@@ -19,16 +19,14 @@ function Topbar({ count }) {
   useEffect(() => {
     if (!wifi_ref) return
     const { current } = wifi_ref
-    const { search } = wifi
-    search(current)
+    wifi.search(current)
     setTime(getTime())
   }, [count])
 
   useEffect(() => {
     if (!dots_ref) return
     const { current } = dots_ref
-    const { blink } = clock
-    blink(current)
+    clock.blink(current)
   }, [])
 
   return (

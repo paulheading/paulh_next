@@ -818,7 +818,7 @@
             "url": "https://open.spotify.com/artist/1GFkwGetxvXluztDxPShGo",
             "name": "Rina Mushonga"
           },
-          "popularity": 44,
+          "popularity": 43,
           "release_date": "2019-02-15",
           "url": "https://open.spotify.com/track/3OyedWlIaMQWvx1qAiILAA",
           "name": "Narcisc0"
@@ -878,7 +878,7 @@
             "url": "https://open.spotify.com/artist/3uOdNUjwD6hhOh1z2dQEIn",
             "name": "lau.ra"
           },
-          "popularity": 19,
+          "popularity": 18,
           "release_date": "2020-02-07",
           "url": "https://open.spotify.com/track/5rtAx0XN2V6P0RCkJSAXZ5",
           "name": "Sideways"
@@ -960,7 +960,7 @@
             "url": "https://open.spotify.com/artist/4BSjlnV6ZYrkMLPm55Wrfm",
             "name": "Deep Throat Choir"
           },
-          "popularity": 4,
+          "popularity": 3,
           "release_date": "2021-09-27",
           "url": "https://open.spotify.com/track/4GC8pzLgJSqp1gD55ddTaz",
           "name": "In Order to Know You"
@@ -1000,7 +1000,7 @@
             "url": "https://open.spotify.com/artist/0Dy94lW3txJhWQHqNXP1BT",
             "name": "Laura Mvula"
           },
-          "popularity": 43,
+          "popularity": 42,
           "release_date": "2021-07-02",
           "url": "https://open.spotify.com/track/32YlBIj8qDpyXgsLJ4MfwR",
           "name": "Got Me"
@@ -1010,7 +1010,7 @@
             "url": "https://open.spotify.com/artist/4gQsGkfdB4uVrNBqo4MhmI",
             "name": "LUMP"
           },
-          "popularity": 22,
+          "popularity": 21,
           "release_date": "2021-05-05",
           "url": "https://open.spotify.com/track/6fcJI9qrH0vr9EYxjpQdaM",
           "name": "Animal - Edit"
@@ -1112,7 +1112,7 @@
             "url": "https://open.spotify.com/artist/6CZhbpXpR3VJNQWFkwd2Ic",
             "name": "Noé Preszow"
           },
-          "popularity": 34,
+          "popularity": 33,
           "release_date": "2022-03-18",
           "url": "https://open.spotify.com/track/6sqYnu5QuI8e1JwxlbwFs4",
           "name": "Faire les choses bien - Version alternative"
@@ -1142,7 +1142,7 @@
             "url": "https://open.spotify.com/artist/6Jrxnp0JgqmeUX1veU591p",
             "name": "Santigold"
           },
-          "popularity": 49,
+          "popularity": 48,
           "release_date": "2022-09-09",
           "url": "https://open.spotify.com/track/1vbayZm5FgNe4ou8BRNiDq",
           "name": "High Priestess"
@@ -1162,7 +1162,7 @@
             "url": "https://open.spotify.com/artist/6RQoLyY1nkArRcNc3sE86m",
             "name": "Ora the Molecule"
           },
-          "popularity": 30,
+          "popularity": 31,
           "release_date": "2021-07-23",
           "url": "https://open.spotify.com/track/0vydtoDOsW0qRhmFEHdyTT",
           "name": "Creator"
@@ -1178,13 +1178,13 @@
   "gem": {
     "name": "futuro",
     "version": "1.1.8",
-    "downloads": 178247,
+    "downloads": 178483,
     "url": "https://rubygems.org/gems/futuro"
   },
   "npm": {
     "name": "barbican-reset",
     "version": "2.14.0",
-    "downloads": 13848,
+    "downloads": 13618,
     "url": "https://www.npmjs.com/package/barbican-reset"
   }
 }
