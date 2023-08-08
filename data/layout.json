@@ -848,7 +848,7 @@
             "url": "https://open.spotify.com/artist/1ooAqaFu4Ac3BO2HpL4V2R",
             "name": "Henrik Schwarz"
           },
-          "popularity": 31,
+          "popularity": 30,
           "release_date": "2020-03-20",
           "url": "https://open.spotify.com/track/7GA49BEANCELzwyBxQVxU1",
           "name": "Come Together"
@@ -1030,7 +1030,7 @@
             "url": "https://open.spotify.com/artist/1YvLqwm8xl6ENUT3KK6XMj",
             "name": "audiobooks"
           },
-          "popularity": 33,
+          "popularity": 32,
           "release_date": "2021-10-01",
           "url": "https://open.spotify.com/track/56CpzZPbczcpj3WGu2KYZ9",
           "name": "The Doll"
@@ -1072,7 +1072,7 @@
             "url": "https://open.spotify.com/artist/4rqegcqfzES4oBRh4n8TM1",
             "name": "Ezéchiel Pailhès"
           },
-          "popularity": 46,
+          "popularity": 45,
           "release_date": "2022-10-07",
           "url": "https://open.spotify.com/track/2k9B3ifvsmef8V8L73BawX",
           "name": "Mélopée"
@@ -1082,7 +1082,7 @@
             "url": "https://open.spotify.com/artist/370nbSkMB9kDWyTypwWYak",
             "name": "Haruomi Hosono"
           },
-          "popularity": 34,
+          "popularity": 33,
           "release_date": "1978",
           "url": "https://open.spotify.com/track/6EN8xSFfwNPy3W3BD4hCLH",
           "name": "SPORTS MEN (2018 Yoshinori Sunahara Remastering)"
@@ -1102,7 +1102,7 @@
             "url": "https://open.spotify.com/artist/3v8mFhjLFa50QK8zDvAMYN",
             "name": "Amanda Miguel"
           },
-          "popularity": 72,
+          "popularity": 71,
           "release_date": "1981-01-01",
           "url": "https://open.spotify.com/track/0hTao6s03MkTStWfxAmnGk",
           "name": "Así No Te Amará Jamás"
@@ -1184,7 +1184,7 @@
   "npm": {
     "name": "barbican-reset",
     "version": "2.14.0",
-    "downloads": 13618,
+    "downloads": 13608,
     "url": "https://www.npmjs.com/package/barbican-reset"
   }
 }

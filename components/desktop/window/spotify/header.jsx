@@ -3,15 +3,10 @@ import Image from 'next/image'
 import SpotifyLogo from 'logos/spotify'
 
 function Header({ name, image, owner, url }) {
-  const linkProps = {
-    className: styles.link,
-    href: url,
-  }
-
   const imageProps = {
-    height: 80,
+    height: 84,
     src: image,
-    width: 80,
+    width: 84,
   }
 
   const nameProps = {

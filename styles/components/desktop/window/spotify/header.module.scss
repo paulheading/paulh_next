@@ -1,7 +1,7 @@
 @import 'styles/global/mixins';
 
 .header {
-  grid-template-columns: 80px auto;
+  grid-template-columns: 5.25rem auto;
   background-color: #222b1b;
   display: grid;
 }
@@ -11,6 +11,10 @@
   padding: 0.75rem;
   display: grid;
   gap: 0.75rem;
+}
+
+.details {
+  font-size: 0;
 }
 
 .link {
