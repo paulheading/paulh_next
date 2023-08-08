@@ -27,7 +27,9 @@ function Header({ name, image, owner, url }) {
           <a {...nameProps}>{name}</a>
           <a {...ownerProps}>{owner.name}</a>
         </div>
-        <SpotifyLogo />
+        <div className={styles.logo_wrap}>
+          <SpotifyLogo />
+        </div>
       </div>
     </header>
   )

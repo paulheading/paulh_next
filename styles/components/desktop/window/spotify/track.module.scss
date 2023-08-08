@@ -1,17 +1,17 @@
 @import 'styles/global/mixins';
 
 .container {
-  grid-template-columns: 2rem auto;
+  grid-template-columns: 1.5rem auto;
   display: grid;
 }
 
 .number {
-  padding-top: 0.25rem;
+  position: relative;
   color: #a0a19e;
+  top: 0.3125rem;
 }
 
 .details {
-  padding-left: 0.25rem;
   overflow: hidden;
 }
 

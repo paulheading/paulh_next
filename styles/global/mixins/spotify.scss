@@ -1,14 +1,12 @@
 @mixin track_name {
   @include text-overflow;
-  padding-bottom: 0.25rem;
   display: inline-block;
-  padding-top: 0.25rem;
   font-size: 1.125rem;
-  line-height: 1.2;
   max-width: 100%;
+  padding: 0.5rem;
+  line-height: 1;
 
   @include focus {
-    @include single-box($c-lemon);
     background-color: $c-lemon;
     color: black;
   }
