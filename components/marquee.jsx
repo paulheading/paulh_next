@@ -38,7 +38,7 @@ function Tab(props) {
 }
 
 function Row(props) {
-  const { marquee, local } = props
+  const { marquee, local, firstTime } = props
 
   function Repeat() {
     var word_spans = ''
@@ -46,7 +46,7 @@ function Row(props) {
 
     for (let index = 0; index < words.length; index++) {
       if (index > 0) word_spans += ' '
-      word_spans += `<span style="visibility: hidden;">${words[index]}</span>`
+      word_spans += `<span>${words[index]}</span>`
     }
 
     var sentence_spans = ''
@@ -61,7 +61,7 @@ function Row(props) {
   }
 
   useEffect(() => {
-    animate.start('#repeat')
+    animate.start('#repeat', firstTime)
   })
 
   return (
@@ -74,12 +74,12 @@ function Row(props) {
 }
 
 function Marquee(props) {
-  const { local } = props.hero
+  const { local } = props
 
   return (
     <div className={styles.marquee_container}>
       <Tab href={local.url} />
-      <Row {...props.hero} />
+      <Row {...props} />
     </div>
   )
 }

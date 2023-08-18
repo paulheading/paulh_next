@@ -96,7 +96,7 @@ function Canvas({ gem, npm, count }) {
   return (
     <div className={styles.canvas_container}>
       <Wrap className={styles.canvas_wrap}>
-        <div className={styles.windows}>
+        <div id="windows" className={styles.windows}>
           <TrelloWindow {...trelloWindowProps} />
           <SpotifyWindow {...spotify2020WindowProps} />
           <SpotifyWindow {...spotify2021WindowProps} />

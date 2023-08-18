@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import Marquee from 'components/marquee'
 import Desktop from 'components/desktop'
 import Contact from 'components/contact'
@@ -9,8 +9,13 @@ import Head from 'components/head'
 import layout from 'data/layout.json'
 
 function Main(props) {
+  const [firstTime, setFirstTime] = useState(true)
   var { projects, spotify, gem, npm } = layout
   var { seo = null } = props
+
+  useEffect(() => {
+    setFirstTime(false)
+  },[])
 
   var heroes = projects.filter(({ hero }) => hero)
   var count = useCount(heroes)
@@ -22,11 +27,15 @@ function Main(props) {
     gem,
     npm,
   }
+  var marqueeProps = {
+    ...hero,
+    firstTime
+  }
 
   return (
     <Fragment>
       <Head dynamic={seo} />
-      <Marquee hero={hero} />
+      <Marquee {...marqueeProps} />
       <Desktop {...desktopProps} />
       <Contact />
       <Footer />
