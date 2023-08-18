@@ -64,9 +64,13 @@ function Row(props) {
     animate.start('#repeat')
   }, [props])
 
+  const linkProps = {
+    href: local.url,
+  }
+
   return (
     <div className={styles.row_container}>
-      <CreateLink href={local.url}>
+      <CreateLink {...linkProps}>
         <Repeat />
       </CreateLink>
     </div>
@@ -78,7 +82,7 @@ function Marquee(props) {
 
   return (
     <div className={styles.marquee_container}>
-      <Tab href={local.url} />
+      {/* <Tab href={local.url} /> */}
       <Row {...props} />
     </div>
   )

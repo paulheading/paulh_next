@@ -8,6 +8,7 @@ let end = duration - offset
 let textDecoration = 'none'
 let opacity = 0
 let clearProps = 'text-decoration'
+let start = 0
 
 // prettier-ignore
 function shuffle(array) {
@@ -51,11 +52,14 @@ marquee.start = function (target) {
         tl.set(word, { opacity }, delay)
       }
     }
+
+    tl.set(parent, { opacity }, duration)
   }
 
   // prettier-ignore
-  tl.set(parent, { clearProps })
-    .to(target, { ease, x, duration })
+  tl.set(parent, { clearProps }, start)
+    .to(parent, { opacity: 1, duration: 0.2 }, start)
+    .to(target, { ease, x, duration }, start)
     .add(hideWords, end)
 }
 
