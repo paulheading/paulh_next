@@ -3,7 +3,7 @@ import duration from 'data/duration'
 
 let x = -(duration * 30)
 let ease = 'none'
-let offset = 0.6
+let offset = 0.8
 let end = duration - offset
 let textDecoration = 'none'
 let opacity = 0
@@ -30,7 +30,7 @@ marquee.start = function (target) {
   var sentences = content.children
   var words = sentences[0].children
 
-  function endEvents() {
+  function hideWords() {
     tl.set(parent, { textDecoration }, end)
 
     let values = []
@@ -56,7 +56,7 @@ marquee.start = function (target) {
   // prettier-ignore
   tl.set(parent, { clearProps })
     .to(target, { ease, x, duration })
-    .add(endEvents, end)
+    .add(hideWords, end)
 }
 
 export default marquee
