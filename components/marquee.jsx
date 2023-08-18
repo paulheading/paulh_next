@@ -38,7 +38,7 @@ function Tab(props) {
 }
 
 function Row(props) {
-  const { marquee, local, firstTime } = props
+  const { marquee, local } = props
 
   function Repeat() {
     var word_spans = ''
@@ -61,8 +61,8 @@ function Row(props) {
   }
 
   useEffect(() => {
-    animate.start('#repeat', firstTime)
-  })
+    animate.start('#repeat')
+  }, [props])
 
   return (
     <div className={styles.row_container}>
