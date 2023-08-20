@@ -82,7 +82,7 @@ function Marquee(props) {
 
   return (
     <div className={styles.marquee_container}>
-      {/* <Tab href={local.url} /> */}
+      <Tab href={local.url} />
       <Row {...props} />
     </div>
   )

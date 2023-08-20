@@ -818,7 +818,7 @@
             "url": "https://open.spotify.com/artist/1GFkwGetxvXluztDxPShGo",
             "name": "Rina Mushonga"
           },
-          "popularity": 43,
+          "popularity": 42,
           "release_date": "2019-02-15",
           "url": "https://open.spotify.com/track/3OyedWlIaMQWvx1qAiILAA",
           "name": "Narcisc0"
@@ -858,7 +858,7 @@
             "url": "https://open.spotify.com/artist/0uo6UbyUYXbG4xBT7vBGSx",
             "name": "Wilma Archer"
           },
-          "popularity": 22,
+          "popularity": 21,
           "release_date": "2020-04-03",
           "url": "https://open.spotify.com/track/2C5Q2WNxzaW6NTucwChrAr",
           "name": "Cheater"
@@ -1000,7 +1000,7 @@
             "url": "https://open.spotify.com/artist/0Dy94lW3txJhWQHqNXP1BT",
             "name": "Laura Mvula"
           },
-          "popularity": 41,
+          "popularity": 42,
           "release_date": "2021-07-02",
           "url": "https://open.spotify.com/track/32YlBIj8qDpyXgsLJ4MfwR",
           "name": "Got Me"
@@ -1030,7 +1030,7 @@
             "url": "https://open.spotify.com/artist/1YvLqwm8xl6ENUT3KK6XMj",
             "name": "audiobooks"
           },
-          "popularity": 32,
+          "popularity": 33,
           "release_date": "2021-10-01",
           "url": "https://open.spotify.com/track/56CpzZPbczcpj3WGu2KYZ9",
           "name": "The Doll"
@@ -1178,13 +1178,13 @@
   "gem": {
     "name": "futuro",
     "version": "1.1.8",
-    "downloads": 179194,
+    "downloads": 179197,
     "url": "https://rubygems.org/gems/futuro"
   },
   "npm": {
     "name": "barbican-reset",
     "version": "2.16.0",
-    "downloads": 13936,
+    "downloads": 13977,
     "url": "https://www.npmjs.com/package/barbican-reset"
   }
 }
