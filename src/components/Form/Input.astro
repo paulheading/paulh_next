@@ -1,12 +1,12 @@
 ---
-import Alert from "/src/components/form/Alert.astro";
+import Alert from '~components/Form/Alert.astro'
 
-const { name } = Astro.props;
+const { name } = Astro.props
 
 const inputProps = {
   ...Astro.props,
   id: name,
-};
+}
 ---
 
 <div class="row">
@@ -18,7 +18,7 @@ const inputProps = {
 </div>
 
 <style lang="scss">
-  @import "/src/styles/mixins";
+  @import '~styles/mixins';
 
   .row {
     @include form_row;

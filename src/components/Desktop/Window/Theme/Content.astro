@@ -1,10 +1,10 @@
 ---
-import Graph from "/src/components/desktop/window/theme/graph.astro";
-const { name, url, version, downloads, color, class: className } = Astro.props;
+import Graph from '~components/Desktop/Window/Theme/Graph.astro'
+const { name, url, version, downloads, color, class: className } = Astro.props
 
 const containerProps = {
-  class: "container " + className,
-};
+  class: 'container ' + className,
+}
 ---
 
 <div {...containerProps}>
@@ -19,7 +19,7 @@ const containerProps = {
 </div>
 
 <style lang="scss" define:vars={{ color }}>
-  @import "/src/styles/mixins";
+  @import '~styles/mixins';
 
   .container {
     border-radius: $border-radius-lg;

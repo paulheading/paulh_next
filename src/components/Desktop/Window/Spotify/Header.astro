@@ -1,22 +1,22 @@
 ---
-import { spotify } from "/src/data/layout.json";
-import logo from "/src/svg/spotify.svg?raw";
-import { parse } from "node-html-parser";
+import { spotify } from '~data/layout.json'
+import logo from '~svg/spotify.svg?raw'
+import { parse } from 'node-html-parser'
 
-const { year } = Astro.props;
+const { year } = Astro.props
 
-const { name, image, owner, url } = spotify["_" + year];
+const { name, image, owner, url } = spotify['_' + year]
 
-const alt = `Artwork for my ${year} playlist.`;
+const alt = `Artwork for my ${year} playlist.`
 
-const size = 80;
+const size = 80
 
 const imageProps = {
   height: size,
   width: size,
   src: image,
   alt,
-};
+}
 ---
 
 <header>
@@ -37,7 +37,7 @@ const imageProps = {
 </header>
 
 <style lang="scss">
-  @import "/src/styles/mixins";
+  @import '~styles/mixins';
 
   header {
     grid-template-columns: 5rem auto;

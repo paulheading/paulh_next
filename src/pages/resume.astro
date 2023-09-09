@@ -1,47 +1,47 @@
 ---
-import { parse } from "node-html-parser";
-import remove_markdown from "remove-markdown";
+import { parse } from 'node-html-parser'
+import remove_markdown from 'remove-markdown'
 
-import Layout from "/src/layouts/Main.astro";
-import Content from "/src/components/Content.astro";
-import Page from "/src/components/Page.astro";
-import Row from "/src/components/page/Row.astro";
-import Biography from "/src/markdown/biography.md";
-import Card from "/src/components/Page/Card.astro";
+import Layout from '~layouts/Main.astro'
+import Content from '~components/Content.astro'
+import Page from '~components/Page.astro'
+import Row from '~components/Page/Row.astro'
+import Biography from '~markdown/biography.md'
+import Card from '~components/Page/Card.astro'
 
-import description from "/src/markdown/biography.md?raw";
+import description from '~markdown/biography.md?raw'
 
-import seo from "/src/data/seo";
-import details from "/src/data/personal";
-import { create } from "/src/scripts/helpers";
-import { projects } from "/src/data/layout";
-import { roles, education } from "/src/data/resume";
+import seo from '~data/seo.js'
+import details from '~data/personal.js'
+import { create } from '~scripts/helpers'
+import { projects } from '~data/layout.json'
+import { roles, education } from '~data/resume.json'
 
 const layoutProps = {
-  title: seo.title("Resume"),
+  title: seo.title('Resume'),
   description: remove_markdown(description),
-};
+}
 
-const paul = new create.person(details);
+const paul = new create.person(details)
 
-const mode = "triple";
-const controls = true;
-const defaults = { mode, controls };
+const mode = 'triple'
+const controls = true
+const defaults = { mode, controls }
 
 const projectProps = {
-  title: "Projects",
+  title: 'Projects',
   ...defaults,
-};
+}
 
 const rolesProps = {
-  title: "Roles",
+  title: 'Roles',
   ...defaults,
-};
+}
 
 const learningProps = {
-  title: "Learning",
+  title: 'Learning',
   ...defaults,
-};
+}
 ---
 
 <script src="/src/scripts/pages/resume.js"></script>
@@ -79,7 +79,7 @@ const learningProps = {
 </Layout>
 
 <style lang="scss">
-  @import "/src/styles/mixins";
+  @import '~styles/mixins';
 
   .name {
     font-size: $h1-font-size;

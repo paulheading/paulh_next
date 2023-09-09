@@ -1,12 +1,12 @@
 ---
-import personal from "/src/data/personal";
+import personal from '~data/personal.js'
 
-const { email } = personal;
+const { email } = personal
 
 const linkProps = {
   href: `mailto:${email}`,
-  class: "link",
-};
+  class: 'link',
+}
 ---
 
 <div id="footer" class="container">
@@ -15,7 +15,7 @@ const linkProps = {
 </div>
 
 <style lang="scss">
-  @import "/src/styles/mixins";
+  @import '~styles/mixins';
 
   .container {
     background-color: black;

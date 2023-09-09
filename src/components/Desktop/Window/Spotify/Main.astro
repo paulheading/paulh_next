@@ -1,10 +1,10 @@
 ---
-import { spotify } from "/src/data/layout.json";
-import Track from "/src/components/desktop/window/spotify/track.astro";
+import { spotify } from '~data/layout.json'
+import Track from '~components/Desktop/Window/Spotify/Track.astro'
 
-const { year } = Astro.props;
+const { year } = Astro.props
 
-const { tracks, url } = spotify["_" + year];
+const { tracks, url } = spotify['_' + year]
 ---
 
 <main>
@@ -14,14 +14,14 @@ const { tracks, url } = spotify["_" + year];
         number: index + 1,
         track,
         url,
-      };
-      return <Track {...trackProps} />;
+      }
+      return <Track {...trackProps} />
     })
   }
 </main>
 
 <style lang="scss">
-  @import "/src/styles/mixins";
+  @import '~styles/mixins';
 
   main {
     max-height: $width-window;

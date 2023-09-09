@@ -1,15 +1,15 @@
 ---
-import Layout from "/src/layouts/Main.astro";
-import Content from "/src/components/Content.astro";
-import seo from "/src/data/seo";
+import Layout from '~layouts/Main.astro'
+import Content from '~components/Content.astro'
+import seo from '~data/seo.js'
 
 const description =
-  "Oh no... this page is missing. Maybe the url is incorrect? If something looks broken, please email hello@paulh.biz";
+  'Oh no... this page is missing. Maybe the url is incorrect? If something looks broken, please email hello@paulh.biz'
 
 const layoutProps = {
-  title: seo.title("404"),
+  title: seo.title('404'),
   description,
-};
+}
 ---
 
 <Layout {...layoutProps}>
@@ -24,7 +24,7 @@ const layoutProps = {
 </Layout>
 
 <style lang="scss">
-  @import "/src/styles/mixins";
+  @import '~styles/mixins';
 
   .wrap {
     @include wrap;

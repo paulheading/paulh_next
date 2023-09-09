@@ -1,14 +1,14 @@
 ---
-let { name, color, size = "sm", variant = "solid", primary } = Astro.props;
+let { name, color, size = 'sm', variant = 'solid', primary } = Astro.props
 
 if (!color) {
-  variant = "outline";
-  color = primary;
+  variant = 'outline'
+  color = primary
 }
 
 const labelProps = {
   class: `label ${variant} ${size} ${color}`,
-};
+}
 ---
 
 <div {...labelProps}>
@@ -16,11 +16,11 @@ const labelProps = {
 </div>
 
 <style lang="scss">
-  @import "/src/styles/mixins";
+  @import '~styles/mixins';
 
   $sizes: (
-    "sm": 0.875rem,
-    "md": 1rem,
+    'sm': 0.875rem,
+    'md': 1rem,
   );
 
   @each $key, $value in $labels {

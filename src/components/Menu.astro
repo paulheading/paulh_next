@@ -1,13 +1,13 @@
 ---
-import MenuLink from "./Menu/Link.astro";
-import LinkHome from "./Menu/Link/Home.astro";
+import MenuLink from '~components/Menu/Link.astro'
+import LinkHome from '~components/Menu/Link/Home.astro'
 
-const mode = Astro.url.pathname == "/" ? "home" : "away";
+const mode = Astro.url.pathname == '/' ? 'home' : 'away'
 
 const containerProps = {
-  id: "menu",
-  "class:list": ["container", mode],
-};
+  id: 'menu',
+  'class:list': ['container', mode],
+}
 ---
 
 <div {...containerProps}>
@@ -57,7 +57,7 @@ const containerProps = {
 </div>
 
 <style lang="scss">
-  @import "/src/styles/mixins";
+  @import '~styles/mixins';
 
   @mixin adjust-position {
     position: relative;
@@ -78,7 +78,7 @@ const containerProps = {
   }
 
   @each $key, $value in $heroes {
-    .container.home[data-loop="#{$key}"] {
+    .container.home[data-loop='#{$key}'] {
       @include small-down {
         background-color: map-get($value, banner);
       }

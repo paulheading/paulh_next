@@ -1,5 +1,5 @@
 ---
-const { color, style } = Astro.props;
+const { color, style } = Astro.props
 ---
 
 <div class={`label ${style} ${color}`}>
@@ -7,7 +7,7 @@ const { color, style } = Astro.props;
 </div>
 
 <style lang="scss">
-  @import "/src/styles/mixins";
+  @import '~styles/mixins';
 
   .label {
     border-radius: $border-radius-sm;

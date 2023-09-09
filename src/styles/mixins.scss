@@ -1,15 +1,15 @@
-@import "/src/styles/variables";
-@import "/src/styles/mixins/breakpoints";
-@import "/src/styles/mixins/buttons";
-@import "/src/styles/mixins/focus";
-@import "/src/styles/mixins/folder";
-@import "/src/styles/mixins/form";
-@import "/src/styles/mixins/hero";
-@import "/src/styles/mixins/label";
-@import "/src/styles/mixins/menu";
-@import "/src/styles/mixins/row";
-@import "/src/styles/mixins/spotify";
-@import "/src/styles/mixins/theme";
+@import '~styles/variables';
+@import '~styles/mixins/breakpoints';
+@import '~styles/mixins/buttons';
+@import '~styles/mixins/focus';
+@import '~styles/mixins/folder';
+@import '~styles/mixins/form';
+@import '~styles/mixins/hero';
+@import '~styles/mixins/label';
+@import '~styles/mixins/menu';
+@import '~styles/mixins/row';
+@import '~styles/mixins/spotify';
+@import '~styles/mixins/theme';
 
 @mixin size($value) {
   height: $value;
@@ -37,13 +37,13 @@
 }
 
 @mixin icon($name) {
-  [astro-icon="#{$name}"] {
+  [astro-icon='#{$name}'] {
     @content;
   }
 }
 
 @mixin path($name) {
-  path[id="#{$name}"] {
+  path[id='#{$name}'] {
     @content;
   }
 }

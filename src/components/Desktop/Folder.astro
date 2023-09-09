@@ -1,33 +1,33 @@
 ---
-import folder_open from "/src/svg/folder/open.svg?raw";
-import folder_closed from "/src/svg/folder/closed.svg?raw";
-import { parse } from "node-html-parser";
-import Window from "/src/components/desktop/folder/Window.astro";
-import WindowList from "/src/components/desktop/folder/window/List.astro";
+import folder_open from '~svg/folder/open.svg?raw'
+import folder_closed from '~svg/folder/closed.svg?raw'
+import { parse } from 'node-html-parser'
+import Window from '~components/Desktop/folder/Window.astro'
+import WindowList from '~components/Desktop/folder/window/List.astro'
 
-const { title, folders, state } = Astro.props;
+const { title, folders, state } = Astro.props
 
-const isGroup = folders.length ? true : false;
+const isGroup = folders.length ? true : false
 
 const dataProps = {
-  "data-group": isGroup ? title : false,
-  "data-state": state,
-};
+  'data-group': isGroup ? title : false,
+  'data-state': state,
+}
 
 const folderProps = {
   ...dataProps,
-  id: "folder_" + title,
-  class: "folder",
-};
+  id: 'folder_' + title,
+  class: 'folder',
+}
 
 const windowProps = {
-  "data-state": dataProps["data-state"],
-};
+  'data-state': dataProps['data-state'],
+}
 
 const listProps = {
-  "data-group": dataProps["data-group"],
+  'data-group': dataProps['data-group'],
   items: folders,
-};
+}
 ---
 
 <div class="container">
@@ -47,7 +47,7 @@ const listProps = {
 </div>
 
 <style lang="scss">
-  @import "/src/styles/mixins";
+  @import '~styles/mixins';
 
   .container {
     position: relative;
@@ -77,13 +77,13 @@ const listProps = {
 </style>
 
 <style lang="scss" is:global>
-  .folder[data-state="open"] {
+  .folder[data-state='open'] {
     #svg_closed {
       display: none;
     }
   }
 
-  .folder[data-state="closed"] {
+  .folder[data-state='closed'] {
     #svg_open {
       display: none;
     }
