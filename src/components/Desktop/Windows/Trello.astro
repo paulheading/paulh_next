@@ -1,0 +1,30 @@
+---
+import Window from "/src/components/desktop/window.astro";
+import Header from "/src/components/desktop/window/trello/header.astro";
+import Main from "/src/components/desktop/window/trello/main.astro";
+import Footer from "/src/components/desktop/window/trello/footer.astro";
+---
+
+<Window {...Astro.props} class="window">
+  <div class="content">
+    <Header />
+    <Main />
+    <Footer />
+  </div>
+</Window>
+
+<style lang="scss">
+  @import "/src/styles/mixins";
+
+  .window {
+    left: 0rem;
+    top: 4rem;
+  }
+
+  .content {
+    background-color: $c-trello-background;
+    padding-right: $padding-trello;
+    padding-left: $padding-trello;
+    color: $c-trello-text;
+  }
+</style>

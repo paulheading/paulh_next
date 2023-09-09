@@ -1,0 +1,23 @@
+---
+import remove_markdown from "remove-markdown";
+import Layout from "/src/layouts/Main.astro";
+import Content from "/src/components/Content.astro";
+import Page from "/src/components/Page.astro";
+import Markdown from "/src/markdown/about.mdx";
+import description from "/src/markdown/biography.md?raw";
+
+import seo from "/src/data/seo";
+
+const layoutProps = {
+  title: seo.title("About"),
+  description: remove_markdown(description),
+};
+---
+
+<Layout {...layoutProps}>
+  <Content>
+    <Page>
+      <Markdown />
+    </Page>
+  </Content>
+</Layout>

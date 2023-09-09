@@ -1,0 +1,31 @@
+---
+import Folder from "/src/components/desktop/Folder.astro";
+import TrelloFolder from "/src/components/desktop/folders/Trello.astro";
+import SpotifyFolder from "/src/components/desktop/folders/Spotify.astro";
+import ThemeFolder from "/src/components/desktop/folders/Theme.astro";
+
+const { items } = Astro.props;
+---
+
+<div id="desktop_folders" class="folders">
+  {
+    items.map(function (item) {
+      const { title } = item;
+
+      if (title == "trello") return <TrelloFolder {...item} />;
+
+      if (title == "spotify") return <SpotifyFolder {...item} />;
+
+      if (title == "theme") return <ThemeFolder {...item} />;
+
+      return <Folder {...item} />;
+    })
+  }
+</div>
+
+<style lang="scss">
+  .folders {
+    text-align: center;
+    position: relative;
+  }
+</style>

@@ -1,0 +1,27 @@
+---
+import Folder from "/src/components/desktop/Folder.astro";
+---
+
+<div class="position">
+  <Folder {...Astro.props} />
+</div>
+
+<style lang="scss">
+  @import "/src/styles/mixins";
+
+  .position {
+    @include position-folder;
+
+    @include medium-up {
+      right: 100px;
+      top: 100px;
+    }
+  }
+
+  .position[data-count="1"] {
+    @include medium-up {
+      right: 60px;
+      top: 170px;
+    }
+  }
+</style>

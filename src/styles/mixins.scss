@@ -1,0 +1,66 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins/breakpoints";
+@import "/src/styles/mixins/buttons";
+@import "/src/styles/mixins/focus";
+@import "/src/styles/mixins/folder";
+@import "/src/styles/mixins/form";
+@import "/src/styles/mixins/hero";
+@import "/src/styles/mixins/label";
+@import "/src/styles/mixins/menu";
+@import "/src/styles/mixins/row";
+@import "/src/styles/mixins/spotify";
+@import "/src/styles/mixins/theme";
+
+@mixin size($value) {
+  height: $value;
+  width: $value;
+}
+
+@mixin window {
+  box-shadow: $box-shadow-window;
+  border-radius: 0.5rem;
+  width: $width-window;
+  font-size: 1.125rem;
+  overflow: hidden;
+}
+
+@mixin text-overflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin wrap {
+  max-width: $max-width-wrap;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin icon($name) {
+  [astro-icon="#{$name}"] {
+    @content;
+  }
+}
+
+@mixin path($name) {
+  path[id="#{$name}"] {
+    @content;
+  }
+}
+
+@mixin topbar-icon {
+  justify-content: center;
+  display: inline-flex;
+  width: 5rem;
+}
+
+@mixin position-folder {
+  @include medium-down {
+    display: inline-block;
+  }
+
+  @include medium-up {
+    transition: right 300ms steps(3), top 300ms steps(3);
+    position: absolute;
+  }
+}
