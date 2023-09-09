@@ -1,8 +1,0 @@
-@import 'styles/global/mixins';
-
-.wrap {
-  @include medium-up {
-    box-shadow: $box-shadow-page;
-    max-width: 50rem;
-  }
-}

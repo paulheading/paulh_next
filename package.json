@@ -1,39 +1,30 @@
 {
-  "name": "paulh.biz",
-  "version": "0.1.0",
-  "private": true,
+  "name": "astro",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "npm run scrape && next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "analyze": "ANALYZE=true npm run build",
-    "scrape": "cd scripts && node scraper.mjs",
-    "remove:jsdoc": "rm -rf docs",
-    "build:jsdoc": "jsdoc -c jsdoc.json",
-    "jsdoc": "npm run remove:jsdoc && npm run build:jsdoc"
+    "scrape": "cd src/scraper && node index.mjs",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@next/bundle-analyzer": "^13.4.10",
+    "@astrojs/mdx": "^1.0.0",
+    "astro": "^3.0.8",
     "focus-visible": "^5.2.0",
     "gsap": "npm:@gsap/shockingly@^3.11.4",
-    "html-react-parser": "^3.0.16",
     "luxon": "^3.3.0",
     "marked": "^5.1.2",
-    "next": "^13.3.0",
     "node-fetch": "^2.5.0",
-    "raw-loader": "^4.0.2",
+    "node-html-parser": "^6.1.6",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-hook-form": "^7.41.1",
-    "react-markdown": "^8.0.7",
-    "sass": "^1.57.1",
+    "remove-markdown": "^0.5.0",
     "showdown": "^2.1.0",
     "string-strip-html": "^13.4.2"
   },
   "devDependencies": {
-    "eslint": "^8.45.0",
-    "eslint-config-next": "^13.3.0",
-    "eslint-plugin-unused-imports": "^3.0.0"
+    "sass": "^1.66.1"
   }
 }
